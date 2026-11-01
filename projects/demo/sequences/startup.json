@@ -1,0 +1,16 @@
+{
+  "name": "startup",
+  "description": "Motorstart simulieren und Hochlauf pruefen",
+  "steps": [
+    {"type": "comment", "text": "Zyklisches Senden vorbereiten"},
+    {"type": "set_signal", "message": "DriverCmd", "signal": "StartButton", "value": 0},
+    {"type": "enable_tx", "message": "DriverCmd", "enabled": true},
+    {"type": "wait", "ms": 300},
+    {"type": "diag", "service": "ExtendedSession", "params": {"session": 3}, "expect": "50 03"},
+    {"type": "set_signal", "message": "DriverCmd", "signal": "StartButton", "value": 1},
+    {"type": "wait_for", "direction": "RX", "message": "EngineData", "signal": "RPM", "op": ">", "value": 100, "timeout_ms": 3000},
+    {"type": "check", "direction": "RX", "message": "EngineData", "signal": "CoolantTemp", "op": "<", "value": 150},
+    {"type": "diag", "service": "ReadVIN", "params": {}, "expect": "62 F1 90"},
+    {"type": "enable_tx", "message": "DriverCmd", "enabled": false}
+  ]
+}

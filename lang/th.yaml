@@ -1,0 +1,1100 @@
+meta:
+  name: ไทย
+  order: 5
+ui:
+  app.title: CAN Tool
+  tab.project: โปรเจกต์
+  tab.data: ข้อมูล
+  tab.trace: Trace
+  tab.sequence: ลำดับทดสอบ
+  tab.graph: กราฟ
+  tab.logging: Logging
+  tab.diag: วินิจฉัย
+  tab.help: ช่วยเหลือ
+  header.dark: โหมดมืด
+  header.dark_tip: สลับระหว่างธีมสว่างและธีมมืด
+  header.language: 'ภาษา:'
+  header.language_tip: เลือกภาษาของหน้าจอและวิธีใช้
+  project.group: โปรเจกต์
+  project.active: 'โปรเจกต์ที่ใช้งาน:'
+  project.new: ใหม่...
+  project.import: นำเข้าไฟล์...
+  project.cache_format: 'รูปแบบแคช:'
+  project.reconvert: "แปลง DBC/CDD/A2L ใหม่"
+  project.info_label: 'ข้อมูล:'
+  project.new_title: โปรเจกต์ใหม่
+  project.new_prompt: 'ชื่อโปรเจกต์:'
+  project.dialog_title: โปรเจกต์
+  project.import_dialog: เลือกไฟล์ DBC/CDD
+  project.import_filter: "DBC/CDD/A2L (*.dbc *.cdd *.a2l);;ไฟล์ทั้งหมด (*)"
+  project.import_title: นำเข้า
+  project.import_error: '{file}: {error}'
+  project.convert_title: การแปลง
+  project.info.dbc: 'DBC: {sources} - {count} ข้อความ'
+  project.info.warning: 'คำเตือน: {text}'
+  project.info.cdd_warning: 'คำเตือน CDD: {text}'
+  hw.group: ฮาร์ดแวร์
+  hw.interface: 'อินเทอร์เฟซ:'
+  hw.channel: 'ช่อง:'
+  hw.channel_tip: "Vector: หมายเลขช่องบนอุปกรณ์ (0 = CH1); PEAK: เช่น PCAN_USBBUS1; SocketCAN: เช่น can0"
+  hw.bitrate: 'บิตเรต (bit/s):'
+  hw.fd: CAN FD
+  hw.data_bitrate: 'บิตเรตข้อมูล (bit/s):'
+  hw.app_name: 'ชื่อแอปพลิเคชัน Vector:'
+  hw.app_name_tip: "ไม่บังคับ ว่าง = เข้าถึงอุปกรณ์ Vector โดยตรง (แนะนำ) หากระบุชื่อ (เช่น CANalyzer) จะใช้การกำหนดช่องของ Vector Hardware Config"
+  hw.sim_echo: 'จำลอง: สะท้อนเฟรมที่ส่งกลับมา'
+  hw.sim_ecu: 'จำลอง: ECU เสมือน'
+  hw.peak_note: 'หมายเหตุ: PEAK PCAN-USB Pro FD ต้องติดตั้งไดรเวอร์ PCAN'
+  hw.type.simulation: จำลอง (ไม่ใช้ฮาร์ดแวร์)
+  hw.type.vector: Vector (VN1630A, VN7572)
+  hw.type.pcan: PEAK PCAN-USB Pro FD
+  hw.type.socketcan: SocketCAN (Linux)
+  hw.only_windows: "เฉพาะ Windows"
+  hw.only_linux: "เฉพาะ Linux"
+  hw.os_note.windows: "ระบบปฏิบัติการ: {os} รองรับ Vector (ไดรเวอร์ XL) และ PEAK (PCAN-Basic) ไม่มี SocketCAN บน Windows"
+  hw.os_note.linux: "ระบบปฏิบัติการ: {os} รองรับ SocketCAN (เช่น can0 ต้องเปิดก่อนด้วย 'ip link set can0 up type can bitrate 500000') และ PEAK (ไลบรารี PCAN-Basic หรือไดรเวอร์เคอร์เนลเป็น can0) ไม่มีไดรเวอร์ Vector XL บน Linux หากเป็นไปได้ให้เชื่อมต่ออุปกรณ์ Vector ผ่าน SocketCAN"
+  hw.os_note.macos: "ระบบปฏิบัติการ: {os} ใช้ได้ทั้งการจำลองและ PEAK (PCAN-Basic)"
+  hw.os_note.other: "ระบบปฏิบัติการ: {os} ใช้ได้การจำลอง ฮาร์ดแวร์อื่นยังไม่ได้ทดสอบ"
+  hw.detect: "ตรวจหาฮาร์ดแวร์"
+  hw.detect_tip: "ค้นหาอินเทอร์เฟซที่เชื่อมต่อ (Vector, PEAK, SocketCAN) ของระบบปฏิบัติการปัจจุบัน และหากพบเพียงหนึ่งรายการ จะใช้ประเภทและช่องของรายการนั้น"
+  hw.detect_none: "ไม่พบอินเทอร์เฟซ ({os}) ติดตั้งไดรเวอร์และเชื่อมต่ออุปกรณ์แล้วหรือยัง"
+  hw.detect_found: "อินเทอร์เฟซที่พบ:\n{items}"
+  err.hw.vector_unsupported: "Vector (ไดรเวอร์ XL) ใช้ไม่ได้บน {os} (เฉพาะ Windows) บน Linux ให้เชื่อมต่ออุปกรณ์ผ่าน SocketCAN"
+  err.hw.vector_driver_missing: "ไม่พบไดรเวอร์ Vector: ไม่มี {dll} (Python เป็น {bits} บิต) วิธีแก้: ติดตั้ง 'Vector Driver Setup' หรือ 'XL Driver Library' จาก vector.com (จะวาง {dll} ไว้ใน C:\\Windows\\System32) แล้วเริ่มเครื่องมือใหม่ หรือคัดลอก {dll} ไปไว้ในโฟลเดอร์ของเครื่องมือหรือ drivers\\ หากใช้ Python 32 บิตจะค้นหา vxlapi.dll แทน vxlapi64.dll ให้ใช้ Python 64 บิตแทน จากนั้นตรวจสอบใน Vector Hardware Config ว่าเห็น VN1630A และไม่มีโปรแกรมอื่น (CANalyzer, CANoe, vFlash) ใช้ช่องนั้นอยู่"
+  err.hw.socketcan_unsupported: "SocketCAN ใช้ไม่ได้บน {os} (เฉพาะ Linux) บน Windows ให้เลือก Vector หรือ PEAK"
+  conn.connect: เชื่อมต่อ
+  conn.disconnect: ตัดการเชื่อมต่อ
+  conn.connected: 'เชื่อมต่อแล้ว: {channel}   RX: {rx}   TX: {tx}'
+  conn.disconnected: ไม่ได้เชื่อมต่อ
+  conn.via_serial: "ผ่านหมายเลขซีเรียล"
+  conn.via_index: "ผ่านดัชนีฮาร์ดแวร์"
+  conn.via_hwconfig: "ผ่าน Vector Hardware Config"
+  tab.xcp: "XCP"
+  tab.builder: "GUI Builder"
+  xcp.title: "XCP"
+  xcp.a2l: "A2L:"
+  xcp.master_id: "ID มาสเตอร์ (hex):"
+  xcp.slave_id: "ID สเลฟ (hex):"
+  xcp.extended: "ID แบบขยาย"
+  xcp.connect: "เชื่อมต่อ XCP"
+  xcp.disconnect: "ตัดการเชื่อมต่อ XCP"
+  xcp.filter_placeholder: "ตัวกรอง (ชื่อ) ..."
+  xcp.col.name: "ชื่อ"
+  xcp.col.kind: "ประเภท"
+  xcp.col.address: "แอดเดรส"
+  xcp.col.unit: "หน่วย"
+  xcp.col.raw: "ค่าดิบ"
+  xcp.col.value: "ค่า"
+  xcp.add: "เพิ่มในรายการเฝ้าดู"
+  xcp.remove: "นำออก"
+  xcp.available: "ที่มี (จาก A2L)"
+  xcp.watch: "เฝ้าดู"
+  xcp.poll: "อ่านวนซ้ำ"
+  xcp.read_once: "อ่านหนึ่งครั้ง"
+  xcp.write_placeholder: "ค่าใหม่ (ตัวเลขหรือข้อความ)"
+  xcp.write: "เขียนค่า"
+  xcp.kind.measurement: "ค่าที่วัด"
+  xcp.kind.characteristic: "พารามิเตอร์"
+  xcp.unsupported_tip: "ไม่รองรับ (ไม่มีชนิดข้อมูล ประเภท หรือแอดเดรส)"
+  xcp.a2l_error: "ข้อผิดพลาด A2L: {error}"
+  xcp.bad_ids: "CAN ID ไม่ถูกต้อง (ต้องเป็นเลขฐานสิบหก)"
+  xcp.no_a2l: "ไม่มีไฟล์ A2L ที่แปลงแล้วในโปรเจกต์ (โฟลเดอร์ a2l/)"
+  xcp.connect_first: "เชื่อมต่อ CAN ก่อน (แท็บโปรเจกต์)"
+  xcp.connected_info: "XCP เชื่อมต่อแล้ว: MAX_CTO {cto}, MAX_DTO {dto}, ลำดับไบต์ {order}"
+  xcp.state_on: "XCP เชื่อมต่อแล้ว"
+  xcp.state_off: "XCP ตัดการเชื่อมต่อแล้ว"
+  xcp.select_row: "เลือกแถวในรายการเฝ้าดูก่อน"
+  xcp.written: "เขียนแล้ว: {name} = {value}"
+  err.a2l.invalid: "ไม่ใช่ไฟล์ A2L ที่ถูกต้อง: {file}"
+  err.a2l.unknown_item: "ไม่รู้จักรายการ '{name}' ใน A2L"
+  err.a2l.short_data: "ข้อมูลไม่พอสำหรับ {name} (ต้องการ {size} ไบต์)"
+  err.a2l.out_of_range: "ค่า {value} เกินช่วงของชนิดข้อมูล ({lo} ถึง {hi})"
+  err.xcp.timeout: "XCP: ไม่มีการตอบกลับภายใน {ms} ms"
+  err.xcp.negative: "ข้อผิดพลาด XCP {name} (0x{code})"
+  err.xcp.bad_response: "การตอบกลับ XCP ที่ไม่คาดคิด: {data}"
+  err.xcp.bitmask_write: "'{name}': ไม่รองรับการเขียนค่าที่วัดแบบบิตมาสก์"
+  err.xcp.unsupported_item: "ไม่รองรับ '{name}' (ไม่มีชนิดข้อมูลหรือแอดเดรส)"
+  conn.no_rx: "ไม่ได้รับข้อมูลบน {channel} ตรวจสอบ: (1) หมายเลขช่อง - 0 = CH1, 1 = CH2 (ตามป้ายบน VN1630A/VN7572); (2) บิตเรตเหมือนบัส; (3) มีโหนดส่งอื่นอย่างน้อยหนึ่งตัวบนบัส (PCAN-View กำลังส่งอยู่หรือไม่); (4) ตัวต้านทานปลายสาย 2 x 120 โอห์มเฉพาะที่ปลายบัส สาขา Y สั้น; (5) CAN-H/CAN-L ไม่สลับกัน และต่อกราวด์แล้ว; (6) ไม่มีโปรแกรมอื่น (CANalyzer/CANoe) ใช้ช่องนั้น; (7) เปิด CAN FD เฉพาะเมื่อบัสส่ง FD"
+  conn.reinit: "เริ่มฮาร์ดแวร์ใหม่"
+  conn.reinit_tip: "เริ่มต้นฮาร์ดแวร์ใหม่: ปิดอินเทอร์เฟซแล้วเปิดใหม่ด้วยการตั้งค่าเดิม มีประโยชน์เมื่อฮาร์ดแวร์ที่เชื่อมต่อค้าง รายการส่งยังคงอยู่ การบันทึกที่กำลังทำงานจะหยุด"
+  err.can.close: "เกิดข้อผิดพลาดขณะปิดอินเทอร์เฟซ: {error}"
+  err.can.close_timeout: "การปิดอินเทอร์เฟซไม่ตอบสนอง (ยกเลิกหลัง {seconds} วินาที)"
+  conn.failed_title: เชื่อมต่อไม่สำเร็จ
+  msg.dbc_error: 'โหลด DBC ไม่ได้: {error}'
+  msg.sequence_load_error: 'โหลดลำดับทดสอบไม่ได้: {error}'
+  msg.project_save_error: 'บันทึกโปรเจกต์ไม่ได้: {error}'
+  msg.cdd_error: 'โหลด CDD ไม่ได้: {error}'
+  msg.logger_error: 'ข้อผิดพลาดของ Logger: {error}'
+  col.message_signal: ข้อความ / สัญญาณ
+  col.id: ID
+  col.unit: หน่วย
+  col.tx_message_signal: ข้อความส่ง / สัญญาณ
+  col.rx_message_signal: ข้อความรับ / สัญญาณ
+  col.cyclic: เป็นรอบ
+  col.value: ค่า
+  col.cycle_ms: คาบ (ms)
+  col.select: เลือก
+  col.text: ข้อความ
+  data.available: 'ข้อมูลที่มี (DBC):'
+  data.filter_placeholder: ตัวกรอง (ข้อความ, สัญญาณ, ID)...
+  data.add_tx: เพิ่มในรายการส่ง
+  data.add_rx: เพิ่มในรายการรับ
+  data.remove: ลบ
+  data.tx_group: ข้อมูลส่ง (TX)
+  data.rx_group: ข้อมูลรับ (RX)
+  data.send_button: ส่ง
+  data.send_title: ส่ง
+  trace.pause: หยุดชั่วคราว
+  trace.decode: ถอดรหัสสัญญาณ
+  trace.only_selected: เฉพาะข้อความที่เลือก
+  trace.autoscroll: เลื่อนอัตโนมัติ
+  trace.tx: TX
+  trace.rx: RX
+  trace.filter_placeholder: ตัวกรอง ID/ชื่อ...
+  trace.clear: ล้าง
+  trace.save_csv: บันทึกเป็น CSV...
+  trace.col.time: เวลา
+  trace.col.dir: ทิศทาง
+  trace.col.channel: ช่อง
+  trace.col.id: ID
+  trace.col.type: ชนิด
+  trace.col.len: ความยาว
+  trace.col.data: ข้อมูล
+  trace.col.message: ข้อความ
+  trace.col.signals: สัญญาณ
+  trace.count: '{rows} แถว ({queued} อยู่ในคิว)'
+  trace.decode_error: (ถอดรหัสผิดพลาด)
+  trace.save_title: บันทึก Trace
+  seq.file: 'ไฟล์:'
+  seq.new: ใหม่
+  seq.load: โหลด
+  seq.save: บันทึก
+  seq.save_as: บันทึกเป็น...
+  seq.name: 'ชื่อ:'
+  seq.description: 'คำอธิบาย:'
+  seq.col.num: ลำดับ
+  seq.col.type: คำสั่ง
+  seq.col.params: พารามิเตอร์ (JSON)
+  seq.kind_item: '{key}  -  {title}'
+  seq.hint: '{key}: {summary}  ตัวอย่าง: {example}'
+  seq.add_step: แทรกขั้นตอน
+  seq.up: ขึ้น
+  seq.down: ลง
+  seq.duplicate: ทำสำเนา
+  seq.delete: ลบ
+  seq.signal: 'สัญญาณ:'
+  seq.apply_signal: ใส่ในขั้นตอนที่เลือก
+  seq.run: เริ่ม
+  seq.stop: หยุด
+  seq.check: ตรวจสอบ
+  seq.res.step: ขั้นตอน
+  seq.res.description: คำอธิบาย
+  seq.res.status: สถานะ
+  seq.res.message: ข้อความ
+  seq.status.ok: OK
+  seq.status.fail: ล้มเหลว
+  seq.status.error: ผิดพลาด
+  seq.status.skipped: ข้าม
+  seq.running: กำลังรันลำดับ...
+  seq.saved: 'บันทึกแล้ว: {name}'
+  seq.valid: ลำดับถูกต้อง
+  seq.bad_json: 'แถว {row}: JSON ไม่ถูกต้อง ({error})'
+  seq.json_object_expected: ต้องเป็นอ็อบเจกต์ JSON
+  seq.load_title: โหลดลำดับ
+  seq.save_title: บันทึกลำดับ
+  seq.file_filter: ลำดับ (*.json)
+  seq.dialog_title: ลำดับทดสอบ
+  graph.signals: 'สัญญาณ:'
+  graph.mode_single: "1 กราฟ"
+  graph.mode_multi: "n กราฟ"
+  graph.mode_tip: "สลับ: สัญญาณที่เลือกทั้งหมดในกราฟร่วมเดียว (1 กราฟ) หรือหนึ่งกราฟต่อหนึ่งสัญญาณเรียงต่อกันโดยใช้แกนเวลาร่วม (n กราฟ)"
+  graph.window: 'ช่วงเวลา:'
+  graph.pause: หยุดชั่วคราว
+  graph.clear: ล้างข้อมูล
+  graph.time: เวลา
+  builder.edit: "แก้ไข"
+  builder.tip: "สร้างหน้าจอแสดงผลของคุณเองจากองค์ประกอบสำหรับสัญญาณที่มีอยู่ (แสดงผลเท่านั้น ไม่มีการป้อนค่า) โหมดแก้ไข: ลากองค์ประกอบด้วยเมาส์ ปรับขนาดที่มุมขวาล่าง คลิกขวาเพื่อตั้งค่า"
+  builder.add_led: "LED"
+  builder.add_text: "ช่องข้อความ"
+  builder.add_gauge: "เข็ม"
+  builder.hint: "ยังว่างอยู่: ใช้ปุ่มด้านบนเพิ่ม LED ช่องข้อความ หรือเข็ม แล้วคลิกขวาเพื่อเชื่อมสัญญาณ"
+  builder.default_text: "ข้อความ"
+  builder.no_signal: "(ไม่มีสัญญาณ)"
+  builder.signal_title: "เชื่อมสัญญาณ"
+  builder.signal_prompt: "สัญญาณ (จากรายการเลือกในแท็บข้อมูล):"
+  builder.text_title: "ข้อความ"
+  builder.text_prompt: "ข้อความหรือป้ายกำกับ:"
+  builder.decimals_prompt: "ทศนิยม:"
+  builder.scale_title: "สเกลแบบกำหนดเอง"
+  builder.min: "ค่าต่ำสุด"
+  builder.max: "ค่าสูงสุด"
+  builder.scale_error: "ค่าต่ำสุดต้องน้อยกว่าค่าสูงสุด"
+  builder.menu.signal: "เชื่อมสัญญาณ..."
+  builder.menu.label: "ป้ายกำกับ..."
+  builder.menu.text: "ข้อความ..."
+  builder.menu.decimals: "ทศนิยม..."
+  builder.menu.scale_auto: "สเกลอัตโนมัติ"
+  builder.menu.scale_manual: "สเกลกำหนดเอง (ต่ำสุด/สูงสุด)..."
+  builder.menu.delete: "ลบ"
+  builder.add_background: "พื้นหลัง"
+  builder.add_image: "รูปภาพ"
+  builder.image_title: "เลือกรูปภาพ"
+  builder.image_filter: "รูปภาพ (*.png *.jpg *.jpeg *.bmp *.gif *.svg)"
+  builder.image_empty: "ไม่มีรูปภาพ"
+  builder.image_error: "โหลดรูปภาพไม่ได้"
+  builder.x_prompt: "ค่าเปรียบเทียบ x:"
+  builder.color_title: "เลือกสี"
+  builder.menu.bg_color: "สีพื้นหลัง..."
+  builder.menu.image: "เลือกรูปภาพ..."
+  builder.menu.image_clear: "ลบรูปภาพ"
+  builder.menu.led_digital: "LED ดิจิทัล (ค่า 0 / 1)"
+  builder.menu.led_analog: "LED แบบช่วง (ต่ำสุด <= x < สูงสุด)"
+  builder.menu.c0: "สีสำหรับค่า 0..."
+  builder.menu.c1: "สีสำหรับค่า 1..."
+  builder.menu.x: "ค่าเปรียบเทียบ x..."
+  builder.menu.c_lt: "สีเมื่อน้อยกว่า x..."
+  builder.menu.c_eq: "สีเมื่อเท่ากับ x..."
+  builder.menu.c_gt: "สีเมื่อมากกว่า x..."
+  builder.menu.title_on: "แสดงหัวเรื่อง"
+  builder.menu.range_on: "แสดงช่วงค่า"
+  builder.range_title: "ช่วง {n}"
+  builder.range_active: "เปิดใช้ช่วง"
+  builder.range_color: "สี"
+  builder.range_rule: "กฎ: ค่าต่ำสุด <= x < ค่าสูงสุด"
+  builder.menu.range1: "ช่วง 1..."
+  builder.menu.range2: "ช่วง 2..."
+  builder.menu.range3: "ช่วง 3..."
+  builder.menu.show_min: "เข็มค่าต่ำสุด"
+  builder.menu.show_max: "เข็มค่าสูงสุด"
+  builder.menu.minmax_reset: "รีเซ็ตต่ำสุด/สูงสุด"
+  log.tree_header: ข้อความ / สัญญาณ
+  log.all: ทั้งหมด
+  log.none: ไม่เลือก
+  log.filename: 'ชื่อไฟล์:'
+  log.min_interval: 'ระยะห่างขั้นต่ำต่อสัญญาณ:'
+  log.on_change: บันทึกเฉพาะเมื่อค่าเปลี่ยน
+  log.raw: บันทึกข้อมูลดิบ (Hex) เพิ่มเติม
+  log.raw_ids: "ID ข้อมูลดิบ"
+  log.raw_ids_tip: "ตัวกรอง ID สำหรับข้อมูลดิบ (hex) เช่น 100, 7E0-7EF เว้นว่าง = ทุกเฟรม"
+  log.raw_ids_placeholder: "เช่น 100, 7E0-7EF (ว่าง = ทั้งหมด)"
+  log.start: เริ่ม Logging
+  log.stop: หยุด Logging
+  log.title: Logging
+  log.connect_first: กรุณาเชื่อมต่อก่อน
+  log.no_data: ไม่ได้เลือกสัญญาณ
+  log.no_pyarrow: ไม่ได้ติดตั้ง pyarrow - ใช้ Parquet logging ไม่ได้
+  log.active: 'Logging กำลังทำงาน: {name} - {rows} แถว, {size} kB'
+  log.error: 'เขียนข้อมูลผิดพลาด: {error}'
+  diag.cdd: 'CDD:'
+  diag.ecu: 'ECU:'
+  diag.request_id: 'Request-ID:'
+  diag.response_id: 'Response-ID:'
+  diag.extended: Extended-ID
+  diag.fd: CAN FD
+  diag.padding: 'Padding:'
+  diag.tester_present: Tester Present (3E 80) ทุก 2 วินาที
+  diag.col.service: Service
+  diag.col.request: Request
+  diag.col.description: คำอธิบาย
+  diag.col.param: พารามิเตอร์
+  diag.col.value: ค่า (hex)
+  diag.send: ส่ง Service
+  diag.raw_placeholder: Request ดิบแบบ Hex เช่น 22 F1 90
+  diag.send_raw: ส่ง Raw
+  diag.clear_log: ล้าง Log
+  diag.bad_address: ที่อยู่/Padding ไม่ถูกต้อง (ต้องเป็น Hex)
+  diag.bad_request: 'Request ไม่ถูกต้อง: {error}'
+  diag.bad_hex: ข้อมูล Hex ไม่ถูกต้อง
+  diag.not_connected: ไม่ได้เชื่อมต่อ
+  diag.config_error: 'การตั้งค่าผิดพลาด: {error}'
+  diag.no_response_expected: (ไม่คาดหวังการตอบกลับ)
+  diag.error: 'ข้อผิดพลาด: {error}'
+  help.search_placeholder: คำค้น (ซ่อนบทที่ไม่พบคำ)
+  help.next: ผลลัพธ์ถัดไป
+  help.count: '{count} บท'
+core:
+  diag.resp.positive: 'ตอบกลับแบบ Positive: {data}'
+  diag.resp.negative: ตอบกลับแบบ Negative (NRC 0x{nrc}) {text}
+  diag.resp.unexpected: 'การตอบกลับที่ไม่คาดคิด: {data}'
+  err.can.fd_too_long: 'ความยาวไม่ถูกต้องสำหรับ CAN FD: {n} ไบต์'
+  err.can.backend_closed: อินเทอร์เฟซ CAN ยังไม่เปิด
+  err.can.missing_python_can: ไม่ได้ติดตั้งแพ็กเกจ python-can (pip install python-can)
+  err.can.listener: 'ข้อผิดพลาดของ Listener: {error}'
+  err.can.rx: 'ข้อผิดพลาดการรับ: {error}'
+  err.can.not_connected: ไม่ได้เชื่อมต่อ
+  err.can.classic_limit: Classic CAN อนุญาตข้อมูลสูงสุด 8 ไบต์
+  err.can.not_in_txlist: "ข้อความ '{name}' ไม่อยู่ในรายการส่ง"
+  err.can.raw_no_signals: ข้อความดิบไม่มีนิยามสัญญาณ
+  err.can.no_signal: "ไม่มีสัญญาณ '{signal}' ในข้อความ '{name}'"
+  err.can.tx: 'ข้อผิดพลาดการส่งที่ {name}: {error}'
+  err.can.open_failed: "การเชื่อมต่อล้มเหลว: {error}\nคำแนะนำ: {hint}"
+  err.can.hint.vector: "Vector: หมายเลขช่อง = หมายเลขบนอุปกรณ์ (0 = CH1, 1 = CH2 ...) หากไม่ระบุชื่อแอปพลิเคชันจะเข้าถึงอุปกรณ์โดยตรง หากระบุชื่อแอป (เช่น CANalyzer) ต้องกำหนดช่องใน Vector Hardware Config บิตเรตต้องตรงกับบัส เปิด CAN FD เฉพาะโหมด FD และไม่มีโปรแกรมอื่นใช้ช่องนั้นอยู่"
+  err.can.hint.pcan: "ช่อง PEAK เช่น PCAN_USBBUS1 หรือ 1 (ช่อง 2: PCAN_USBBUS2 หรือ 2) เปิด CAN FD เฉพาะอุปกรณ์ที่รองรับ FD (PCAN-USB Pro FD) บิตเรตต้องตรงกับบัส"
+  err.can.hint.other: "ตรวจสอบอินเทอร์เฟซ ชื่อช่อง และบิตเรต เปิด CAN FD เฉพาะอุปกรณ์ที่รองรับ FD"
+  err.can.vector_found: "ช่อง Vector ที่ไดรเวอร์รายงาน:\n{items}"
+  err.can.vector_none: "ไดรเวอร์ Vector ไม่รายงานช่องใด ๆ: เชื่อมต่อ VN1630A (USB) หรือติดตั้งการ์ด VN7572 (PCIe) แล้วหรือยัง เห็นใน 'Vector Hardware Config' หรือไม่ ติดตั้ง Vector Driver Setup แล้วหรือยัง และไม่มีโปรแกรมอื่น (CANalyzer/CANoe/vFlash) ใช้อุปกรณ์อยู่หรือไม่"
+  err.dbc.signal_too_long: สัญญาณยาวกว่าข้อความ
+  err.diag.unresolved: 'มีพารามิเตอร์ใน Request ที่ยังไม่ถูกแทนค่า: {text}'
+  err.isotp.bad_dl: 'ความยาวข้อมูล CAN FD ไม่ถูกต้อง: {dl}'
+  err.isotp.timeout: 'Timeout: ECU ไม่ตอบกลับ'
+  err.isotp.overflow: ECU รายงาน Overflow (Flow Control)
+  err.isotp.empty: ไม่มีข้อมูล
+  err.isotp.sequence: 'ISO-TP ลำดับผิดพลาด: คาดหวัง {expected} ได้รับ {got}'
+  err.log.pyarrow: ไม่ได้ติดตั้ง pyarrow (pip install pyarrow)
+  err.log.bad_id_filter: "ตัวกรอง ID ไม่ถูกต้อง: '{value}' (hex เช่น 100 หรือ 7E0-7EF)"
+  err.project.bad_ext: "รองรับเฉพาะไฟล์ .dbc, .cdd และ .a2l"
+  err.project.name: ชื่อโปรเจกต์ไม่ถูกต้อง
+  err.project.exists: "มีโปรเจกต์ '{name}' อยู่แล้ว"
+  err.project.not_found: "ไม่พบโปรเจกต์ '{name}'"
+  err.seq.invalid: |-
+    ลำดับไม่ถูกต้อง:
+    {problems}
+  err.seq.no_steps: "ลำดับไม่มีขั้นตอน ('steps')"
+  err.seq.not_connected: ไม่ได้เชื่อมต่อ
+  err.seq.running: มีลำดับกำลังรันอยู่แล้ว
+  warn.dbc.unreadable_signal: 'อ่านบรรทัดสัญญาณไม่ได้: {line}'
+  warn.dbc.extended_mux: 'ไม่รองรับ Extended Multiplexing: {signal}'
+  warn.dbc.generic: '{source}: {text}'
+  warn.dbc.duplicate_message: "{source}: ข้อความ '{name}' ถูกนิยามซ้ำ"
+  warn.dbc.duplicate_id: ID 0x{id} ซ้ำกัน ({first}, {second})
+  warn.cdd.heuristic: อ่าน CDD แบบ heuristic โปรดตรวจสอบผลลัพธ์
+  warn.cdd.no_services: ไม่พบ Service ใน CDD
+  seq.problem.unknown_type: "{where}: ไม่รู้จักคำสั่ง '{kind}'"
+  seq.problem.bad_op: "{where}: ตัวดำเนินการ '{op}' ไม่ถูกต้อง"
+  seq.problem.no_message: "{where}: ไม่พบข้อความ '{message}' ใน DBC"
+  seq.problem.no_signal: "{where}: ไม่พบสัญญาณ '{signal}' ในข้อความ '{message}'"
+  seq.summary: "ลำดับ '{name}': {status} ({ok}/{total} ขั้นตอน OK)"
+  seq.run_status.running: กำลังรัน
+  seq.run_status.passed: ผ่าน
+  seq.run_status.failed: ไม่ผ่าน
+  seq.run_status.aborted: ถูกยกเลิก
+  seq.runtime_error: ข้อผิดพลาดขณะรัน
+  seq.desc.set_signal: '{message}.{signal} = {value}'
+  seq.desc.enable_on: '{message}: เปิดการส่งเป็นรอบ'
+  seq.desc.enable_off: '{message}: ปิดการส่งเป็นรอบ'
+  seq.desc.set_cycle: '{message}: คาบ {cycle_ms} ms'
+  seq.desc.send_once: '{message}: ส่งหนึ่งครั้ง'
+  seq.desc.wait: รอ {ms} ms
+  seq.desc.wait_for: รอ {direction} {message}.{signal} {op} {value}
+  seq.desc.check: ตรวจสอบ {direction} {message}.{signal} {op} {value}
+  seq.desc.diag: Service วินิจฉัย {service}
+  seq.desc.diag_raw: วินิจฉัย raw {request}
+  seq.desc.loop: วนซ้ำ x{count}
+  seq.msg.no_value: ไม่ได้รับค่า
+  seq.msg.timeout: Timeout ({detail})
+  seq.msg.unknown_step: "ไม่รู้จักคำสั่ง '{kind}'"
+  seq.msg.no_new_value: ไม่มีค่าใหม่สำหรับ {key}
+  seq.msg.expected: '{key} = {val}, คาดหวัง {op} {value}'
+  seq.msg.diag_not_configured: ยังไม่ได้ตั้งค่าการวินิจฉัย
+  seq.msg.no_diag_def: ยังไม่ได้โหลดนิยามการวินิจฉัย (CDD)
+  seq.msg.no_service: "ไม่พบ Service '{service}' ใน CDD"
+  seq.msg.no_response_expected: ไม่คาดหวังการตอบกลับ
+  seq.msg.resp_mismatch: "การตอบกลับ {response} ไม่ตรงกับ '{expect}'"
+  cli.converted: 'แปลงแล้ว: {path}'
+  cli.description: CAN Tool รองรับ Vector/PEAK
+  cli.help.project: โปรเจกต์ที่เปิดตอนเริ่มต้น
+  cli.help.list: แสดงรายการโปรเจกต์
+  cli.help.convert: แปลง DBC/CDD ของโปรเจกต์เป็น JSON/YAML (ไม่ใช้ GUI)
+  cli.help.format: รูปแบบแคช (json หรือ yaml)
+  cli.help.force: สร้างแคชใหม่แม้เป็นข้อมูลล่าสุดอยู่แล้ว
+  cli.help.lang: ภาษา (de, en, fr, es, zh, th)
+  cli.no_projects: (ไม่มีโปรเจกต์)
+  cli.summary: '{messages} ข้อความจาก {files} ไฟล์'
+  cli.warning: 'คำเตือน: {text}'
+  cli.missing_xcb_cursor: "บน Linux (X11) Qt ต้องใช้ไลบรารี libxcb-cursor0 ซึ่งไม่พบ ติดตั้งด้วย:\n  Debian/Ubuntu/Mint: sudo apt install libxcb-cursor0\n  Fedora:             sudo dnf install xcb-util-cursor\n  Arch:               sudo pacman -S xcb-util-cursor\nจากนั้นเริ่มโปรแกรมอีกครั้ง"
+  cli.missing_gui: |-
+    ไม่พบไลบรารีที่ GUI ต้องใช้: {error}
+    กรุณารัน 'pip install -r requirements.txt'
+  cli.unknown_lang: "ไม่รู้จักภาษา '{lang}' ภาษาที่มี: {codes}"
+steps:
+  steps:
+    set_signal:
+      title: ตั้งค่าสัญญาณ
+      summary: ตั้งค่าทางกายภาพของสัญญาณในข้อความส่ง ค่าใหม่จะออกบนบัสพร้อมเฟรมถัดไป (แบบเป็นรอบหรือส่งครั้งเดียว)
+      format: '{"type": "set_signal", "message": "<ข้อความ>", "signal": "<สัญญาณ>", "value": <ตัวเลขหรือข้อความ>}'
+      notes: สัญญาณอื่นของข้อความที่ไม่ได้ระบุจะคงค่าเดิม (ค่าเริ่มต้น 0)
+      fields:
+        message: ชื่อข้อความใน DBC หากไม่อยู่ในรายการส่งจะถูกเพิ่มให้ (ตอนแรกยังไม่ส่งเป็นรอบ)
+        signal: ชื่อสัญญาณในข้อความ
+        value: ค่าทางกายภาพ (หลัง factor/offset เช่น 40 สำหรับ 40 %) สำหรับสัญญาณที่มีตารางค่าใช้ข้อความของตารางได้ เช่น "R" ค่านอกช่วงของสัญญาณจะถูกจำกัด
+    enable_tx:
+      title: เปิด/ปิดการส่งเป็นรอบ
+      summary: เริ่มหรือหยุดการส่งข้อความเป็นรอบตามคาบที่ตั้งไว้
+      format: '{"type": "enable_tx", "message": "<ข้อความ>", "enabled": <true|false>}'
+      notes: เฟรมแรกส่งทันที จากนั้นส่งตามคาบที่ตั้งไว้
+      fields:
+        message: ชื่อข้อความใน DBC (เพิ่มในรายการส่งเมื่อจำเป็น คาบจาก DBC หรือ 100 ms หากไม่มี)
+        enabled: true = ส่งเป็นรอบ, false = หยุดส่ง
+    set_cycle:
+      title: เปลี่ยนคาบ
+      summary: เปลี่ยนคาบของข้อความส่ง (มีผลทันที แม้ขณะกำลังส่งเป็นรอบ)
+      format: '{"type": "set_cycle", "message": "<ข้อความ>", "cycle_ms": <ตัวเลข>}'
+      notes: ''
+      fields:
+        message: ชื่อข้อความใน DBC
+        cycle_ms: คาบเป็นมิลลิวินาที 0 = หยุดส่งเป็นรอบชั่วคราว
+    send_once:
+      title: ส่งข้อความหนึ่งครั้ง
+      summary: ส่งหนึ่งเฟรมด้วยค่าสัญญาณปัจจุบัน โดยไม่ขึ้นกับการส่งเป็นรอบ
+      format: '{"type": "send_once", "message": "<ข้อความ>"}'
+      notes: ''
+      fields:
+        message: ชื่อข้อความใน DBC
+    send_raw:
+      title: "ส่งเฟรมดิบ"
+      summary: "ส่งเฟรมดิบ (ID + ข้อมูล) บนบัส CAN ครั้งเดียวหรือวนซ้ำ เมื่อ cyclic=true และ enabled=false จะหยุดการส่งวนซ้ำของ ID นี้"
+      format: '{"type": "send_raw", "id": "<hex>", "data": "<hex>", "dlc": <n>, "cyclic": <true|false>, "cycle_ms": <n>}'
+      notes: "ไบต์ข้อมูลที่ขาดจะเติมด้วย 00 ID มากกว่า 0x7FF = เฟรมขยาย DLC มากกว่า 8 = CAN FD เฟรมที่ส่งวนซ้ำจะทำงานต่อหลังขั้นตอนนี้"
+      fields:
+        id: "CAN ID ฐานสิบหก (เช่น \"0x100\" หรือ \"100\")"
+        data: "ข้อมูลเป็นไบต์ฐานสิบหก เช่น \"00 01 02 03 04 05 06 07\""
+        dlc: "ความยาวข้อมูล (0-8, 12, 16, 20, 24, 32, 48, 64) ค่าเริ่มต้น: จำนวนไบต์ข้อมูล"
+        cyclic: "true = ส่งวนซ้ำ, false = ส่งครั้งเดียว (ค่าเริ่มต้น)"
+        cycle_ms: "รอบเวลาเป็น ms เมื่อ cyclic=true (ค่าเริ่มต้น 100)"
+        enabled: "false หยุดการส่งวนซ้ำของ ID นี้ (ใช้กับ cyclic=true เท่านั้น ค่าเริ่มต้น true)"
+        extended: "true บังคับใช้ ID แบบขยาย (ค่าเริ่มต้น: อัตโนมัติเมื่อมากกว่า 0x7FF)"
+        fd: "true บังคับใช้ CAN FD (ค่าเริ่มต้น: อัตโนมัติเมื่อ DLC มากกว่า 8)"
+    wait:
+      title: รอตามเวลาที่กำหนด
+      summary: หยุดลำดับชั่วคราวตามเวลาที่กำหนด การส่งเป็นรอบและการรับยังทำงานต่อ
+      format: '{"type": "wait", "ms": <ตัวเลข>}'
+      notes: การกดหยุดจะยุติการรอที่กำลังทำงานอยู่ทันที
+      fields:
+        ms: เวลารอเป็นมิลลิวินาที
+    wait_for:
+      title: รอเงื่อนไขของสัญญาณ
+      summary: รอจนสัญญาณเป็นไปตามเงื่อนไข นับเฉพาะค่าที่ได้รับหลังจากขั้นตอนนี้เริ่มแล้ว ขั้นตอนเป็น ok เมื่อพบครั้งแรก มิฉะนั้นเป็น error เมื่อหมดเวลา timeout
+      format: '{"type": "wait_for", "direction": "RX", "message": "<ข้อความ>", "signal": "<สัญญาณ>", "op": "<ตัวดำเนินการ>", "value": <ตัวเลข>, "timeout_ms": <ตัวเลข>}'
+      notes: การประเมินไม่ขึ้นกับการเลือกสัญญาณในแท็บ 'ข้อมูล'
+      fields:
+        direction: ประเมินข้อความที่รับหรือที่ส่ง
+        message: ชื่อข้อความใน DBC
+        signal: ชื่อสัญญาณ
+        op: 'การเปรียบเทียบ: ==  !=  <  <=  >  >='
+        value: ค่าเปรียบเทียบ (ค่าทางกายภาพ)
+        timeout_ms: เวลารอสูงสุดเป็น ms (ค่าเริ่มต้น 3000)
+    check:
+      title: ตรวจสอบค่าสัญญาณ
+      summary: ตรวจสอบค่าล่าสุดที่ได้รับของสัญญาณทันที (ไม่รอ) ขั้นตอนจะล้มเหลวหากไม่เป็นไปตามเงื่อนไข หรือยังไม่เคยได้รับค่าตั้งแต่เริ่มลำดับ
+      format: '{"type": "check", "direction": "RX", "message": "<ข้อความ>", "signal": "<สัญญาณ>", "op": "<ตัวดำเนินการ>", "value": <ตัวเลข>}'
+      notes: หลังเริ่มลำดับมักยังไม่มีค่า - ควรซิงโครไนซ์ด้วย wait_for ก่อน
+      fields:
+        direction: ประเมินข้อความที่รับหรือที่ส่ง
+        message: ชื่อข้อความใน DBC
+        signal: ชื่อสัญญาณ
+        op: 'การเปรียบเทียบ: ==  !=  <  <=  >  >='
+        value: ค่าเปรียบเทียบ (ค่าทางกายภาพ)
+    diag:
+      title: Service วินิจฉัยจาก CDD
+      summary: ส่ง Service วินิจฉัยที่นิยามใน CDD ผ่าน ISO-TP และประเมินการตอบกลับ
+      format: '{"type": "diag", "service": "<ชื่อ Service>", "params": {"<พารามิเตอร์>": <ค่า>}, "expect": "<Hex นำหน้า>", "timeout_ms": <ตัวเลข>}'
+      notes: การระบุที่อยู่ (Request/Response-ID, FD) มาจากแท็บ 'วินิจฉัย'
+      fields:
+        service: ชื่อ Service ใน CDD (แท็บวินิจฉัย) เช่น ReadVIN
+        params: ค่าสำหรับ {Platzhalter} ใน Request ตัวเลข = ฐานสิบ, ข้อความ = ฐานสิบหก ("F186")
+        expect: ส่วนต้นของการตอบกลับที่คาดหวัง เช่น "62 F1 90" ว่าง = การตอบกลับแบบ positive ใดก็ได้
+        timeout_ms: Timeout การตอบกลับเป็น ms (ค่าเริ่มต้น 1000) กรณี 'ResponsePending' (NRC 0x78) จะรอนานขึ้น
+    diag_raw:
+      title: Request วินิจฉัยแบบ Hex
+      summary: ส่ง UDS Request ใดก็ได้ (ไบต์ Hex) ผ่าน ISO-TP และประเมินการตอบกลับ
+      format: '{"type": "diag_raw", "request": "<ไบต์ Hex>", "expect": "<Hex นำหน้า>", "timeout_ms": <ตัวเลข>}'
+      notes: Request ที่ไม่มีการตอบกลับ (Sub-Function ที่ตั้งบิต 7 เช่น "3E 80") ถือว่า ok
+      fields:
+        request: ไบต์ของ Request เช่น "22 F1 86"
+        expect: ส่วนต้นของการตอบกลับที่คาดหวัง เช่น "62 F1 86" ว่าง = การตอบกลับแบบ positive ใดก็ได้
+        timeout_ms: Timeout การตอบกลับเป็น ms (ค่าเริ่มต้น 1000)
+    loop:
+      title: วนซ้ำ
+      summary: รันขั้นตอนที่อยู่ภายในซ้ำหลายรอบต่อเนื่องกัน
+      format: '{"type": "loop", "count": <ตัวเลข>, "steps": [ <ขั้นตอน>, <ขั้นตอน>, ... ]}'
+      notes: ในผลลัพธ์ ขั้นตอนภายในจะแสดงเช่น 3.2.1 (ขั้นตอนที่ 3, รอบที่ 2, ขั้นตอนที่ 1)
+      fields:
+        count: จำนวนรอบ
+        steps: ขั้นตอนซ้อน (ชนิดใดก็ได้ รวมถึงลูปซ้อนลูป)
+    comment:
+      title: หมายเหตุ
+      summary: ไม่ทำอะไร ใช้บันทึกเอกสารของลำดับเท่านั้น
+      format: '{"type": "comment", "text": "<ข้อความ>"}'
+      notes: ''
+      fields:
+        text: หมายเหตุใดก็ได้
+    label:
+      format: รูปแบบ
+      elements: องค์ประกอบ
+      example: ตัวอย่าง
+      note: 'หมายเหตุ:'
+      col_element: องค์ประกอบ
+      col_type: ชนิด
+      col_desc: คำอธิบาย
+      col_command: คำสั่ง
+      col_title: ชื่อ
+      col_summary: สรุป
+    required: จำเป็น
+    optional: ไม่บังคับ
+    type:
+      text: ข้อความ
+      number: ตัวเลข
+      number_or_text: ตัวเลขหรือข้อความ
+      bool: true/false
+      direction: '"RX" หรือ "TX"'
+      hex: ข้อความ Hex
+      object: อ็อบเจกต์
+      list: รายการ
+    type_required: '{type}, {required}'
+help:
+  help:
+    topic:
+      general:
+        title: 1. ภาพรวมและการสร้างโปรเจกต์
+        html: |-
+          <h1>1. คำอธิบายทั่วไปและการสร้างโปรเจกต์</h1>
+
+          <h2>1.1 เครื่องมือนี้ใช้ทำอะไร</h2>
+          <p>CAN Tool เป็นเครื่องมือ Python สำหรับทดสอบและวิเคราะห์บัส CAN และ CAN FD ทำงานได้กับ
+          <b>Vector VN1630A / VN7572</b> หรือ <b>PEAK-System PCAN-USB Pro FD</b> (ทั้งสองผ่าน
+          python-can) หรือใช้ <b>การจำลอง</b> ในตัวโดยไม่ต้องมีฮาร์ดแวร์</p>
+          <p>ฟังก์ชันหลัก:</p>
+          <ul><li>จัดการ <b>โปรเจกต์</b> หลายโปรเจกต์ (แต่ละโปรเจกต์มีไฟล์ DBC, CDD, ลำดับทดสอบ และ log ของตัวเอง)</li><li><b>แปลง DBC/CDD</b> เป็น JSON หรือ YAML ก่อนใช้งานจริง (โหลดเร็ว ตรวจสอบง่าย)</li><li><b>ส่งเป็นรอบ</b> และรับข้อความ เข้าถึงสัญญาณเป็นค่าทางกายภาพ</li><li><b>Trace</b> ของเฟรมที่ส่งและรับทั้งหมด พร้อมถอดรหัสสัญญาณได้</li><li><b>ลำดับทดสอบ</b> (JSON): ตั้งค่าสัญญาณ รอการตอบสนอง ตรวจสอบ รันการวินิจฉัย</li><li><b>กราฟเส้น</b> ของสัญญาณที่เลือก</li><li>สลับธีมได้ (<b>โหมดมืด</b>) และรองรับ <b>หกภาษา</b> (เยอรมัน อังกฤษ ฝรั่งเศส สเปน จีนกลาง ไทย)</li><li><b>Parquet logging</b> พร้อมตัวกรอง</li><li><b>การวินิจฉัย</b> ผ่าน ISO-TP (ISO 15765-2) ด้วย UDS Service จาก CDD</li></ul>
+
+          <h2>1.2 ภาพรวมการไหลของข้อมูล</h2>
+          <pre> dbc/*.dbc  --(แปลง)--&gt;  cache/*.dbc.json|yaml  ---+
+           cdd/*.cdd  --(แปลง)--&gt;  cache/*.cdd.json|yaml  ---+--&gt; แท็บ &quot;ข้อมูล&quot;: เลือก TX / RX
+                                                                      |        |
+                                                                      |        +--&gt; Trace   (ทุกเฟรม)
+                                                                      |        +--&gt; กราฟ    (สัญญาณที่เลือก)
+                                                                      |        +--&gt; Logging (สัญญาณที่เลือก, ตัวกรอง)
+           sequences/*.json  ------------------------------------------+--&gt; ลำดับทดสอบ (ตั้งค่า/ตรวจสอบสัญญาณ, วินิจฉัย)</pre>
+          <p>ขณะรันจะอ่านเฉพาะ <b>แคช</b> (JSON/YAML) เสมอ หากไฟล์ DBC/CDD เปลี่ยนแปลง
+          จะถูกแปลงใหม่อัตโนมัติเมื่อเปิดโปรเจกต์ครั้งถัดไป (ตรวจจาก checksum ของไฟล์ต้นฉบับ)</p>
+
+          <h2>1.3 การติดตั้งและการเริ่มต้น</h2>
+          <pre>pip install -r requirements.txt
+          python main.py                      # GUI
+          python main.py --project demo       # GUI พร้อมโปรเจกต์ที่ระบุ
+          python main.py --list               # แสดงรายการโปรเจกต์
+          python main.py --convert demo       # แปลง DBC/CDD อย่างเดียว (ไม่ใช้ GUI)
+          python main.py --convert demo --format yaml --force</pre>
+          <p>ไดรเวอร์: Vector ต้องใช้ <i>Vector XL Driver Library</i> (เป็นส่วนหนึ่งของไดรเวอร์ Vector) ส่วน PEAK ต้องใช้
+          ไดรเวอร์ <i>PCAN-Basic</i> หากไม่มีฮาร์ดแวร์ ใช้การจำลองได้</p>
+
+          <h2>1.4 โครงสร้างโฟลเดอร์</h2>
+          <pre>can_tool/
+            main.py  gui.py  can_manager.py  dbc_manager.py  cdd_manager.py
+            iso_tp_manager.py  sequence_runner.py  parquet_logger.py  project_manager.py
+            help_content.py  i18n.py
+            lang/               ไฟล์ภาษา (de.yaml, en.yaml, fr.yaml, es.yaml, zh.yaml, th.yaml)
+            tools/check_lang.py ตรวจสอบไฟล์ภาษา
+            projects/
+              &lt;ชื่อโปรเจกต์&gt;/
+                project.json      การตั้งค่าของโปรเจกต์ (เครื่องมือเขียนให้)
+                dbc/              ไฟล์ DBC ของคุณ (*.dbc)
+                cdd/              คำอธิบายการวินิจฉัยของคุณ (*.cdd)
+                sequences/        ลำดับทดสอบ (*.json)
+                cache/            สร้างอัตโนมัติ: DBC/CDD ที่แปลงแล้ว (JSON หรือ YAML)
+                logs/             ไฟล์ log แบบ Parquet</pre>
+
+          <h2>1.5 การสร้างโปรเจกต์</h2>
+          <h3>ใน GUI</h3>
+          <ol><li>เปิดแท็บ <b>โปรเจกต์</b> แล้วคลิก <b>ใหม่ ...</b></li><li>ป้อนชื่อโปรเจกต์ ใช้ได้เฉพาะตัวอักษร ตัวเลข ขีดล่าง ขีดกลาง และช่องว่าง (สูงสุด 64 ตัวอักษร ตัวแรกต้องเป็นตัวอักษรหรือตัวเลข) หากมีชื่อนี้อยู่แล้วจะไม่เขียนทับ</li><li>เครื่องมือจะสร้าง <code>projects/&lt;name&gt;/</code> พร้อมโฟลเดอร์ย่อย <code>dbc, cdd, sequences, cache, logs</code> และ <code>project.json</code> ที่มีค่าเริ่มต้น (จำลอง, 500 kbit/s, แคช JSON) แล้วสลับไปยังโปรเจกต์ใหม่</li><li><b>นำเข้า DBC/CDD ...</b>: ไฟล์จะถูกคัดลอกไปที่ <code>dbc/</code> หรือ <code>cdd/</code> และแปลงทันที หรือจะวางไฟล์ลงโฟลเดอร์เองแล้วคลิก <b>แปลงใหม่</b> (หรือเปิดโปรเจกต์ใหม่) ก็ได้</li><li>ตั้งค่าฮาร์ดแวร์ (ดูบทที่ 2.3) แล้ว <b>เชื่อมต่อ</b></li></ol>
+          <h3>ผ่านไฟล์</h3>
+          <p>สร้างโฟลเดอร์โปรเจกต์ตามโครงสร้างข้างต้น และวาง <code>project.json</code> ที่มีอย่างน้อย
+          <code>{}</code> - ค่าที่ไม่ได้ตั้งจะถูกเติมด้วยค่าเริ่มต้น โปรเจกต์ตัวอย่าง
+          <code>projects/demo</code> ใช้เป็นแม่แบบได้</p>
+          <h3>การสลับโปรเจกต์</h3>
+          <p>เลือกจากรายการโปรเจกต์ เมื่อสลับ (และเมื่อออกจากโปรแกรม) การเชื่อมต่อจะถูกตัด logging ที่กำลังทำงานจะหยุด
+          และโปรเจกต์เดิมจะถูกบันทึก สิ่งที่บันทึก: ฮาร์ดแวร์ รายการส่งพร้อมค่าสัญญาณและ
+          คาบ รายการรับที่เลือก ตัวกรอง logging การเลือกกราฟ การตั้งค่าวินิจฉัย และลำดับที่โหลดล่าสุด
+          การส่งเป็นรอบจะ<b>ปิด</b>เสมอหลังเปิดโปรเจกต์ (เพื่อความปลอดภัยบนบัสจริง)</p>
+
+          <h2>1.6 ขั้นตอนการทำงานทั่วไป</h2>
+          <ol><li>สร้างหรือเลือกโปรเจกต์ แล้วนำเข้า DBC (และ CDD)</li><li>ตั้งค่าฮาร์ดแวร์ แล้ว <b>เชื่อมต่อ</b></li><li>แท็บ <b>ข้อมูล</b>: เลือกข้อความส่งและรับจาก DBC ตั้งค่าสัญญาณและคาบ</li><li>เปิดการส่งเป็นรอบ ดูผลใน <b>Trace</b> และ <b>กราฟ</b></li><li>หากต้องการ ให้เริ่ม <b>Logging</b> และ/หรือสร้างและรัน <b>ลำดับทดสอบ</b></li><li><b>วินิจฉัย</b>: ส่ง Service ตรวจสอบการตอบกลับ</li></ol>
+      files:
+        title: 2. การเตรียมไฟล์ก่อนเริ่ม
+        html: |-
+          <h1>2. การเตรียมไฟล์ก่อนเริ่มใช้งาน</h1>
+          <p>ก่อนเชื่อมต่อ ต้องเตรียมไฟล์ของโปรเจกต์ให้พร้อม บทนี้อธิบายว่าแต่ละไฟล์ต้องมีอะไร
+          และเครื่องมือใช้ข้อมูลส่วนใดบ้าง</p>
+
+          <h2>2.1 ไฟล์ DBC (<code>dbc/*.dbc</code>)</h2>
+          <p>ไฟล์ DBC มาตรฐานจาก CANdb++, CANdb Editor, SavvyCAN และอื่น ๆ ใช้ DBC ได้หลายไฟล์ต่อโปรเจกต์
+          (รวมกันเป็นฐานข้อมูล) ชุดอักขระ UTF-8 หรือ Windows-1252</p>
+          <p>ส่วนที่เครื่องมือใช้:</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">องค์ประกอบ DBC</th><th width="72%" align="left">ความหมายในเครื่องมือ</th></tr><tr><td valign='top'><code>BO_</code></td><td valign='top'>ข้อความ: ID (ตั้งบิต 31 = Extended-ID), ชื่อ, ความยาว (DLC &gt; 8 = CAN FD), ผู้ส่ง</td></tr><tr><td valign='top'><code>SG_</code></td><td valign='top'>สัญญาณ: start bit, ความยาว, ลำดับไบต์ (Intel/Motorola), เครื่องหมาย, factor, offset, min/max, หน่วย, ผู้รับ</td></tr><tr><td valign='top'><code>SG_ ... M / m0, m1</code></td><td valign='top'>Multiplexing แบบง่าย (หนึ่ง multiplexor หลายกลุ่ม) <b>ไม่รองรับ</b> Extended Multiplexing (จะมีคำเตือน)</td></tr><tr><td valign='top'><code>VAL_</code></td><td valign='top'>ตารางค่า: ข้อความของแต่ละค่าดิบ ในเครื่องมือแสดงเป็นดรอปดาวน์ตอนส่งและเป็นข้อความตอนรับ</td></tr><tr><td valign='top'><code>SIG_VALTYPE_</code></td><td valign='top'>สัญญาณทศนิยมลอยตัว (32/64 บิต)</td></tr><tr><td valign='top'><code>CM_</code></td><td valign='top'>คอมเมนต์ของข้อความ/สัญญาณ</td></tr><tr><td valign='top'><code>BA_ &quot;GenMsgCycleTime&quot;</code></td><td valign='top'>คาบมาตรฐาน (ms) ของข้อความ หากไม่ระบุใช้ 100 ms</td></tr><tr><td valign='top'><code>BA_ &quot;VFrameFormat&quot;</code></td><td valign='top'>รูปแบบเฟรม ค่าที่มี <i>FD</i> หมายถึงข้อความ CAN FD</td></tr></table>
+          <p>ตัวอย่าง:</p>
+          [[pre:dbc]]
+          <p><b>ข้อแนะนำในการเตรียมข้อมูล</b></p>
+          <ul><li>ชื่อข้อความและชื่อสัญญาณถูกใช้ในลำดับทดสอบ - ควรตั้งชื่อให้สื่อความหมายและไม่ซ้ำกัน</li><li>ชื่อข้อความซ้ำข้ามหลายไฟล์ DBC: คงนิยามแรกไว้ นิยามที่สองจะถูกละเว้นพร้อมคำเตือน</li><li>ID เดียวกันแต่ชื่อต่างกัน: ตอนรับจะจับคู่กับชื่อแรก (มีคำเตือน)</li><li>โหนดผู้ส่ง (<code>BU_</code>) กำหนดว่า ECU เสมือนในโหมดจำลองจะส่งข้อความใดเป็นรอบ (ค่าเริ่มต้น: ผู้ส่ง <code>ECU</code> ตั้งค่าได้ใน <code>sim.traffic_senders</code>) การกำหนดค่า min/max ที่เหมาะสมใน DBC จะให้ค่าจำลองที่สมจริง</li><li>คำเตือนจากการแปลงอยู่ในแท็บ <b>โปรเจกต์</b> ในช่อง <i>ไฟล์ที่แปลงแล้ว / คำเตือน</i></li></ul>
+          <h3>แคช (<code>cache/*.dbc.json</code> หรือ <code>.yaml</code>)</h3>
+          <p>เมื่อเปิดโปรเจกต์ DBC ทุกไฟล์จะถูกเขียนลงแคชอัตโนมัติ (เลือกรูปแบบได้ในแท็บ
+          <b>โปรเจกต์</b>) จะแปลงใหม่เฉพาะเมื่อไฟล์ต้นฉบับเปลี่ยน <b>แปลงใหม่</b> ใช้บังคับให้แปลง
+          การแก้ไขในแคชด้วยตนเองจะถูกเขียนทับเมื่อแปลงใหม่ - การแก้ไขต้องทำใน DBC</p>
+          [[pre:cache]]
+
+          <h2>2.2 คำอธิบายการวินิจฉัย (<code>cdd/*.cdd</code>)</h2>
+          <p>CDD อธิบาย Service วินิจฉัย จะถูกแปลงเป็น <code>cache/*.cdd.json|yaml</code> เช่นเดียวกับ DBC</p>
+          <p><b>ข้อจำกัดสำคัญ:</b> รองรับเต็มรูปแบบเฉพาะรูปแบบ XML ง่าย ๆ <code>&lt;DIAGDATA&gt;</code>
+          (ดูตัวอย่างและ <code>projects/demo/cdd/diag.cdd</code>) ไฟล์ CDD ต้นฉบับของ CANdelaStudio จะอ่านแบบ
+          <b>heuristic</b> เท่านั้น (ชื่อ Service และไบต์ของ Request หากหาพบ) ในกรณีนั้นให้ตรวจสอบไฟล์
+          แคชที่สร้างขึ้น (แท็บ <b>โปรเจกต์</b> คำเตือน) และเติมที่อยู่ Request และพารามิเตอร์การตอบกลับที่นั่น
+          หรือในรูปแบบง่าย</p>
+          [[pre:cdd]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">องค์ประกอบ / แอตทริบิวต์</th><th width="68%" align="left">ความหมาย</th></tr><tr><td valign='top'><code>ECU name, request_id, response_id</code></td><td valign='top'>ชื่อ ECU และ CAN ID (Tester -&gt; ECU, ECU -&gt; Tester) เช่น <code>0x7E0</code>/<code>0x7E8</code></td></tr><tr><td valign='top'><code>ECU extended, fd</code></td><td valign='top'><code>true</code>: ID 29 บิต หรือ CAN FD (ISO-TP สูงสุด 64 ไบต์ต่อเฟรม)</td></tr><tr><td valign='top'><code>SERVICE name</code></td><td valign='top'>ชื่อ Service (ใช้ในแท็บวินิจฉัยและในขั้นตอนลำดับ <code>diag</code>)</td></tr><tr><td valign='top'><code>SERVICE request</code></td><td valign='top'>ไบต์ของ Request เป็น Hex ตัวแทนค่าอยู่ในวงเล็บปีกกา เช่น <code>10 {session}</code></td></tr><tr><td valign='top'><code>SERVICE description</code></td><td valign='top'>ข้อความอิสระ แสดงในรายการ Service</td></tr><tr><td valign='top'><code>PARAM</code></td><td valign='top'>อยู่โดยตรงใน SERVICE: พารามิเตอร์ป้อนเข้าสำหรับตัวแทนค่า: <code>name</code>, <code>bytes</code> (ความกว้าง), <code>default</code> (Hex)</td></tr><tr><td valign='top'><code>RESPONSE prefix_len</code></td><td valign='top'>จำนวนไบต์ต้นการตอบกลับที่ข้ามไป (Service-ID + DID เช่น 3 สำหรับ <code>62 F1 90</code>)</td></tr><tr><td valign='top'><code>RESPONSE/PARAM</code></td><td valign='top'>พารามิเตอร์การตอบกลับ: <code>name</code>, <code>offset</code> และ <code>length</code> เป็นไบต์ (นับจากท้าย prefix), <code>type</code> = <code>ascii | uint | int | hex</code>, เพิ่มเติมได้ <code>factor</code>, <code>offset_val</code>, <code>unit</code></td></tr></table>
+          <p>รายการแคชที่สอดคล้องกัน (สำหรับแก้ไขด้วยตนเอง):</p>
+          [[pre:cdd_cache]]
+
+          <h2>2.3 ฮาร์ดแวร์และการเชื่อมต่อ</h2>
+          <p>การตั้งค่าในแท็บ <b>โปรเจกต์</b> (บันทึกใน <code>project.json</code> ภายใต้ <code>hardware</code>):</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="16%" align="left">การตั้งค่า</th><th width="32%" align="left">Vector VN1630A / VN7572</th><th width="32%" align="left">PEAK PCAN-USB Pro FD</th><th width="20%" align="left">จำลอง</th></tr><tr><td valign='top'>อินเทอร์เฟซ</td><td valign='top'><code>vector</code> (ไดรเวอร์ XL)</td><td valign='top'><code>pcan</code> (PCAN-Basic)</td><td valign='top'><code>simulation</code></td></tr><tr><td valign='top'>ช่อง</td><td valign='top'>ดัชนีช่อง เริ่มจาก 0 (เช่น <code>0</code>) การกำหนดทำผ่าน <i>Vector Hardware Config</i> หากตั้งชื่อแอปไว้ จะใช้หมายเลขช่องที่กำหนดไว้ที่นั่น</td><td valign='top'><code>PCAN_USBBUS1</code>, <code>PCAN_USBBUS2</code> ...</td><td valign='top'>ไม่ต้องใช้</td></tr><tr><td valign='top'>บิตเรต</td><td valign='top'>Nominal bitrate (kbit/s)</td><td valign='top'>Nominal bitrate (kbit/s) ในโหมด FD ตายตัว 500k/2M (clock 80 MHz)</td><td valign='top'>ไม่มีผล</td></tr><tr><td valign='top'>CAN FD / บิตเรตข้อมูล</td><td valign='top'>ติ๊กเครื่องหมายและกรอกบิตเรตข้อมูล</td><td valign='top'>ติ๊กเครื่องหมาย; timing อื่นตั้งใน <code>hardware.extra</code></td><td valign='top'>ติ๊กเพื่อใช้เฟรม FD</td></tr><tr><td valign='top'>ชื่อแอป</td><td valign='top'>ชื่อจาก Vector Hardware Config (ว่าง = ค่าเริ่มต้นของ python-can)</td><td valign='top'>-</td><td valign='top'>-</td></tr></table>
+          <p><b>Vector VN7572 (การ์ด PCIe):</b> การ์ดอินเทอร์เฟซ Vector VN7572 ก็ใช้เป็นชนิด <code>vector</code> ผ่านไดรเวอร์ Vector XL (เฉพาะ Windows) เช่นเดียวกับ VN1630A เมื่อติดตั้ง <i>Vector Driver Setup</i> แล้ว การ์ดต้องปรากฏใน <i>Vector Hardware Config</i> หมายเลขช่องเริ่มจาก 0 (0 = CH1, 1 = CH2 ...) <b>ตรวจหาฮาร์ดแวร์</b> จะแสดงรายการช่องที่พบพร้อมหมายเลขซีเรียล ห้ามมีโปรแกรมอื่น (CANalyzer, CANoe, vFlash) ใช้ช่องนั้นอยู่</p>
+          <ul><li>ทุกโหนดบนบัสต้องใช้บิตเรตเดียวกัน และสำหรับ CAN FD ต้องใช้บิตเรตข้อมูลเดียวกันด้วย</li><li>ในชุดทดสอบบนโต๊ะที่มีอุปกรณ์สองตัว ปลายบัสต้องมี terminator 120 โอห์ม</li><li><code>hardware.extra</code> (ตั้งได้เฉพาะใน <code>project.json</code>) ส่งพารามิเตอร์ใดก็ได้ต่อไปยัง python-can เช่น <code>{"nom_brp": 5}</code> สำหรับ PEAK</li><li><b>จำลอง</b>: <i>สะท้อน</i> ส่งข้อความที่ส่งออกกลับมาเป็นข้อความที่รับ <i>ECU เสมือน</i> ตอบ UDS Request (เช่น 10, 11, 14, 19, 22, 27, 3E) ตามที่อยู่ในการตั้งค่าวินิจฉัย และส่งข้อความของผู้ส่ง ECU เป็นรอบ</li></ul>
+
+          <h2>2.4 ไฟล์ลำดับ (<code>sequences/*.json</code>)</h2>
+          <p>ลำดับประกอบด้วยชื่อ คำอธิบาย และรายการขั้นตอน สร้างได้ในแท็บ
+          <b>ลำดับทดสอบ</b> หรือแก้ไขไฟล์โดยตรง อ้างอิงคำสั่ง: ภาคผนวก A</p>
+          [[pre:sequence]]
+
+          <h2>2.5 ไฟล์โปรเจกต์ (<code>project.json</code>)</h2>
+          <p>เครื่องมือเขียนให้ แก้ไขด้วยตนเองได้เมื่อจำเป็น (ปิดเครื่องมือก่อน) คีย์ที่ขาดจะถูกเติมด้วยค่าเริ่มต้น</p>
+          [[pre:project]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">คีย์</th><th width="78%" align="left">ความหมาย</th></tr><tr><td valign='top'><code>hardware</code></td><td valign='top'>พารามิเตอร์การเชื่อมต่อ (บทที่ 2.3) บิตเรตเป็น bit/s</td></tr><tr><td valign='top'><code>cache_format</code></td><td valign='top'><code>json</code> หรือ <code>yaml</code> สำหรับไฟล์ที่แปลงแล้ว</td></tr><tr><td valign='top'><code>tx</code></td><td valign='top'>รายการส่ง: ข้อความ คาบ (ms) ค่าสัญญาณ <code>signals</code> = สัญญาณที่เลือกสำหรับกราฟ/logging (<code>null</code> = ทั้งหมด)</td></tr><tr><td valign='top'><code>rx</code></td><td valign='top'>รายการรับที่เลือก: ข้อความ -&gt; รายการสัญญาณที่เลือก หรือ <code>null</code> (ทั้งหมด)</td></tr><tr><td valign='top'><code>logging</code></td><td valign='top'>ตัวกรองและตัวเลือกของ logging (แท็บ Logging)</td></tr><tr><td valign='top'><code>graph</code></td><td valign='top'>คีย์ของสัญญาณที่ติ๊กในกราฟ เช่น <code>RX:Msg.Signal</code></td></tr><tr><td valign='top'><code>diag</code></td><td valign='top'>ไฟล์ CDD, ECU, การกำหนดที่อยู่ทับ (ไม่บังคับ: <code>request_id</code>, <code>response_id</code>), <code>extended</code>, <code>fd</code>, <code>padding</code></td></tr><tr><td valign='top'><code>sequence</code></td><td valign='top'>ลำดับที่โหลดล่าสุด (ชื่อไฟล์ใน <code>sequences/</code>)</td></tr><tr><td valign='top'><code>sim</code></td><td valign='top'>จำลอง: <code>ecu</code> (ECU เสมือน), <code>traffic_senders</code> (โหนดผู้ส่งที่จำลองเป็นรอบ)</td></tr></table>
+
+          <h2>2.6 เช็กลิสต์ก่อนเชื่อมต่อครั้งแรก</h2>
+          <ol><li>ไฟล์ DBC อยู่ในโฟลเดอร์ <code>dbc/</code> ในแท็บโปรเจกต์แสดงข้อความตามที่คาดไว้ (จำนวน) และไม่มีคำเตือนที่ไม่คาดคิด</li><li>CDD (ถ้ามี) อยู่ในโฟลเดอร์ <code>cdd/</code> ในแท็บวินิจฉัยแสดง ECU และ Service</li><li>ติดตั้งไดรเวอร์ฮาร์ดแวร์แล้ว ต่ออุปกรณ์แล้ว ช่องและบิตเรตตรงกับบัส</li><li>สำหรับ CAN FD: ติ๊ก <i>CAN FD</i> และตั้งบิตเรตข้อมูล โหนดอีกฝั่งต้องรองรับ FD ด้วย</li><li>มีลำดับอยู่ใน <code>sequences/</code> หรือสร้างไว้ในแท็บลำดับทดสอบแล้ว</li></ol>
+          <h3>ปัญหาที่พบบ่อย</h3>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">อาการ</th><th width="68%" align="left">สาเหตุที่เป็นไปได้ / วิธีแก้</th></tr><tr><td valign='top'>ไม่มีข้อความในแท็บข้อมูล</td><td valign='top'>DBC ไม่อยู่ในโฟลเดอร์ <code>dbc/</code> หรือนามสกุลไม่ใช่ <code>.dbc</code>; อ่านคำเตือนในแท็บโปรเจกต์</td></tr><tr><td valign='top'>เชื่อมต่อไม่สำเร็จ</td><td valign='top'>ไม่มี python-can/ไดรเวอร์ ช่องผิด อุปกรณ์ถูกโปรแกรมอื่นใช้อยู่ (เช่น CANalyzer/PCAN-View)</td></tr><tr><td valign='top'>เห็นเฟรมแต่ไม่ถอดรหัส</td><td valign='top'>ID/การระบุ Extended ใน DBC ไม่ตรงกับบัส; ไม่มีข้อความนี้ใน DBC</td></tr><tr><td valign='top'>ค่าสัญญาณผิด</td><td valign='top'>ตรวจลำดับไบต์ (Intel/Motorola), start bit, factor/offset ใน DBC</td></tr><tr><td valign='top'>วินิจฉัย: Timeout</td><td valign='top'>ตรวจ Request/Response-ID, Extended/FD และ Padding ในแท็บวินิจฉัย; ECU อยู่ใน session ที่เหมาะสมหรือไม่?</td></tr><tr><td valign='top'>ใช้ Logging ไม่ได้</td><td valign='top'>ไม่มีแพ็กเกจ Python <code>pyarrow</code> (<code>pip install pyarrow</code>)</td></tr></table>
+      project:
+        title: 3.1 แท็บโปรเจกต์
+        html: |-
+          <h1>3.1 แท็บ "โปรเจกต์"</h1>
+          <p><b>ระบบปฏิบัติการ:</b> เมื่อเริ่มต้น เครื่องมือจะตรวจจับเองว่ากำลังทำงานบน <b>Windows</b> หรือ <b>Linux</b> (แสดงในแถบชื่อเรื่อง) ตัวเลือกฮาร์ดแวร์จะปรับตาม: <i>Vector</i> (ไดรเวอร์ XL) เฉพาะ Windows, <i>SocketCAN</i> เฉพาะ Linux, <i>PEAK</i> และ <i>การจำลอง</i> ใช้ได้ทั้งสองระบบ รายการที่ใช้ไม่ได้จะถูกทำเครื่องหมายและปิดใช้งาน ปุ่ม <b>ตรวจหาฮาร์ดแวร์</b> จะแสดงอินเทอร์เฟซที่เชื่อมต่อ ฟังก์ชันอื่นทั้งหมด (Trace, ลำดับ, การบันทึก, การวินิจฉัย, vFlash, วิธีใช้/PDF) เหมือนกันทั้งสองระบบ โฟลเดอร์โปรเจกต์ใช้แลกเปลี่ยนระหว่าง Windows และ Linux ได้</p>
+          <p><b>เริ่มฮาร์ดแวร์ใหม่:</b> ปุ่มนี้อยู่ข้างปุ่ม <i>เชื่อมต่อ</i> จะปิดอินเทอร์เฟซแล้วเปิดใหม่ด้วยการตั้งค่าเดิม ช่วยได้เมื่อฮาร์ดแวร์ที่เชื่อมต่อค้าง รายการส่งยังคงอยู่ (ข้อความที่ส่งวนซ้ำจะส่งต่อ) การบันทึกที่กำลังทำงานจะหยุด</p>
+          <p>จัดการโปรเจกต์ นำเข้า DBC/CDD ตั้งค่าฮาร์ดแวร์ และเชื่อมต่อ</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="34%" align="left">ส่วนควบคุม</th><th width="66%" align="left">หน้าที่</th></tr><tr><td valign='top'>โปรเจกต์ที่ใช้งาน</td><td valign='top'>รายการเลือกโปรเจกต์ทั้งหมด (<code>projects/*/project.json</code>) การสลับจะตัดการเชื่อมต่อ หยุด logging บันทึกโปรเจกต์เดิม และโหลดโปรเจกต์ใหม่</td></tr><tr><td valign='top'>ใหม่ ...</td><td valign='top'>สร้างโปรเจกต์พร้อมโครงสร้างโฟลเดอร์และค่าเริ่มต้น (บทที่ 1.5)</td></tr><tr><td valign='top'>นำเข้า DBC/CDD ...</td><td valign='top'>คัดลอกไฟล์ <code>.dbc</code>/<code>.cdd</code> ที่เลือกเข้าโปรเจกต์และแปลง</td></tr><tr><td valign='top'>รูปแบบแคช</td><td valign='top'><code>json</code> หรือ <code>yaml</code>; เมื่อเปลี่ยนจะแปลงใหม่</td></tr><tr><td valign='top'>แปลงใหม่</td><td valign='top'>บังคับแปลง DBC/CDD ทั้งหมดและโหลดโปรเจกต์ใหม่</td></tr><tr><td valign='top'>อินเทอร์เฟซ / ช่อง / บิตเรต / CAN FD / บิตเรตข้อมูล / ชื่อแอป</td><td valign='top'>พารามิเตอร์ฮาร์ดแวร์ (บทที่ 2.3) ถูกล็อกขณะเชื่อมต่ออยู่</td></tr><tr><td valign='top'>จำลอง: สะท้อน</td><td valign='top'>ข้อความที่ส่งออกจะปรากฏเป็นข้อความที่รับด้วย</td></tr><tr><td valign='top'>จำลอง: ECU เสมือน</td><td valign='top'>เมื่อเชื่อมต่อจะเริ่ม ECU ซอฟต์แวร์ที่รองรับ UDS พร้อมทราฟฟิกทดสอบ</td></tr><tr><td valign='top'>เชื่อมต่อ / ตัดการเชื่อมต่อ</td><td valign='top'>เปิดหรือปิดอินเทอร์เฟซ เมื่อตัดการเชื่อมต่อ logging ที่กำลังทำงานจะหยุด</td></tr><tr><td valign='top'>แถบสถานะ</td><td valign='top'>สถานะการเชื่อมต่อ จำนวนเฟรมที่รับ (RX) และส่ง (TX) ข้อผิดพลาดล่าสุด</td></tr><tr><td valign='top'>ไฟล์ที่แปลงแล้ว / คำเตือน</td><td valign='top'>รายการไฟล์แคช จำนวนข้อความ คำเตือนจาก DBC/CDD</td></tr></table>
+      data:
+        title: 3.2 แท็บข้อมูล
+        html: |-
+          <h1>3.2 แท็บ "ข้อมูล"</h1>
+          <p>ที่นี่กำหนดว่า<b>ข้อความ</b>ใดถูกส่งและรับ และ<b>สัญญาณ</b>ใดใช้สำหรับกราฟ
+          logging และการแสดงผล - เลือกจากข้อมูล DBC ทั้งหมดของโปรเจกต์</p>
+          <h2>ฝั่งซ้าย: ข้อมูลที่มี</h2>
+          <ul><li>ต้นไม้ของข้อความทั้งหมดพร้อมสัญญาณ (ID, ผู้ส่ง, หน่วย) <b>ช่องตัวกรอง</b>ค้นหาในชื่อข้อความ ID และชื่อสัญญาณ</li><li><b>-&gt; ส่ง (TX)</b> นำข้อความที่เลือกไปใส่ในรายการส่ง (ดับเบิลคลิกที่ข้อความให้ผลเหมือนกัน) เลือกได้หลายรายการ หากเลือกสัญญาณ จะนำข้อความของสัญญาณนั้นไปใช้</li><li><b>-&gt; รับ (RX)</b> นำข้อความที่เลือกไปใส่ในรายการรับ</li></ul>
+          <h2>ขวาบน: ส่ง</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">คอลัมน์</th><th width="76%" align="left">ความหมาย</th></tr><tr><td valign='top'>ข้อความส่ง / สัญญาณ</td><td valign='top'>ข้อความ (พร้อม ID) และสัญญาณทั้งหมดของข้อความใต้ลงมา</td></tr><tr><td valign='top'>เป็นรอบ</td><td valign='top'>เครื่องหมายติ๊กที่ข้อความเปิด/ปิดการส่งเป็นรอบ (ส่งจริงเมื่อมีการเชื่อมต่อเท่านั้น)</td></tr><tr><td valign='top'>ค่า</td><td valign='top'>ค่าสัญญาณทางกายภาพ (ช่องป้อนค่า หรือรายการเลือกสำหรับสัญญาณที่มีตารางค่า) การเปลี่ยนแปลงมีผลตั้งแต่เฟรมถัดไป</td></tr><tr><td valign='top'>คาบ [ms]</td><td valign='top'>คาบของข้อความ ค่าตั้งต้นจาก DBC (<code>GenMsgCycleTime</code>) หรือ 100 ms 0 = ไม่ส่งเป็นรอบ</td></tr><tr><td valign='top'>เลือก</td><td valign='top'>เครื่องหมายติ๊กที่สัญญาณ: สัญญาณเป็นส่วนของตัวเลือกสำหรับกราฟและ logging</td></tr><tr><td valign='top'>ส่ง (ปุ่ม)</td><td valign='top'>ส่งข้อความหนึ่งครั้งด้วยค่าปัจจุบัน</td></tr></table>
+          <p><b>ลบ</b> ลบข้อความของแถวที่เลือกออกจากรายการส่ง</p>
+          <h2>ขวาล่าง: รับ</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">คอลัมน์</th><th width="76%" align="left">ความหมาย</th></tr><tr><td valign='top'>ข้อความรับ / สัญญาณ</td><td valign='top'>ข้อความ (พร้อม ID) และสัญญาณของข้อความ</td></tr><tr><td valign='top'>ค่า / หน่วย / ข้อความ</td><td valign='top'>ค่าที่ได้รับล่าสุด (อัปเดตทุก 200 ms) หน่วย และข้อความจากตารางค่า (ถ้ามี)</td></tr><tr><td valign='top'>เลือก</td><td valign='top'>เครื่องหมายติ๊กที่สัญญาณ: สัญญาณเป็นส่วนของตัวเลือกสำหรับกราฟและ logging สัญญาณที่ไม่ติ๊กจะไม่ถูกบันทึก</td></tr></table>
+          <h2>หมายเหตุ</h2>
+          <ul><li>การเลือก (เครื่องหมายติ๊ก) กำหนดสิ่งที่ <b>กราฟ</b> และ <b>Logging</b> มองเห็น ส่วน <b>Trace</b> แสดงทุกเฟรม (เลือกแสดงเฉพาะข้อความที่เลือกได้)</li><li>การเลือกและค่าที่ส่งทั้งหมดถูกบันทึกกับโปรเจกต์ การส่งเป็นรอบจะปิดหลังโหลด</li><li>ข้อความหนึ่งอยู่ในทั้งรายการ TX และ RX ได้พร้อมกัน (เช่น กับการสะท้อนในโหมดจำลอง)</li></ul>
+      trace:
+        title: 3.3 แท็บ Trace
+        html: |-
+          <h1>3.3 แท็บ "Trace"</h1>
+          <p>ลำดับเวลาของเฟรมที่ส่ง (Tx, เน้นสี) และที่รับ (Rx) ทั้งหมด</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">คอลัมน์</th><th width="80%" align="left">เนื้อหา</th></tr><tr><td valign='top'>เวลา [s]</td><td valign='top'>เวลาสัมพัทธ์กับเฟรมแรกที่แสดง (นับจากเชื่อมต่อหรือจาก <i>ล้าง</i>)</td></tr><tr><td valign='top'>Rx/Tx, ช่อง</td><td valign='top'>ทิศทางและอินเทอร์เฟซ</td></tr><tr><td valign='top'>ID, ชนิด, Len</td><td valign='top'>CAN ID (hex, 8 หลักสำหรับ Extended) ชนิด (CAN, FD, FD/BRS) และความยาวข้อมูล</td></tr><tr><td valign='top'>ข้อมูล</td><td valign='top'>ข้อมูลเป็น Hex</td></tr><tr><td valign='top'>ข้อความ, สัญญาณ</td><td valign='top'>ชื่อจาก DBC และสัญญาณที่ถอดรหัสพร้อมหน่วย (เมื่อเปิด <i>ถอดรหัส</i>)</td></tr><tr><td valign='top'>โหมดสี</td><td valign='top'>ปุ่มสลับ เปิด: ข้อความ Rx สีน้ำเงินกลาง ข้อความ Tx สีเขียวกลาง ข้อความผิดพลาด (เฟรมข้อผิดพลาดของบัส ชนิด ERR) สีแดง และข้อความ ISO-TP (ID คำขอ/ตอบกลับของการวินิจฉัย รวมถึง 0x7DF) สีม่วงกลาง ปิด: แสดงผลเหมือนเดิม</td></tr></table>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">ส่วนควบคุม</th><th width="72%" align="left">หน้าที่</th></tr><tr><td valign='top'>หยุดชั่วคราว</td><td valign='top'>หยุดการแสดงผล เฟรมยังถูกเก็บในบัฟเฟอร์ต่อไป (สูงสุด 50 000) และจะแสดงเมื่อยกเลิกการหยุด</td></tr><tr><td valign='top'>ถอดรหัส</td><td valign='top'>เปิด/ปิดการถอดรหัสสัญญาณ (ปิด = เร็วกว่าเมื่อโหลดบัสสูง)</td></tr><tr><td valign='top'>เฉพาะข้อความที่เลือก</td><td valign='top'>แสดงเฉพาะข้อความที่อยู่ในรายการ TX หรือ RX ของแท็บข้อมูล</td></tr><tr><td valign='top'>เลื่อนอัตโนมัติ</td><td valign='top'>ตามรายการล่าสุดโดยอัตโนมัติ</td></tr><tr><td valign='top'>Rx / Tx</td><td valign='top'>แสดง/ซ่อนทิศทาง</td></tr><tr><td valign='top'>ช่องตัวกรอง</td><td valign='top'>ID แบบ Hex คั่นด้วยจุลภาค (เช่น <code>100, 200</code>) และ/หรือบางส่วนของชื่อข้อความ (เช่น <code>engine</code>)</td></tr><tr><td valign='top'>ล้าง</td><td valign='top'>ลบการแสดงผลและบัฟเฟอร์</td></tr><tr><td valign='top'>บันทึกเป็น CSV ...</td><td valign='top'>ส่งออกแถวที่มองเห็นอยู่ (ตัวคั่น <code>;</code>)</td></tr></table>
+          <p><b>อัปเดตแถวเดิม:</b> เมื่อติ๊ก <i>อัปเดตแถวเดิม</i> แต่ละข้อความ (ทิศทาง ช่อง ID) จะแสดงเพียงครั้งเดียวในตารางตามลำดับที่ปรากฏครั้งแรก เมื่อปรากฏอีก จะอัปเดตเวลา ข้อมูล และสัญญาณที่ถอดรหัสของแถวนั้น และเพิ่มคอลัมน์ <i>จำนวน</i> เมื่อไม่ติ๊ก เฟรมทั้งหมดจะถูกเขียนต่อกันแบบเลื่อน การสลับจะล้างตาราง การเลื่อนอัตโนมัติใช้ได้เฉพาะโหมดเลื่อน</p>
+          <p><b>ส่วนต่างเวลา:</b> นอกจาก <i>อัปเดตแถวเดิม</i> แล้ว เมื่อติ๊ก <i>ส่วนต่างเวลา</i> คอลัมน์เวลาจะแสดงช่วงห่างจากการปรากฏครั้งก่อนของข้อความเดียวกัน (ทิศทาง ช่อง ID) ซึ่งคือรอบเวลา แทนเวลาสัมบูรณ์ ครั้งแรกเป็น 0 หัวคอลัมน์เปลี่ยนเป็น <i>ส่วนต่างเวลา [s]</i> การสลับจะล้างตาราง</p>
+          <p><b>แถวส่ง:</b> ใต้แถบตัวเลือกมีแถวสำหรับส่งเฟรมดิบ (ค่าเริ่มต้น: ID 100 hex, DLC 8, ข้อมูล 00 01 02 03 04 05 06 07, 1000 ms) <b>ส่ง</b> จะส่งเฟรมหนึ่งครั้ง เมื่อติ๊ก <b>ส่งวนซ้ำ</b> จะเริ่มส่งวนซ้ำ และคลิกอีกครั้ง (<b>หยุด</b>) เพื่อสิ้นสุด ID ที่มากกว่า 7FF จะส่งเป็นเฟรมขยาย DLC ที่มากกว่า 8 จะส่งเป็น CAN FD (ต้องเปิด FD ในการตั้งค่าการเชื่อมต่อ) เฟรมจะแสดงใน Trace เป็น Tx</p>
+          <h2>ข้อความที่กำหนดเอง (ส่งหลายข้อความ)</h2>
+          <p>แถวส่งส่งได้ทีละหนึ่งข้อความ สำหรับ<b>หลายข้อความ</b>ใช้ปุ่ม <b>กำหนดเอง</b>: จะเปิดหน้าต่างแยกที่เปิดค้างไว้ข้าง Trace ที่นั่นกำหนดข้อความส่งได้ไม่จำกัดจำนวนและส่งแยกทีละข้อความ รายการถูกบันทึกในโปรเจกต์ (<code>custom_tx</code>) และใช้ได้อีกเมื่อเปิดโปรเจกต์ครั้งถัดไป</p>
+          <h2>กำหนดและส่งข้อความ</h2>
+          <ol><li>คลิกปุ่ม <b>กำหนดเอง</b> ในแถวส่ง: หน้าต่าง "ข้อความที่กำหนดเอง" จะเปิดขึ้น</li><li><b>คลิกขวา</b>ในตารางแล้วเลือก <b>เพิ่ม</b></li><li>ในกล่องโต้ตอบ "กำหนดข้อความ" ป้อน ID (hex), DLC, ข้อมูล (hex), รอบเวลา [ms] และติ๊ก <b>ส่งเป็นรอบ</b> หากต้องการ แล้วยืนยันด้วย <b>OK</b> ข้อมูลที่ไม่ถูกต้อง (เช่น DLC ที่ไม่อนุญาตหรือไบต์มากเกินไป) จะถูกปฏิเสธพร้อมข้อความและไม่มีอะไรถูกบันทึก</li><li>คลิกขวาที่แถวแล้วเลือก <b>ส่ง</b>: หากไม่ติ๊กส่งเป็นรอบจะส่งหนึ่งครั้ง หากติ๊กจะเริ่มส่งเป็นรอบ (สถานะ: "กำลังส่งเป็นรอบ") เมนูเดิมจะเปลี่ยนเป็น <b>หยุด</b></li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">ช่อง</th><th width="74%" align="left">ความหมาย</th></tr><tr><td valign='top'>ID (hex)</td><td valign='top'>CAN ID ฐานสิบหกไม่มีคำนำหน้า (เช่น <code>7DF</code>) ID ที่มากกว่า 7FF จะถูกส่งเป็น Extended ID (29 บิต) อัตโนมัติ</td></tr><tr><td valign='top'>DLC</td><td valign='top'>ความยาวข้อมูล: 0 ถึง 8 และ 12, 16, 20, 24, 32, 48, 64 ค่าที่มากกว่า 8 จะถูกส่งเป็น CAN FD (ฮาร์ดแวร์และโปรเจกต์ต้องรองรับ CAN FD)</td></tr><tr><td valign='top'>ข้อมูล (hex)</td><td valign='top'>ไบต์ฐานสิบหกมีหรือไม่มีเว้นวรรคก็ได้ ข้อมูลที่สั้นเกินไปจะถูกเติม 00 จนครบ DLC ข้อมูลที่ยาวเกินไปถือเป็นข้อผิดพลาด</td></tr><tr><td valign='top'>รอบเวลา [ms]</td><td valign='top'>ช่วงเวลาส่งตั้งแต่ 1 ถึง 3 600 000 ms มีผลเฉพาะเมื่อส่งเป็นรอบ</td></tr><tr><td valign='top'>ส่งเป็นรอบ</td><td valign='top'>ไม่ติ๊ก: ส่งครั้งเดียว ติ๊ก: ส่งเป็นรอบจนกว่าจะหยุด</td></tr></table>
+          <p><b>เมนูคลิกขวา:</b> เพิ่ม (คลิกบนพื้นที่ว่างได้ด้วย) ส่งหรือหยุด แก้ไข (ดับเบิลคลิกได้ด้วย) และลบ รายการที่กำลังส่งอยู่จะถูกหยุดก่อนแก้ไขหรือลบ ต้องเชื่อมต่อก่อนจึงจะส่งได้ เมื่อตัดการเชื่อมต่อ การส่งเป็นรอบของทุกรายการจะหยุด หลายรายการที่ ID เดียวกันใช้งานส่งร่วมกัน ข้อความที่ส่งแล้วปรากฏใน Trace เป็น Tx</p>
+          <p>หมายเหตุ: แสดงสูงสุด 5 000 แถว (แถวเก่าจะเลื่อนหายไป) การแสดงผลอัปเดตเฉพาะขณะที่
+          แท็บแสดงอยู่ เบื้องหลังเครื่องมือเก็บบัฟเฟอร์ได้สูงสุด 50 000 เฟรม สำหรับการบันทึกที่ไม่ขาดช่วงให้ใช้ <b>Logging</b></p>
+      sequence:
+        title: 3.4 แท็บลำดับทดสอบ
+        html: |-
+          <h1>3.4 แท็บ "ลำดับทดสอบ"</h1>
+          <p>สร้าง บันทึก โหลด และรันลำดับทดสอบ จะมี<b>ลำดับเดียวเท่านั้น</b>ที่โหลด/ใช้งานอยู่เสมอ
+          ลำดับหลายรายการเก็บเป็นไฟล์ในโฟลเดอร์ <code>sequences/</code> ของโปรเจกต์</p>
+          <h2>ไฟล์</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">ส่วนควบคุม</th><th width="70%" align="left">หน้าที่</th></tr><tr><td valign='top'>รายการไฟล์ + โหลด</td><td valign='top'>เลือกลำดับจาก <code>sequences/</code> และโหลดเข้าตัวแก้ไข</td></tr><tr><td valign='top'>ใหม่</td><td valign='top'>ลำดับว่าง (ยังไม่บันทึกจนกว่าจะ <i>บันทึก</i>)</td></tr><tr><td valign='top'>บันทึก / บันทึกเป็น ...</td><td valign='top'>เขียนลำดับเป็น JSON ชื่อไฟล์ที่บันทึก/โหลดล่าสุดจะถูกจดไว้ในโปรเจกต์และโหลดอีกครั้งเมื่อเปิดครั้งถัดไป</td></tr><tr><td valign='top'>ชื่อ / คำอธิบาย</td><td valign='top'>เมทาดาทาของลำดับ</td></tr></table>
+          <h2>การแก้ไขขั้นตอน</h2>
+          <p>ขั้นตอนอยู่ในตาราง (ลำดับ, ชนิด, พารามิเตอร์เป็น JSON) <b>ข้อความพารามิเตอร์แก้ไขได้โดยตรง</b>
+          (ดับเบิลคลิก) JSON ที่ไม่ถูกต้องจะถูกปฏิเสธและคืนค่าเดิม ชนิดของขั้นตอนเปลี่ยนไม่ได้</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">ส่วนควบคุม</th><th width="70%" align="left">หน้าที่</th></tr><tr><td valign='top'>ดรอปดาวน์คำสั่ง</td><td valign='top'>เลือกชนิดขั้นตอน <b>เมื่อเลื่อนเมาส์ไปบนรายการจะมี tooltip</b> แสดงรูปแบบ คำอธิบายขององค์ประกอบทั้งหมด และตัวอย่าง ด้านล่างยังแสดงสรุปของคำสั่งที่เลือกอยู่ด้วย</td></tr><tr><td valign='top'>เพิ่มขั้นตอน</td><td valign='top'>แทรกคำสั่งพร้อมแม่แบบหลังแถวที่เลือก (หรือท้ายสุด)</td></tr><tr><td valign='top'>ขึ้น / ลง / ทำสำเนา / ลบ</td><td valign='top'>ย้าย คัดลอก หรือลบขั้นตอนที่เลือก</td></tr><tr><td valign='top'>เลือกสัญญาณ + ใส่สัญญาณในขั้นตอน</td><td valign='top'>แสดงสัญญาณทั้งหมดของ DBC เป็น <code>Message.Signal</code> (พร้อมเติมคำอัตโนมัติขณะพิมพ์) และใส่ข้อความ (และสัญญาณ สำหรับ <code>set_signal</code>, <code>wait_for</code>, <code>check</code>) ลงในขั้นตอนที่เลือก</td></tr><tr><td valign='top'>Tooltip ในตาราง</td><td valign='top'>tooltip ของคำสั่งจะแสดงเมื่อชี้ที่คอลัมน์ชนิดของขั้นตอนด้วย</td></tr></table>
+          <h2>ตรวจสอบและรัน</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">ส่วนควบคุม</th><th width="70%" align="left">หน้าที่</th></tr><tr><td valign='top'>ตรวจสอบ</td><td valign='top'>ตรวจแบบสถิต: ชนิดขั้นตอน ตัวดำเนินการ ข้อความ และสัญญาณที่ไม่รู้จัก (เทียบกับ DBC)</td></tr><tr><td valign='top'>เริ่ม</td><td valign='top'>รันลำดับ (เมื่อเชื่อมต่ออยู่เท่านั้น) ก่อนเริ่มจะตรวจสอบอัตโนมัติ ตัวแก้ไขถูกล็อกขณะรัน</td></tr><tr><td valign='top'>หยุด</td><td valign='top'>ยกเลิกลำดับ (รวมถึง <code>wait</code> ที่กำลังรัน) สถานะ <i>aborted</i></td></tr><tr><td valign='top'>ตารางผลลัพธ์</td><td valign='top'>ต่อขั้นตอน: หมายเลข (ลูป: เช่น <code>3.2.1</code>) คำอธิบาย สถานะ (เขียว = ok, แดง = fail/error) และข้อความ (เช่น ค่าที่วัดได้ ไบต์ของการตอบกลับ)</td></tr></table>
+          <p><b>กฎการรัน:</b> ขั้นตอนทำงานต่อเนื่องกัน <b>ขั้นตอนแรกที่ล้มเหลวจะจบลำดับ</b> (สถานะ <i>failed</i>)
+          เมื่อจบ แถบสถานะแสดงเช่น <i>startup: passed (10/10 ขั้นตอน ok)</i> ข้อความที่เริ่มส่งเป็นรอบจะส่งต่อไปหลังจบ
+          เว้นแต่หยุดด้วย <code>enable_tx</code></p>
+          <h2>ภาพรวมคำสั่ง</h2>
+          [[commands_table]]
+          <p>คำอธิบายครบถ้วนของแต่ละคำสั่ง พร้อมรูปแบบ องค์ประกอบ และตัวอย่าง อยู่ใน <a href="topic:appendix_a">ภาคผนวก A</a></p>
+      graph:
+        title: 3.5 แท็บกราฟ
+        html: |-
+          <h1>3.5 แท็บ "กราฟ"</h1>
+          <p>แท็บนี้แสดงเส้นสัญญาณแบบสดเป็นกราฟเส้น (แกนเวลา: วินาทีเทียบกับปัจจุบัน ซ้าย = อดีต ขวา = ปัจจุบัน) สวิตช์เหนือรายการเลือกใช้สลับระหว่าง <b>1 กราฟ</b> และ <b>n กราฟ</b></p>
+          <h2>การเลือกที่จัดกลุ่มตามข้อความ</h2>
+          <p>รายการเลือกแสดงสัญญาณทั้งหมดที่เลือกไว้ในแท็บข้อมูล จัดกลุ่มตามทิศทางและข้อความ (<code>RX</code> = รับ, <code>TX</code> = ส่ง) ใต้แต่ละข้อความจะแสดงสัญญาณพร้อมหน่วยในวงเล็บเหลี่ยม ช่องทำเครื่องหมายของข้อความมีสามสถานะ: เลือกครบทุกสัญญาณ เลือกบางส่วน หรือไม่เลือกเลย การคลิกจะเลือกสัญญาณทั้งหมดของข้อความหรือยกเลิกทั้งหมด</p>
+          <h2>การแสดงผล "1 กราฟ"</h2>
+          <p>สัญญาณที่เลือกทั้งหมดถูกวาดในแผนภูมิเดียวพร้อมคำอธิบายสี ข้อดีคือเปรียบเทียบเส้นได้โดยตรง หากช่วงค่าต่างกันมาก สัญญาณขนาดเล็กจะดูแบน ในกรณีนั้น "n กราฟ" เหมาะกว่า</p>
+          <h2>การแสดงผล "n กราฟ"</h2>
+          <p>แต่ละสัญญาณที่เลือกมีแผนภูมิและแกนค่าของตนเอง ติดป้ายเป็น ข้อความ.สัญญาณ พร้อมหน่วย โดยเรียงซ้อนกันในแนวตั้ง ทุกแผนภูมิใช้ <b>ฐานเวลา</b> เดียวกัน: การซูมหรือเลื่อนแกนเวลาในแผนภูมิหนึ่งมีผลกับทุกแผนภูมิ และป้ายเวลาจะแสดงเฉพาะแผนภูมิล่างสุด</p>
+          <h2>ส่วนควบคุม</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">ส่วนควบคุม</th><th width="74%" align="left">ฟังก์ชัน</th></tr><tr><td valign='top'>สวิตช์ 1 กราฟ / n กราฟ</td><td valign='top'>เปลี่ยนรูปแบบการแสดงผล หน้าจอถูกสร้างใหม่ทันที การตั้งค่าถูกบันทึกในโปรเจกต์ (<code>graph_multi</code>)</td></tr><tr><td valign='top'>การเลือกสัญญาณ</td><td valign='top'>ติ๊ก = แสดงเส้น ช่องทำเครื่องหมายของข้อความเลือกหรือยกเลิกสัญญาณทั้งหมดของมัน การเลือกถูกบันทึกในโปรเจกต์ (<code>graph</code>)</td></tr><tr><td valign='top'>ช่วงเวลา</td><td valign='top'>ช่วงเวลาที่มองเห็นเป็นวินาที (1 ถึง 3600)</td></tr><tr><td valign='top'>หยุดชั่วคราว</td><td valign='top'>ตรึงหน้าจอ ข้อมูลยังถูกเก็บต่อเบื้องหลัง</td></tr><tr><td valign='top'>ล้างข้อมูล</td><td valign='top'>ทิ้งเส้นสัญญาณที่เก็บไว้ทั้งหมด</td></tr><tr><td valign='top'>แผนภูมิ</td><td valign='top'>เมาส์: ซูมด้วยลูกกลิ้ง เลื่อนด้วยการกดปุ่มค้าง ใน "n กราฟ" มีผลกับทุกแผนภูมิพร้อมกัน</td></tr></table>
+          <p>หมายเหตุ: เก็บได้สูงสุด 50 000 จุดต่อสัญญาณ บันทึกเฉพาะสัญญาณที่ติ๊กในแท็บข้อมูล
+          สัญญาณจะปรากฏเมื่อมีการรับ/ส่งข้อมูลแล้วเท่านั้น การแสดงผลอัปเดตเฉพาะเมื่อแท็บแสดงอยู่</p>
+      logging:
+        title: 3.6 แท็บ Logging
+        html: |-
+          <h1>3.6 แท็บ "Logging"</h1>
+          <p><b>สัญญาณที่ถอดรหัสแล้ว:</b> เมื่อโหลด DBC, A2L หรือ CDD ไฟล์ Parquet จะมีไม่เพียงข้อความเป็นเลขฐานสิบหก แต่ยังมีสัญญาณพร้อม<b>ค่าดิบ ค่าดิบฐานสิบหก ค่าทางกายภาพ ข้อความ (ตารางค่า) และหน่วย</b> คอลัมน์ของไฟล์สัญญาณ: <code>timestamp, direction, message, signal, value, source, can_id, raw, raw_hex, text, unit, message_hex</code> ระหว่างบันทึก <code>source</code> คือ <code>CAN</code> (ข้อความ DBC), <code>XCP</code> (ค่า A2L ที่อ่านในแท็บ XCP) หรือ <code>UDS</code> (พารามิเตอร์การตอบกลับที่ถอดรหัสจากแท็บวินิจฉัยตาม CDD) ไฟล์ดิบ (<code>_raw.parquet</code>) มีคอลัมน์ <code>signals</code> เพิ่มเติม แสดงสัญญาณทั้งหมดของเฟรมเป็นข้อความ เช่น <code>RPM=0x1F40/2000 rpm</code></p>
+          <p>บันทึกสัญญาณที่เลือกในรูปแบบ <b>Parquet</b> (ต้องใช้ <code>pyarrow</code>) ไฟล์อยู่ในโฟลเดอร์
+          <code>logs/</code> ของโปรเจกต์</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">ส่วนควบคุม</th><th width="72%" align="left">หน้าที่</th></tr><tr><td valign='top'>ต้นไม้ข้อมูล</td><td valign='top'>แสดงข้อความ/สัญญาณที่เลือกในแท็บข้อมูล <b>ตัวกรอง:</b> บันทึกเฉพาะสัญญาณที่ติ๊ก (การติ๊กที่ข้อความจะเลือก/ยกเลิกสัญญาณทั้งหมดของข้อความ) การเลือกถูกบันทึกในโปรเจกต์</td></tr><tr><td valign='top'>ทั้งหมด / ไม่เลือก</td><td valign='top'>เลือกหรือยกเลิกสัญญาณทั้งหมด</td></tr><tr><td valign='top'>ชื่อไฟล์</td><td valign='top'>ค่าตั้งต้นเป็น <i>โปรเจกต์_วันที่_เวลา.parquet</i> จะเติมนามสกุลให้เมื่อจำเป็น</td></tr><tr><td valign='top'>ระยะห่างขั้นต่ำต่อสัญญาณ</td><td valign='top'>ต่อสัญญาณบันทึกได้มากสุดหนึ่งรายการต่อช่วงเวลา (ms) - ลดปริมาณข้อมูลของข้อความที่เร็ว 0 = ทุกเฟรม</td></tr><tr><td valign='top'>เฉพาะเมื่อค่าเปลี่ยน</td><td valign='top'>เขียนสัญญาณเฉพาะเมื่อค่าต่างจากค่าที่เขียนล่าสุด</td></tr><tr><td valign='top'>เฟรมดิบ</td><td valign='top'>เขียน <i>&lt;ชื่อ&gt;_raw.parquet</i> เพิ่มเติม ซึ่งมี<b>ทุก</b>เฟรมบนบัส (ไม่ขึ้นกับ DBC และการเลือกสัญญาณ รวมถึงเฟรมผิดพลาด) คอลัมน์: เวลา, ทิศทาง, ช่อง, ID, ขยาย, FD, BRS, ผิดพลาด, DLC, ข้อมูล (ไบนารี), ข้อมูล (ข้อความ hex), ชื่อข้อความ จึงบันทึกได้แม้ไม่เลือกสัญญาณ <b>ID ข้อมูลดิบ</b> ใช้จำกัดเฟรม เช่น <code>100, 7E0-7EF</code> (hex, ว่าง = ทั้งหมด)</td></tr><tr><td valign='top'>เริ่ม / หยุด Logging</td><td valign='top'>เริ่มหรือจบการบันทึก (เมื่อเชื่อมต่อเท่านั้น) เมื่อตัดการเชื่อมต่อหรือสลับโปรเจกต์ จะหยุดอัตโนมัติและปิดไฟล์อย่างถูกต้อง</td></tr><tr><td valign='top'>แถบสถานะ</td><td valign='top'>ชื่อไฟล์ จำนวนแถวที่เขียน ขนาดไฟล์</td></tr></table>
+          <h2>รูปแบบไฟล์</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">คอลัมน์</th><th width="20%" align="left">ชนิด</th><th width="60%" align="left">เนื้อหา</th></tr><tr><td valign='top'>timestamp</td><td valign='top'>float64</td><td valign='top'>Timestamp (วินาทีแบบ Epoch)</td></tr><tr><td valign='top'>direction</td><td valign='top'>string</td><td valign='top'><code>RX</code> หรือ <code>TX</code></td></tr><tr><td valign='top'>message</td><td valign='top'>string</td><td valign='top'>ชื่อข้อความ</td></tr><tr><td valign='top'>signal</td><td valign='top'>string</td><td valign='top'>ชื่อสัญญาณ</td></tr><tr><td valign='top'>value</td><td valign='top'>float64</td><td valign='top'>ค่าทางกายภาพ</td></tr></table>
+          <p>รูปแบบยาว (หนึ่งแถวต่อค่าสัญญาณหนึ่งค่า) หลีกเลี่ยงช่องว่างเมื่อคาบต่างกัน ข้อมูลถูกเก็บในบัฟเฟอร์และ
+          เขียนลงดิสก์ทุก 5 วินาทีหรือเมื่อครบ 20 000 แถว (บีบอัดด้วย zstd)</p>
+          <p>การวิเคราะห์ใน Python (ดูภาคผนวก B ด้วย):</p>
+          [[pre:pandas]]
+      diag:
+        title: 3.7 แท็บวินิจฉัย
+        html: |-
+          <h1>3.7 แท็บ "วินิจฉัย"</h1>
+          <p>Service วินิจฉัย (UDS) ผ่าน <b>ISO-TP</b> (ISO 15765-2) บน CAN หรือ CAN FD Service มาจาก CDD ที่แปลงแล้ว
+          และยังส่ง Request แบบ Hex ใดก็ได้เพิ่มเติมได้</p>
+          <h2>การตั้งค่า (แถวบน)</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">ช่อง</th><th width="74%" align="left">ความหมาย</th></tr><tr><td valign='top'>CDD</td><td valign='top'>คำอธิบายการวินิจฉัยที่แปลงแล้วจากแคชของโปรเจกต์</td></tr><tr><td valign='top'>ECU</td><td valign='top'>ECU จาก CDD เมื่อเปลี่ยนจะใช้ที่อยู่ของ ECU นั้น</td></tr><tr><td valign='top'>Request-ID / Response-ID</td><td valign='top'>CAN ID เป็น Hex (Tester -&gt; ECU / ECU -&gt; Tester) ตั้งต้นจาก CDD แก้ทับได้ที่นี่</td></tr><tr><td valign='top'>Extended-ID</td><td valign='top'>การระบุที่อยู่ 29 บิต</td></tr><tr><td valign='top'>CAN FD</td><td valign='top'>ISO-TP กับเฟรม FD (สูงสุด 64 ไบต์ต่อเฟรม พร้อมสลับบิตเรต) ต้องตรงกับอีกฝั่ง</td></tr><tr><td valign='top'>Padding</td><td valign='top'>ไบต์เติมเป็น Hex (ค่าเริ่มต้น AA) ว่าง = ไม่เติมสำหรับ Classic CAN</td></tr><tr><td valign='top'>Tester Present</td><td valign='top'>ส่ง <code>3E 80</code> ทุก 2 วินาที (ไม่มีการตอบกลับ) เพื่อให้ diagnostic session เปิดอยู่</td></tr><tr><td valign='top'>แท็บ vFlash</td><td valign='top'>โหลดแพ็ก vFlash (หรือ manifest/HEX/S19/BIN) แสดงการตีความ และรันลำดับการแฟลชบนฮาร์ดแวร์ที่เลือก พร้อมหน้าต่างความคืบหน้า (ภาคผนวก C)</td></tr></table>
+          <h2>การส่ง Service</h2>
+          <ol><li>เลือก Service ในรายการ (ชื่อ, Request, คำอธิบาย)</li><li>หาก Service มีพารามิเตอร์ ให้ป้อนค่าในตาราง <i>พารามิเตอร์ / ค่า (hex)</i> (ตัวแทนค่าใน Request)</li><li><b>ส่ง Service</b> การส่งทำงานเบื้องหลัง หน้าจอยังใช้งานได้</li><li><b>Log</b> แสดง Request (&gt;&gt;) การตอบกลับ (&lt;&lt;) พร้อมการประเมิน (positive/negative หากเป็น negative จะแสดง NRC พร้อมคำอธิบาย) และพารามิเตอร์การตอบกลับที่ถอดรหัสจาก CDD (เช่น <i>VIN: WDD...</i>)</li></ol>
+          <p><b>ส่ง Raw</b>: ป้อน Request เป็นไบต์ Hex (เช่น <code>22 F1 86</code>) แล้วกด Enter หรือใช้ปุ่ม</p>
+          <h2>รายละเอียดทางเทคนิค</h2>
+          <ul><li>การแบ่งส่วน: Single Frame, First Frame, Consecutive Frame และ Flow Control สูงสุด 4095 ไบต์ (ยาวกว่านั้นใช้ extended First Frame)</li><li>เมื่อรับการตอบกลับที่ยาว เครื่องมือส่ง Flow Control ด้วย Blocksize 0 และ STmin 0</li><li>Timeout การตอบกลับ 2 วินาที เมื่อเป็น <i>ResponsePending</i> (NRC 0x78) จะรอต่อได้สูงสุด 10 วินาที</li><li>Request ที่ไม่มีการตอบกลับ (Sub-Function ที่มีบิต 7 เช่น <code>3E 80</code>) จะถูกบันทึกว่าส่งแล้ว</li><li>ในลำดับทดสอบ <code>diag</code> และ <code>diag_raw</code> ใช้การตั้งค่าที่อยู่เดียวกัน</li></ul>
+      header:
+        title: '3.8 แถบแท็บ: โหมดมืดและภาษา'
+        html: |-
+          <h1>3.8 แถบแท็บ: โหมดมืดและภาษา</h1>
+          <p>ที่ขอบขวาของแถบแท็บ (ข้างแท็บต่าง ๆ) มีส่วนควบคุมสองอย่างที่ใช้กับทุกแท็บ</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">ส่วนควบคุม</th><th width="78%" align="left">หน้าที่</th></tr><tr><td valign='top'>โหมดมืด</td><td valign='top'>เครื่องหมายติ๊กสลับระหว่างธีมสว่างและธีมมืด มีผลกับหน้าจอ Trace กราฟ ตารางผลลัพธ์ของลำดับ และวิธีใช้นี้ การตั้งค่าจะถูกบันทึกและใช้ในการเริ่มครั้งถัดไป</td></tr><tr><td valign='top'>ภาษา</td><td valign='top'>เมนูดรอปดาวน์: Deutsch (ภาษาหลัก), English, Francais, Espanol, จีน (กลาง, ตัวย่อ) และไทย การสลับมีผลทันทีโดยไม่ต้องรีสตาร์ท การเลือกจะถูกบันทึก</td></tr></table>
+          <h2>อะไรบ้างที่ถูกแปล?</h2>
+          <ul><li>ป้ายกำกับ ปุ่ม หัวตาราง tooltip กล่องโต้ตอบ และข้อความทั้งหมดของหน้าจอ</li><li>อ้างอิงคำสั่งของลำดับทดสอบ (tooltip ในดรอปดาวน์ ภาคผนวก A) และทุกบทของวิธีใช้นี้</li><li>ข้อความข้อผิดพลาดและคำเตือนของส่วนโปรแกรม (เช่น การแปลง การเชื่อมต่อ การรันลำดับ)</li><li><b>ไม่</b>แปลงข้อมูลจากไฟล์ของคุณ: ชื่อข้อความและสัญญาณ หน่วย และตารางค่าจาก DBC/CDD ชื่อไฟล์ ชื่อโปรเจกต์ และเนื้อหาของไฟล์ลำดับ</li><li>บรรทัดบันทึกที่เขียนไปแล้ว (Log วินิจฉัย ตารางผลลัพธ์ของลำดับ) จะคงภาษาที่เกิดขึ้น</li></ul>
+          <p>สำหรับภาษาจีนและไทย ในเครื่องต้องมีฟอนต์ที่มีอักขระที่เกี่ยวข้อง
+          (การติดตั้ง Windows, macOS และ Linux ทั่วไปมีอยู่แล้ว)</p>
+          <h2>ไฟล์ภาษา</h2>
+          <p>แต่ละภาษาอยู่ในไฟล์ของตัวเองในโฟลเดอร์ <code>lang/</code> (YAML; ใช้ JSON ได้เช่นกัน):</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">ไฟล์</th><th width="70%" align="left">ภาษา</th></tr><tr><td valign='top'><code>lang/de.yaml</code></td><td valign='top'>Deutsch - ภาษาหลักและภาษาสำรอง: หากภาษาใดขาดข้อความ จะใช้ข้อความภาษาเยอรมันแทน</td></tr><tr><td valign='top'><code>lang/en.yaml</code></td><td valign='top'>English</td></tr><tr><td valign='top'><code>lang/fr.yaml</code></td><td valign='top'>Francais</td></tr><tr><td valign='top'><code>lang/es.yaml</code></td><td valign='top'>Espanol</td></tr><tr><td valign='top'><code>lang/zh.yaml</code></td><td valign='top'>จีนกลาง (อักษรจีนตัวย่อ)</td></tr><tr><td valign='top'><code>lang/th.yaml</code></td><td valign='top'>ไทย</td></tr></table>
+          <p>โครงสร้างของแต่ละไฟล์: ส่วน <code>meta</code> (ชื่อที่แสดง ลำดับในดรอปดาวน์), <code>ui</code> (หน้าจอ),
+          <code>core</code> (ข้อความแจ้ง), <code>steps</code> (อ้างอิงคำสั่ง) และ <code>help</code> (บทของวิธีใช้นี้) ตัวแทนค่าใน
+          วงเล็บปีกกา (เช่น <code>{name}</code>) และตัวแทนค่าในวงเล็บเหลี่ยมคู่ในข้อความวิธีใช้
+          ห้ามแก้ไข</p>
+          <h3>การเพิ่มหรือแก้ไขภาษา</h3>
+          <ol><li>คัดลอก <code>lang/de.yaml</code> แล้วบันทึกเป็น <code>lang/&lt;code&gt;.yaml</code> (เช่น <code>it.yaml</code>)</li><li>ในส่วน <code>meta</code> ตั้งชื่อที่แสดง (<code>name</code>) และตำแหน่ง (<code>order</code>) แล้วแปลข้อความทั้งหมด</li><li>ตรวจสอบด้วย <code>python tools/check_lang.py it</code>: เครื่องมือจะรายงานคีย์ที่ขาด ตัวแทนค่าที่ไม่ตรง และโครงสร้าง HTML ที่เสียหาย</li><li>รีสตาร์ทโปรแกรม - ภาษาจะปรากฏในดรอปดาวน์เองโดยอัตโนมัติ</li></ol>
+          <h3>บรรทัดคำสั่ง</h3>
+          <p>เอาต์พุตของ <code>main.py</code> ก็ถูกแปลเช่นกัน: <code>python main.py --lang en --list</code>
+          หากไม่ระบุ <code>--lang</code> จะใช้ภาษาที่เลือกล่าสุดใน GUI</p>
+      help:
+        title: 3.9 แท็บช่วยเหลือ
+        html: |-
+          <h1>3.9 แท็บ "ช่วยเหลือ"</h1>
+          <p>แท็บนี้ ด้านซ้ายคือบท ด้านขวาคือเนื้อหา</p>
+          <ul>
+          <li><b>ช่องค้นหา</b>: ซ่อนบทที่ไม่มีคำนั้น และไฮไลต์ตำแหน่งแรกที่พบใน
+          บทที่เลือก <b>ผลลัพธ์ถัดไป</b> ข้ามไปตำแหน่งถัดไป เมื่อล้างช่อง จะแสดงทุกบทอีกครั้ง</li>
+          <li>ลิงก์ในเนื้อหา (เช่น ไปยังภาคผนวก) คลิกได้</li>
+          <li>คำอธิบายคำสั่งตรงกับ tooltip ในดรอปดาวน์คำสั่งของแท็บลำดับทดสอบ</li>
+          <li>วิธีใช้แสดงเป็นภาษาที่เลือก (บทที่ 3.8) และจะเปลี่ยนทันทีเมื่อสลับภาษา การสลับสว่าง/มืดก็มีผลที่นี่ด้วย</li>
+          </ul>
+      xcp:
+        title: 3.10 แท็บ XCP
+        html: |-
+          <h1>3.10 แท็บ "XCP"</h1>
+          <p>วัดและปรับค่าตัวแปรของ ECU ผ่าน <b>XCP on CAN</b> โดยอิงจาก<b>ไฟล์ A2L</b> (ASAP2) A2L ถูกแปลงเหมือน DBC และ CDD:
+          ไฟล์ต้นฉบับอยู่ในโฟลเดอร์ <code>a2l/</code> ของโปรเจกต์ ขณะทำงานจะอ่านเฉพาะแคช <code>cache/&lt;name&gt;.a2l.json|yaml</code></p>
+          <h2>การตั้งค่า</h2>
+          <ol><li>คัดลอก A2L เข้าโปรเจกต์ด้วย <b>นำเข้า</b> (แท็บโปรเจกต์) จะแปลงอัตโนมัติ (<code>python main.py --convert demo</code> ใช้ได้โดยไม่ต้องมี GUI)</li>
+          <li>เชื่อมต่อ CAN (แท็บโปรเจกต์) XCP ใช้อินเทอร์เฟซเดียวกัน</li>
+          <li>แท็บ XCP: เลือก A2L และตรวจสอบ <b>ID มาสเตอร์</b> (คำสั่งไปยัง ECU) และ <b>ID สเลฟ</b> (การตอบกลับ) ค่าจะถูกกรอกให้จากส่วน XCP ของ A2L (<code>IF_DATA XCP / XCP_ON_CAN</code>) และแก้ไขได้</li>
+          <li><b>เชื่อมต่อ XCP</b> บันทึกแสดงคำสั่งทั้งหมด (-&gt;) และการตอบกลับ (&lt;-) เป็นเลขฐานสิบหก</li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">ส่วนควบคุม</th><th width="72%" align="left">หน้าที่</th></tr>
+          <tr><td valign='top'>รายการด้านซ้าย</td><td valign='top'>ค่าที่วัด (MEASUREMENT) และพารามิเตอร์ (CHARACTERISTIC ชนิด VALUE) ทั้งหมดของ A2L กรองตามชื่อ ดับเบิลคลิกหรือ <i>เพิ่มในรายการเฝ้าดู</i> เพื่อนำมาใช้</td></tr>
+          <tr><td valign='top'>เฝ้าดู</td><td valign='top'>แสดงค่าดิบและค่าทางกายภาพพร้อมหน่วยของแต่ละรายการ การเลือกจะถูกบันทึกกับโปรเจกต์</td></tr>
+          <tr><td valign='top'>อ่านวนซ้ำ</td><td valign='top'>อ่านทุกรายการที่เฝ้าดูตามช่วงเวลาที่ตั้ง (ms) ใช้ SHORT_UPLOAD ในการโพลล์ ไม่ใช้รายการ DAQ</td></tr>
+          <tr><td valign='top'>อ่านหนึ่งครั้ง</td><td valign='top'>อ่านรายการเฝ้าดูหนึ่งครั้ง</td></tr>
+          <tr><td valign='top'>เขียนค่า</td><td valign='top'>เขียนค่าที่ป้อน (ค่าทางกายภาพ หากเป็นการแปลงข้อความใช้ข้อความได้ เช่น <i>RUN</i>) ลงแถวที่เลือก (SET_MTA + DOWNLOAD) แล้วอ่านกลับ</td></tr></table>
+          <h2>การตีความ A2L</h2>
+          <ul><li>ชนิดข้อมูล UBYTE, SBYTE, UWORD, SWORD, ULONG, SLONG, A_UINT64, A_INT64, FLOAT32_IEEE, FLOAT64_IEEE ลำดับไบต์ตามการตอบกลับ CONNECT ของ ECU</li>
+          <li>การแปลง IDENTICAL, LINEAR, RAT_FUNC (ไม่รวมพจน์กำลังสอง) และ TAB_VERB (ค่าข้อความ) BIT_MASK จะถูกมาสก์ออกเมื่ออ่าน</li>
+          <li>วัตถุที่ไม่รองรับ (เส้นโค้ง แผนที่ อาร์เรย์ ค่าที่วัดโดยไม่มีแอดเดรส) จะแสดงเป็นสีเทา</li></ul>
+          <p>เมื่อฮาร์ดแวร์เป็น <i>การจำลอง</i> เครื่องมือจะเริ่ม XCP สเลฟจำลองที่สะท้อน A2L ของโปรเจกต์ (เดโม: <code>projects/demo/a2l/demo.a2l</code>)
+          ไม่รวม: DAQ/STIM, seed&amp;key, หน้าสอบเทียบ และการโปรแกรมแฟลช การที่ ECU จริงอนุญาตให้เข้าถึงทั้งหมดหรือไม่ขึ้นกับระดับการป้องกันของมัน</p>
+      builder:
+        title: 3.11 แท็บ GUI Builder
+        html: |-
+          <h1>3.11 แท็บ "GUI Builder"</h1>
+          <p>สร้างหน้าจอแสดงผลของคุณเองจากองค์ประกอบง่าย ๆ สำหรับสัญญาณที่มีอยู่ องค์ประกอบใช้สำหรับ<b>แสดงผล</b>เท่านั้น ไม่มีการป้อนค่า เชื่อมสัญญาณที่เลือกไว้ในแท็บข้อมูลได้ (รับหรือส่ง) เลย์เอาต์และการเชื่อมต่อถูกบันทึกในโปรเจกต์ (<code>builder</code>)</p>
+          <h2>องค์ประกอบ</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">องค์ประกอบ</th><th width="74%" align="left">ฟังก์ชัน</th></tr><tr><td valign='top'>LED</td><td valign='top'>แสดงสถานะของสัญญาณเป็นสี <b>ดิจิทัล</b>: ค่า 0 และค่า 1 มีสีที่เลือกได้อย่างละสี <b>ช่วง</b>: เหมือนสเกลของเข็ม มีสามช่วง (ต่ำสุด &lt;= x &lt; สูงสุด) ช่วงละหนึ่งสี หากค่าไม่อยู่ในช่วงใดหรือไม่มีค่า LED เป็นสีเทา</td></tr><tr><td valign='top'>ช่องข้อความไม่มีสัญญาณ</td><td valign='top'>ช่องข้อความธรรมดาที่กำหนดข้อความได้อิสระ เช่น หัวข้อหรือป้ายกำกับ</td></tr><tr><td valign='top'>ช่องข้อความมีสัญญาณ</td><td valign='top'>แสดงข้อความและค่าปัจจุบันของสัญญาณพร้อมหน่วย อัปเดตต่อเนื่อง ตั้งจำนวนทศนิยมได้</td></tr><tr><td valign='top'>เข็ม</td><td valign='top'>มาตรวัดแบบเข็มที่มีสเกล 180 องศา (ครึ่งวงกลม): ซ้ายคือค่าต่ำสุด ขวาคือค่าสูงสุด ด้านล่างแสดงค่าตัวเลขพร้อมหน่วย</td></tr><tr><td valign='top'>พื้นหลัง</td><td valign='top'>สี่เหลี่ยมสีธรรมดา (เลือกสีได้) ไม่มีฟังก์ชันอื่น ใช้จัดกลุ่มองค์ประกอบอื่นด้วยภาพ และอยู่หลังองค์ประกอบที่ใช้งานเสมอ แต่อยู่เหนือพื้นหลังมาตรฐาน</td></tr><tr><td valign='top'>รูปภาพ</td><td valign='top'>กรอบรูปที่เลือกรูปได้อิสระ (PNG, JPG, BMP, GIF, SVG) รูปจะถูกปรับให้พอดีกับกรอบอัตโนมัติ (คงอัตราส่วน) และปรับตามทุกการเปลี่ยนขนาด</td></tr></table>
+          <h2>การใช้งาน</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">ส่วนควบคุม</th><th width="74%" align="left">ฟังก์ชัน</th></tr><tr><td valign='top'>แก้ไข</td><td valign='top'>ติ๊ก: แสดงตาราง เพิ่ม ย้าย ปรับขนาด และลบองค์ประกอบได้ ไม่ติ๊ก: หน้าจอถูกล็อก (แสดงผลอย่างเดียว)</td></tr><tr><td valign='top'>+ LED / + ช่องข้อความ / + เข็ม</td><td valign='top'>เพิ่มองค์ประกอบใหม่ (หรือคลิกขวาบนพื้นที่ว่างเพื่อเพิ่ม ณ ตำแหน่งเมาส์)</td></tr><tr><td valign='top'>ลาก</td><td valign='top'>ย้ายองค์ประกอบ มุมขวาล่างใช้ปรับขนาด</td></tr><tr><td valign='top'>คลิกขวาบนองค์ประกอบ</td><td valign='top'>เมนู: เชื่อมสัญญาณ (หรือ "ไม่มีสัญญาณ") ป้ายกำกับหรือข้อความ เกณฑ์และสี LED ทศนิยม สเกล (เข็ม) ลบ</td></tr></table>
+          <h2>เข็มและสเกล</h2>
+          <p>สเกลมีสองโหมด <b>อัตโนมัติ</b> (ค่าเริ่มต้น): ช่วงค่าขยายตามค่าที่สังเกตได้และปัดเป็นเลขกลม (เช่น 0 ถึง 100) ขีดและตัวเลขปรับตาม <b>กำหนดเอง</b>: <b>คลิกขวา</b>ที่เข็มแล้วเลือก <b>สเกลกำหนดเอง (ต่ำสุด/สูงสุด)</b> เพื่อกำหนดค่าต่ำสุดและสูงสุด (ค่าต่ำสุดต้องน้อยกว่าค่าสูงสุด) ช่องติ๊ก <b>สเกลอัตโนมัติ</b> ในเมนูเดียวกันใช้สลับกลับเป็นอัตโนมัติ ค่านอกสเกลทำให้เข็มหยุดที่ปลายสุด</p>
+          <h2>เริ่มต้นอย่างรวดเร็ว</h2>
+          <ol><li>ติ๊ก <b>แก้ไข</b> ไว้ (แสดงตาราง)</li><li>คลิก <b>+ LED</b>, <b>+ ช่องข้อความ</b> หรือ <b>+ เข็ม</b> องค์ประกอบจะปรากฏบนพื้นที่วาด (หรือคลิกขวาบนพื้นที่ว่าง ณ ตำแหน่งเมาส์)</li><li><b>คลิกขวา</b>ที่องค์ประกอบ เลือก <b>เชื่อมสัญญาณ</b> แล้วเลือกสัญญาณจากรายการ</li><li>ตั้งป้ายกำกับ เกณฑ์ LED ทศนิยม หรือสเกล และจัดตำแหน่งโดยการลาก มุมขวาล่างใช้ปรับขนาด</li><li>เอาเครื่องหมายติ๊ก <b>แก้ไข</b> ออก: หน้าจอถูกล็อกและใช้ดูอย่างเดียว</li></ol>
+          <h2>เชื่อมสัญญาณ</h2>
+          <p>รายการแสดงสัญญาณที่เลือกไว้ในแท็บข้อมูลในรูป <code>RX:Msg.Signal</code> หรือ <code>TX:Msg.Signal</code> และมีรายการ "(ไม่มีสัญญาณ)" สำหรับยกเลิกการเชื่อม หากไม่มีสัญญาณที่ต้องการ ให้เลือกในแท็บข้อมูลก่อน ค่าจะปรากฏเมื่อมีการรับหรือส่งข้อมูล หน่วยมาจาก DBC เมื่อเปลี่ยนสัญญาณ สเกลอัตโนมัติจะถูกรีเซ็ต</p>
+          <h2>ตั้งค่า LED และช่องข้อความ</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">การตั้งค่า</th><th width="74%" align="left">ผล</th></tr><tr><td valign='top'>ป้ายกำกับ / ข้อความ</td><td valign='top'>LED: ป้ายข้าง LED (ถ้าว่างใช้ชื่อสัญญาณ) ช่องข้อความ: ข้อความอิสระ เมื่อมีสัญญาณจะอยู่หน้าค่า</td></tr><tr><td valign='top'>โหมด LED</td><td valign='top'>ดิจิทัล (ค่า 0 / ค่า 1) หรือช่วง (ช่วง 1 ถึง 3) ดิจิทัล: ค่า 0 ให้สี 0 ค่าอื่นทั้งหมดให้สี 1</td></tr><tr><td valign='top'>สี / ช่วง</td><td valign='top'>ดิจิทัล: สีสำหรับค่า 0 และค่า 1 ช่วง: แต่ละช่วงมีเปิด/ปิด ค่าต่ำสุด ค่าสูงสุด และสี ตามกฎ <b>ค่าต่ำสุด &lt;= x &lt; ค่าสูงสุด</b> ช่วงแรกที่ตรงเงื่อนไขกำหนดสี เป็นการตั้งค่าเดียวกับการแสดงช่วงค่าของเข็ม</td></tr><tr><td valign='top'>ทศนิยม</td><td valign='top'>จำนวนทศนิยม 0 ถึง 9 สำหรับช่องข้อความและเข็ม</td></tr><tr><td valign='top'>หัวเรื่อง (เข็ม)</td><td valign='top'>ช่องติ๊ก <b>แสดงหัวเรื่อง</b> แสดงหรือซ่อนป้ายเหนือเข็ม พื้นที่จะถูกใช้สำหรับสเกลแทน</td></tr><tr><td valign='top'>แสดงช่วงค่า (เข็ม)</td><td valign='top'>ช่องติ๊ก <b>แสดงช่วงค่า</b> ใส่สีให้สเกลได้สูงสุดสามช่วง (ช่วง 1 ถึง 3) แต่ละช่วงมีค่าต่ำสุด ค่าสูงสุด สี และเปิด/ปิด ตามกฎ <b>ค่าต่ำสุด &lt;= x &lt; ค่าสูงสุด</b> จากนั้นทั้งสามช่วงจะปรากฏในเมนู</td></tr><tr><td valign='top'>เข็มต่ำสุด/สูงสุด (เข็ม)</td><td valign='top'>เมื่อติ๊ก <b>เข็มค่าต่ำสุด</b> และ <b>เข็มค่าสูงสุด</b> สเกลจะแสดงเข็มบางเพิ่มอีกสองเข็ม (สีน้ำเงินและสีส้ม) สำหรับค่าต่ำสุดและสูงสุดตั้งแต่เริ่มสังเกต <b>รีเซ็ตต่ำสุด/สูงสุด</b> เริ่มใหม่ การเปลี่ยนสัญญาณหรือสลับช่องติ๊กก็รีเซ็ตเช่นกัน ค่าไม่ถูกบันทึกในโปรเจกต์ บันทึกเฉพาะช่องติ๊ก</td></tr></table>
+          <h2>สเกลของเข็มโดยละเอียด</h2>
+          <p><b>อัตโนมัติ:</b> จนกว่าจะได้ค่าแรก ใช้ 0 ถึง 100 หลังจากนั้นเข็มจดจำค่าต่ำสุดและสูงสุดที่สังเกตได้ และปัดขอบเขตเป็นเลขกลม (1, 2, 2.5, 5 คูณเลขยกกำลังสิบ) หากทุกค่าไม่เป็นลบและใกล้ 0 สเกลจะเริ่มที่ 0 สเกลขยายได้แต่ไม่หดลง ช่องติ๊ก <b>สเกลอัตโนมัติ</b> ในเมนูคลิกขวา (ปิดแล้วเปิดใหม่) จะเริ่มสังเกตใหม่ สเกลแสดงขีดห้าขีดพร้อมตัวเลข</p>
+          <p><b>กำหนดเอง:</b> <b>คลิกขวา</b>ที่เข็ม เลือก <b>สเกลกำหนดเอง (ต่ำสุด/สูงสุด)</b>: ป้อนค่าต่ำสุดและสูงสุดในกล่องโต้ตอบ (ใส่ทศนิยมได้) หากค่าต่ำสุดไม่น้อยกว่าค่าสูงสุด จะมีข้อความแจ้งและไม่ใช้ค่า สเกลกำหนดเองมีผลทันที ถูกบันทึกในโปรเจกต์ และปิดโหมดอัตโนมัติ ค่านอกช่วงทำให้เข็มหยุดที่ปลายสุด</p>
+          <h2>พื้นหลังและรูปภาพ</h2>
+          <p>องค์ประกอบอยู่ในชั้น: พื้นหลังมาตรฐาน (พื้นที่วาด) ด้านบนคือองค์ประกอบพื้นหลัง และด้านบนสุดคือองค์ประกอบที่ใช้งาน (LED ช่องข้อความ เข็ม รูปภาพ) องค์ประกอบพื้นหลังจะถูกวางไว้หลังองค์ประกอบอื่นอัตโนมัติเมื่อเพิ่ม ย้าย และโหลด ดังนั้นกรอบสีหนึ่งกรอบจึงจัดกลุ่มการแสดงผลหลายอันได้ รูปที่เลือกจะถูกคัดลอกไปยังโฟลเดอร์โปรเจกต์ (<code>images</code>) เพื่อให้ย้ายโปรเจกต์ได้ หากไม่มีรูปจะแสดง "ไม่มีรูปภาพ"</p>
+          <h2>สี LED และการแสดงช่วงค่า</h2>
+          <p>ตัวอย่าง LED ดิจิทัล: ค่า 0 = แดง ค่า 1 = เขียว ตัวอย่าง LED แบบช่วง (อุณหภูมิ): ช่วง 1: 0 ถึง 80 เขียว ช่วง 2: 80 ถึง 100 เหลือง ช่วง 3: 100 ถึง 120 แดง นอกช่วง LED เป็นสีเทา</p><p>การแสดงช่วงค่าของเข็ม: มีสามช่วง แต่ละช่วงมีค่าต่ำสุด ค่าสูงสุด และสี ค่า x อยู่ในช่วงเมื่อ <b>ค่าต่ำสุด &lt;= x &lt; ค่าสูงสุด</b> เป็นจริง (รวมค่าต่ำสุด ไม่รวมค่าสูงสุด) ตัวอย่าง: ช่วง 1: 0 ถึง 80 เขียว ช่วง 2: 80 ถึง 100 เหลือง ช่วง 3: 100 ถึง 120 แดง แต่ละช่วงเปิดหรือปิดแยกกันได้ ส่วนที่อยู่นอกสเกลจะถูกตัดออก และค่าต่ำสุดต้องน้อยกว่าค่าสูงสุด เมื่อใช้สเกลอัตโนมัติ แถบสีจะปรับตามสเกลปัจจุบัน</p>
+          <h2>การบันทึกและข้อจำกัด</h2>
+          <p>องค์ประกอบ ตำแหน่ง ขนาด การเชื่อมต่อ และการตั้งค่าถูกบันทึกในโปรเจกต์ (<code>builder</code>) พื้นที่วาดเลื่อนได้ GUI Builder แสดงเฉพาะค่า ไม่มีองค์ประกอบป้อนข้อมูลหรือสวิตช์ แสดงได้เฉพาะสัญญาณที่เลือกไว้ในแท็บข้อมูล</p>
+          <p>หมายเหตุ: สัญญาณจะปรากฏเมื่อมีการรับหรือส่งข้อมูลแล้ว จนกว่าจะถึงตอนนั้นช่องข้อความและเข็มแสดง "--" หรือตำแหน่งศูนย์ และ LED ดับ</p>
+      appendix_a:
+        title: 'ภาคผนวก A: อ้างอิงคำสั่งลำดับทดสอบ'
+        html: '<h1>ภาคผนวก A: อ้างอิงคำสั่งลำดับทดสอบ</h1><p>แต่ละขั้นตอนคือ JSON อ็อบเจกต์ที่มีฟิลด์ <code>type</code> และองค์ประกอบที่ระบุด้านล่าง ค่าทางกายภาพคือค่าหลังคำนวณ factor และ offset ของ DBC</p>[[commands_reference]]'
+      appendix_b:
+        title: 'ภาคผนวก B: หมายเหตุและข้อจำกัด'
+        html: |-
+          <h1>ภาคผนวก B: หมายเหตุและข้อจำกัด</h1>
+          <ul><li><b>ความแม่นยำของเวลา</b>: การส่งเป็นรอบใช้ซอฟต์แวร์ตัวตั้งเวลา (ความแม่นยำในระดับไม่กี่มิลลิวินาที) ไม่ได้ trigger ด้วยฮาร์ดแวร์</li><li><b>DBC</b>: ไม่รองรับ Extended Multiplexing และ environment variable</li><li><b>CDD</b>: ไฟล์ CANdelaStudio ต้นฉบับอ่านแบบ heuristic เท่านั้น (บทที่ 2.2)</li><li><b>PEAK + CAN FD</b>: bit timing กำหนดตายตัว (80 MHz, 500k/2M) หากต้องการค่าอื่นใช้ <code>hardware.extra</code></li><li><b>ความปลอดภัย</b>: การส่งเป็นรอบไม่เริ่มเองอัตโนมัติเมื่อโหลดโปรเจกต์ สำหรับบัสของรถหรือ test bench ให้ตรวจรายการส่งและค่าก่อนเชื่อมต่อ</li><li><b>แป้นพิมพ์</b>: ในตารางให้ดับเบิลคลิกเพื่อแก้ไข ในช่องวินิจฉัยแบบ raw การกด Enter จะส่ง Request</li></ul>
+          <h2>การทดสอบโดยไม่มีฮาร์ดแวร์</h2>
+          <p>โปรเจกต์ตัวอย่าง <code>demo</code> ใช้การจำลองพร้อม ECU เสมือน จึงลองใช้ทุกแท็บได้
+          (ส่ง/รับ, Trace, กราฟ, Logging, ลำดับ <i>startup</i> และ <i>driving</i>, วินิจฉัย) โดยไม่ต้องมีฮาร์ดแวร์
+          การทดสอบแกนหลักรันด้วย <code>python -m unittest discover -s tests -v</code></p>
+
+shots:
+  help.shot.title: "ภาพหน้าจอพร้อมคำอธิบาย"
+  help.shot.caption: "ภาพแสดงหน้าจอแบบแผนภาพ หมายเลขอ้างอิงถึงคำอธิบายด้านล่าง"
+  help.export_pdf: "คู่มือเป็น PDF..."
+  help.export_title: "บันทึกคู่มือเป็น PDF"
+  help.export_filter: "เอกสาร PDF (*.pdf)"
+  help.export_done: "บันทึกคู่มือแล้ว: {path}"
+  help.export_error: "สร้าง PDF ไม่สำเร็จ: {error}"
+  manual.title: "คู่มือ"
+  manual.date: "วันที่เผยแพร่: {date}"
+  manual.languages: "ภาษาที่รวมอยู่"
+  cli.help.manual: "ส่งออกคู่มือ (วิธีใช้ทุกภาษา) เป็นไฟล์ PDF"
+  cli.manual_done: "เขียนคู่มือแล้ว: {path}"
+  help.shot.project.1: "เลือกโปรเจกต์ สร้างโปรเจกต์ใหม่ และนำเข้าไฟล์ DBC/CDD"
+  help.shot.project.2: "รูปแบบแคช (json/yaml) และการแปลง DBC/CDD ใหม่"
+  help.shot.project.3: "ฮาร์ดแวร์: อินเทอร์เฟซ ช่อง (เช่น PCAN_USBBUS1) บิตเรต และ CAN FD"
+  help.shot.project.4: "เชื่อมต่อหรือตัดการเชื่อมต่อ พร้อมแสดงสถานะ (ตัวนับรับและส่ง)"
+  help.shot.project.5: "ช่องข้อมูล: ไฟล์ DBC ที่โหลด จำนวนข้อความ และคำเตือน"
+  help.shot.data.1: "ตัวกรองและรายการข้อความและสัญญาณทั้งหมดจาก DBC"
+  help.shot.data.2: "เพิ่มรายการที่เลือกไปยังข้อมูลส่ง (TX) หรือข้อมูลรับ (RX)"
+  help.shot.data.3: "ข้อมูลส่ง: เปิด/ปิดการส่งเป็นรอบ ตั้งค่าสัญญาณและเวลาต่อรอบ"
+  help.shot.data.4: "ส่งครั้งเดียว: ส่งข้อความทันทีหนึ่งครั้ง"
+  help.shot.data.5: "ข้อมูลรับพร้อมค่าสดปัจจุบันของสัญญาณ"
+  help.shot.trace.1: "ตัวเลือก: หยุดชั่วคราว ถอดรหัสสัญญาณ เฉพาะข้อความที่เลือก เลื่อนอัตโนมัติ"
+  help.shot.trace.2: "กรองตาม ID หรือชื่อข้อความ"
+  help.shot.trace.3: "ตาราง Trace: เวลา ทิศทาง (Rx/Tx) ช่อง ID ชนิด ความยาว และข้อมูลดิบ ใช้ได้แม้ไม่มี DBC/CDD"
+  help.shot.trace.4: "ชื่อข้อความและค่าสัญญาณที่ถอดรหัสแล้ว (เมื่อโหลด DBC)"
+  help.shot.trace.5: "ล้าง Trace หรือบันทึกเป็นไฟล์ CSV"
+  help.shot.sequence.1: "เลือก โหลด สร้าง และบันทึกไฟล์ลำดับการทดสอบ (ครั้งละหนึ่งลำดับ)"
+  help.shot.sequence.2: "รายการคำสั่ง: เมื่อวางเมาส์บนรายการจะแสดงคำแนะนำพร้อมรูปแบบ องค์ประกอบ และตัวอย่าง"
+  help.shot.sequence.3: "แทรก ย้าย ทำซ้ำ หรือลบขั้นตอน"
+  help.shot.sequence.4: "รายการขั้นตอน: คำสั่งและพารามิเตอร์เป็น JSON แก้ไขได้โดยตรงในตาราง"
+  help.shot.sequence.5: "เริ่ม หยุด และตรวจสอบลำดับแบบสถิต ผลรวมแสดงอยู่ข้างๆ"
+  help.shot.sequence.6: "ตารางผลลัพธ์ต่อขั้นตอน: เขียว = ผ่าน แดง = ไม่ผ่าน พร้อมข้อความ"
+  help.shot.builder.1: "ช่องติ๊กแก้ไข: แสดงตาราง เพิ่ม ย้าย และปรับขนาดได้"
+  help.shot.builder.2: "ปุ่มเพิ่ม LED ช่องข้อความ เข็ม พื้นหลัง และรูปภาพ"
+  help.shot.builder.3: "องค์ประกอบพื้นหลังที่เลือกสีได้: จัดกลุ่มองค์ประกอบด้วยภาพและอยู่ด้านหลัง"
+  help.shot.builder.4: "LED: ดิจิทัล (ค่า 0 / 1) และแบบช่วง (สีขึ้นกับช่วง ต่ำสุด <= x < สูงสุด)"
+  help.shot.builder.5: "ช่องข้อความ: ซ้ายไม่มีสัญญาณ (ข้อความธรรมดา) ขวามีสัญญาณ (ค่าและหน่วยแบบสด)"
+  help.shot.builder.6: "เข็มที่มีสเกล 180 องศา สเกลอัตโนมัติหรือกำหนดเอง และเลือกแสดงช่วงค่าได้"
+  help.shot.builder.7: "กรอบรูป: รูปที่เลือกถูกปรับขนาดให้พอดีกรอบอัตโนมัติ"
+  help.shot.builder.8: "เมนูคลิกขวาของเข็ม: สัญญาณ หัวเรื่อง สเกล แสดงช่วงค่า และลบ"
+  help.shot.builder_signal.1: "คลิกขวาที่ LED: เชื่อมสัญญาณ ป้ายกำกับ โหมดดิจิทัล/ช่วง สี ลบ"
+  help.shot.builder_signal.2: "รายการเลือก: สัญญาณจากแท็บข้อมูลในรูป RX:/TX:ข้อความ.สัญญาณ หรือ (ไม่มีสัญญาณ)"
+  help.shot.builder_signal.3: "LED: สีขึ้นกับค่าสัญญาณ (ดิจิทัล 0 / 1 หรือตามช่วง 1 ถึง 3)"
+  help.shot.builder_signal.4: "ช่องข้อความที่มีสัญญาณ: ข้อความ ค่า และหน่วย ตั้งทศนิยมได้"
+  help.shot.builder_range.1: "LED สามดวงแบบช่วง: แต่ละช่วงค่า (ต่ำสุด <= x < สูงสุด) กำหนดสี"
+  help.shot.builder_range.2: "เข็มที่แสดงช่วงค่า: สามช่วงสีบนสเกล (ช่วง 1 ถึง 3)"
+  help.shot.builder_range.3: "เมนู: แสดงหัวเรื่อง เปิดหรือปิดป้ายกำกับ"
+  help.shot.builder_range.4: "เมนู: เปิดหรือปิดการแสดงช่วงค่า"
+  help.shot.builder_range.5: "ช่วง 1 ถึง 3: แต่ละช่วงมีค่าต่ำสุด ค่าสูงสุด (กฎ ค่าต่ำสุด <= x < ค่าสูงสุด) สี และเปิด/ปิด"
+  help.shot.builder_range.6: "เมนู: เข็มที่สองและสามแบบเลือกได้สำหรับค่าต่ำสุด (น้ำเงิน) และสูงสุด (ส้ม) และการรีเซ็ต"
+  help.shot.trace_custom_edit.1: "ID (hex): CAN ID รวมถึง Extended (> 7FF)"
+  help.shot.trace_custom_edit.2: "DLC: ความยาวข้อมูล รวมถึงค่า CAN FD"
+  help.shot.trace_custom_edit.3: "ข้อมูล (hex): ไบต์มีหรือไม่มีเว้นวรรค ไบต์ที่ขาดจะเติม 00"
+  help.shot.trace_custom_edit.4: "รอบเวลา [ms] และช่องส่งเป็นรอบ: ส่งครั้งเดียวหรือเป็นรอบ"
+  help.shot.trace_custom_edit.5: "OK เพิ่มข้อความลงรายการ ยกเลิกทิ้งข้อมูลที่ป้อน"
+  help.shot.builder_scale.1: "เข็มที่มีสเกลอัตโนมัติ: ขอบเขตเป็นเลขกลม ที่นี่ 0 ถึง 3200"
+  help.shot.builder_scale.2: "เข็มที่มีสเกลกำหนดเอง ที่นี่ 0 ถึง 8000"
+  help.shot.builder_scale.3: "กล่องสเกลกำหนดเอง: ป้อนค่าต่ำสุดและสูงสุด"
+  help.shot.builder_scale.4: "OK ใช้สเกล (เมื่อต่ำสุดน้อยกว่าสูงสุดเท่านั้น) ยกเลิกทิ้งค่า"
+  help.shot.graph.1: "สวิตช์ 1 กราฟ / n กราฟ (ที่นี่: 1 กราฟ)"
+  help.shot.graph.2: "การเลือกสัญญาณจัดกลุ่มตามข้อความ ช่องของข้อความเลือกสัญญาณทั้งหมด หน่วยอยู่ในวงเล็บเหลี่ยม"
+  help.shot.graph.3: "ช่วงเวลาเป็นวินาที"
+  help.shot.graph.4: "หยุดชั่วคราวตรึงหน้าจอ ล้างข้อมูลทิ้งเส้นสัญญาณ"
+  help.shot.graph.5: "แผนภูมิรวมพร้อมคำอธิบาย แกนเวลาเป็นวินาทีเทียบกับปัจจุบัน"
+  help.shot.graph_multi.1: "สวิตช์ตั้งเป็น n กราฟ"
+  help.shot.graph_multi.2: "การเลือกยังจัดกลุ่มตามข้อความ ที่นี่เลือกสามสัญญาณ"
+  help.shot.graph_multi.3: "แต่ละสัญญาณมีกราฟและแกนค่าของตนเอง ติดป้ายเป็น ข้อความ.สัญญาณ และหน่วย"
+  help.shot.graph_multi.4: "แกนเวลาร่วม: ซูมและเลื่อนมีผลกับทุกกราฟ ป้ายอยู่ด้านล่างเท่านั้น"
+  help.shot.logging.1: "เลือกข้อความและสัญญาณที่จะบันทึก (กรองจากข้อมูลที่เลือกไว้)"
+  help.shot.logging.2: "เลือกสัญญาณทั้งหมดหรือไม่เลือกเลย"
+  help.shot.logging.3: "ชื่อไฟล์ Parquet (เก็บในโฟลเดอร์ logs/ ของโปรเจกต์)"
+  help.shot.logging.4: "ตัวเลือก: เฉพาะเมื่อค่าเปลี่ยน ระยะห่างขั้นต่ำต่อสัญญาณ บันทึกข้อมูลดิบเพิ่ม"
+  help.shot.logging.5: "เริ่มหรือหยุดการบันทึก แถบสถานะแสดงจำนวนแถวและขนาดไฟล์"
+  help.shot.diag.1: "การตั้งค่าวินิจฉัย: CDD, ECU, ID คำขอ/ตอบกลับ, Extended ID, CAN FD, Padding"
+  help.shot.diag.2: "ส่ง Tester Present (3E 80) อัตโนมัติทุก 2 วินาที"
+  help.shot.diag.3: "เซอร์วิสจาก CDD พร้อมเทมเพลตคำขอและคำอธิบาย"
+  help.shot.diag.4: "พารามิเตอร์ของเซอร์วิสที่เลือก (แก้ไขค่าเลขฐานสิบหกได้) จากนั้นกด “ส่งเซอร์วิส”"
+  help.shot.diag.5: "บันทึกการตอบกลับ: คำขอที่ส่ง การตอบกลับ (บวก/ลบ) และค่าที่ถอดรหัสแล้ว"
+  help.shot.diag.6: "ส่งคำขอดิบแบบเลขฐานสิบหก (เช่น 22 F1 90) โดยไม่ต้องมีคำจำกัดความ CDD"
+  help.shot.header.1: "โหมดมืด: สลับระหว่างธีมสว่างและมืด (จดจำไว้)"
+  help.shot.header.2: "ภาษา: รายการแบบเลื่อนลงของไฟล์ภาษาทั้งหมด การสลับมีผลทันที รวมถึงวิธีใช้"
+  help.shot.help.1: "รายการบทของวิธีใช้"
+  help.shot.help.2: "ช่องค้นหา: ซ่อนบทที่ไม่พบ “ผลถัดไป” ข้ามไปยังรายการถัดไป"
+  help.shot.help.3: "เนื้อหาบทพร้อมภาพประกอบที่มีคำอธิบาย"
+  help.shot.help.4: "คู่มือ PDF: ส่งออกวิธีใช้ทุกภาษาที่มี (มีหน้าปกและวันที่เผยแพร่) และให้บันทึกไฟล์"
+  trace.color_mode: "สี"
+  trace.color_mode_tip: "โหมดสี: Rx สีน้ำเงินกลาง, Tx สีเขียวกลาง, ข้อความผิดพลาดสีแดง, ข้อความ ISO-TP สีม่วงกลาง ปิด: แสดงผลเหมือนเดิม"
+  trace.col.count: "จำนวน"
+  trace.update_mode: "อัปเดตแถวเดิม"
+  trace.update_mode_tip: "โหมดอัปเดต: แต่ละข้อความ (ทิศทาง ช่อง ID) แสดงเพียงครั้งเดียวในตาราง เมื่อปรากฏอีก จะอัปเดตเวลา ข้อมูล และสัญญาณของแถวนั้นและเพิ่มจำนวน ปิด: เฟรมจะถูกเขียนต่อกันแบบเลื่อน"
+  trace.diff_time: "ส่วนต่างเวลา"
+  trace.diff_time_tip: "เฉพาะโหมดอัปเดต: คอลัมน์เวลาแสดงช่วงห่างจากการปรากฏครั้งก่อนของข้อความเดียวกัน (รอบเวลา) แทนเวลาสัมบูรณ์ ครั้งแรกเป็น 0"
+  trace.col.diff: "ส่วนต่างเวลา [s]"
+  trace.raw.id: "ID (hex)"
+  trace.raw.dlc: "DLC"
+  trace.raw.data: "ข้อมูล (hex)"
+  trace.raw.timing: "รอบเวลา [ms]"
+  trace.raw.cyclic: "ส่งวนซ้ำ"
+  trace.raw.send: "ส่ง"
+  trace.raw.stop: "หยุด"
+  trace.raw.tip: "ส่งเฟรมดิบบนบัส CAN ไม่ติ๊ก: ส่งครั้งเดียว ติ๊ก: ส่งวนซ้ำจนกว่าจะคลิกอีกครั้ง (หยุด) ข้อมูลเป็นไบต์ฐานสิบหก ไบต์ที่ขาดจะเติมด้วย 00"
+  trace.raw.title: "ส่งเฟรมดิบ"
+  trace.custom.button: "กำหนดเอง"
+  trace.custom.title: "ข้อความที่กำหนดเอง"
+  trace.custom.add: "เพิ่ม"
+  trace.custom.edit: "แก้ไข"
+  trace.custom.delete: "ลบ"
+  trace.custom.status: "สถานะ"
+  trace.custom.running: "กำลังส่งเป็นรอบ"
+  trace.custom.edit_title: "กำหนดข้อความ"
+  trace.custom.tip: "กำหนดข้อความส่งได้ไม่จำกัดจำนวน (ID เลขฐานสิบหก, DLC, ข้อมูลฐานสิบหก, รอบเวลา, ส่งเป็นรอบ) คลิกขวา: เพิ่ม แก้ไข ลบ ส่ง/หยุด รายการถูกบันทึกในโปรเจกต์"
+  help.shot.trace.7: "แถวส่ง: ID (hex), DLC, ข้อมูล, รอบเวลา, ช่องติ๊กส่งวนซ้ำ และปุ่มส่ง"
+  help.shot.trace_custom.1: "ปุ่ม กำหนดเอง เปิดหน้าต่างข้อความส่งของคุณเอง"
+  help.shot.trace_custom.2: "ตารางข้อความส่ง: ID (hex), DLC, ข้อมูล (hex), รอบเวลา [ms], ส่งเป็นรอบ และสถานะ"
+  help.shot.trace_custom.3: "เมนูคลิกขวา: เพิ่ม ส่ง/หยุด แก้ไข ลบ"
+  err.can.bad_id: "CAN ID ไม่ถูกต้อง: '{value}' (ฐานสิบหก, 0 ถึง 1FFFFFFF)"
+  err.can.bad_data: "ข้อมูลไม่ถูกต้อง: '{data}' (ต้องเป็นไบต์ฐานสิบหก เช่น 00 01 02)"
+  err.can.bad_dlc: "DLC ไม่ถูกต้อง: {dlc} (ที่อนุญาต: 0-8, 12, 16, 20, 24, 32, 48, 64)"
+  err.can.data_longer_than_dlc: "ข้อมูล {length} ไบต์ไม่พอดีกับ DLC {dlc}"
+  err.can.bad_cycle: "รอบเวลาไม่ถูกต้อง: {cycle_ms} ms"
+  seq.problem.bad_raw: "{where}: {error}"
+  seq.desc.send_raw_once: "ส่งเฟรมดิบ {id} ครั้งเดียว: {data}"
+  seq.desc.send_raw_cyclic: "ส่งเฟรมดิบ {id} วนซ้ำทุก {cycle_ms} ms: {data}"
+  seq.desc.send_raw_stop: "เฟรมดิบ {id}: ปิดการส่งวนซ้ำ"
+  trace.error_frame: "เฟรมผิดพลาด"
+  help.shot.trace.6: "โหมดสี: Rx น้ำเงิน, Tx เขียว, ข้อผิดพลาดแดง, ISO-TP ม่วง"
+
+flash:
+  diag.sub.services: "Services"
+  diag.sub.vflash: "vFlash"
+  flash.hint: "โหลดแพ็ก vFlash (Vector) ตีความ และรันบนฮาร์ดแวร์ที่เลือก (Vector, PEAK, SocketCAN, simulation) โดยไม่ต้องใช้ซอฟต์แวร์ vFlash"
+  flash.load: "โหลดแพ็ก vFlash..."
+  flash.reload: "โหลดใหม่"
+  flash.load_title: "เลือกแพ็ก vFlash"
+  flash.load_filter: "แพ็ก vFlash (*.vflashpack *.zip *.json *.yaml *.hex *.s19 *.srec *.mot *.bin);;ไฟล์ทั้งหมด (*)"
+  flash.no_pack: "ยังไม่ได้โหลดแพ็ก"
+  flash.loaded: "{name}: {blocks} data block, {kb} kB, {steps} ขั้นตอน"
+  flash.load_error: "ไม่สามารถอ่านแพ็กได้: {error}"
+  flash.start: "เริ่มแฟลช..."
+  flash.confirm_title: "ยืนยันการแฟลช"
+  flash.confirm_text: "แพ็ก '{name}' ({blocks} data block, {kb} kB) จะถูกเขียนลงใน ECU โดยหน่วยความจำจะถูกลบและเขียนทับ ห้ามตัดแหล่งจ่ายไฟและการเชื่อมต่อในระหว่างนี้\n\nต้องการเริ่มจริงหรือไม่?"
+  flash.not_connected: "กรุณาเชื่อมต่อก่อนในแท็บ Project"
+  flash.tree.header: "การตีความแพ็ก"
+  flash.tree.general: "ทั่วไป"
+  flash.tree.data: "ข้อมูล"
+  flash.tree.steps: "ลำดับขั้นตอน"
+  flash.tree.warnings: "หมายเหตุ"
+  flash.info.source: "แหล่งที่มา"
+  flash.info.format: "รูปแบบ"
+  flash.info.ecu: "ECU"
+  flash.info.ids: "Request/Response ID"
+  flash.info.security: "Seed&Key"
+  flash.info.alfid: "รูปแบบ Address/Length"
+  flash.format.manifest: "Manifest ของ CAN Tool (flashpack.json/yaml)"
+  flash.format.vflash: "แพ็ก vFlash (อ่านแบบ heuristic)"
+  flash.format.image: "ไฟล์เดี่ยว (ลำดับขั้นตอนมาตรฐาน)"
+  flash.block: "Block {index}: 0x{address}, {length} ไบต์ ({source})"
+  flash.security.none: "ไม่มี"
+  flash.security.xor: "Key = Seed XOR 0x{value} (Level {level})"
+  flash.security.add: "Key = Seed + 0x{value} (Level {level})"
+  flash.security.constant: "Key = ค่าคงที่ 0x{value} (Level {level})"
+  flash.warn.generic_sequence: "แพ็กไม่มีลำดับขั้นตอนของตัวเอง: จะใช้ลำดับขั้นตอน UDS มาตรฐานทั่วไป (ไม่เฉพาะผู้ผลิต) กรุณาตรวจสอบลำดับขั้นตอนก่อนแฟลช"
+  flash.warn.vflash_heuristic: "รูปแบบภายในของแพ็ก vFlash ไม่มีเอกสารเผยแพร่สู่สาธารณะ จึงอ่านเนื้อหาแบบ heuristic เท่านั้น (ไฟล์ข้อมูล ชื่อ CAN ID)"
+  flash.warn.ignored_files: "ไฟล์ {count} ไฟล์ในแพ็กจะไม่ถูกประเมิน (เช่น ODX-F, signature, DLL)"
+  flash.warn.vflash_security: "Seed&Key เฉพาะผู้ผลิต (เช่น DLL) จะไม่ถูกเรียกใช้ หากจำเป็น ให้เพิ่ม manifest ที่ใช้วิธีง่าย ๆ (xor/add/constant)"
+  flash.warn.no_data: "แพ็กไม่มีข้อมูลสำหรับโปรแกรม"
+  flash.warn.bin_address: "{file}: ไฟล์ BIN ไม่มี address จึงใช้ address 0 ให้ระบุ 'address' ใน manifest"
+  flash.err.bad_record: "{file}: record ไม่ถูกต้องในบรรทัด {line}"
+  flash.err.unsupported_file: "ไม่รองรับไฟล์: {name}"
+  flash.err.too_big: "แพ็กมีขนาดใหญ่เกินไปเมื่อแตกไฟล์"
+  flash.err.bad_manifest: "Manifest ไม่ถูกต้อง: {error}"
+  flash.err.missing_file: "ไม่พบไฟล์ '{name}' ในแพ็ก"
+  flash.err.no_algorithm: "ไม่มีวิธี Seed&Key (manifest: security.type)"
+  flash.err.running: "กำลังมีการแฟลชทำงานอยู่แล้ว"
+  flash.err.aborted: "ยกเลิกแล้ว"
+  flash.err.no_response: "ไม่มีการตอบกลับจาก ECU"
+  flash.err.expected: "Response {got} ไม่ได้ขึ้นต้นด้วย {expect}"
+  flash.err.block_missing: "ไม่มี data block {block}"
+  flash.err.alfid_too_small: "รูปแบบ Address/Length 0x{alfid} เล็กเกินไปสำหรับ block"
+  flash.err.no_seed: "Response ไม่มี seed"
+  flash.log.already_unlocked: "Seed เป็น 0: ECU ปลดล็อกแล้ว"
+  flash.msg.transferred: "ถ่ายโอน {length} ไบต์แล้ว (ขนาด block {chunk})"
+  flash.step.unknown: "ขั้นตอนที่ไม่รู้จัก '{kind}'"
+  flash.step.session: "Diagnostic session 0x{session}"
+  flash.step.comm_control: "Communication control (0x{control})"
+  flash.step.security: "Security access (Level {level})"
+  flash.step.routine: "Routine 0x{routine}"
+  flash.step.erase: "ลบ block {block} (0x{address}, {length} ไบต์)"
+  flash.step.download: "โปรแกรม block {block} (0x{address}, {length} ไบต์)"
+  flash.step.check: "Check routine 0x{routine}"
+  flash.step.request: "Request {data}"
+  flash.step.reset: "ECU reset 0x{reset}"
+  flash.step.wait: "รอ {ms} ms"
+  flash.step.comment: "{text}"
+  flash.dlg.title: "vFlash - ความคืบหน้า"
+  flash.dlg.overall: "ความคืบหน้ารวม"
+  flash.dlg.col.step: "ขั้นตอน"
+  flash.dlg.col.status: "สถานะ"
+  flash.dlg.col.detail: "รายละเอียด"
+  flash.dlg.abort: "ยกเลิก"
+  flash.dlg.close: "ปิด"
+  flash.dlg.running: "กำลังแฟลช ห้ามตัดการเชื่อมต่อหรือแหล่งจ่ายไฟ!"
+  flash.dlg.speed: "{done} / {total} kB  ({speed} kB/s)"
+  flash.dlg.log: "บันทึก"
+  flash.dlg.aborting: "ส่งคำขอยกเลิกแล้ว..."
+  flash.status.pending: "รอ"
+  flash.status.running: "กำลังทำงาน"
+  flash.status.ok: "OK"
+  flash.status.fail: "ล้มเหลว"
+  flash.status.skipped: "ข้าม"
+  flash.status.aborted: "ยกเลิก"
+  flash.result.passed: "แฟลชเสร็จสมบูรณ์ ({seconds} s)"
+  flash.result.failed: "แฟลชล้มเหลว"
+  flash.result.aborted: "ยกเลิกการแฟลชแล้ว"
+  help.shot.vflash.1: "โหลดแพ็ก vFlash (.vflashpack/.zip, manifest, HEX/S19/BIN) \"โหลดใหม่\" จะอ่านไฟล์อีกครั้ง"
+  help.shot.vflash.2: "การตีความแพ็ก: ทั่วไป (ECU, ID, Seed&Key), ข้อมูล (block พร้อม address และ length), ลำดับขั้นตอน (steps) และหมายเหตุ"
+  help.shot.vflash.3: "เริ่มแฟลช: หลังการยืนยันความปลอดภัย ลำดับขั้นตอนจะรันบนฮาร์ดแวร์ที่เลือก"
+  help.shot.vflash.4: "หน้าต่างความคืบหน้า: สถานะของแต่ละขั้นตอน (รอ, กำลังทำงาน, OK, ล้มเหลว, ข้าม) พร้อมรายละเอียด"
+  help.shot.vflash.5: "ความคืบหน้ารวม ความคืบหน้าของ data block ปัจจุบันพร้อมอัตราข้อมูล และบันทึก \"ยกเลิก\" จะหยุดระหว่างสอง block"
+  help.topic.appendix_c.title: "ภาคผนวก C: แพ็ก vFlash และ Manifest"
+  help.topic.appendix_c.html: |-
+    <h1>ภาคผนวก C: แพ็ก vFlash และ Manifest</h1>
+    <p>แท็บ vFlash ในหมวด Diagnose จะโหลดแพ็กแฟลช ตีความ และรันด้วยลำดับการแฟลช UDS ในตัวบนฮาร์ดแวร์ที่เลือก (Vector, PEAK, SocketCAN, simulation) โดยไม่ต้องใช้ซอฟต์แวร์ vFlash ของ Vector</p>
+    <h2>แหล่งที่มาที่รองรับ</h2>
+    <ul><li><code>*.vflashpack</code> หรือ <code>*.zip</code> ที่มี <code>flashpack.json</code> (หรือ <code>flashpack.yaml</code>) และไฟล์ข้อมูล: รองรับเต็มรูปแบบ</li><li>แพ็ก vFlash จริงที่ไม่มี manifest: รูปแบบภายในไม่มีเอกสารเผยแพร่สู่สาธารณะ ระบบจะค้นหาไฟล์ HEX, S-Record และ BIN และอ่านโปรเจกต์แบบ heuristic โดยส่วนใหญ่ต้องเพิ่มลำดับขั้นตอน address และ Seed&amp;Key ผ่าน manifest</li><li>ไฟล์ manifest เดี่ยวหรือ image (<code>.hex</code>, <code>.s19</code>, <code>.srec</code>, <code>.mot</code>, <code>.bin</code>) พร้อมลำดับขั้นตอนมาตรฐานทั่วไป</li></ul>
+    <h2>Manifest flashpack.json</h2>
+    [[pre:flashpack]]
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">องค์ประกอบ</th><th width="76%" align="left">ความหมาย</th></tr><tr><td valign='top'><code>name</code>, <code>ecu</code></td><td valign='top'>ชื่อที่แสดงและ ECU</td></tr><tr><td valign='top'><code>request_id</code>, <code>response_id</code>, <code>extended</code>, <code>fd</code></td><td valign='top'>การกำหนดแอดเดรส ISO-TP หากไม่ระบุ จะใช้การตั้งค่า Diagnose ของหมวด Diagnose</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'>Seed&amp;Key: <code>type</code> = <code>none</code>, <code>xor</code>, <code>add</code> หรือ <code>constant</code> พร้อม <code>level</code> (seed level, key = level + 1) และ <code>value</code></td></tr><tr><td valign='top'><code>address_format</code></td><td valign='top'>addressAndLengthFormatIdentifier เช่น <code>0x44</code> = length 4 ไบต์ และ address 4 ไบต์</td></tr><tr><td valign='top'><code>max_chunk</code></td><td valign='top'>ขีดจำกัดสูงสุดของข้อมูลต่อ transfer request (มิฉะนั้นจะใช้ค่าจาก response ของ 0x34)</td></tr><tr><td valign='top'><code>data</code></td><td valign='top'>รายการไฟล์ข้อมูล (<code>file</code>, <code>name</code>) สำหรับไฟล์ BIN ต้องระบุ <code>address</code></td></tr><tr><td valign='top'><code>steps</code></td><td valign='top'>ลำดับขั้นตอนของตัวเอง หากไม่ระบุ จะใช้ลำดับขั้นตอนมาตรฐาน</td></tr></table>
+    <h2>ขั้นตอนของลำดับ (steps)</h2>
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">ขั้นตอน</th><th width="76%" align="left">พารามิเตอร์และผล</th></tr><tr><td valign='top'><code>session</code></td><td valign='top'><code>session</code>: diagnostic session (0x10)</td></tr><tr><td valign='top'><code>comm_control</code></td><td valign='top'><code>control</code>, <code>comm_type</code>: communication control (0x28)</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'><code>level</code>: ขอ seed คำนวณและส่ง key (0x27)</td></tr><tr><td valign='top'><code>erase</code></td><td valign='top'><code>block</code> (<code>all</code> หรือหมายเลข), <code>routine</code> (ค่าเริ่มต้น FF00): ลบหน่วยความจำ (0x31)</td></tr><tr><td valign='top'><code>download</code></td><td valign='top'><code>block</code>: Request Download, Transfer Data, Transfer Exit (0x34, 0x36, 0x37)</td></tr><tr><td valign='top'><code>check</code>, <code>routine</code></td><td valign='top'><code>routine</code>, <code>data</code> (hex), <code>control</code>, <code>timeout_ms</code>: เริ่ม routine (0x31)</td></tr><tr><td valign='top'><code>request</code></td><td valign='top'><code>data</code> (hex), <code>expect</code> (ไบต์แรกของ response ที่คาดไว้)</td></tr><tr><td valign='top'><code>reset</code></td><td valign='top'><code>reset</code>: ECU reset (0x11)</td></tr><tr><td valign='top'><code>wait</code>, <code>comment</code></td><td valign='top'><code>ms</code> เวลารอ หรือ <code>text</code> เป็นความคิดเห็น</td></tr></table>
+    <h2>ลำดับขั้นตอนมาตรฐาน</h2>
+    <p>หากไม่มี <code>steps</code> จะดำเนินการตามลำดับดังนี้: session 0x03, ปิดการสื่อสาร (0x28 03 01), session 0x02, security access (หากตั้ง <code>security</code>), ลบและโปรแกรมทุก block, ECU reset 0x11 01 ลำดับนี้เป็นแบบทั่วไปและไม่เฉพาะผู้ผลิต</p>
+    <h2>ข้อควรระวังด้านความปลอดภัย</h2>
+    <p>การแฟลชจะลบและเขียนทับหน่วยความจำของ ECU ห้ามตัดแหล่งจ่ายไฟและการเชื่อมต่อบัสในระหว่างนี้ โค้ดจากแพ็กจะไม่ถูกรันเด็ดขาด และไม่รองรับ DLL Seed&amp;Key เฉพาะผู้ผลิต เมื่อเกิดข้อผิดพลาด ลำดับขั้นตอนจะหยุดและข้ามขั้นตอนที่เหลือ</p>

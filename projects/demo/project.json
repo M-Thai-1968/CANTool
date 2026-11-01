@@ -1,0 +1,64 @@
+{
+  "hardware": {
+    "type": "simulation",
+    "channel": "",
+    "bitrate": 500000,
+    "fd": true,
+    "data_bitrate": 2000000,
+    "app_name": "",
+    "sim_network": "sim",
+    "sim_echo": true
+  },
+  "cache_format": "json",
+  "tx": [
+    {
+      "message": "DriverCmd",
+      "cycle_ms": 50,
+      "enabled": false,
+      "values": {
+        "ThrottleCmd": 0,
+        "StartButton": 0
+      },
+      "signals": null
+    }
+  ],
+  "rx": {
+    "EngineData": null,
+    "VehicleSpeed": null,
+    "EngineStatus": null,
+    "DiagCounter": null,
+    "FdSensor": null
+  },
+  "logging": {
+    "selection": {
+      "TX": {},
+      "RX": {
+        "EngineData": null,
+        "VehicleSpeed": null
+      }
+    },
+    "on_change_only": false,
+    "min_interval_ms": 0,
+    "log_raw": false
+  },
+  "graph": [
+    "RX:EngineData.RPM",
+    "RX:VehicleSpeed.Speed"
+  ],
+  "diag": {
+    "cdd": "diag.cdd.json",
+    "ecu": "Engine_ECU",
+    "request_id": "",
+    "response_id": "",
+    "fd": false,
+    "padding": 170,
+    "tester_present": false
+  },
+  "sequence": "startup.json",
+  "sim": {
+    "ecu": true,
+    "traffic_senders": [
+      "ECU"
+    ]
+  }
+}

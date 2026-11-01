@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vereinfachtes Diagnoseformat (kein originales CANdelaStudio-Format) -->
+<DIAGDATA>
+  <ECU name="Engine_ECU" request_id="0x7E0" response_id="0x7E8" extended="false" fd="false">
+    <SERVICE name="DefaultSession" request="10 01" description="Default Session"/>
+    <SERVICE name="ExtendedSession" request="10 {session}" description="Diagnosesession waehlen">
+      <PARAM name="session" bytes="1" default="03"/>
+    </SERVICE>
+    <SERVICE name="TesterPresent" request="3E 00" description="Tester Present"/>
+    <SERVICE name="EcuReset" request="11 01" description="Hard Reset"/>
+    <SERVICE name="ReadVIN" request="22 F1 90" description="Fahrgestellnummer lesen">
+      <RESPONSE prefix_len="3"><PARAM name="VIN" offset="0" length="17" type="ascii"/></RESPONSE>
+    </SERVICE>
+    <SERVICE name="ReadActiveSession" request="22 F1 86" description="Aktive Session">
+      <RESPONSE prefix_len="3"><PARAM name="Session" offset="0" length="1" type="uint"/></RESPONSE>
+    </SERVICE>
+    <SERVICE name="ReadSerial" request="22 F1 8C" description="Seriennummer">
+      <RESPONSE prefix_len="3"><PARAM name="Serial" offset="0" length="12" type="ascii"/></RESPONSE>
+    </SERVICE>
+    <SERVICE name="ReadDid" request="22 {did}" description="Beliebigen DID lesen (hex, 2 Byte)">
+      <PARAM name="did" bytes="2" default="F190"/>
+    </SERVICE>
+    <SERVICE name="ReadSpeedDid" request="22 F4 0D" description="Geschwindigkeit (Demo)">
+      <RESPONSE prefix_len="3"><PARAM name="Speed" offset="0" length="1" type="uint" unit="km/h"/></RESPONSE>
+    </SERVICE>
+    <SERVICE name="ReadDtc" request="19 02 FF" description="DTCs lesen"/>
+    <SERVICE name="ClearDtc" request="14 FF FF FF" description="DTCs loeschen"/>
+    <SERVICE name="SecuritySeed" request="27 01" description="Seed anfordern"/>
+    <SERVICE name="SlowRead" request="22 F1 FF" description="Antwort mit ResponsePending (0x78)"/>
+  </ECU>
+</DIAGDATA>

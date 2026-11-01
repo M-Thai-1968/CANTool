@@ -1,0 +1,28 @@
+VERSION "1.0"
+
+NS_ :
+
+BS_:
+
+BU_: Tester ECU
+
+BO_ 256 VehicleSpeed: 8 ECU
+ SG_ Speed : 0|16@1+ (0.01,0) [0|250] "km/h" Tester
+ SG_ Gear : 16|4@1+ (1,0) [0|15] "" Tester
+ SG_ BrakePedal : 20|1@1+ (1,0) [0|1] "" Tester
+ SG_ Odometer : 24|24@1+ (0.1,0) [0|1677721.5] "km" Tester
+
+BO_ 257 DriverCmd: 8 Tester
+ SG_ ThrottleCmd : 0|8@1+ (0.4,0) [0|100] "%" ECU
+ SG_ StartButton : 8|1@1+ (1,0) [0|1] "" ECU
+ SG_ TargetGear : 12|4@1+ (1,0) [0|15] "" ECU
+
+CM_ BO_ 256 "Fahrzeuggeschwindigkeit und Getriebe";
+CM_ SG_ 256 Speed "Fahrzeuggeschwindigkeit";
+VAL_ 256 Gear 0 "N" 1 "1" 2 "2" 3 "3" 4 "4" 5 "5" 15 "R" ;
+VAL_ 257 StartButton 0 "Aus" 1 "Ein" ;
+
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_ "GenMsgCycleTime" BO_ 256 20;
+BA_ "GenMsgCycleTime" BO_ 257 50;

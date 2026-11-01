@@ -1,0 +1,37 @@
+VERSION "1.0"
+
+NS_ :
+
+BS_:
+
+BU_: Tester ECU
+
+BO_ 512 EngineData: 8 ECU
+ SG_ RPM : 0|16@1+ (0.25,0) [0|8000] "rpm" Tester
+ SG_ CoolantTemp : 16|8@1+ (1,-40) [-40|130] "degC" Tester
+ SG_ Torque : 24|16@1- (0.1,0) [-3000|3000] "Nm" Tester
+
+BO_ 513 EngineStatus: 8 ECU
+ SG_ Pressure : 7|12@0+ (0.1,0) [0|409.5] "kPa" Tester
+ SG_ State : 23|3@0+ (1,0) [0|7] "" Tester
+ SG_ Load : 31|8@0+ (0.5,0) [0|127.5] "%" Tester
+
+BO_ 768 DiagCounter: 8 ECU
+ SG_ MuxSel M : 0|8@1+ (1,0) [0|1] "" Tester
+ SG_ CounterA m0 : 8|16@1+ (1,0) [0|65535] "" Tester
+ SG_ CounterB m1 : 8|16@1+ (0.5,0) [0|32767.5] "" Tester
+
+BO_ 1024 FdSensor: 16 ECU
+ SG_ Voltage : 0|16@1+ (0.001,0) [0|65.535] "V" Tester
+ SG_ Current : 16|16@1- (0.01,0) [-327.68|327.67] "A" Tester
+ SG_ Temp : 32|32@1- (1,0) [0|0] "" Tester
+
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_ BO_ "VFrameFormat" ENUM "StandardCAN","ExtendedCAN","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_DEF_DEF_ "VFrameFormat" "StandardCAN";
+BA_ "GenMsgCycleTime" BO_ 512 10;
+BA_ "GenMsgCycleTime" BO_ 513 50;
+BA_ "GenMsgCycleTime" BO_ 768 100;
+BA_ "GenMsgCycleTime" BO_ 1024 20;
+BA_ "VFrameFormat" BO_ 1024 14;

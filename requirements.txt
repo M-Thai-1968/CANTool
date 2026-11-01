@@ -1,0 +1,6 @@
+python-can>=4.2        # Vector (XL-Treiber) und PEAK (PCAN-Basic) Hardware-Anbindung
+pyarrow>=14             # Parquet-Logging
+PySide6>=6.5            # GUI
+pyqtgraph>=0.13         # Liniendiagramme
+numpy
+PyYAML                  # Sprachdateien (lang/*.yaml) und Cache-Format "yaml"

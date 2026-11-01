@@ -1,0 +1,64 @@
+/* Demo-A2L fuer das CAN-Tool (XCP on CAN, simulierter Slave) */
+ASAP2_VERSION 1 71
+/begin PROJECT DemoProject "Demo"
+  /begin MODULE DemoEcu "Demo ECU"
+    /begin MOD_COMMON ""
+      BYTE_ORDER MSB_LAST
+      ALIGNMENT_BYTE 1
+    /end MOD_COMMON
+    /begin IF_DATA XCP
+      /begin PROTOCOL_LAYER
+        0x0100 0x03E8 0x0000 0x0000 0x0000 0x0000 0x0000 0x0000 8 8
+        BYTE_ORDER_MSB_LAST ADDRESS_GRANULARITY_BYTE
+      /end PROTOCOL_LAYER
+      /begin XCP_ON_CAN
+        0x0100
+        CAN_ID_BROADCAST 0x600
+        CAN_ID_MASTER 0x600
+        CAN_ID_SLAVE 0x601
+        BAUDRATE 500000
+      /end XCP_ON_CAN
+    /end IF_DATA
+    /begin COMPU_METHOD CM_Ident "" IDENTICAL "%6.0" ""
+    /end COMPU_METHOD
+    /begin COMPU_METHOD CM_Rpm "Drehzahl" RAT_FUNC "%6.1" "rpm"
+      COEFFS 0 4 0 0 0 1
+    /end COMPU_METHOD
+    /begin COMPU_METHOD CM_Temp "Temperatur" LINEAR "%5.1" "degC"
+      COEFFS_LINEAR 0.75 -48
+    /end COMPU_METHOD
+    /begin COMPU_METHOD CM_State "Zustand" TAB_VERB "%2.0" ""
+      COMPU_TAB_REF VT_State
+    /end COMPU_METHOD
+    /begin COMPU_VTAB VT_State "Zustand" TAB_VERB 3
+      0 "OFF" 1 "RUN" 2 "ERROR"
+    /end COMPU_VTAB
+    /begin RECORD_LAYOUT RL_UWORD
+      FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    /begin RECORD_LAYOUT RL_UBYTE
+      FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    /begin RECORD_LAYOUT RL_FLOAT
+      FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    /begin MEASUREMENT EngineSpeed "Motordrehzahl" UWORD CM_Rpm 1 0.5 0 1000 ECU_ADDRESS 0x1000
+    /end MEASUREMENT
+    /begin MEASUREMENT CoolantTemp "Kuehlmitteltemperatur" UBYTE CM_Temp 1 0.5 -48 143 ECU_ADDRESS 0x1002
+    /end MEASUREMENT
+    /begin MEASUREMENT Throttle "Drosselklappe" UBYTE CM_Ident 1 0.5 0 100 ECU_ADDRESS 0x1003
+    /end MEASUREMENT
+    /begin MEASUREMENT State "Betriebszustand" UBYTE CM_State 1 0 0 2 ECU_ADDRESS 0x1004
+    /end MEASUREMENT
+    /begin MEASUREMENT Counter "Zaehler" ULONG CM_Ident 1 0 0 4294967295 ECU_ADDRESS 0x1008
+    /end MEASUREMENT
+    /begin MEASUREMENT Voltage "Batteriespannung" FLOAT32_IEEE CM_Ident 1 0 8 16 ECU_ADDRESS 0x100C
+    /end MEASUREMENT
+    /begin CHARACTERISTIC RpmLimit "Drehzahlbegrenzung" VALUE 0x2000 RL_UWORD 0 CM_Rpm 0 6500
+    /end CHARACTERISTIC
+    /begin CHARACTERISTIC GainKp "Regler-Verstaerkung" VALUE 0x2004 RL_FLOAT 0 CM_Ident 0 10
+    /end CHARACTERISTIC
+    /begin CHARACTERISTIC Mode "Betriebsart" VALUE 0x2008 RL_UBYTE 0 CM_State 0 2
+    /end CHARACTERISTIC
+  /end MODULE
+/end PROJECT

@@ -1,0 +1,17 @@
+{
+  "name": "driving",
+  "description": "Gas geben in Stufen",
+  "steps": [
+    {"type": "enable_tx", "message": "DriverCmd", "enabled": true},
+    {"type": "set_signal", "message": "DriverCmd", "signal": "StartButton", "value": 1},
+    {"type": "loop", "count": 3, "steps": [
+      {"type": "set_signal", "message": "DriverCmd", "signal": "ThrottleCmd", "value": 20},
+      {"type": "wait", "ms": 400},
+      {"type": "set_signal", "message": "DriverCmd", "signal": "ThrottleCmd", "value": 60},
+      {"type": "wait", "ms": 400},
+      {"type": "check", "direction": "RX", "message": "VehicleSpeed", "signal": "Speed", "op": ">=", "value": 0}
+    ]},
+    {"type": "diag_raw", "request": "3E 00", "expect": "7E 00"},
+    {"type": "set_signal", "message": "DriverCmd", "signal": "ThrottleCmd", "value": 0}
+  ]
+}

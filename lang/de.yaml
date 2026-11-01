@@ -1,0 +1,1100 @@
+meta:
+  name: Deutsch
+  order: 0
+ui:
+  app.title: CAN Tool
+  tab.project: Projekt
+  tab.data: Daten
+  tab.trace: Trace
+  tab.sequence: Testsequenz
+  tab.graph: Graph
+  tab.logging: Logging
+  tab.diag: Diagnose
+  tab.help: Hilfe
+  header.dark: Dark Mode
+  header.dark_tip: Zwischen hellem und dunklem Erscheinungsbild umschalten
+  header.language: 'Sprache:'
+  header.language_tip: Sprache der Oberflaeche und der Hilfe waehlen
+  project.group: Projekt
+  project.active: 'Aktives Projekt:'
+  project.new: Neu...
+  project.import: Dateien importieren...
+  project.cache_format: 'Cache-Format:'
+  project.reconvert: "DBC/CDD/A2L neu wandeln"
+  project.info_label: 'Informationen:'
+  project.new_title: Neues Projekt
+  project.new_prompt: 'Projektname:'
+  project.dialog_title: Projekt
+  project.import_dialog: DBC-/CDD-Dateien waehlen
+  project.import_filter: "DBC/CDD/A2L (*.dbc *.cdd *.a2l);;Alle Dateien (*)"
+  project.import_title: Import
+  project.import_error: '{file}: {error}'
+  project.convert_title: Umwandlung
+  project.info.dbc: 'DBC: {sources} - {count} Botschaften'
+  project.info.warning: 'Warnung: {text}'
+  project.info.cdd_warning: 'CDD-Warnung: {text}'
+  hw.group: Hardware
+  hw.interface: 'Interface:'
+  hw.channel: 'Kanal:'
+  hw.channel_tip: "Vector: Kanalnummer am Geraet (0 = CH1); PEAK: z. B. PCAN_USBBUS1; SocketCAN: z. B. can0"
+  hw.bitrate: 'Bitrate (bit/s):'
+  hw.fd: CAN FD
+  hw.data_bitrate: 'Daten-Bitrate (bit/s):'
+  hw.app_name: 'Vector-Anwendungsname:'
+  hw.app_name_tip: "Optional. Leer = Vector-Geraet direkt ansprechen (empfohlen). Mit Name (z. B. CANalyzer) wird die Kanalzuweisung der Vector Hardware Config verwendet."
+  hw.sim_echo: 'Simulation: Sendeframes zurueckspiegeln'
+  hw.sim_ecu: 'Simulation: virtuelles Steuergeraet'
+  hw.peak_note: 'Hinweis: Fuer PEAK PCAN-USB Pro FD muss der PCAN-Treiber installiert sein.'
+  hw.type.simulation: Simulation (ohne Hardware)
+  hw.type.vector: Vector (VN1630A, VN7572)
+  hw.type.pcan: PEAK PCAN-USB Pro FD
+  hw.type.socketcan: SocketCAN (Linux)
+  hw.only_windows: "nur Windows"
+  hw.only_linux: "nur Linux"
+  hw.os_note.windows: "Betriebssystem: {os}. Vector (XL-Treiber) und PEAK (PCAN-Basic) werden unterstuetzt; SocketCAN ist unter Windows nicht verfuegbar."
+  hw.os_note.linux: "Betriebssystem: {os}. SocketCAN (z. B. can0, vorher mit 'ip link set can0 up type can bitrate 500000' aktivieren) und PEAK (PCAN-Basic-Bibliothek oder Kernel-Treiber als can0) werden unterstuetzt. Der Vector-XL-Treiber ist unter Linux nicht verfuegbar; Vector-Geraete ggf. ueber SocketCAN einbinden."
+  hw.os_note.macos: "Betriebssystem: {os}. Es stehen Simulation und PEAK (PCAN-Basic) zur Verfuegung."
+  hw.os_note.other: "Betriebssystem: {os}. Es steht die Simulation zur Verfuegung; weitere Hardware ist nicht getestet."
+  hw.detect: "Hardware suchen"
+  hw.detect_tip: "Sucht angeschlossene Schnittstellen (Vector, PEAK, SocketCAN) des aktuellen Betriebssystems und uebernimmt bei genau einem Treffer Typ und Kanal."
+  hw.detect_none: "Keine Schnittstelle gefunden ({os}). Treiber installiert und Geraet angeschlossen?"
+  hw.detect_found: "Gefundene Schnittstellen:\n{items}"
+  err.hw.vector_unsupported: "Vector (XL-Treiber) ist unter {os} nicht verfuegbar (nur Windows). Unter Linux das Geraet ueber SocketCAN einbinden."
+  err.hw.vector_driver_missing: "Vector-Treiber nicht gefunden: {dll} fehlt (Python ist {bits}-bit). Loesung: 'Vector Driver Setup' bzw. 'XL Driver Library' von vector.com installieren (legt {dll} in C:\\Windows\\System32 ab) und das Tool neu starten. Alternativ {dll} in den Tool-Ordner oder nach drivers\\ kopieren. Bei 32-bit-Python wird vxlapi.dll statt vxlapi64.dll gesucht - dann 64-bit-Python verwenden. Danach in der Vector Hardware Config pruefen, dass der VN1630A erscheint und kein anderes Programm (CANalyzer, CANoe, vFlash) den Kanal belegt."
+  err.hw.socketcan_unsupported: "SocketCAN ist unter {os} nicht verfuegbar (nur Linux). Unter Windows Vector oder PEAK waehlen."
+  conn.connect: Verbinden
+  conn.disconnect: Trennen
+  conn.connected: 'Verbunden: {channel}   RX: {rx}   TX: {tx}'
+  conn.disconnected: Nicht verbunden
+  conn.via_serial: "ueber Seriennummer"
+  conn.via_index: "ueber Hardware-Index"
+  conn.via_hwconfig: "ueber Vector Hardware Config"
+  tab.xcp: "XCP"
+  tab.builder: "GUI Builder"
+  xcp.title: "XCP"
+  xcp.a2l: "A2L:"
+  xcp.master_id: "Master-ID (hex):"
+  xcp.slave_id: "Slave-ID (hex):"
+  xcp.extended: "Extended-IDs"
+  xcp.connect: "XCP verbinden"
+  xcp.disconnect: "XCP trennen"
+  xcp.filter_placeholder: "Filter (Name) ..."
+  xcp.col.name: "Name"
+  xcp.col.kind: "Art"
+  xcp.col.address: "Adresse"
+  xcp.col.unit: "Einheit"
+  xcp.col.raw: "Rohwert"
+  xcp.col.value: "Wert"
+  xcp.add: "Zur Beobachtung"
+  xcp.remove: "Entfernen"
+  xcp.available: "Verfuegbar (aus der A2L)"
+  xcp.watch: "Beobachtung"
+  xcp.poll: "Zyklisch lesen"
+  xcp.read_once: "Einmal lesen"
+  xcp.write_placeholder: "Neuer Wert (Zahl oder Text)"
+  xcp.write: "Wert schreiben"
+  xcp.kind.measurement: "Messgroesse"
+  xcp.kind.characteristic: "Parameter"
+  xcp.unsupported_tip: "Nicht unterstuetzt (Datentyp, Typ oder Adresse fehlt)."
+  xcp.a2l_error: "A2L-Fehler: {error}"
+  xcp.bad_ids: "Ungueltige CAN-IDs (hexadezimal erwartet)."
+  xcp.no_a2l: "Keine konvertierte A2L-Datei im Projekt (Ordner a2l/)."
+  xcp.connect_first: "Zuerst CAN verbinden (Rubrik Projekt)."
+  xcp.connected_info: "XCP verbunden: MAX_CTO {cto}, MAX_DTO {dto}, Byte-Reihenfolge {order}."
+  xcp.state_on: "XCP verbunden"
+  xcp.state_off: "XCP getrennt"
+  xcp.select_row: "Zuerst eine Zeile in der Beobachtung waehlen."
+  xcp.written: "Geschrieben: {name} = {value}"
+  err.a2l.invalid: "Keine gueltige A2L-Datei: {file}"
+  err.a2l.unknown_item: "Unbekannte Groesse '{name}' in der A2L"
+  err.a2l.short_data: "Zu wenige Daten fuer {name} (erwartet {size} Byte)"
+  err.a2l.out_of_range: "Wert {value} ausserhalb des Datentyps ({lo} bis {hi})"
+  err.xcp.timeout: "XCP: keine Antwort innerhalb {ms} ms"
+  err.xcp.negative: "XCP-Fehler {name} (0x{code})"
+  err.xcp.bad_response: "Unerwartete XCP-Antwort: {data}"
+  err.xcp.bitmask_write: "'{name}': Schreiben auf Bit-Masken-Messgroessen wird nicht unterstuetzt"
+  err.xcp.unsupported_item: "'{name}' wird nicht unterstuetzt (Datentyp oder Adresse fehlt)"
+  conn.no_rx: "Keine Empfangsdaten auf {channel}. Pruefen: (1) Kanalnummer - 0 = CH1, 1 = CH2 (Beschriftung am VN1630A/VN7572); (2) Bitrate wie am Bus; (3) mindestens ein weiterer sendender Knoten am Bus (PCAN-View sendet?); (4) Terminierung 2 x 120 Ohm nur an den Busenden, Y-Abzweig kurz; (5) CAN-H/CAN-L nicht vertauscht, Masse verbunden; (6) kein anderes Programm (CANalyzer/CANoe) belegt den Kanal; (7) CAN FD nur aktiv, wenn der Bus FD sendet."
+  conn.reinit: "Re-Init HW"
+  conn.reinit_tip: "Hardware neu initialisieren: Schnittstelle schliessen und mit denselben Einstellungen neu oeffnen. Hilfreich, wenn die angeschlossene Hardware haengt. Die Sendeliste bleibt erhalten, ein laufendes Logging wird beendet."
+  err.can.close: "Fehler beim Schliessen der Schnittstelle: {error}"
+  err.can.close_timeout: "Schliessen der Schnittstelle reagiert nicht (nach {seconds} s abgebrochen)"
+  conn.failed_title: Verbindung fehlgeschlagen
+  msg.dbc_error: 'DBC konnte nicht geladen werden: {error}'
+  msg.sequence_load_error: 'Testsequenz konnte nicht geladen werden: {error}'
+  msg.project_save_error: 'Projekt konnte nicht gespeichert werden: {error}'
+  msg.cdd_error: 'CDD konnte nicht geladen werden: {error}'
+  msg.logger_error: 'Logger-Fehler: {error}'
+  col.message_signal: Botschaft / Signal
+  col.id: ID
+  col.unit: Einheit
+  col.tx_message_signal: Sendebotschaft / Signal
+  col.rx_message_signal: Empfangsbotschaft / Signal
+  col.cyclic: Zyklisch
+  col.value: Wert
+  col.cycle_ms: Zyklus (ms)
+  col.select: Aktion
+  col.text: Text
+  data.available: 'Verfuegbare Daten (DBC):'
+  data.filter_placeholder: Filter (Botschaft, Signal, ID)...
+  data.add_tx: Zu Senden hinzufuegen
+  data.add_rx: Zu Empfangen hinzufuegen
+  data.remove: Entfernen
+  data.tx_group: Sendedaten (TX)
+  data.rx_group: Empfangsdaten (RX)
+  data.send_button: Senden
+  data.send_title: Senden
+  trace.pause: Pause
+  trace.decode: Signale dekodieren
+  trace.only_selected: Nur gewaehlte Botschaften
+  trace.autoscroll: Automatisch scrollen
+  trace.tx: TX
+  trace.rx: RX
+  trace.filter_placeholder: ID-/Namensfilter...
+  trace.clear: Leeren
+  trace.save_csv: Als CSV speichern...
+  trace.col.time: Zeit
+  trace.col.dir: Richtung
+  trace.col.channel: Kanal
+  trace.col.id: ID
+  trace.col.type: Typ
+  trace.col.len: Laenge
+  trace.col.data: Daten
+  trace.col.message: Botschaft
+  trace.col.signals: Signale
+  trace.count: '{rows} Zeilen ({queued} in Warteschlange)'
+  trace.decode_error: (Dekodierfehler)
+  trace.save_title: Trace speichern
+  seq.file: 'Datei:'
+  seq.new: Neu
+  seq.load: Laden
+  seq.save: Speichern
+  seq.save_as: Speichern unter...
+  seq.name: 'Name:'
+  seq.description: 'Beschreibung:'
+  seq.col.num: Nr.
+  seq.col.type: Befehl
+  seq.col.params: Parameter (JSON)
+  seq.kind_item: '{key}  -  {title}'
+  seq.hint: '{key}: {summary}  Beispiel: {example}'
+  seq.add_step: Schritt einfuegen
+  seq.up: Hoch
+  seq.down: Runter
+  seq.duplicate: Duplizieren
+  seq.delete: Loeschen
+  seq.signal: 'Signal:'
+  seq.apply_signal: In gewaehlten Schritt uebernehmen
+  seq.run: Starten
+  seq.stop: Stoppen
+  seq.check: Pruefen
+  seq.res.step: Schritt
+  seq.res.description: Beschreibung
+  seq.res.status: Status
+  seq.res.message: Meldung
+  seq.status.ok: OK
+  seq.status.fail: FEHLER
+  seq.status.error: FEHLER
+  seq.status.skipped: uebersprungen
+  seq.running: Sequenz laeuft...
+  seq.saved: 'Gespeichert: {name}'
+  seq.valid: Sequenz ist gueltig.
+  seq.bad_json: 'Zeile {row}: ungueltiges JSON ({error})'
+  seq.json_object_expected: JSON-Objekt erwartet
+  seq.load_title: Sequenz laden
+  seq.save_title: Sequenz speichern
+  seq.file_filter: Sequenz (*.json)
+  seq.dialog_title: Testsequenz
+  graph.signals: 'Signale:'
+  graph.mode_single: "1 Graph"
+  graph.mode_multi: "n Graphen"
+  graph.mode_tip: "Umschalten: alle gewaehlten Signale in einem gemeinsamen Graph (1 Graph) oder je Signal ein eigener Graph untereinander mit gemeinsamer Zeitachse (n Graphen)."
+  graph.window: 'Zeitfenster:'
+  graph.pause: Pause
+  graph.clear: Daten leeren
+  graph.time: Zeit
+  builder.edit: "Bearbeiten"
+  builder.tip: "Eigene Anzeige aus Elementen fuer vorhandene Signale (nur Ansicht, keine Werteeingabe). Bearbeiten: Elemente per Maus verschieben, Groesse ueber die Ecke unten rechts, Rechtsklick fuer Einstellungen."
+  builder.add_led: "LED"
+  builder.add_text: "Textfeld"
+  builder.add_gauge: "Zeiger"
+  builder.hint: "Noch leer: mit den Buttons oben LED, Textfeld oder Zeiger hinzufuegen und per Rechtsklick ein Signal verknuepfen."
+  builder.default_text: "Text"
+  builder.no_signal: "(kein Signal)"
+  builder.signal_title: "Signal verknuepfen"
+  builder.signal_prompt: "Signal (aus der Auswahl der Rubrik Daten):"
+  builder.text_title: "Text"
+  builder.text_prompt: "Text bzw. Beschriftung:"
+  builder.decimals_prompt: "Nachkommastellen:"
+  builder.scale_title: "Manuelle Skala"
+  builder.min: "Minimum"
+  builder.max: "Maximum"
+  builder.scale_error: "Das Minimum muss kleiner als das Maximum sein."
+  builder.menu.signal: "Signal verknuepfen..."
+  builder.menu.label: "Beschriftung..."
+  builder.menu.text: "Text..."
+  builder.menu.decimals: "Nachkommastellen..."
+  builder.menu.scale_auto: "Skala automatisch"
+  builder.menu.scale_manual: "Skala manuell (min/max)..."
+  builder.menu.delete: "Loeschen"
+  builder.add_background: "Hintergrund"
+  builder.add_image: "Bild"
+  builder.image_title: "Bild waehlen"
+  builder.image_filter: "Bilder (*.png *.jpg *.jpeg *.bmp *.gif *.svg)"
+  builder.image_empty: "Kein Bild"
+  builder.image_error: "Bild nicht ladbar"
+  builder.x_prompt: "Vergleichswert x:"
+  builder.color_title: "Farbe waehlen"
+  builder.menu.bg_color: "Hintergrundfarbe..."
+  builder.menu.image: "Bild waehlen..."
+  builder.menu.image_clear: "Bild entfernen"
+  builder.menu.led_digital: "LED digital (Wert 0 / 1)"
+  builder.menu.led_analog: "LED mit Bereichen (min <= x < max)"
+  builder.menu.c0: "Farbe fuer Wert 0..."
+  builder.menu.c1: "Farbe fuer Wert 1..."
+  builder.menu.x: "Vergleichswert x..."
+  builder.menu.c_lt: "Farbe kleiner x..."
+  builder.menu.c_eq: "Farbe gleich x..."
+  builder.menu.c_gt: "Farbe groesser x..."
+  builder.menu.title_on: "Ueberschrift anzeigen"
+  builder.menu.range_on: "Bereichsanzeige"
+  builder.range_title: "Bereich {n}"
+  builder.range_active: "Bereich aktiv"
+  builder.range_color: "Farbe"
+  builder.range_rule: "Regel: Minimum <= x < Maximum"
+  builder.menu.range1: "Bereich 1..."
+  builder.menu.range2: "Bereich 2..."
+  builder.menu.range3: "Bereich 3..."
+  builder.menu.show_min: "Minimum-Zeiger"
+  builder.menu.show_max: "Maximum-Zeiger"
+  builder.menu.minmax_reset: "Min/Max zuruecksetzen"
+  log.tree_header: Botschaft / Signal
+  log.all: Alle
+  log.none: Keine
+  log.filename: 'Dateiname:'
+  log.min_interval: 'Mindestabstand je Signal:'
+  log.on_change: Nur bei Wertaenderung loggen
+  log.raw: Rohdaten (Hex) zusaetzlich loggen
+  log.raw_ids: "Rohdaten-IDs"
+  log.raw_ids_tip: "Optionaler ID-Filter fuer die Rohdaten (hex), z. B. 100, 7E0-7EF. Leer = alle Frames."
+  log.raw_ids_placeholder: "z. B. 100, 7E0-7EF (leer = alle)"
+  log.start: Logging starten
+  log.stop: Logging stoppen
+  log.title: Logging
+  log.connect_first: Bitte zuerst verbinden.
+  log.no_data: Keine Signale ausgewaehlt.
+  log.no_pyarrow: pyarrow ist nicht installiert - Parquet-Logging nicht verfuegbar.
+  log.active: 'Logging aktiv: {name} - {rows} Zeilen, {size} kB'
+  log.error: 'Fehler beim Schreiben: {error}'
+  diag.cdd: 'CDD:'
+  diag.ecu: 'ECU:'
+  diag.request_id: 'Request-ID:'
+  diag.response_id: 'Response-ID:'
+  diag.extended: Extended-ID
+  diag.fd: CAN FD
+  diag.padding: 'Padding:'
+  diag.tester_present: Tester Present (3E 80) alle 2 s
+  diag.col.service: Service
+  diag.col.request: Request
+  diag.col.description: Beschreibung
+  diag.col.param: Parameter
+  diag.col.value: Wert (hex)
+  diag.send: Service senden
+  diag.raw_placeholder: Roh-Request in Hex, z. B. 22 F1 90
+  diag.send_raw: Raw senden
+  diag.clear_log: Log leeren
+  diag.bad_address: Ungueltige Adresse/Padding (Hex erwartet)
+  diag.bad_request: 'Request ungueltig: {error}'
+  diag.bad_hex: Ungueltige Hex-Eingabe
+  diag.not_connected: Nicht verbunden
+  diag.config_error: 'Konfigurationsfehler: {error}'
+  diag.no_response_expected: (keine Antwort erwartet)
+  diag.error: 'Fehler: {error}'
+  help.search_placeholder: Suchbegriff (blendet Kapitel ohne Treffer aus)
+  help.next: Naechster Treffer
+  help.count: '{count} Kapitel'
+core:
+  diag.resp.positive: 'Positive Antwort: {data}'
+  diag.resp.negative: Negative Antwort (NRC 0x{nrc}) {text}
+  diag.resp.unexpected: 'Unerwartete Antwort: {data}'
+  err.can.fd_too_long: 'Ungueltige Laenge fuer CAN FD: {n} Bytes'
+  err.can.backend_closed: CAN-Schnittstelle ist nicht geoeffnet
+  err.can.missing_python_can: Das Paket python-can ist nicht installiert (pip install python-can)
+  err.can.listener: 'Listener-Fehler: {error}'
+  err.can.rx: 'Empfangsfehler: {error}'
+  err.can.not_connected: Nicht verbunden
+  err.can.classic_limit: Classic CAN erlaubt maximal 8 Datenbytes
+  err.can.not_in_txlist: Botschaft '{name}' ist nicht in der Sendeliste
+  err.can.raw_no_signals: Rohbotschaft ohne Signaldefinition
+  err.can.no_signal: Signal '{signal}' existiert nicht in Botschaft '{name}'
+  err.can.tx: 'Sendefehler bei {name}: {error}'
+  err.can.open_failed: "Verbindung fehlgeschlagen: {error}\nHinweis: {hint}"
+  err.can.hint.vector: "Vector: Kanalnummer = Nummer am Geraet (0 = CH1, 1 = CH2 ...). Ohne App-Name wird das Geraet direkt angesprochen; ein App-Name (z. B. CANalyzer) erfordert eine Kanalzuweisung in der Vector Hardware Config. Bitrate muss zum Bus passen, CAN FD nur bei FD-Betrieb; Kanal darf von keinem anderen Programm belegt sein."
+  err.can.hint.pcan: "PEAK-Kanal z. B. PCAN_USBBUS1 oder 1 (Kanal 2: PCAN_USBBUS2 oder 2); CAN FD nur bei FD-faehigen Geraeten (PCAN-USB Pro FD) aktivieren; Bitrate muss zum Bus passen."
+  err.can.hint.other: "Schnittstelle, Kanalname und Bitrate pruefen; CAN FD nur bei FD-faehigen Geraeten aktivieren."
+  err.can.vector_found: "Vom Treiber gemeldete Vector-Kanaele:\n{items}"
+  err.can.vector_none: "Der Vector-Treiber meldet keinen Kanal: VN1630A (USB) bzw. VN7572 (PCIe-Karte) angeschlossen bzw. eingebaut? In 'Vector Hardware Config' sichtbar? Vector Driver Setup (Treiber) installiert, kein anderes Programm (CANalyzer/CANoe/vFlash) belegt das Geraet?"
+  err.dbc.signal_too_long: Signal ist laenger als die Botschaft
+  err.diag.unresolved: 'Nicht aufgeloeste Parameter im Request: {text}'
+  err.isotp.bad_dl: 'Ungueltige CAN-FD-Datenlaenge: {dl}'
+  err.isotp.timeout: 'Timeout: keine Antwort vom Steuergeraet'
+  err.isotp.overflow: Steuergeraet meldet Overflow (Flow Control)
+  err.isotp.empty: Leere Nutzdaten
+  err.isotp.sequence: 'ISO-TP-Sequenzfehler: erwartet {expected}, erhalten {got}'
+  err.log.pyarrow: pyarrow ist nicht installiert (pip install pyarrow)
+  err.log.bad_id_filter: "Ungueltiger ID-Filter: '{value}' (hex, z. B. 100 oder 7E0-7EF)"
+  err.project.bad_ext: "Nur .dbc-, .cdd- und .a2l-Dateien werden unterstuetzt"
+  err.project.name: Ungueltiger Projektname
+  err.project.exists: Projekt '{name}' existiert bereits
+  err.project.not_found: Projekt '{name}' nicht gefunden
+  err.seq.invalid: |-
+    Sequenz ist ungueltig:
+    {problems}
+  err.seq.no_steps: Keine Schritte ('steps') in der Sequenz
+  err.seq.not_connected: Nicht verbunden
+  err.seq.running: Es laeuft bereits eine Sequenz
+  warn.dbc.unreadable_signal: 'Signalzeile nicht lesbar: {line}'
+  warn.dbc.extended_mux: 'Erweitertes Multiplexing wird nicht unterstuetzt: {signal}'
+  warn.dbc.generic: '{source}: {text}'
+  warn.dbc.duplicate_message: '{source}: Botschaft ''{name}'' doppelt definiert'
+  warn.dbc.duplicate_id: ID 0x{id} doppelt vergeben ({first}, {second})
+  warn.cdd.heuristic: CDD wurde heuristisch gelesen; Ergebnis bitte pruefen
+  warn.cdd.no_services: In der CDD wurden keine Services gefunden
+  seq.problem.unknown_type: '{where}: unbekannter Befehl ''{kind}'''
+  seq.problem.bad_op: '{where}: ungueltiger Operator ''{op}'''
+  seq.problem.no_message: '{where}: Botschaft ''{message}'' nicht in der DBC'
+  seq.problem.no_signal: '{where}: Signal ''{signal}'' nicht in Botschaft ''{message}'''
+  seq.summary: 'Sequenz ''{name}'': {status} ({ok}/{total} Schritte OK)'
+  seq.run_status.running: laeuft
+  seq.run_status.passed: bestanden
+  seq.run_status.failed: fehlgeschlagen
+  seq.run_status.aborted: abgebrochen
+  seq.runtime_error: Laufzeitfehler
+  seq.desc.set_signal: '{message}.{signal} = {value}'
+  seq.desc.enable_on: '{message}: zyklisch senden EIN'
+  seq.desc.enable_off: '{message}: zyklisch senden AUS'
+  seq.desc.set_cycle: '{message}: Zyklus {cycle_ms} ms'
+  seq.desc.send_once: '{message}: einmal senden'
+  seq.desc.wait: Warten {ms} ms
+  seq.desc.wait_for: Warten auf {direction} {message}.{signal} {op} {value}
+  seq.desc.check: Pruefen {direction} {message}.{signal} {op} {value}
+  seq.desc.diag: Diagnose-Service {service}
+  seq.desc.diag_raw: Diagnose raw {request}
+  seq.desc.loop: Schleife x{count}
+  seq.msg.no_value: kein Wert empfangen
+  seq.msg.timeout: Timeout ({detail})
+  seq.msg.unknown_step: Unbekannter Befehl '{kind}'
+  seq.msg.no_new_value: kein neuer Wert fuer {key}
+  seq.msg.expected: '{key} = {val}, erwartet {op} {value}'
+  seq.msg.diag_not_configured: Diagnose nicht konfiguriert
+  seq.msg.no_diag_def: Keine Diagnosedefinition (CDD) geladen
+  seq.msg.no_service: Service '{service}' nicht in der CDD
+  seq.msg.no_response_expected: keine Antwort erwartet
+  seq.msg.resp_mismatch: Antwort {response} passt nicht zu '{expect}'
+  cli.converted: 'gewandelt: {path}'
+  cli.description: CAN-Tool mit Vector-/PEAK-Unterstuetzung
+  cli.help.project: Projekt, das beim Start geoeffnet wird
+  cli.help.list: Projekte auflisten
+  cli.help.convert: DBC/CDD eines Projekts nach JSON/YAML wandeln (ohne GUI)
+  cli.help.format: Cache-Format (json oder yaml)
+  cli.help.force: Cache neu erzeugen, auch wenn aktuell
+  cli.help.lang: Sprache (de, en, fr, es, zh, th)
+  cli.no_projects: (keine Projekte)
+  cli.summary: '{messages} Botschaften aus {files} Datei(en)'
+  cli.warning: 'Warnung: {text}'
+  cli.missing_xcb_cursor: "Qt benoetigt unter Linux (X11) die Bibliothek libxcb-cursor0, sie fehlt. Installation:\n  Debian/Ubuntu/Mint: sudo apt install libxcb-cursor0\n  Fedora:             sudo dnf install xcb-util-cursor\n  Arch:               sudo pacman -S xcb-util-cursor\nDanach das Programm erneut starten."
+  cli.missing_gui: |-
+    GUI-Abhaengigkeiten fehlen: {error}
+    Bitte 'pip install -r requirements.txt' ausfuehren.
+  cli.unknown_lang: 'Unbekannte Sprache ''{lang}''. Verfuegbar: {codes}'
+steps:
+  steps:
+    set_signal:
+      title: Signalwert setzen
+      summary: Setzt den physikalischen Wert eines Signals in einer Sendebotschaft. Der neue Wert geht mit dem naechsten (zyklischen oder einzelnen) Frame auf den Bus.
+      format: '{"type": "set_signal", "message": "<Botschaft>", "signal": "<Signal>", "value": <Zahl oder Text>}'
+      notes: Nicht angegebene Signale der Botschaft bleiben unveraendert (Startwert 0).
+      fields:
+        message: Name der DBC-Botschaft. Fehlt sie in der Sendeliste, wird sie ergaenzt (zunaechst nicht zyklisch aktiv).
+        signal: Name des Signals innerhalb der Botschaft.
+        value: Physikalischer Wert (nach Faktor/Offset, z. B. 40 fuer 40 %). Bei Signalen mit Wertetabelle auch deren Text, z. B. "R". Werte ausserhalb des Signalbereichs werden begrenzt.
+    enable_tx:
+      title: Zyklisches Senden ein-/ausschalten
+      summary: Startet oder stoppt das zyklische Senden einer Botschaft mit ihrem eingestellten Zyklus.
+      format: '{"type": "enable_tx", "message": "<Botschaft>", "enabled": <true|false>}'
+      notes: Das erste Telegramm geht sofort raus, danach im eingestellten Zyklus.
+      fields:
+        message: Name der DBC-Botschaft (wird bei Bedarf zur Sendeliste ergaenzt; Zyklus aus der DBC, sonst 100 ms).
+        enabled: true = zyklisch senden, false = Senden stoppen.
+    set_cycle:
+      title: Zykluszeit aendern
+      summary: Aendert die Zykluszeit einer Sendebotschaft (wirkt sofort, auch waehrend sie zyklisch sendet).
+      format: '{"type": "set_cycle", "message": "<Botschaft>", "cycle_ms": <Zahl>}'
+      notes: ''
+      fields:
+        message: Name der DBC-Botschaft.
+        cycle_ms: Zykluszeit in Millisekunden. 0 pausiert das zyklische Senden.
+    send_once:
+      title: Botschaft einmal senden
+      summary: Sendet genau einen Frame mit den aktuellen Signalwerten, unabhaengig vom zyklischen Senden.
+      format: '{"type": "send_once", "message": "<Botschaft>"}'
+      notes: ''
+      fields:
+        message: Name der DBC-Botschaft.
+    send_raw:
+      title: "Rohframe senden"
+      summary: "Sendet einen Rohframe (ID + Daten) auf den CAN, einmalig oder zyklisch. Mit cyclic=true und enabled=false wird das zyklische Senden dieser ID beendet."
+      format: '{"type": "send_raw", "id": "<hex>", "data": "<hex>", "dlc": <n>, "cyclic": <true|false>, "cycle_ms": <n>}'
+      notes: "Fehlende Datenbytes werden mit 00 aufgefuellt. ID ueber 0x7FF = Extended, DLC ueber 8 = CAN FD. Zyklisch gesendete Frames laufen nach dem Schritt weiter."
+      fields:
+        id: "CAN-ID, hexadezimal (z. B. \"0x100\" oder \"100\")."
+        data: "Nutzdaten als Hex-Bytes, z. B. \"00 01 02 03 04 05 06 07\"."
+        dlc: "Datenlaenge (0-8, 12, 16, 20, 24, 32, 48, 64). Standard: Anzahl der Datenbytes."
+        cyclic: "true = zyklisch senden, false = einmal senden (Standard)."
+        cycle_ms: "Zykluszeit in ms bei cyclic=true (Standard 100)."
+        enabled: "false beendet das zyklische Senden dieser ID (nur mit cyclic=true, Standard true)."
+        extended: "true erzwingt Extended-ID (Standard: automatisch ab 0x800)."
+        fd: "true erzwingt CAN FD (Standard: automatisch bei DLC ueber 8)."
+    wait:
+      title: Feste Zeit warten
+      summary: Pausiert die Sequenz fuer eine feste Zeit. Zyklisches Senden und Empfang laufen weiter.
+      format: '{"type": "wait", "ms": <Zahl>}'
+      notes: Ein Klick auf Stopp beendet auch ein laufendes Warten sofort.
+      fields:
+        ms: Wartezeit in Millisekunden.
+    wait_for:
+      title: Auf Signalbedingung warten
+      summary: Wartet, bis ein Signal die Bedingung erfuellt. Es zaehlen nur Werte, die NACH Beginn dieses Schritts empfangen wurden. Der Schritt ist ok beim ersten Treffer, sonst Fehler nach Ablauf des Timeouts.
+      format: '{"type": "wait_for", "direction": "RX", "message": "<Botschaft>", "signal": "<Signal>", "op": "<Operator>", "value": <Zahl>, "timeout_ms": <Zahl>}'
+      notes: Die Auswertung ist unabhaengig von der Signalauswahl in der Rubrik 'Daten'.
+      fields:
+        direction: Empfangene oder gesendete Botschaft auswerten.
+        message: Name der DBC-Botschaft.
+        signal: Name des Signals.
+        op: 'Vergleich: ==  !=  <  <=  >  >='
+        value: Vergleichswert (physikalisch).
+        timeout_ms: Maximale Wartezeit in ms (Standard 3000).
+    check:
+      title: Signalwert pruefen
+      summary: Prueft sofort den zuletzt empfangenen Wert eines Signals (kein Warten). Der Schritt schlaegt fehl, wenn die Bedingung nicht erfuellt ist oder seit Sequenzstart noch kein Wert empfangen wurde.
+      format: '{"type": "check", "direction": "RX", "message": "<Botschaft>", "signal": "<Signal>", "op": "<Operator>", "value": <Zahl>}'
+      notes: Direkt nach dem Start ist oft noch kein Wert da - vorher mit wait_for synchronisieren.
+      fields:
+        direction: Empfangene oder gesendete Botschaft auswerten.
+        message: Name der DBC-Botschaft.
+        signal: Name des Signals.
+        op: 'Vergleich: ==  !=  <  <=  >  >='
+        value: Vergleichswert (physikalisch).
+    diag:
+      title: Diagnose-Service aus der CDD
+      summary: Sendet einen in der CDD definierten Diagnose-Service per ISO-TP und wertet die Antwort aus.
+      format: '{"type": "diag", "service": "<Servicename>", "params": {"<Parameter>": <Wert>}, "expect": "<Hex-Praefix>", "timeout_ms": <Zahl>}'
+      notes: Adressierung (Request-/Response-ID, FD) kommt aus der Rubrik 'Diagnose'.
+      fields:
+        service: Name des Services in der CDD (Rubrik Diagnose), z. B. ReadVIN.
+        params: Werte fuer {Platzhalter} im Request. Zahl = dezimal, Text = hexadezimal ("F186").
+        expect: Erwarteter Anfang der Antwort, z. B. "62 F1 90". Leer = jede positive Antwort genuegt.
+        timeout_ms: Antwort-Timeout in ms (Standard 1000). Bei 'ResponsePending' (NRC 0x78) wird laenger gewartet.
+    diag_raw:
+      title: Diagnose-Request in Hex
+      summary: Sendet einen beliebigen UDS-Request (Hex-Bytes) per ISO-TP und wertet die Antwort aus.
+      format: '{"type": "diag_raw", "request": "<Hex-Bytes>", "expect": "<Hex-Praefix>", "timeout_ms": <Zahl>}'
+      notes: Requests ohne Antwort (Sub-Function mit gesetztem Bit 7, z. B. "3E 80") gelten als ok.
+      fields:
+        request: Request-Bytes, z. B. "22 F1 86".
+        expect: Erwarteter Anfang der Antwort, z. B. "62 F1 86". Leer = jede positive Antwort genuegt.
+        timeout_ms: Antwort-Timeout in ms (Standard 1000).
+    loop:
+      title: Schleife
+      summary: Fuehrt die enthaltenen Schritte mehrfach nacheinander aus.
+      format: '{"type": "loop", "count": <Zahl>, "steps": [ <Schritt>, <Schritt>, ... ]}'
+      notes: Im Ergebnis erscheinen innere Schritte als z. B. 3.2.1 (Schritt 3, Durchlauf 2, Schritt 1).
+      fields:
+        count: Anzahl der Durchlaeufe.
+        steps: Verschachtelte Schritte (beliebige Typen, auch weitere Schleifen).
+    comment:
+      title: Kommentar
+      summary: Tut nichts; dient nur der Dokumentation der Sequenz.
+      format: '{"type": "comment", "text": "<Text>"}'
+      notes: ''
+      fields:
+        text: Beliebiger Kommentar.
+    label:
+      format: Format
+      elements: Elemente
+      example: Beispiel
+      note: 'Hinweis:'
+      col_element: Element
+      col_type: Typ
+      col_desc: Beschreibung
+      col_command: Befehl
+      col_title: Titel
+      col_summary: Kurzbeschreibung
+    required: Pflicht
+    optional: optional
+    type:
+      text: Text
+      number: Zahl
+      number_or_text: Zahl oder Text
+      bool: true/false
+      direction: '"RX" oder "TX"'
+      hex: Hex-Text
+      object: Objekt
+      list: Liste
+    type_required: '{type}, {required}'
+help:
+  help:
+    topic:
+      general:
+        title: 1. Allgemeines und Projekterzeugung
+        html: |-
+          <h1>1. Allgemeine Beschreibung und Projekterzeugung</h1>
+
+          <h2>1.1 Wofuer das Tool gedacht ist</h2>
+          <p>Das CAN Tool ist ein Python-Werkzeug zum Testen und Analysieren von CAN- und CAN-FD-Bussen. Es arbeitet
+          wahlweise mit dem <b>Vector VN1630A / VN7572</b> oder dem <b>PEAK-System PCAN-USB Pro FD</b> (beide ueber
+          python-can) oder - ohne Hardware - mit einer eingebauten <b>Simulation</b>.</p>
+          <p>Kernfunktionen:</p>
+          <ul><li>Verwaltung mehrerer <b>Projekte</b> (jedes mit eigenen DBC-, CDD-, Sequenz- und Logdateien).</li><li><b>DBC/CDD-Konvertierung</b> nach JSON oder YAML vor der eigentlichen Nutzung (schnelles Laden, einfache Pruefung).</li><li><b>Zyklisches Senden</b> und Empfangen von Botschaften, Signalzugriff in physikalischen Werten.</li><li><b>Trace</b> aller gesendeten und empfangenen Frames, optional mit Signaldekodierung.</li><li><b>Testsequenzen</b> (JSON): Signale setzen, auf Reaktionen warten, pruefen, Diagnose ausfuehren.</li><li><b>Liniengraph</b> ausgewaehlter Signale.</li><li>Umschaltbares Erscheinungsbild (<b>Dark Mode</b>) und <b>sechs Sprachen</b> (Deutsch, Englisch, Franzoesisch, Spanisch, Chinesisch/Mandarin, Thai).</li><li><b>Parquet-Logging</b> mit Filter.</li><li><b>Diagnose</b> ueber ISO-TP (ISO 15765-2) mit UDS-Services aus der CDD.</li></ul>
+
+          <h2>1.2 Datenfluss im Ueberblick</h2>
+          <pre> dbc/*.dbc  --(Konvertierung)--&gt;  cache/*.dbc.json|yaml  ---+
+           cdd/*.cdd  --(Konvertierung)--&gt;  cache/*.cdd.json|yaml  ---+--&gt; Rubrik &quot;Daten&quot;: Auswahl TX / RX
+                                                                      |        |
+                                                                      |        +--&gt; Trace   (alle Frames)
+                                                                      |        +--&gt; Graph   (gewaehlte Signale)
+                                                                      |        +--&gt; Logging (gewaehlte Signale, Filter)
+           sequences/*.json  ------------------------------------------+--&gt; Testsequenz (setzt/prueft Signale, Diagnose)</pre>
+          <p>Zur Laufzeit wird immer nur der <b>Cache</b> (JSON/YAML) gelesen. Aendert sich eine DBC/CDD-Datei, wird sie
+          beim naechsten Oeffnen des Projekts automatisch neu konvertiert (Pruefsumme der Quelldatei).</p>
+
+          <h2>1.3 Installation und Start</h2>
+          <pre>pip install -r requirements.txt
+          python main.py                      # GUI
+          python main.py --project demo       # GUI mit einem bestimmten Projekt
+          python main.py --list               # Projekte auflisten
+          python main.py --convert demo       # nur DBC/CDD konvertieren (ohne GUI)
+          python main.py --convert demo --format yaml --force</pre>
+          <p>Treiber: Vector benoetigt die <i>Vector XL Driver Library</i> (Teil der Vector-Treiber), PEAK den
+          <i>PCAN-Basic</i>-Treiber. Ohne Hardware genuegt die Simulation.</p>
+
+          <h2>1.4 Ordnerstruktur</h2>
+          <pre>can_tool/
+            main.py  gui.py  can_manager.py  dbc_manager.py  cdd_manager.py
+            iso_tp_manager.py  sequence_runner.py  parquet_logger.py  project_manager.py
+            help_content.py  i18n.py
+            lang/               Sprachdateien (de.yaml, en.yaml, fr.yaml, es.yaml, zh.yaml, th.yaml)
+            tools/check_lang.py Pruefung der Sprachdateien
+            projects/
+              &lt;Projektname&gt;/
+                project.json      Einstellungen des Projekts (wird vom Tool geschrieben)
+                dbc/              Ihre DBC-Dateien (*.dbc)
+                cdd/              Ihre Diagnosebeschreibungen (*.cdd)
+                sequences/        Testsequenzen (*.json)
+                cache/            automatisch erzeugt: konvertierte DBC/CDD (JSON oder YAML)
+                logs/             Parquet-Logdateien</pre>
+
+          <h2>1.5 Projekt erzeugen</h2>
+          <h3>In der GUI</h3>
+          <ol><li>Rubrik <b>Projekt</b> oeffnen und <b>Neu ...</b> klicken.</li><li>Projektnamen eingeben. Erlaubt sind Buchstaben, Ziffern, Unterstrich, Bindestrich und Leerzeichen (max. 64 Zeichen, erstes Zeichen Buchstabe oder Ziffer). Existiert der Name schon, wird nichts ueberschrieben.</li><li>Das Tool legt <code>projects/&lt;name&gt;/</code> mit den Unterordnern <code>dbc, cdd, sequences, cache, logs</code> und einer <code>project.json</code> mit Standardwerten (Simulation, 500 kbit/s, JSON-Cache) an und wechselt in das neue Projekt.</li><li><b>DBC/CDD importieren ...</b>: Dateien werden in <code>dbc/</code> bzw. <code>cdd/</code> kopiert und sofort konvertiert. Alternativ die Dateien von Hand in die Ordner legen und <b>Neu konvertieren</b> klicken (oder das Projekt neu oeffnen).</li><li>Hardware einstellen (siehe Kapitel 2.3) und <b>Verbinden</b>.</li></ol>
+          <h3>Per Datei</h3>
+          <p>Einen Projektordner mit der obigen Struktur anlegen und eine <code>project.json</code> mit mindestens
+          <code>{}</code> hineinlegen - fehlende Einstellungen werden mit Standardwerten ergaenzt. Das Demo-Projekt
+          <code>projects/demo</code> dient als Vorlage.</p>
+          <h3>Projekte wechseln</h3>
+          <p>Auswahl in der Projekt-Liste. Beim Wechsel (und beim Beenden) wird die Verbindung getrennt, ein laufendes
+          Logging gestoppt und das bisherige Projekt gespeichert. Gespeichert werden: Hardware, Sendeliste inkl. Signalwerten und
+          Zyklen, Empfangsauswahl, Logging-Filter, Graph-Auswahl, Diagnose-Einstellungen und die zuletzt geladene Sequenz.
+          Das zyklische Senden ist nach dem Oeffnen eines Projekts immer <b>ausgeschaltet</b> (Sicherheit am echten Bus).</p>
+
+          <h2>1.6 Typischer Arbeitsablauf</h2>
+          <ol><li>Projekt anlegen oder waehlen, DBC (und CDD) importieren.</li><li>Hardware einstellen, <b>Verbinden</b>.</li><li>Rubrik <b>Daten</b>: Sende- und Empfangsbotschaften aus der DBC waehlen, Signalwerte und Zyklen setzen.</li><li>Zyklisches Senden einschalten; in <b>Trace</b> und <b>Graph</b> das Ergebnis beobachten.</li><li>Bei Bedarf <b>Logging</b> starten und/oder eine <b>Testsequenz</b> erstellen und ausfuehren.</li><li><b>Diagnose</b>: Services senden, Antworten pruefen.</li></ol>
+      files:
+        title: 2. Bedatung vor dem Start
+        html: |-
+          <h1>2. Bedatung von Dateien vor dem Start</h1>
+          <p>Bevor Sie verbinden, muessen die Projektdateien vorbereitet sein. Dieses Kapitel beschreibt, was in welcher Datei
+          stehen muss und welche Angaben das Tool auswertet.</p>
+
+          <h2>2.1 DBC-Dateien (<code>dbc/*.dbc</code>)</h2>
+          <p>Standard-DBC-Dateien aus CANdb++, CANdb Editor, SavvyCAN u. a. Mehrere DBC-Dateien pro Projekt sind moeglich
+          (deren Summe bildet die Datenbasis). Zeichensatz UTF-8 oder Windows-1252.</p>
+          <p>Ausgewertet werden:</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">DBC-Element</th><th width="72%" align="left">Bedeutung im Tool</th></tr><tr><td valign='top'><code>BO_</code></td><td valign='top'>Botschaft: ID (Bit 31 gesetzt = Extended-ID), Name, Laenge (DLC &gt; 8 = CAN FD), Sender.</td></tr><tr><td valign='top'><code>SG_</code></td><td valign='top'>Signal: Startbit, Laenge, Byte-Reihenfolge (Intel/Motorola), Vorzeichen, Faktor, Offset, Min/Max, Einheit, Empfaenger.</td></tr><tr><td valign='top'><code>SG_ ... M / m0, m1</code></td><td valign='top'>Einfaches Multiplexing (ein Multiplexor, mehrere Gruppen). Extended Multiplexing wird <b>nicht</b> unterstuetzt (Warnung).</td></tr><tr><td valign='top'><code>VAL_</code></td><td valign='top'>Wertetabelle: Text je Rohwert. Im Tool als Dropdown beim Senden und als Text beim Empfang.</td></tr><tr><td valign='top'><code>SIG_VALTYPE_</code></td><td valign='top'>Gleitkomma-Signale (32/64 Bit).</td></tr><tr><td valign='top'><code>CM_</code></td><td valign='top'>Kommentare zu Botschaften/Signalen.</td></tr><tr><td valign='top'><code>BA_ &quot;GenMsgCycleTime&quot;</code></td><td valign='top'>Standard-Zykluszeit (ms) einer Botschaft; ohne Angabe 100 ms.</td></tr><tr><td valign='top'><code>BA_ &quot;VFrameFormat&quot;</code></td><td valign='top'>Frame-Format; Werte mit <i>FD</i> kennzeichnen CAN-FD-Botschaften.</td></tr></table>
+          <p>Beispiel:</p>
+          [[pre:dbc]]
+          <p><b>Hinweise zur Bedatung</b></p>
+          <ul><li>Botschafts- und Signalnamen werden in Testsequenzen verwendet - sprechende, eindeutige Namen waehlen.</li><li>Doppelte Botschaftsnamen ueber mehrere DBC-Dateien: die erste Definition bleibt, die zweite wird mit Warnung ignoriert.</li><li>Gleiche ID mit unterschiedlichen Namen: Beim Empfang wird dem ersten Namen zugeordnet (Warnung).</li><li>Die Sender-Knoten (<code>BU_</code>) steuern in der Simulation, welche Botschaften das virtuelle Steuergeraet zyklisch sendet (Standard: Sender <code>ECU</code>, einstellbar in <code>sim.traffic_senders</code>). Sinnvolle Min/Max-Werte in der DBC geben realistische Simulationswerte.</li><li>Warnungen der Konvertierung stehen in der Rubrik <b>Projekt</b> im Feld <i>Konvertierte Dateien / Warnungen</i>.</li></ul>
+          <h3>Der Cache (<code>cache/*.dbc.json</code> oder <code>.yaml</code>)</h3>
+          <p>Beim Oeffnen des Projekts wird jede DBC automatisch in den Cache geschrieben (Format in der Rubrik
+          <b>Projekt</b> waehlbar). Nur wenn sich die Quelldatei geaendert hat, wird neu konvertiert; <b>Neu konvertieren</b> erzwingt es.
+          Eigene Aenderungen im Cache werden bei einer neuen Konvertierung ueberschrieben - Korrekturen gehoeren in die DBC.</p>
+          [[pre:cache]]
+
+          <h2>2.2 Diagnosebeschreibung (<code>cdd/*.cdd</code>)</h2>
+          <p>Die CDD beschreibt Diagnose-Services. Sie wird wie die DBC nach <code>cache/*.cdd.json|yaml</code> konvertiert.</p>
+          <p><b>Wichtige Einschraenkung:</b> Vollstaendig unterstuetzt wird das einfache XML-Format <code>&lt;DIAGDATA&gt;</code>
+          (siehe Beispiel und <code>projects/demo/cdd/diag.cdd</code>). Originale CANdelaStudio-CDD-Dateien werden nur
+          <b>heuristisch</b> gelesen (Servicenamen und, falls auffindbar, Request-Bytes). Pruefen Sie in dem Fall die erzeugte
+          Cache-Datei (Rubrik <b>Projekt</b>, Warnungen) und ergaenzen Sie Adressen, Requests und Antwortparameter dort oder
+          im einfachen Format.</p>
+          [[pre:cdd]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">Element / Attribut</th><th width="68%" align="left">Bedeutung</th></tr><tr><td valign='top'><code>ECU name, request_id, response_id</code></td><td valign='top'>Name des Steuergeraets und CAN-IDs (Tester -&gt; ECU, ECU -&gt; Tester), z. B. <code>0x7E0</code>/<code>0x7E8</code>.</td></tr><tr><td valign='top'><code>ECU extended, fd</code></td><td valign='top'><code>true</code>: 29-Bit-IDs bzw. CAN FD (ISO-TP mit bis zu 64 Byte je Frame).</td></tr><tr><td valign='top'><code>SERVICE name</code></td><td valign='top'>Name des Services (in Rubrik Diagnose und in Sequenzschritt <code>diag</code> verwendet).</td></tr><tr><td valign='top'><code>SERVICE request</code></td><td valign='top'>Request-Bytes in Hex. Platzhalter in geschweiften Klammern, z. B. <code>10 {session}</code>.</td></tr><tr><td valign='top'><code>SERVICE description</code></td><td valign='top'>Freitext, wird in der Serviceliste angezeigt.</td></tr><tr><td valign='top'><code>PARAM</code></td><td valign='top'>Direkt im SERVICE: Eingabeparameter fuer einen Platzhalter: <code>name</code>, <code>bytes</code> (Breite), <code>default</code> (Hex).</td></tr><tr><td valign='top'><code>RESPONSE prefix_len</code></td><td valign='top'>Anzahl Bytes am Anfang der Antwort, die uebersprungen werden (Service-ID + DID, z. B. 3 bei <code>62 F1 90</code>).</td></tr><tr><td valign='top'><code>RESPONSE/PARAM</code></td><td valign='top'>Antwortparameter: <code>name</code>, <code>offset</code> und <code>length</code> in Bytes (ab Ende des Praefix), <code>type</code> = <code>ascii | uint | int | hex</code>, optional <code>factor</code>, <code>offset_val</code>, <code>unit</code>.</td></tr></table>
+          <p>Der entsprechende Cache-Eintrag (zum manuellen Nachbessern):</p>
+          [[pre:cdd_cache]]
+
+          <h2>2.3 Hardware und Verbindung</h2>
+          <p>Einstellungen in der Rubrik <b>Projekt</b> (werden in <code>project.json</code> unter <code>hardware</code> gespeichert):</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="16%" align="left">Einstellung</th><th width="32%" align="left">Vector VN1630A / VN7572</th><th width="32%" align="left">PEAK PCAN-USB Pro FD</th><th width="20%" align="left">Simulation</th></tr><tr><td valign='top'>Schnittstelle</td><td valign='top'><code>vector</code> (XL-Treiber)</td><td valign='top'><code>pcan</code> (PCAN-Basic)</td><td valign='top'><code>simulation</code></td></tr><tr><td valign='top'>Kanal</td><td valign='top'>Kanalindex, 0-basiert (z. B. <code>0</code>). Zuordnung ueber die <i>Vector Hardware Config</i>; bei gesetztem App-Namen gilt die dort zugeordnete Kanalnummer.</td><td valign='top'><code>PCAN_USBBUS1</code>, <code>PCAN_USBBUS2</code> ...</td><td valign='top'>nicht benoetigt</td></tr><tr><td valign='top'>Bitrate</td><td valign='top'>Nominal-Bitrate (kbit/s)</td><td valign='top'>Nominal-Bitrate (kbit/s); bei FD fest 500k/2M (80-MHz-Takt)</td><td valign='top'>ohne Bedeutung</td></tr><tr><td valign='top'>CAN FD / Daten-Bitrate</td><td valign='top'>Haken setzen und Daten-Bitrate eintragen</td><td valign='top'>Haken setzen; abweichendes Timing in <code>hardware.extra</code></td><td valign='top'>Haken fuer FD-Frames</td></tr><tr><td valign='top'>App-Name</td><td valign='top'>Name aus der Vector Hardware Config (leer = Standard von python-can)</td><td valign='top'>-</td><td valign='top'>-</td></tr></table>
+          <p><b>Vector VN7572 (PCIe-Karte):</b> Auch die Vector-Schnittstellenkarte VN7572 wird als Typ <code>vector</code> ueber den Vector-XL-Treiber angesprochen (nur Windows), genau wie die VN1630A. Die Karte muss mit installiertem <i>Vector Driver Setup</i> in der <i>Vector Hardware Config</i> sichtbar sein. Die Kanalnummer ist 0-basiert (0 = CH1, 1 = CH2 ...); mit <b>Hardware erkennen</b> werden die gefundenen Kanaele samt Seriennummer aufgelistet. Ein anderes Programm (CANalyzer, CANoe, vFlash) darf den Kanal nicht belegen.</p>
+          <ul><li>Alle Teilnehmer am Bus muessen dieselbe Bitrate nutzen; bei CAN FD zusaetzlich dieselbe Daten-Bitrate.</li><li>Auf einem Tisch-Aufbau mit zwei Geraeten muessen die Busenden mit 120 Ohm terminiert sein.</li><li><code>hardware.extra</code> (nur in <code>project.json</code>) reicht beliebige Parameter an python-can durch, z. B. <code>{"nom_brp": 5}</code> fuer PEAK.</li><li><b>Simulation</b>: <i>Spiegeln</i> liefert die eigenen Sendebotschaften als Empfang zurueck; <i>virtuelles Steuergeraet</i> beantwortet UDS-Requests (u. a. 10, 11, 14, 19, 22, 27, 3E) auf den Adressen der Diagnose-Einstellung und sendet die Botschaften der ECU-Sender zyklisch.</li></ul>
+
+          <h2>2.4 Sequenzdateien (<code>sequences/*.json</code>)</h2>
+          <p>Eine Sequenz besteht aus Name, Beschreibung und einer Liste von Schritten. Sie koennen sie in der Rubrik
+          <b>Testsequenz</b> erstellen oder die Datei direkt bearbeiten. Befehlsreferenz: Anhang A.</p>
+          [[pre:sequence]]
+
+          <h2>2.5 Die Projektdatei (<code>project.json</code>)</h2>
+          <p>Wird vom Tool geschrieben; bei Bedarf manuell editierbar (Tool dabei beenden). Fehlende Schluessel werden mit Standardwerten ergaenzt.</p>
+          [[pre:project]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">Schluessel</th><th width="78%" align="left">Bedeutung</th></tr><tr><td valign='top'><code>hardware</code></td><td valign='top'>Verbindungsparameter (Kapitel 2.3); Bitraten in bit/s.</td></tr><tr><td valign='top'><code>cache_format</code></td><td valign='top'><code>json</code> oder <code>yaml</code> fuer die konvertierten Dateien.</td></tr><tr><td valign='top'><code>tx</code></td><td valign='top'>Sendeliste: Botschaft, Zyklus (ms), Signalwerte, <code>signals</code> = Auswahl fuer Graph/Logging (<code>null</code> = alle).</td></tr><tr><td valign='top'><code>rx</code></td><td valign='top'>Empfangsauswahl: Botschaft -&gt; Liste der gewaehlten Signale oder <code>null</code> (alle).</td></tr><tr><td valign='top'><code>logging</code></td><td valign='top'>Logging-Filter und -Optionen (Rubrik Logging).</td></tr><tr><td valign='top'><code>graph</code></td><td valign='top'>Schluessel der im Graph angehakten Signale, z. B. <code>RX:Msg.Signal</code>.</td></tr><tr><td valign='top'><code>diag</code></td><td valign='top'>CDD-Datei, ECU, optionale Adress-Ueberschreibung (<code>request_id</code>, <code>response_id</code>), <code>extended</code>, <code>fd</code>, <code>padding</code>.</td></tr><tr><td valign='top'><code>sequence</code></td><td valign='top'>Zuletzt geladene Sequenz (Dateiname in <code>sequences/</code>).</td></tr><tr><td valign='top'><code>sim</code></td><td valign='top'>Simulation: <code>ecu</code> (virtuelles Steuergeraet), <code>traffic_senders</code> (Sender-Knoten, die zyklisch simuliert werden).</td></tr></table>
+
+          <h2>2.6 Checkliste vor dem ersten Verbinden</h2>
+          <ol><li>DBC-Datei(en) im Ordner <code>dbc/</code>; in der Rubrik Projekt erscheinen die erwarteten Botschaften (Anzahl) und keine unerwarteten Warnungen.</li><li>Optional CDD im Ordner <code>cdd/</code>; in der Rubrik Diagnose erscheinen ECU und Services.</li><li>Hardware-Treiber installiert, Geraet angeschlossen, Kanal und Bitraten passend zum Bus.</li><li>Bei CAN FD: Haken <i>CAN FD</i> und Daten-Bitrate; Gegenstellen ebenfalls FD-faehig.</li><li>Sequenzen unter <code>sequences/</code> vorhanden bzw. in der Rubrik Testsequenz erstellt.</li></ol>
+          <h3>Haeufige Probleme</h3>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">Symptom</th><th width="68%" align="left">Moegliche Ursache / Abhilfe</th></tr><tr><td valign='top'>Keine Botschaften in der Daten-Rubrik</td><td valign='top'>DBC nicht im Ordner <code>dbc/</code> oder Dateiendung nicht <code>.dbc</code>; Warnungen in der Rubrik Projekt lesen.</td></tr><tr><td valign='top'>Verbinden schlaegt fehl</td><td valign='top'>python-can/Treiber fehlt, falscher Kanal, Geraet von anderer Anwendung belegt (z. B. CANalyzer/PCAN-View).</td></tr><tr><td valign='top'>Frames sichtbar, aber nicht dekodiert</td><td valign='top'>ID/Extended-Kennzeichnung der DBC stimmt nicht mit dem Bus ueberein; Botschaft fehlt in der DBC.</td></tr><tr><td valign='top'>Falsche Signalwerte</td><td valign='top'>Byte-Reihenfolge (Intel/Motorola), Startbit, Faktor/Offset in der DBC pruefen.</td></tr><tr><td valign='top'>Diagnose: Timeout</td><td valign='top'>Request-/Response-ID, Extended/FD und Padding in der Rubrik Diagnose pruefen; Steuergeraet in passender Session?</td></tr><tr><td valign='top'>Logging nicht verfuegbar</td><td valign='top'>Python-Paket <code>pyarrow</code> fehlt (<code>pip install pyarrow</code>).</td></tr></table>
+      project:
+        title: 3.1 Rubrik Projekt
+        html: |-
+          <h1>3.1 Rubrik "Projekt"</h1>
+          <p><b>Betriebssystem:</b> Das Tool erkennt beim Start selbststaendig, ob es unter <b>Windows</b> oder <b>Linux</b> laeuft (Anzeige in der Titelzeile). Die Hardware-Auswahl passt sich an: <i>Vector</i> (XL-Treiber) nur unter Windows, <i>SocketCAN</i> nur unter Linux, <i>PEAK</i> und <i>Simulation</i> auf beiden. Nicht nutzbare Eintraege sind markiert und gesperrt. Die Schaltflaeche <b>Hardware suchen</b> listet angeschlossene Schnittstellen auf. Alle uebrigen Funktionen (Trace, Sequenzen, Logging, Diagnose, vFlash, Hilfe/PDF) sind auf beiden Systemen identisch; Projektordner sind zwischen Windows und Linux austauschbar.</p>
+          <p><b>Re-Init HW:</b> Neben <i>Verbinden</i> schliesst dieser Button die Schnittstelle und oeffnet sie mit denselben Einstellungen neu. Er hilft, wenn die angeschlossene Hardware haengt. Die Sendeliste bleibt erhalten (zyklisch aktive Botschaften senden danach weiter); ein laufendes Logging wird beendet.</p>
+          <p>Projekte verwalten, DBC/CDD einbinden, Hardware einstellen und die Verbindung herstellen.</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="34%" align="left">Bedienelement</th><th width="66%" align="left">Funktion</th></tr><tr><td valign='top'>Aktives Projekt</td><td valign='top'>Auswahlliste aller Projekte (<code>projects/*/project.json</code>). Ein Wechsel trennt die Verbindung, stoppt das Logging, speichert das alte und laedt das neue Projekt.</td></tr><tr><td valign='top'>Neu ...</td><td valign='top'>Legt ein Projekt mit Ordnerstruktur und Standardeinstellungen an (Kapitel 1.5).</td></tr><tr><td valign='top'>DBC/CDD importieren ...</td><td valign='top'>Kopiert gewaehlte <code>.dbc</code>/<code>.cdd</code>-Dateien in das Projekt und konvertiert sie.</td></tr><tr><td valign='top'>Cache-Format</td><td valign='top'><code>json</code> oder <code>yaml</code>; bei Aenderung wird neu konvertiert.</td></tr><tr><td valign='top'>Neu konvertieren</td><td valign='top'>Erzwingt die Konvertierung aller DBC/CDD und laedt das Projekt neu.</td></tr><tr><td valign='top'>Schnittstelle / Kanal / Bitrate / CAN FD / Daten-Bitrate / App-Name</td><td valign='top'>Hardware-Parameter (Kapitel 2.3). Waehrend der Verbindung gesperrt.</td></tr><tr><td valign='top'>Simulation: Spiegeln</td><td valign='top'>Eigene Sendebotschaften erscheinen zusaetzlich als Empfang.</td></tr><tr><td valign='top'>Simulation: virtuelles Steuergeraet</td><td valign='top'>Startet beim Verbinden ein UDS-faehiges Software-Steuergeraet mit Testverkehr.</td></tr><tr><td valign='top'>Verbinden / Trennen</td><td valign='top'>Oeffnet bzw. schliesst die Schnittstelle. Beim Trennen stoppt ein laufendes Logging.</td></tr><tr><td valign='top'>Statuszeile</td><td valign='top'>Verbindungszustand, Anzahl empfangener (RX) und gesendeter (TX) Frames, letzter Fehler.</td></tr><tr><td valign='top'>Konvertierte Dateien / Warnungen</td><td valign='top'>Liste der Cache-Dateien, Anzahl der Botschaften, Warnungen aus DBC/CDD.</td></tr></table>
+      data:
+        title: 3.2 Rubrik Daten
+        html: |-
+          <h1>3.2 Rubrik "Daten"</h1>
+          <p>Hier wird festgelegt, <b>welche</b> Botschaften gesendet und empfangen werden und <b>welche Signale</b> fuer Graph,
+          Logging und Anzeige gelten - jeweils aus der Summe aller DBC-Daten des Projekts.</p>
+          <h2>Linke Seite: Verfuegbare Daten</h2>
+          <ul><li>Baum aller Botschaften mit ihren Signalen (ID, Sender, Einheit). Das <b>Filterfeld</b> sucht in Botschaftsname, ID und Signalname.</li><li><b>-&gt; Senden (TX)</b> uebernimmt die markierten Botschaften in die Sendeliste (Doppelklick auf eine Botschaft macht dasselbe). Mehrfachauswahl ist moeglich; markiert man ein Signal, wird dessen Botschaft uebernommen.</li><li><b>-&gt; Empfang (RX)</b> uebernimmt die markierten Botschaften in die Empfangsliste.</li></ul>
+          <h2>Rechts oben: Senden</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">Spalte</th><th width="76%" align="left">Bedeutung</th></tr><tr><td valign='top'>Sendebotschaft / Signal</td><td valign='top'>Botschaft (mit ID) und darunter alle ihre Signale.</td></tr><tr><td valign='top'>Zyklisch</td><td valign='top'>Haken an der Botschaft schaltet das zyklische Senden ein/aus (nur bei bestehender Verbindung wird tatsaechlich gesendet).</td></tr><tr><td valign='top'>Wert</td><td valign='top'>Physikalischer Signalwert (Eingabefeld bzw. Auswahlliste bei Signalen mit Wertetabelle). Aenderungen wirken ab dem naechsten Frame.</td></tr><tr><td valign='top'>Zyklus [ms]</td><td valign='top'>Zykluszeit der Botschaft; Vorbelegung aus der DBC (<code>GenMsgCycleTime</code>), sonst 100 ms. 0 = nicht zyklisch.</td></tr><tr><td valign='top'>Auswahl</td><td valign='top'>Haken am Signal: Signal gehoert zur Auswahl fuer Graph und Logging.</td></tr><tr><td valign='top'>Senden (Schaltflaeche)</td><td valign='top'>Sendet die Botschaft genau einmal mit den aktuellen Werten.</td></tr></table>
+          <p><b>Entfernen</b> loescht die Botschaft der markierten Zeile aus der Sendeliste.</p>
+          <h2>Rechts unten: Empfangen</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">Spalte</th><th width="76%" align="left">Bedeutung</th></tr><tr><td valign='top'>Empfangsbotschaft / Signal</td><td valign='top'>Botschaft (mit ID) und ihre Signale.</td></tr><tr><td valign='top'>Wert / Einheit / Text</td><td valign='top'>Zuletzt empfangener Wert (Aktualisierung alle 200 ms), Einheit und - falls vorhanden - der Text der Wertetabelle.</td></tr><tr><td valign='top'>Auswahl</td><td valign='top'>Haken am Signal: Signal gehoert zur Auswahl fuer Graph und Logging. Nicht angehakte Signale werden nicht gespeichert.</td></tr></table>
+          <h2>Hinweise</h2>
+          <ul><li>Die Auswahl (Haken) bestimmt, was <b>Graph</b> und <b>Logging</b> sehen. Der <b>Trace</b> zeigt dagegen alle Frames (optional nur die gewaehlten Botschaften).</li><li>Die Auswahl und alle Sendewerte werden mit dem Projekt gespeichert; das zyklische Senden ist nach dem Laden aus.</li><li>Eine Botschaft kann gleichzeitig in der TX- und RX-Liste stehen (z. B. mit Spiegelung in der Simulation).</li></ul>
+      trace:
+        title: 3.3 Rubrik Trace
+        html: |-
+          <h1>3.3 Rubrik "Trace"</h1>
+          <p>Zeitlicher Ablauf aller gesendeten (Tx, farbig hervorgehoben) und empfangenen (Rx) Frames.</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">Spalte</th><th width="80%" align="left">Inhalt</th></tr><tr><td valign='top'>Zeit [s]</td><td valign='top'>Zeit relativ zum ersten angezeigten Frame (seit Verbinden bzw. <i>Leeren</i>).</td></tr><tr><td valign='top'>Rx/Tx, Kanal</td><td valign='top'>Richtung und Schnittstelle.</td></tr><tr><td valign='top'>ID, Typ, Len</td><td valign='top'>CAN-ID (hex, 8-stellig bei Extended), Typ (CAN, FD, FD/BRS) und Datenlaenge.</td></tr><tr><td valign='top'>Daten</td><td valign='top'>Nutzdaten in Hex.</td></tr><tr><td valign='top'>Botschaft, Signale</td><td valign='top'>Name aus der DBC und dekodierte Signale mit Einheit (wenn <i>Dekodieren</i> aktiv).</td></tr><tr><td valign='top'>Farbmodus</td><td valign='top'>Schaltflaeche (umschaltbar). Aktiv: Rx-Botschaften mittelblau, Tx-Botschaften mittelgruen, fehlerhafte Botschaften (Bus-Fehlerframes, Typ ERR) rot und ISO-TP-Botschaften (Diagnose-Request-/Response-ID, auch 0x7DF) mittelviolett. Inaktiv: Darstellung wie bisher.</td></tr></table>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">Bedienelement</th><th width="72%" align="left">Funktion</th></tr><tr><td valign='top'>Pause</td><td valign='top'>Haelt die Anzeige an. Frames werden weiter gepuffert (bis 50 000) und nach dem Aufheben nachgeliefert.</td></tr><tr><td valign='top'>Dekodieren</td><td valign='top'>Schaltet die Signaldekodierung ein/aus (aus = schneller bei hoher Buslast).</td></tr><tr><td valign='top'>Nur gewaehlte Botschaften</td><td valign='top'>Zeigt nur Botschaften, die in der Rubrik Daten in der TX- bzw. RX-Liste stehen.</td></tr><tr><td valign='top'>Autoscroll</td><td valign='top'>Folgt automatisch dem neuesten Eintrag.</td></tr><tr><td valign='top'>Rx / Tx</td><td valign='top'>Richtungen ein-/ausblenden.</td></tr><tr><td valign='top'>Filterfeld</td><td valign='top'>Kommagetrennte IDs in Hex (z. B. <code>100, 200</code>) und/oder ein Teil eines Botschaftsnamens (z. B. <code>engine</code>).</td></tr><tr><td valign='top'>Leeren</td><td valign='top'>Loescht Anzeige und Puffer.</td></tr><tr><td valign='top'>Als CSV speichern ...</td><td valign='top'>Exportiert die aktuell sichtbaren Zeilen (Trennzeichen <code>;</code>).</td></tr></table>
+          <p><b>Aktualisieren:</b> Mit dem Haken <i>Aktualisieren</i> steht jede Botschaft (Richtung, Kanal, ID) nur einmal in der Tabelle, in der Reihenfolge des ersten Auftretens. Bei erneutem Auftreten werden Zeitstempel, Daten und dekodierte Signale dieser Zeile aktualisiert und die Spalte <i>Anzahl</i> erhoeht. Ohne Haken werden alle Frames scrollend hintereinander geschrieben. Beim Umschalten wird die Tabelle geleert; Autoscroll wirkt nur im scrollenden Modus.</p>
+          <p><b>Diffzeit:</b> Zusaetzlich zu <i>Aktualisieren</i> zeigt der Haken <i>Diffzeit</i> in der Zeitspalte statt der absoluten Zeit den Abstand zum vorigen Auftreten derselben Botschaft (Richtung, Kanal, ID), also die Zykluszeit; beim ersten Auftreten steht 0. Die Spaltenueberschrift wechselt zu <i>Diffzeit [s]</i>. Beim Umschalten wird die Tabelle geleert.</p>
+          <p><b>Sende-Zeile:</b> Unter der Optionsleiste sendet eine Zeile Rohframes (Standard: ID 100 hex, DLC 8, Daten 00 01 02 03 04 05 06 07, 1000 ms). <b>Senden</b> schickt den Frame einmal; mit Haken <b>Zyklisch</b> startet es das zyklische Senden, ein weiterer Klick (<b>Stopp</b>) beendet es. IDs ueber 7FF werden als Extended-Frames gesendet, DLC groesser 8 als CAN FD (FD muss in den Verbindungseinstellungen aktiv sein). Der Frame erscheint im Trace als Tx.</p>
+          <h2>Selbst definierte Botschaften (Multi-Senden)</h2>
+          <p>Die Sende-Zeile sendet genau eine Botschaft. Fuer <b>mehrere Botschaften</b> dient der Button <b>Selbst definiert</b>: Er oeffnet ein eigenes Fenster, das neben dem Trace geoeffnet bleibt. Dort werden beliebig viele Sendebotschaften definiert und einzeln gesendet. Die Liste wird im Projekt gespeichert (<code>custom_tx</code>) und steht beim naechsten Oeffnen des Projekts wieder zur Verfuegung.</p>
+          <h2>Botschaft definieren und senden</h2>
+          <ol><li>Button <b>Selbst definiert</b> in der Sende-Zeile klicken: das Fenster "Selbst definierte Botschaften" oeffnet sich.</li><li>Mit <b>Rechtsklick</b> in die Tabelle den Eintrag <b>Hinzufuegen</b> waehlen.</li><li>Im Dialog "Botschaft definieren" ID (hex), DLC, Daten (hex), Zyklus [ms] eingeben und ggf. <b>Zyklisch</b> anhaken; mit <b>OK</b> uebernehmen. Ungueltige Eingaben (z. B. unzulaessiger DLC oder zu viele Datenbytes) werden mit einer Meldung abgelehnt, nichts wird gespeichert.</li><li>Rechtsklick auf die Zeile und <b>Senden</b> waehlen: ohne Haken Zyklisch wird die Botschaft einmal gesendet, mit Haken startet das zyklische Senden (Status: "sendet zyklisch"). Derselbe Menuepunkt heisst dann <b>Stopp</b>.</li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Feld</th><th width="74%" align="left">Bedeutung</th></tr><tr><td valign='top'>ID (hex)</td><td valign='top'>CAN-ID in Hex, ohne Praefix (z. B. <code>7DF</code>). IDs groesser als 7FF werden automatisch als Extended-ID (29 Bit) gesendet.</td></tr><tr><td valign='top'>DLC</td><td valign='top'>Laenge der Daten: 0 bis 8 sowie 12, 16, 20, 24, 32, 48, 64. Werte ueber 8 werden als CAN FD gesendet (Hardware und Projekt muessen CAN FD unterstuetzen).</td></tr><tr><td valign='top'>Daten (hex)</td><td valign='top'>Hex-Bytes mit oder ohne Leerzeichen. Zu kurze Eingaben werden mit 00 auf den DLC aufgefuellt, zu lange sind ein Fehler.</td></tr><tr><td valign='top'>Zyklus [ms]</td><td valign='top'>Sendeabstand von 1 bis 3 600 000 ms; wirkt nur bei Zyklisch.</td></tr><tr><td valign='top'>Zyklisch</td><td valign='top'>Ohne Haken wird einmal gesendet, mit Haken zyklisch bis zum Stopp.</td></tr></table>
+          <p><b>Rechtsklick-Menue:</b> Hinzufuegen (auch auf freier Flaeche), Senden bzw. Stopp, Aendern (auch per Doppelklick) und Loeschen. Wird ein laufender Eintrag geaendert oder geloescht, stoppt er zuvor. Zum Senden muss die Verbindung hergestellt sein; beim Trennen stoppt das zyklische Senden aller Eintraege. Mehrere Eintraege mit derselben ID teilen sich einen Sendeauftrag. Gesendete Botschaften erscheinen im Trace als Tx.</p>
+          <p>Hinweise: Es werden maximal 5 000 Zeilen angezeigt (aeltere rollen heraus). Die Anzeige wird nur aktualisiert, solange die
+          Rubrik sichtbar ist; im Hintergrund puffert das Tool bis zu 50 000 Frames. Fuer lueckenlose Aufzeichnung dient das <b>Logging</b>.</p>
+      sequence:
+        title: 3.4 Rubrik Testsequenz
+        html: |-
+          <h1>3.4 Rubrik "Testsequenz"</h1>
+          <p>Erstellen, Speichern, Laden und Ausfuehren von Testsequenzen. Es ist immer <b>genau eine Sequenz</b> geladen/aktiv;
+          mehrere Sequenzen liegen als Dateien im Ordner <code>sequences/</code> des Projekts.</p>
+          <h2>Datei</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">Bedienelement</th><th width="70%" align="left">Funktion</th></tr><tr><td valign='top'>Datei-Liste + Laden</td><td valign='top'>Waehlt eine Sequenz aus <code>sequences/</code> und laedt sie in den Editor.</td></tr><tr><td valign='top'>Neu</td><td valign='top'>Leere Sequenz (nicht gespeichert, bis <i>Speichern</i>).</td></tr><tr><td valign='top'>Speichern / Speichern unter ...</td><td valign='top'>Schreibt die Sequenz als JSON. Der zuletzt gespeicherte/geladene Dateiname wird im Projekt vermerkt und beim naechsten Oeffnen wieder geladen.</td></tr><tr><td valign='top'>Name / Beschreibung</td><td valign='top'>Metadaten der Sequenz.</td></tr></table>
+          <h2>Schritte bearbeiten</h2>
+          <p>Die Schritte stehen in einer Tabelle (Nr., Typ, Parameter als JSON). Der <b>Parameter-Text ist direkt editierbar</b>
+          (Doppelklick). Ungueltiges JSON wird abgelehnt und der alte Wert wiederhergestellt; der Typ eines Schritts ist fest.</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">Bedienelement</th><th width="70%" align="left">Funktion</th></tr><tr><td valign='top'>Befehls-Dropdown</td><td valign='top'>Waehlt den Schritttyp. <b>Beim Ueberfahren eines Eintrags mit der Maus erscheint ein Tooltip</b> mit Format, Beschreibung aller Elemente und einem Beispiel; darunter steht zusaetzlich die Kurzbeschreibung des markierten Befehls.</td></tr><tr><td valign='top'>Schritt hinzufuegen</td><td valign='top'>Fuegt den Befehl mit einer Vorlage hinter der markierten Zeile (bzw. am Ende) ein.</td></tr><tr><td valign='top'>Hoch / Runter / Duplizieren / Loeschen</td><td valign='top'>Markierten Schritt verschieben, kopieren oder entfernen.</td></tr><tr><td valign='top'>Signal-Auswahl + Signal in Schritt uebernehmen</td><td valign='top'>Listet alle Signale der DBC als <code>Message.Signal</code> (mit Tipp-Vervollstaendigung) und traegt Botschaft (und bei <code>set_signal</code>, <code>wait_for</code>, <code>check</code> auch Signal) in den markierten Schritt ein.</td></tr><tr><td valign='top'>Tooltip in der Tabelle</td><td valign='top'>Auch ueber der Typ-Spalte eines Schritts erscheint der Befehlstooltip.</td></tr></table>
+          <h2>Pruefen und Ausfuehren</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">Bedienelement</th><th width="70%" align="left">Funktion</th></tr><tr><td valign='top'>Pruefen</td><td valign='top'>Statische Pruefung: unbekannte Schritttypen, Operatoren, Botschaften und Signale (gegen die DBC).</td></tr><tr><td valign='top'>Start</td><td valign='top'>Fuehrt die Sequenz aus (nur bei bestehender Verbindung). Vor dem Start wird automatisch geprueft. Waehrend des Laufs ist der Editor gesperrt.</td></tr><tr><td valign='top'>Stopp</td><td valign='top'>Bricht die Sequenz ab (auch ein laufendes <code>wait</code>); Status <i>aborted</i>.</td></tr><tr><td valign='top'>Ergebnistabelle</td><td valign='top'>Je Schritt: Nummer (Schleifen: z. B. <code>3.2.1</code>), Beschreibung, Status (gruen = ok, rot = fail/error) und Meldung (z. B. gemessener Wert, Antwort-Bytes).</td></tr></table>
+          <p><b>Ablaufregeln:</b> Die Schritte laufen nacheinander. Der <b>erste fehlgeschlagene Schritt beendet die Sequenz</b> (Status <i>failed</i>).
+          Nach Ende zeigt die Statuszeile z. B. <i>startup: passed (10/10 Schritte ok)</i>. Zyklisch gestartete Botschaften laufen nach dem Ende weiter,
+          sofern nicht per <code>enable_tx</code> gestoppt.</p>
+          <h2>Befehle im Ueberblick</h2>
+          [[commands_table]]
+          <p>Die vollstaendige Beschreibung jedes Befehls mit Format, Elementen und Beispiel steht in <a href="topic:appendix_a">Anhang A</a>.</p>
+      graph:
+        title: 3.5 Rubrik Graph
+        html: |-
+          <h1>3.5 Rubrik "Graph"</h1>
+          <p>Die Rubrik zeigt Signalverlaeufe live als Liniendiagramm (Zeitachse: Sekunden relativ zu jetzt, links = Vergangenheit, rechts = jetzt). Mit dem Schalter oberhalb der Auswahl wird zwischen <b>1 Graph</b> und <b>n Graphen</b> umgeschaltet.</p>
+          <h2>Auswahl nach Botschaft gruppiert</h2>
+          <p>Die Auswahl zeigt alle in der Rubrik Daten gewaehlten Signale, gruppiert nach Richtung und Botschaft (<code>RX</code> = empfangen, <code>TX</code> = gesendet). Unter jeder Botschaft stehen ihre Signale mit Einheit in eckigen Klammern. Der Haken an der Botschaft kennt drei Zustaende: alle Signale gewaehlt, teilweise gewaehlt (Teilzustand) oder keines gewaehlt. Ein Klick darauf waehlt alle Signale der Botschaft oder entfernt sie wieder.</p>
+          <h2>Darstellung "1 Graph"</h2>
+          <p>Alle gewaehlten Signale werden in einem gemeinsamen Diagramm mit Legende (Farbzuordnung) gezeichnet. Vorteil: direkter Vergleich der Kurven. Bei sehr unterschiedlichen Wertebereichen werden kleine Signale flach - dann ist "n Graphen" besser geeignet.</p>
+          <h2>Darstellung "n Graphen"</h2>
+          <p>Jedes gewaehlte Signal erhaelt ein eigenes Diagramm mit eigener Wertachse, beschriftet mit Botschaft.Signal und Einheit; die Diagramme stehen untereinander. Alle Diagramme teilen sich dieselbe <b>Zeitbasis</b>: Zoomen und Verschieben der Zeitachse in einem Diagramm wirkt auf alle, die Zeitbeschriftung erscheint nur am untersten Diagramm.</p>
+          <h2>Bedienelemente</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Bedienelement</th><th width="74%" align="left">Funktion</th></tr><tr><td valign='top'>Schalter 1 Graph / n Graphen</td><td valign='top'>Wechselt die Darstellungsart; die Anzeige wird sofort neu aufgebaut. Die Einstellung wird im Projekt gespeichert (<code>graph_multi</code>).</td></tr><tr><td valign='top'>Signalauswahl</td><td valign='top'>Haken setzen = Kurve anzeigen. Der Haken an der Botschaft waehlt bzw. entfernt alle ihre Signale. Die Auswahl wird im Projekt gespeichert (<code>graph</code>).</td></tr><tr><td valign='top'>Zeitfenster</td><td valign='top'>Sichtbarer Zeitraum in Sekunden (1 bis 3600).</td></tr><tr><td valign='top'>Pause</td><td valign='top'>Friert die Anzeige ein; Daten werden im Hintergrund weiter gesammelt.</td></tr><tr><td valign='top'>Daten leeren</td><td valign='top'>Verwirft alle gesammelten Signalverlaeufe.</td></tr><tr><td valign='top'>Diagramm</td><td valign='top'>Maus: Zoomen mit Mausrad, Verschieben mit gedrueckter Taste. In "n Graphen" gilt dies gemeinsam fuer alle Diagramme.</td></tr></table>
+          <p>Hinweise: Je Signal werden bis zu 50 000 Punkte vorgehalten. Nur Signale, die in der Rubrik Daten angehakt sind,
+          werden aufgezeichnet. Signale erscheinen erst, wenn Daten empfangen/gesendet wurden. Die Anzeige aktualisiert sich nur bei sichtbarer Rubrik.</p>
+      logging:
+        title: 3.6 Rubrik Logging
+        html: |-
+          <h1>3.6 Rubrik "Logging"</h1>
+          <p><b>Aufgeloeste Signale:</b> Ist eine DBC, A2L oder CDD eingebunden, enthaelt die Parquet-Datei nicht nur die Botschaft als Hex, sondern die Signale mit <b>Rohwert, Roh-Hex, physikalischem Wert, Text (Wertetabelle) und Einheit</b>. Spalten der Signaldatei: <code>timestamp, direction, message, signal, value, source, can_id, raw, raw_hex, text, unit, message_hex</code>. <code>source</code> ist <code>CAN</code> (DBC-Botschaften), <code>XCP</code> (gelesene A2L-Werte der Rubrik XCP) oder <code>UDS</code> (dekodierte Antwortparameter der Rubrik Diagnose aus der CDD), solange das Logging laeuft. Die Rohdatei (<code>_raw.parquet</code>) enthaelt zusaetzlich die Spalte <code>signals</code> mit allen Signalen des Frames als Text, z. B. <code>RPM=0x1F40/2000 rpm</code>.</p>
+          <p>Zeichnet ausgewaehlte Signale im <b>Parquet</b>-Format auf (benoetigt <code>pyarrow</code>). Dateien liegen im Ordner
+          <code>logs/</code> des Projekts.</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">Bedienelement</th><th width="72%" align="left">Funktion</th></tr><tr><td valign='top'>Datenbaum</td><td valign='top'>Zeigt die in der Rubrik Daten gewaehlten Botschaften/Signale. <b>Filter:</b> nur angehakte Signale werden aufgezeichnet (Haken an der Botschaft setzt/entfernt alle ihre Signale). Die Auswahl wird im Projekt gespeichert.</td></tr><tr><td valign='top'>Alle / Keine</td><td valign='top'>Alle Signale an- bzw. abwaehlen.</td></tr><tr><td valign='top'>Dateiname</td><td valign='top'>Vorbelegt mit <i>Projekt_Datum_Uhrzeit.parquet</i>; Endung wird bei Bedarf ergaenzt.</td></tr><tr><td valign='top'>Mindestabstand je Signal</td><td valign='top'>Pro Signal hoechstens ein Eintrag pro Zeitraum (ms) - reduziert die Datenmenge bei schnellen Botschaften. 0 = jeder Frame.</td></tr><tr><td valign='top'>Nur bei Wertaenderung</td><td valign='top'>Ein Signal wird nur geschrieben, wenn sich sein Wert gegenueber dem letzten geschriebenen aendert.</td></tr><tr><td valign='top'>Rohframes</td><td valign='top'>Schreibt zusaetzlich <i>&lt;Name&gt;_raw.parquet</i> mit <b>allen</b> Frames des Busses (unabhaengig von DBC und Signalauswahl, inkl. Fehlerframes). Spalten: Zeit, Richtung, Kanal, ID, Extended, FD, BRS, Fehler, DLC, Daten (binaer), Daten (Hex-Text), Botschaftsname. Logging ist damit auch ohne Signalauswahl moeglich. <b>Rohdaten-IDs</b> begrenzen die Frames, z. B. <code>100, 7E0-7EF</code> (hex, leer = alle).</td></tr><tr><td valign='top'>Logging starten / stoppen</td><td valign='top'>Startet bzw. beendet die Aufzeichnung (nur bei Verbindung). Beim Trennen oder Projektwechsel wird automatisch gestoppt und die Datei sauber abgeschlossen.</td></tr><tr><td valign='top'>Statuszeile</td><td valign='top'>Dateiname, geschriebene Zeilen, Dateigroesse.</td></tr></table>
+          <h2>Dateiformat</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">Spalte</th><th width="20%" align="left">Typ</th><th width="60%" align="left">Inhalt</th></tr><tr><td valign='top'>timestamp</td><td valign='top'>float64</td><td valign='top'>Zeitstempel (Epoch-Sekunden)</td></tr><tr><td valign='top'>direction</td><td valign='top'>string</td><td valign='top'><code>RX</code> oder <code>TX</code></td></tr><tr><td valign='top'>message</td><td valign='top'>string</td><td valign='top'>Botschaftsname</td></tr><tr><td valign='top'>signal</td><td valign='top'>string</td><td valign='top'>Signalname</td></tr><tr><td valign='top'>value</td><td valign='top'>float64</td><td valign='top'>Physikalischer Wert</td></tr></table>
+          <p>Das Langformat (eine Zeile je Signalwert) vermeidet Luecken bei unterschiedlichen Zykluszeiten. Daten werden gepuffert und
+          alle 5 Sekunden bzw. ab 20 000 Zeilen auf die Platte geschrieben (Kompression zstd).</p>
+          <p>Auswertung in Python (siehe auch Anhang B):</p>
+          [[pre:pandas]]
+      diag:
+        title: 3.7 Rubrik Diagnose
+        html: |-
+          <h1>3.7 Rubrik "Diagnose"</h1>
+          <p>Diagnose-Services (UDS) ueber <b>ISO-TP</b> (ISO 15765-2) auf CAN bzw. CAN FD. Die Services stammen aus der konvertierten CDD;
+          zusaetzlich koennen beliebige Requests in Hex gesendet werden.</p>
+          <h2>Konfiguration (obere Zeile)</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Feld</th><th width="74%" align="left">Bedeutung</th></tr><tr><td valign='top'>CDD</td><td valign='top'>Konvertierte Diagnosebeschreibung aus dem Projekt-Cache.</td></tr><tr><td valign='top'>ECU</td><td valign='top'>Steuergeraet aus der CDD; ein Wechsel uebernimmt dessen Adressen.</td></tr><tr><td valign='top'>Request-ID / Response-ID</td><td valign='top'>CAN-IDs in Hex (Tester -&gt; ECU / ECU -&gt; Tester). Vorbelegt aus der CDD, hier ueberschreibbar.</td></tr><tr><td valign='top'>Extended-ID</td><td valign='top'>29-Bit-Adressierung.</td></tr><tr><td valign='top'>CAN FD</td><td valign='top'>ISO-TP mit FD-Frames (bis 64 Byte je Frame, mit Bitraten-Umschaltung). Muss zur Gegenstelle passen.</td></tr><tr><td valign='top'>Padding</td><td valign='top'>Fuellbyte in Hex (Standard AA); leer = ohne Auffuellen bei Classic-CAN.</td></tr><tr><td valign='top'>Tester Present</td><td valign='top'>Sendet alle 2 s <code>3E 80</code> (ohne Antwort), um eine Diagnosesession offen zu halten.</td></tr><tr><td valign='top'>Reiter vFlash</td><td valign='top'>Laedt ein vFlash-Pack (oder Manifest/HEX/S19/BIN), zeigt die Interpretation und fuehrt den Flashablauf mit der gewaehlten Hardware aus, mit Fortschrittsfenster (Anhang C).</td></tr></table>
+          <h2>Services senden</h2>
+          <ol><li>Service in der Liste markieren (Name, Request, Beschreibung).</li><li>Falls der Service Parameter hat, in der Tabelle <i>Parameter / Wert (hex)</i> den Wert eintragen (Platzhalter im Request).</li><li><b>Service senden</b>. Der Versand laeuft im Hintergrund; die Oberflaeche bleibt bedienbar.</li><li>Das <b>Log</b> zeigt Request (&gt;&gt;), Antwort (&lt;&lt;) mit Auswertung (positiv/negativ, bei negativen Antworten NRC mit Klartext) sowie die dekodierten Antwortparameter der CDD (z. B. <i>VIN: WDD...</i>).</li></ol>
+          <p><b>Raw senden</b>: Request als Hex-Bytes eintragen (z. B. <code>22 F1 86</code>) und Enter druecken oder die Schaltflaeche nutzen.</p>
+          <h2>Technische Details</h2>
+          <ul><li>Segmentierung: Single Frame, First Frame, Consecutive Frames und Flow Control, bis 4095 Byte (laengere ueber den erweiterten First Frame).</li><li>Beim Empfang laengerer Antworten sendet das Tool Flow Control mit Blocksize 0 und STmin 0.</li><li>Antwort-Timeout 2 s; bei <i>ResponsePending</i> (NRC 0x78) wird bis zu 10 s weiter gewartet.</li><li>Requests ohne Antwort (Sub-Function mit Bit 7, z. B. <code>3E 80</code>) werden als gesendet protokolliert.</li><li>In Testsequenzen verwenden <code>diag</code> und <code>diag_raw</code> dieselbe Adress-Konfiguration.</li></ul>
+      header:
+        title: '3.8 Rubrikzeile: Dark Mode und Sprache'
+        html: |-
+          <h1>3.8 Rubrikzeile: Dark Mode und Sprache</h1>
+          <p>Am rechten Rand der Rubrikzeile (neben den Reitern) befinden sich zwei Bedienelemente, die fuer alle Rubriken gelten.</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">Bedienelement</th><th width="78%" align="left">Funktion</th></tr><tr><td valign='top'>Dark Mode</td><td valign='top'>Haken schaltet zwischen hellem und dunklem Erscheinungsbild um. Betroffen sind Oberflaeche, Trace, Graph, Ergebnistabelle der Sequenz und diese Hilfe. Die Einstellung wird gespeichert und beim naechsten Start verwendet.</td></tr><tr><td valign='top'>Sprache</td><td valign='top'>Dropdown-Menue mit Deutsch (Primaersprache), English, Francais, Espanol, Chinesisch (Mandarin, vereinfacht) und Thai. Die Umschaltung wirkt sofort ohne Neustart. Die Auswahl wird gespeichert.</td></tr></table>
+          <h2>Was wird uebersetzt?</h2>
+          <ul><li>Alle Beschriftungen, Schaltflaechen, Tabellenkoepfe, Tooltips, Dialoge und Meldungen der Oberflaeche.</li><li>Die Befehlsreferenz der Testsequenz (Tooltips im Dropdown, Anhang A) und alle Kapitel dieser Hilfe.</li><li>Fehler- und Warnmeldungen der Programmteile (z. B. Konvertierung, Verbindung, Sequenzlauf).</li><li><b>Nicht</b> uebersetzt werden Daten aus Ihren Dateien: Botschafts- und Signalnamen, Einheiten und Wertetabellen aus DBC/CDD, Dateinamen, Projektnamen und der Inhalt von Sequenzdateien.</li><li>Bereits geschriebene Protokollzeilen (Diagnose-Log, Ergebnistabelle einer Sequenz) behalten die Sprache, in der sie entstanden sind.</li></ul>
+          <p>Fuer Chinesisch und Thai muss auf dem Rechner eine Schriftart mit den entsprechenden Zeichen vorhanden sein
+          (bei gaengigen Windows-, macOS- und Linux-Installationen der Fall).</p>
+          <h2>Sprachdateien</h2>
+          <p>Jede Sprache liegt in einer eigenen Datei im Ordner <code>lang/</code> (YAML; JSON ist ebenfalls moeglich):</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">Datei</th><th width="70%" align="left">Sprache</th></tr><tr><td valign='top'><code>lang/de.yaml</code></td><td valign='top'>Deutsch - Primaersprache und Rueckfallebene: fehlt in einer Sprache ein Text, wird der deutsche verwendet.</td></tr><tr><td valign='top'><code>lang/en.yaml</code></td><td valign='top'>English</td></tr><tr><td valign='top'><code>lang/fr.yaml</code></td><td valign='top'>Francais</td></tr><tr><td valign='top'><code>lang/es.yaml</code></td><td valign='top'>Espanol</td></tr><tr><td valign='top'><code>lang/zh.yaml</code></td><td valign='top'>Chinesisch (Mandarin, vereinfachte Schriftzeichen)</td></tr><tr><td valign='top'><code>lang/th.yaml</code></td><td valign='top'>Thai</td></tr></table>
+          <p>Aufbau jeder Datei: Abschnitte <code>meta</code> (Anzeigename, Reihenfolge im Dropdown), <code>ui</code> (Oberflaeche),
+          <code>core</code> (Meldungen), <code>steps</code> (Befehlsreferenz) und <code>help</code> (Kapitel dieser Hilfe). Platzhalter in
+          geschweiften Klammern (z. B. <code>{name}</code>) und Platzhalter in doppelten eckigen Klammern in den Hilfetexten
+          duerfen nicht veraendert werden.</p>
+          <h3>Eine Sprache hinzufuegen oder aendern</h3>
+          <ol><li><code>lang/de.yaml</code> kopieren und als <code>lang/&lt;code&gt;.yaml</code> speichern (z. B. <code>it.yaml</code>).</li><li>Im Abschnitt <code>meta</code> den Anzeigenamen (<code>name</code>) und die Position (<code>order</code>) setzen; alle Texte uebersetzen.</li><li>Mit <code>python tools/check_lang.py it</code> pruefen: Das Werkzeug meldet fehlende Schluessel, abweichende Platzhalter und beschaedigte HTML-Struktur.</li><li>Programm neu starten - die Sprache erscheint automatisch im Dropdown.</li></ol>
+          <h3>Kommandozeile</h3>
+          <p>Auch die Ausgaben von <code>main.py</code> sind uebersetzt: <code>python main.py --lang en --list</code>.
+          Ohne <code>--lang</code> wird die zuletzt in der GUI gewaehlte Sprache verwendet.</p>
+      help:
+        title: 3.9 Rubrik Hilfe
+        html: |-
+          <h1>3.9 Rubrik "Hilfe"</h1>
+          <p>Diese Rubrik. Links stehen die Kapitel, rechts der Text.</p>
+          <ul>
+          <li><b>Suchfeld</b>: blendet Kapitel aus, in denen der Begriff nicht vorkommt, und markiert die erste Fundstelle im
+          gewaehlten Kapitel. <b>Naechster Treffer</b> springt zur naechsten Fundstelle. Leeres Feld zeigt wieder alle Kapitel.</li>
+          <li>Verweise im Text (z. B. auf den Anhang) lassen sich anklicken.</li>
+          <li>Die Befehlsbeschreibungen entsprechen den Tooltips im Befehls-Dropdown der Rubrik Testsequenz.</li>
+          <li>Die Hilfe erscheint in der gewaehlten Sprache (Kapitel 3.8) und wird beim Umschalten der Sprache sofort ausgetauscht; Hell/Dunkel-Umschaltung gilt auch hier.</li>
+          </ul>
+      xcp:
+        title: 3.10 Rubrik XCP
+        html: |-
+          <h1>3.10 Rubrik "XCP"</h1>
+          <p>Messen und Verstellen von Steuergeraete-Variablen per <b>XCP on CAN</b> auf Basis einer <b>A2L-Datei</b> (ASAP2). Die A2L wird wie DBC und CDD
+          konvertiert: Quelldateien liegen im Projektordner <code>a2l/</code>, zur Laufzeit wird nur der Cache <code>cache/&lt;name&gt;.a2l.json|yaml</code> gelesen.</p>
+          <h2>Einrichtung</h2>
+          <ol><li>A2L ueber <b>Importieren</b> (Rubrik Projekt) in das Projekt kopieren; sie wird automatisch konvertiert (<code>python main.py --convert demo</code> geht auch ohne GUI).</li>
+          <li>CAN verbinden (Rubrik Projekt). XCP nutzt dieselbe Schnittstelle.</li>
+          <li>Rubrik XCP: A2L waehlen, <b>Master-ID</b> (Kommandos an das Steuergeraet) und <b>Slave-ID</b> (Antworten) pruefen. Sie werden aus dem XCP-Teil der A2L (<code>IF_DATA XCP / XCP_ON_CAN</code>) vorbelegt und koennen geaendert werden.</li>
+          <li><b>XCP verbinden</b>. Im Log stehen alle Kommandos (-&gt;) und Antworten (&lt;-) als Hex.</li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">Bedienelement</th><th width="72%" align="left">Funktion</th></tr>
+          <tr><td valign='top'>Liste links</td><td valign='top'>Alle Messgroessen (MEASUREMENT) und Parameter (CHARACTERISTIC vom Typ VALUE) der A2L; Filter nach Namen; Doppelklick oder <i>Zur Beobachtung</i> uebernimmt sie.</td></tr>
+          <tr><td valign='top'>Beobachtung</td><td valign='top'>Zeigt je Eintrag Rohwert und physikalischen Wert mit Einheit. Die Auswahl wird im Projekt gespeichert.</td></tr>
+          <tr><td valign='top'>Zyklisch lesen</td><td valign='top'>Liest alle beobachteten Eintraege im eingestellten Intervall (ms). Es wird per SHORT_UPLOAD gepollt; DAQ-Listen werden nicht verwendet.</td></tr>
+          <tr><td valign='top'>Einmal lesen</td><td valign='top'>Liest die Beobachtung einmalig.</td></tr>
+          <tr><td valign='top'>Wert schreiben</td><td valign='top'>Schreibt den eingegebenen Wert (physikalisch, bei Textumrechnung auch der Text, z. B. <i>RUN</i>) in die gewaehlte Zeile (SET_MTA + DOWNLOAD) und liest sie danach zurueck.</td></tr></table>
+          <h2>Interpretation der A2L</h2>
+          <ul><li>Datentypen UBYTE, SBYTE, UWORD, SWORD, ULONG, SLONG, A_UINT64, A_INT64, FLOAT32_IEEE, FLOAT64_IEEE; Byte-Reihenfolge laut CONNECT-Antwort des Steuergeraets.</li>
+          <li>Umrechnung IDENTICAL, LINEAR, RAT_FUNC (ohne quadratische Terme) und TAB_VERB (Textwerte); BIT_MASK wird beim Lesen ausmaskiert.</li>
+          <li>Nicht unterstuetzte Objekte (Kurven, Kennfelder, Felder, Messgroessen ohne Adresse) erscheinen ausgegraut.</li></ul>
+          <p>Mit Hardware <i>Simulation</i> startet das Tool einen simulierten XCP-Slave, der die A2L des Projekts abbildet (Demo: <code>projects/demo/a2l/demo.a2l</code>).
+          Nicht enthalten: DAQ/STIM, Seed&amp;Key, Kalibrierseiten und Flash-Programmierung. Ob ein echtes Steuergeraet alle Zugriffe erlaubt, haengt von dessen Schutzstufen ab.</p>
+      builder:
+        title: 3.11 Rubrik GUI Builder
+        html: |-
+          <h1>3.11 Rubrik "GUI Builder"</h1>
+          <p>Hier entsteht eine eigene Anzeige aus einfachen Elementen fuer vorhandene Signale. Die Elemente dienen nur der <b>Ansicht</b>; es gibt keine Werteeingabe. Verknuepfen lassen sich die Signale, die in der Rubrik Daten ausgewaehlt sind (empfangen oder gesendet). Aufbau und Verknuepfungen werden im Projekt gespeichert (<code>builder</code>).</p>
+          <h2>Elemente</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Element</th><th width="74%" align="left">Funktion</th></tr><tr><td valign='top'>LED</td><td valign='top'>Zeigt den Zustand eines Signals als Farbe. <b>Digital</b>: Wert 0 und Wert 1 haben je eine waehlbare Farbe. <b>Bereiche</b>: wie bei der Zeiger-Skala drei Bereiche (min &lt;= x &lt; max) mit je einer Farbe; liegt der Wert in keinem Bereich oder fehlt er, ist die LED grau.</td></tr><tr><td valign='top'>Textfeld ohne Signal</td><td valign='top'>Reines Textfeld mit frei waehlbarem Text, z. B. als Ueberschrift oder Beschriftung.</td></tr><tr><td valign='top'>Textfeld mit Signal</td><td valign='top'>Zeigt Text und aktuellen Wert des Signals mit Einheit; wird laufend aktualisiert. Die Nachkommastellen sind einstellbar.</td></tr><tr><td valign='top'>Zeiger</td><td valign='top'>Zeigerinstrument mit Skala ueber 180 Grad (Halbkreis): links Minimum, rechts Maximum; darunter der Zahlenwert mit Einheit.</td></tr><tr><td valign='top'>Hintergrund</td><td valign='top'>Einfaches farbiges Rechteck (Farbe waehlbar) ohne weitere Funktion. Es fasst andere Elemente optisch zusammen und liegt immer hinter den Funktionselementen, aber ueber dem Standardhintergrund.</td></tr><tr><td valign='top'>Bild</td><td valign='top'>Bilderrahmen mit frei waehlbarem Bild (PNG, JPG, BMP, GIF, SVG). Das Bild wird automatisch an den Rahmen angepasst (Seitenverhaeltnis bleibt erhalten) und folgt jeder Groessenaenderung.</td></tr></table>
+          <h2>Bedienung</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Bedienelement</th><th width="74%" align="left">Funktion</th></tr><tr><td valign='top'>Bearbeiten</td><td valign='top'>Haken gesetzt: Raster sichtbar, Elemente koennen hinzugefuegt, verschoben, in der Groesse geaendert und geloescht werden. Ohne Haken ist die Anzeige gesperrt (reine Ansicht).</td></tr><tr><td valign='top'>+ LED / + Textfeld / + Zeiger</td><td valign='top'>Fuegt ein neues Element hinzu (auch per Rechtsklick auf die freie Flaeche an der Mausposition).</td></tr><tr><td valign='top'>Ziehen</td><td valign='top'>Verschiebt ein Element; die Ecke unten rechts aendert die Groesse.</td></tr><tr><td valign='top'>Rechtsklick auf ein Element</td><td valign='top'>Menue: Signal verknuepfen (oder "kein Signal"), Beschriftung bzw. Text, LED-Schwelle und -Farbe, Nachkommastellen, Skala (Zeiger), Loeschen.</td></tr></table>
+          <h2>Zeigerelement und Skala</h2>
+          <p>Die Skala hat zwei Betriebsarten. <b>Automatisch</b> (Standard): Der Bereich waechst mit den beobachteten Werten und wird auf runde Zahlen gesetzt (z. B. 0 bis 100); Skalenstriche und Zahlen passen sich an. <b>Manuell</b>: Per <b>Rechtsklick</b> auf den Zeiger und <b>Skala manuell (min/max)</b> werden Minimum und Maximum vorgegeben (das Minimum muss kleiner als das Maximum sein). Mit dem Haken <b>Skala automatisch</b> im selben Menue wird wieder auf Automatik zurueckgeschaltet. Werte ausserhalb der Skala stellen den Zeiger am Anschlag dar.</p>
+          <h2>Schnellstart</h2>
+          <ol><li>Haken <b>Bearbeiten</b> gesetzt lassen (Raster sichtbar).</li><li><b>+ LED</b>, <b>+ Textfeld</b> oder <b>+ Zeiger</b> klicken; das Element erscheint auf der Zeichenflaeche (auch per Rechtsklick auf die freie Flaeche an der Mausposition).</li><li>Mit <b>Rechtsklick</b> auf das Element <b>Signal verknuepfen</b> waehlen und ein Signal aus der Liste auswaehlen.</li><li>Beschriftung, LED-Schwelle, Nachkommastellen oder Skala einstellen und das Element per Ziehen positionieren; die Ecke unten rechts aendert die Groesse.</li><li>Haken <b>Bearbeiten</b> entfernen: die Anzeige ist gesperrt und dient nur noch der Ansicht.</li></ol>
+          <h2>Signal verknuepfen</h2>
+          <p>Die Liste zeigt die in der Rubrik Daten ausgewaehlten Signale als <code>RX:Msg.Signal</code> bzw. <code>TX:Msg.Signal</code>, dazu den Eintrag "(kein Signal)", der die Verknuepfung loest. Fehlt ein Signal, wird es zuerst in der Rubrik Daten ausgewaehlt. Die Werte erscheinen, sobald Daten empfangen bzw. gesendet werden; die Einheit stammt aus der DBC. Beim Wechsel des Signals wird die automatische Skala zurueckgesetzt.</p>
+          <h2>LED und Textfeld einstellen</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">Einstellung</th><th width="74%" align="left">Wirkung</th></tr><tr><td valign='top'>Beschriftung / Text</td><td valign='top'>LED: Beschriftung neben der LED (ohne Eintrag der Signalname). Textfeld: freier Text; mit Signal steht er vor dem Wert.</td></tr><tr><td valign='top'>LED-Modus</td><td valign='top'>Digital (Wert 0 / Wert 1) oder Bereiche (Bereich 1 bis 3). Digital: Wert 0 ergibt Farbe 0, jeder andere Wert Farbe 1.</td></tr><tr><td valign='top'>Farben / Bereiche</td><td valign='top'>Digital: Farbe fuer Wert 0 und Wert 1. Bereiche: je Bereich Ein/Aus, Minimum, Maximum und Farbe nach der Regel <b>Minimum &lt;= x &lt; Maximum</b>; der erste passende Bereich bestimmt die Farbe. Dieselbe Einstellung wie bei der Bereichsanzeige des Zeigers.</td></tr><tr><td valign='top'>Nachkommastellen</td><td valign='top'>Anzahl der Dezimalstellen von 0 bis 9 fuer Textfeld und Zeiger.</td></tr><tr><td valign='top'>Ueberschrift (Zeiger)</td><td valign='top'>Der Haken <b>Ueberschrift anzeigen</b> blendet die Beschriftung ueber dem Zeiger ein oder aus; der Platz wird dann fuer die Skala genutzt.</td></tr><tr><td valign='top'>Bereichsanzeige (Zeiger)</td><td valign='top'>Der Haken <b>Bereichsanzeige</b> faerbt die Skala in bis zu drei Bereichen (Bereich 1 bis 3), je mit Minimum, Maximum, Farbe und Ein/Aus nach der Regel <b>Minimum &lt;= x &lt; Maximum</b>; die drei Bereiche stehen dann im Menue.</td></tr><tr><td valign='top'>Min-/Max-Zeiger (Zeiger)</td><td valign='top'>Mit den Haken <b>Minimum-Zeiger</b> und <b>Maximum-Zeiger</b> zeigt die Skala zusaetzlich einen duennen zweiten (blau) und dritten Zeiger (orange) fuer den kleinsten bzw. groessten Wert seit Beginn der Beobachtung. <b>Min/Max zuruecksetzen</b> beginnt neu; ein Signalwechsel oder das Umschalten der Haken setzt ebenfalls zurueck. Die Werte werden nicht im Projekt gespeichert, nur die Haken.</td></tr></table>
+          <h2>Skala des Zeigers im Detail</h2>
+          <p><b>Automatisch:</b> Bis der erste Wert vorliegt gilt 0 bis 100. Danach merkt sich der Zeiger kleinsten und groessten beobachteten Wert und rundet die Grenzen auf runde Zahlen (1, 2, 2,5, 5 mal Zehnerpotenz); liegen alle Werte nahe bei 0 und sind nicht negativ, beginnt die Skala bei 0. Die Skala waechst mit, schrumpft aber nicht. Mit dem Haken <b>Skala automatisch</b> im Rechtsklick-Menue (aus- und wieder einschalten) beginnt die Beobachtung neu. Die Skala zeigt fuenf Teilstriche mit Zahlen.</p>
+          <p><b>Manuell:</b> <b>Rechtsklick</b> auf den Zeiger, <b>Skala manuell (min/max)</b>: im Dialog Minimum und Maximum eingeben (Dezimalstellen erlaubt). Ist das Minimum nicht kleiner als das Maximum, erscheint eine Meldung und nichts wird uebernommen. Die manuelle Skala gilt sofort, bleibt im Projekt gespeichert und schaltet die Automatik ab. Werte ausserhalb stellen den Zeiger am Anschlag dar.</p>
+          <h2>Hintergrund und Bild</h2>
+          <p>Die Elemente liegen in Ebenen: Standardhintergrund (Zeichenflaeche), darueber die Hintergrundelemente, darueber die Funktionselemente (LED, Textfeld, Zeiger, Bild). Hintergrundelemente werden beim Hinzufuegen, Verschieben und Laden automatisch hinter die uebrigen Elemente gelegt, so kann z. B. ein farbiger Rahmen mehrere Anzeigen zusammenfassen. Das gewaehlte Bild wird als Kopie im Projektordner (<code>images</code>) abgelegt, damit das Projekt austauschbar bleibt; ohne Bild erscheint "Kein Bild".</p>
+          <h2>LED-Farben und Bereichsanzeige</h2>
+          <p>Beispiel LED digital: Wert 0 = rot, Wert 1 = gruen. Beispiel LED mit Bereichen (Temperatur): Bereich 1: 0 bis 80 gruen, Bereich 2: 80 bis 100 gelb, Bereich 3: 100 bis 120 rot; ausserhalb ist die LED grau.</p><p>Bereichsanzeige des Zeigers: Es gibt drei Bereiche, jeder mit Minimum, Maximum und Farbe. Ein Wert x gehoert zu einem Bereich, wenn <b>Minimum &lt;= x &lt; Maximum</b> gilt (das Minimum gehoert dazu, das Maximum nicht). Beispiel: Bereich 1: 0 bis 80 gruen, Bereich 2: 80 bis 100 gelb, Bereich 3: 100 bis 120 rot. Jeder Bereich laesst sich einzeln ein- oder ausschalten; Teile ausserhalb der Skala werden abgeschnitten, das Minimum muss kleiner als das Maximum sein. Bei automatischer Skala passen sich die Baender der aktuellen Skala an.</p>
+          <h2>Speicherung und Grenzen</h2>
+          <p>Elemente, Positionen, Groessen, Verknuepfungen und Einstellungen werden im Projekt gespeichert (<code>builder</code>). Die Zeichenflaeche ist scrollbar. Der GUI Builder zeigt nur Werte an; es gibt keine Eingabe- oder Schaltelemente. Angezeigt werden nur Signale aus der Auswahl der Rubrik Daten.</p>
+          <p>Hinweis: Signale erscheinen erst, wenn Daten empfangen bzw. gesendet wurden; bis dahin zeigen Textfeld und Zeiger "--" bzw. Nullstellung, die LED ist aus.</p>
+      appendix_a:
+        title: 'Anhang A: Befehlsreferenz Testsequenz'
+        html: '<h1>Anhang A: Befehlsreferenz Testsequenz</h1><p>Jeder Schritt ist ein JSON-Objekt mit dem Feld <code>type</code> und den unten genannten Elementen. Physikalische Werte sind Werte nach Faktor und Offset der DBC.</p>[[commands_reference]]'
+      appendix_b:
+        title: 'Anhang B: Hinweise und Grenzen'
+        html: |-
+          <h1>Anhang B: Hinweise und Grenzen</h1>
+          <ul><li><b>Zeitgenauigkeit</b>: Zyklisches Senden erfolgt per Software-Timer (Genauigkeit im Bereich weniger Millisekunden), nicht hardware-getriggert.</li><li><b>DBC</b>: Extended Multiplexing und Umgebungsvariablen werden nicht unterstuetzt.</li><li><b>CDD</b>: Originale CANdelaStudio-Dateien nur heuristisch (Kapitel 2.2).</li><li><b>PEAK + CAN FD</b>: Bit-Timing fest vorbelegt (80 MHz, 500k/2M); Abweichungen ueber <code>hardware.extra</code>.</li><li><b>Sicherheit</b>: Zyklisches Senden startet nie automatisch beim Laden eines Projekts. Auf Fahrzeug- oder Pruefstandsbussen vor dem Verbinden Sendeliste und Werte pruefen.</li><li><b>Tastatur</b>: In Tabellen mit Doppelklick bearbeiten; im Raw-Diagnosefeld sendet Enter den Request.</li></ul>
+          <h2>Testen ohne Hardware</h2>
+          <p>Das Demo-Projekt <code>demo</code> nutzt die Simulation mit virtuellem Steuergeraet. Damit lassen sich alle Rubriken
+          (Senden/Empfangen, Trace, Graph, Logging, Sequenzen <i>startup</i> und <i>driving</i>, Diagnose) ohne Hardware ausprobieren.
+          Die Kerntests laufen mit <code>python -m unittest discover -s tests -v</code>.</p>
+
+shots:
+  help.shot.title: "Bildschirmbild mit Erklaerungen"
+  help.shot.caption: "Schematische Darstellung der Oberflaeche; die Nummern verweisen auf die Erklaerungen darunter."
+  help.export_pdf: "Handbuch als PDF..."
+  help.export_title: "Handbuch als PDF speichern"
+  help.export_filter: "PDF-Dokument (*.pdf)"
+  help.export_done: "Handbuch gespeichert: {path}"
+  help.export_error: "PDF konnte nicht erstellt werden: {error}"
+  manual.title: "Handbuch"
+  manual.date: "Ausgabedatum: {date}"
+  manual.languages: "Enthaltene Sprachen"
+  cli.help.manual: "Handbuch (Hilfe in allen Sprachen) als PDF-Datei ausgeben"
+  cli.manual_done: "Handbuch geschrieben: {path}"
+  help.shot.project.1: "Projektauswahl, neues Projekt anlegen und DBC/CDD importieren."
+  help.shot.project.2: "Cache-Format (json/yaml) und erneute Umwandlung von DBC/CDD."
+  help.shot.project.3: "Hardware: Schnittstelle, Kanal (z. B. PCAN_USBBUS1), Bitrate und CAN FD."
+  help.shot.project.4: "Verbinden bzw. Trennen mit Statusanzeige (Empfangs- und Sendezaehler)."
+  help.shot.project.5: "Informationsfeld: geladene DBC-Dateien, Botschaftsanzahl und Warnungen."
+  help.shot.data.1: "Filter und Liste aller Botschaften und Signale aus der DBC."
+  help.shot.data.2: "Auswahl zu den Sendedaten (TX) oder Empfangsdaten (RX) hinzufuegen."
+  help.shot.data.3: "Sendedaten: zyklisch ein/aus, Signalwerte und Zykluszeit einstellen."
+  help.shot.data.4: "Einzelsendung: sendet die Botschaft sofort einmal."
+  help.shot.data.5: "Empfangsdaten mit den aktuellen Livewerten der Signale."
+  help.shot.trace.1: "Optionen: Pause, Signale dekodieren, nur gewaehlte Botschaften, Autoscroll."
+  help.shot.trace.2: "Filter nach ID oder Botschaftsname."
+  help.shot.trace.3: "Trace-Tabelle: Zeit, Richtung (Rx/Tx), Kanal, ID, Typ, Laenge und Rohdaten. Auch ohne DBC/CDD."
+  help.shot.trace.4: "Dekodierte Botschaftsnamen und Signalwerte (wenn eine DBC geladen ist)."
+  help.shot.trace.5: "Trace leeren oder als CSV-Datei speichern."
+  help.shot.sequence.1: "Testsequenz-Datei waehlen, laden, neu anlegen, speichern (jeweils eine Sequenz)."
+  help.shot.sequence.2: "Befehls-Dropdown: beim Ueberfahren eines Eintrags erscheint der Tooltip mit Format, Elementen und Beispiel."
+  help.shot.sequence.3: "Schritt einfuegen, verschieben, duplizieren oder loeschen."
+  help.shot.sequence.4: "Schrittliste: Befehl und Parameter als JSON, direkt in der Tabelle editierbar."
+  help.shot.sequence.5: "Starten, Stoppen und statische Pruefung der Sequenz; darunter das Gesamtergebnis."
+  help.shot.sequence.6: "Ergebnistabelle je Schritt: gruen = bestanden, rot = fehlgeschlagen, mit Meldung."
+  help.shot.builder.1: "Haken Bearbeiten: Raster, Hinzufuegen, Verschieben und Groessenaenderung moeglich."
+  help.shot.builder.2: "Buttons zum Hinzufuegen von LED, Textfeld, Zeiger, Hintergrund und Bild."
+  help.shot.builder.3: "Hintergrundelement mit waehlbarer Farbe: fasst Elemente optisch zusammen und liegt hinter ihnen."
+  help.shot.builder.4: "LEDs: digital (Wert 0 / 1) und mit Bereichen (Farbe je nach Bereich min <= x < max)."
+  help.shot.builder.5: "Textfelder: links ohne Signal (reiner Text), rechts mit Signal (Wert und Einheit live)."
+  help.shot.builder.6: "Zeiger mit 180-Grad-Skala, automatisch oder manuell skaliert, optional mit Bereichsanzeige."
+  help.shot.builder.7: "Bilderrahmen: das gewaehlte Bild wird automatisch auf den Rahmen skaliert."
+  help.shot.builder.8: "Rechtsklick-Menue des Zeigers mit Signal, Ueberschrift, Skala, Bereichsanzeige und Loeschen."
+  help.shot.builder_signal.1: "Rechtsklick auf die LED: Signal verknuepfen, Beschriftung, Modus digital/Bereiche, Farben, Loeschen."
+  help.shot.builder_signal.2: "Auswahl: Signale aus der Rubrik Daten als RX:/TX:Botschaft.Signal, oder (kein Signal)."
+  help.shot.builder_signal.3: "LED: Farbe je nach Signalwert (digital 0 / 1 oder nach Bereich 1 bis 3)."
+  help.shot.builder_signal.4: "Textfeld mit Signal: Text, Wert und Einheit; Nachkommastellen einstellbar."
+  help.shot.builder_range.1: "Drei LEDs mit Bereichen: je ein Wertebereich (min <= x < max) bestimmt die Farbe."
+  help.shot.builder_range.2: "Zeiger mit Bereichsanzeige: drei farbige Bereiche auf der Skala (Bereich 1 bis 3)."
+  help.shot.builder_range.3: "Menue: Ueberschrift anzeigen schaltet die Beschriftung ein oder aus."
+  help.shot.builder_range.4: "Menue: Bereichsanzeige ein- oder ausschalten."
+  help.shot.builder_range.5: "Bereich 1 bis 3: je Minimum, Maximum (Regel Minimum <= x < Maximum), Farbe und Ein/Aus."
+  help.shot.builder_range.6: "Menue: optionaler zweiter und dritter Zeiger fuer Minimum (blau) und Maximum (orange) sowie Zuruecksetzen."
+  help.shot.trace_custom_edit.1: "ID (hex): CAN-ID, auch Extended (> 7FF)."
+  help.shot.trace_custom_edit.2: "DLC: Datenlaenge, auch CAN-FD-Werte."
+  help.shot.trace_custom_edit.3: "Daten (hex): Bytes mit oder ohne Leerzeichen; fehlende Bytes werden mit 00 aufgefuellt."
+  help.shot.trace_custom_edit.4: "Zyklus [ms] und Haken Zyklisch: einmalig oder zyklisch senden."
+  help.shot.trace_custom_edit.5: "OK uebernimmt die Botschaft in die Liste, Abbrechen verwirft die Eingabe."
+  help.shot.builder_scale.1: "Zeiger mit automatischer Skala: Grenzen auf runde Zahlen, hier 0 bis 3200."
+  help.shot.builder_scale.2: "Zeiger mit manueller Skala, hier 0 bis 8000."
+  help.shot.builder_scale.3: "Dialog Manuelle Skala: Minimum und Maximum eingeben."
+  help.shot.builder_scale.4: "OK uebernimmt die Skala (nur wenn Minimum kleiner als Maximum), Abbrechen verwirft."
+  help.shot.graph.1: "Schalter 1 Graph / n Graphen (hier: 1 Graph)."
+  help.shot.graph.2: "Signalauswahl, nach Botschaft gruppiert; Haken an der Botschaft waehlt alle Signale, Einheit in eckigen Klammern."
+  help.shot.graph.3: "Zeitfenster in Sekunden."
+  help.shot.graph.4: "Pause friert die Anzeige ein, Daten leeren verwirft die Verlaeufe."
+  help.shot.graph.5: "Gemeinsames Diagramm mit Legende; Zeitachse in Sekunden relativ zu jetzt."
+  help.shot.graph_multi.1: "Schalter steht auf n Graphen."
+  help.shot.graph_multi.2: "Die Auswahl bleibt nach Botschaft gruppiert; hier sind drei Signale gewaehlt."
+  help.shot.graph_multi.3: "Jedes Signal hat einen eigenen Graph mit eigener Wertachse, beschriftet mit Botschaft.Signal und Einheit."
+  help.shot.graph_multi.4: "Gemeinsame Zeitachse: Zoomen und Verschieben wirkt auf alle Graphen; Beschriftung nur unten."
+  help.shot.logging.1: "Auswahl der zu loggenden Botschaften und Signale (Filter aus der Summe der gewaehlten Daten)."
+  help.shot.logging.2: "Alle oder keine Signale markieren."
+  help.shot.logging.3: "Name der Parquet-Datei (liegt im Ordner logs/ des Projekts)."
+  help.shot.logging.4: "Optionen: nur bei Wertaenderung, Mindestabstand je Signal, Rohdaten zusaetzlich."
+  help.shot.logging.5: "Logging starten bzw. stoppen; die Statuszeile zeigt Zeilenzahl und Dateigroesse."
+  help.shot.diag.1: "Diagnose-Konfiguration: CDD, ECU, Request-/Response-ID, Extended-ID, CAN FD, Padding."
+  help.shot.diag.2: "Tester Present (3E 80) wird alle 2 s automatisch gesendet."
+  help.shot.diag.3: "Services aus der CDD mit Request-Vorlage und Beschreibung."
+  help.shot.diag.4: "Parameter des gewaehlten Services (Hex-Werte editierbar), danach „Service senden“."
+  help.shot.diag.5: "Antwort-Log: gesendete Requests, Antworten (positiv/negativ) und dekodierte Werte."
+  help.shot.diag.6: "Roh-Request in Hex senden (z. B. 22 F1 90) ohne CDD-Definition."
+  help.shot.header.1: "Dark Mode: schaltet zwischen hellem und dunklem Erscheinungsbild um (wird gespeichert)."
+  help.shot.header.2: "Sprache: Dropdown mit allen vorhandenen Sprachdateien; die Umschaltung gilt sofort, auch fuer die Hilfe."
+  help.shot.help.1: "Kapitelliste der Hilfe."
+  help.shot.help.2: "Suchfeld: blendet Kapitel ohne Treffer aus; „Naechster Treffer“ springt weiter."
+  help.shot.help.3: "Kapiteltext mit kommentierten Abbildungen."
+  help.shot.help.4: "Handbuch als PDF: gibt die Hilfe in allen verfuegbaren Sprachen aus (mit Deckblatt und Ausgabedatum) und bietet sie zum Speichern an."
+  trace.color_mode: "Farbig"
+  trace.color_mode_tip: "Farbmodus: Rx mittelblau, Tx mittelgruen, fehlerhafte Botschaften rot, ISO-TP-Botschaften mittelviolett. Aus: Darstellung wie bisher."
+  trace.col.count: "Anzahl"
+  trace.update_mode: "Aktualisieren"
+  trace.update_mode_tip: "Aktualisierungsmodus: jede Botschaft (Richtung, Kanal, ID) steht nur einmal in der Tabelle; bei erneutem Auftreten werden Zeit, Daten und Signale dieser Zeile aktualisiert und die Anzahl erhoeht. Aus: Frames werden scrollend hintereinander geschrieben."
+  trace.diff_time: "Diffzeit"
+  trace.diff_time_tip: "Nur im Aktualisierungsmodus: Die Zeitspalte zeigt statt der absoluten Zeit den Abstand zum vorigen Auftreten derselben Botschaft (Zykluszeit); beim ersten Auftreten 0."
+  trace.col.diff: "Diffzeit [s]"
+  trace.raw.id: "ID (hex)"
+  trace.raw.dlc: "DLC"
+  trace.raw.data: "Daten (hex)"
+  trace.raw.timing: "Zyklus [ms]"
+  trace.raw.cyclic: "Zyklisch"
+  trace.raw.send: "Senden"
+  trace.raw.stop: "Stopp"
+  trace.raw.tip: "Sendet einen Rohframe auf den CAN. Ohne Haken wird einmal gesendet, mit Haken zyklisch bis zum erneuten Klick (Stopp). Daten als Hex-Bytes, fehlende Bytes werden mit 00 aufgefuellt."
+  trace.raw.title: "Rohframe senden"
+  trace.custom.button: "Selbst definiert"
+  trace.custom.title: "Selbst definierte Botschaften"
+  trace.custom.add: "Hinzufuegen"
+  trace.custom.edit: "Aendern"
+  trace.custom.delete: "Loeschen"
+  trace.custom.status: "Status"
+  trace.custom.running: "sendet zyklisch"
+  trace.custom.edit_title: "Botschaft definieren"
+  trace.custom.tip: "Beliebig viele Sendebotschaften definieren (ID hex, DLC, Daten hex, Zyklus, zyklisch). Rechtsklick: Hinzufuegen, Aendern, Loeschen, Senden/Stopp. Die Liste wird im Projekt gespeichert."
+  help.shot.trace.7: "Sende-Zeile: ID (hex), DLC, Daten, Zykluszeit, Haken fuer zyklisches Senden und Senden-Button."
+  help.shot.trace_custom.1: "Der Button Selbst definiert oeffnet das Fenster fuer eigene Sendebotschaften."
+  help.shot.trace_custom.2: "Tabelle der Sendebotschaften: ID (hex), DLC, Daten (hex), Zyklus [ms], zyklisch und Status."
+  help.shot.trace_custom.3: "Rechtsklick-Menue: Hinzufuegen, Senden/Stopp, Aendern, Loeschen."
+  err.can.bad_id: "Ungueltige CAN-ID: '{value}' (hexadezimal, 0 bis 1FFFFFFF)"
+  err.can.bad_data: "Ungueltige Daten: '{data}' (erwartet Hex-Bytes, z. B. 00 01 02)"
+  err.can.bad_dlc: "Ungueltige DLC: {dlc} (erlaubt: 0-8, 12, 16, 20, 24, 32, 48, 64)"
+  err.can.data_longer_than_dlc: "{length} Datenbytes passen nicht in DLC {dlc}"
+  err.can.bad_cycle: "Ungueltige Zykluszeit: {cycle_ms} ms"
+  seq.problem.bad_raw: "{where}: {error}"
+  seq.desc.send_raw_once: "Rohframe {id} einmal senden: {data}"
+  seq.desc.send_raw_cyclic: "Rohframe {id} zyklisch senden alle {cycle_ms} ms: {data}"
+  seq.desc.send_raw_stop: "Rohframe {id}: zyklisches Senden AUS"
+  trace.error_frame: "Fehler-Frame"
+  help.shot.trace.6: "Farbmodus: Rx blau, Tx gruen, Fehler rot, ISO-TP violett."
+
+flash:
+  diag.sub.services: "Services"
+  diag.sub.vflash: "vFlash"
+  flash.hint: "vFlash-Pack (Vector) laden, interpretieren und mit der gewaehlten Hardware ausfuehren (Vector, PEAK, SocketCAN, Simulation). Die Software vFlash wird nicht benoetigt."
+  flash.load: "vFlash-Pack laden..."
+  flash.reload: "Neu einlesen"
+  flash.load_title: "vFlash-Pack waehlen"
+  flash.load_filter: "vFlash-Pack (*.vflashpack *.zip *.json *.yaml *.hex *.s19 *.srec *.mot *.bin);;Alle Dateien (*)"
+  flash.no_pack: "Kein Pack geladen."
+  flash.loaded: "{name}: {blocks} Datenbloecke, {kb} kB, {steps} Schritte"
+  flash.load_error: "Pack konnte nicht gelesen werden: {error}"
+  flash.start: "Flash starten..."
+  flash.confirm_title: "Flashen bestaetigen"
+  flash.confirm_text: "Das Pack '{name}' ({blocks} Datenbloecke, {kb} kB) wird in das Steuergeraet geschrieben. Dabei wird Speicher geloescht und ueberschrieben. Spannungsversorgung und Verbindung duerfen waehrenddessen nicht unterbrochen werden.\n\nWirklich starten?"
+  flash.not_connected: "Bitte zuerst in der Rubrik Projekt verbinden."
+  flash.tree.header: "Interpretation des Packs"
+  flash.tree.general: "Allgemein"
+  flash.tree.data: "Daten"
+  flash.tree.steps: "Ablauf"
+  flash.tree.warnings: "Hinweise"
+  flash.info.source: "Quelle"
+  flash.info.format: "Format"
+  flash.info.ecu: "Steuergeraet"
+  flash.info.ids: "Request-/Response-ID"
+  flash.info.security: "Seed&Key"
+  flash.info.alfid: "Adress-/Laengenformat"
+  flash.format.manifest: "CAN-Tool-Manifest (flashpack.json/yaml)"
+  flash.format.vflash: "vFlash-Pack (heuristisch gelesen)"
+  flash.format.image: "Einzelne Datei (Standardablauf)"
+  flash.block: "Block {index}: 0x{address}, {length} Bytes ({source})"
+  flash.security.none: "keine"
+  flash.security.xor: "Key = Seed XOR 0x{value} (Level {level})"
+  flash.security.add: "Key = Seed + 0x{value} (Level {level})"
+  flash.security.constant: "Key = Konstante 0x{value} (Level {level})"
+  flash.warn.generic_sequence: "Kein eigener Ablauf im Pack: Es wird der generische UDS-Standardablauf verwendet (nicht herstellerspezifisch). Ablauf vor dem Flashen pruefen."
+  flash.warn.vflash_heuristic: "Das interne Format von vFlash-Packs ist nicht oeffentlich dokumentiert; Inhalt wurde nur heuristisch gelesen (Datendateien, Namen, CAN-IDs)."
+  flash.warn.ignored_files: "{count} Datei(en) im Pack werden nicht ausgewertet (z. B. ODX-F, Signaturen, DLLs)."
+  flash.warn.vflash_security: "Herstellerspezifisches Seed&Key (z. B. DLL) wird nicht ausgefuehrt. Falls noetig, ein Manifest mit einfachem Verfahren (xor/add/constant) ergaenzen."
+  flash.warn.no_data: "Das Pack enthaelt keine Daten zum Programmieren."
+  flash.warn.bin_address: "{file}: BIN-Datei ohne Adresse, es wird Adresse 0 verwendet. Im Manifest 'address' angeben."
+  flash.err.bad_record: "{file}: ungueltiger Datensatz in Zeile {line}"
+  flash.err.unsupported_file: "Nicht unterstuetzte Datei: {name}"
+  flash.err.too_big: "Das Pack ist entpackt zu gross."
+  flash.err.bad_manifest: "Manifest ungueltig: {error}"
+  flash.err.missing_file: "Im Pack fehlt die Datei '{name}'"
+  flash.err.no_algorithm: "Seed&Key-Verfahren fehlt (Manifest: security.type)"
+  flash.err.running: "Es laeuft bereits ein Flashvorgang"
+  flash.err.aborted: "Abgebrochen"
+  flash.err.no_response: "Keine Antwort vom Steuergeraet"
+  flash.err.expected: "Antwort {got} beginnt nicht mit {expect}"
+  flash.err.block_missing: "Datenblock {block} existiert nicht"
+  flash.err.alfid_too_small: "Adress-/Laengenformat 0x{alfid} ist zu klein fuer den Block"
+  flash.err.no_seed: "Antwort enthaelt keinen Seed"
+  flash.log.already_unlocked: "Seed ist 0: Steuergeraet bereits entsperrt"
+  flash.msg.transferred: "{length} Bytes uebertragen (Blockgroesse {chunk})"
+  flash.step.unknown: "Unbekannter Schritt '{kind}'"
+  flash.step.session: "Diagnose-Session 0x{session}"
+  flash.step.comm_control: "Kommunikation steuern (0x{control})"
+  flash.step.security: "Security Access (Level {level})"
+  flash.step.routine: "Routine 0x{routine}"
+  flash.step.erase: "Loeschen Block {block} (0x{address}, {length} Bytes)"
+  flash.step.download: "Programmieren Block {block} (0x{address}, {length} Bytes)"
+  flash.step.check: "Pruefroutine 0x{routine}"
+  flash.step.request: "Request {data}"
+  flash.step.reset: "ECU-Reset 0x{reset}"
+  flash.step.wait: "Warten {ms} ms"
+  flash.step.comment: "{text}"
+  flash.dlg.title: "vFlash - Fortschritt"
+  flash.dlg.overall: "Gesamtfortschritt"
+  flash.dlg.col.step: "Schritt"
+  flash.dlg.col.status: "Status"
+  flash.dlg.col.detail: "Details"
+  flash.dlg.abort: "Abbrechen"
+  flash.dlg.close: "Schliessen"
+  flash.dlg.running: "Flashen laeuft. Verbindung und Spannungsversorgung nicht unterbrechen!"
+  flash.dlg.speed: "{done} / {total} kB  ({speed} kB/s)"
+  flash.dlg.log: "Protokoll"
+  flash.dlg.aborting: "Abbruch angefordert..."
+  flash.status.pending: "wartet"
+  flash.status.running: "laeuft"
+  flash.status.ok: "OK"
+  flash.status.fail: "FEHLER"
+  flash.status.skipped: "uebersprungen"
+  flash.status.aborted: "abgebrochen"
+  flash.result.passed: "Flashen erfolgreich abgeschlossen ({seconds} s)"
+  flash.result.failed: "Flashen fehlgeschlagen"
+  flash.result.aborted: "Flashen abgebrochen"
+  help.shot.vflash.1: "vFlash-Pack laden (.vflashpack/.zip, Manifest, HEX/S19/BIN); \"Neu einlesen\" liest die Datei erneut."
+  help.shot.vflash.2: "Interpretation des Packs: Allgemein (ECU, IDs, Seed&Key), Daten (Bloecke mit Adresse und Laenge), Ablauf (Schritte) und Hinweise."
+  help.shot.vflash.3: "Flash starten: nach einer Sicherheitsabfrage laeuft der Ablauf ueber die gewaehlte Hardware."
+  help.shot.vflash.4: "Fortschrittsfenster: je Schritt Status (wartet, laeuft, OK, FEHLER, uebersprungen) mit Details."
+  help.shot.vflash.5: "Gesamtfortschritt, Fortschritt des laufenden Datenblocks mit Datenrate und Protokoll; \"Abbrechen\" stoppt zwischen zwei Bloecken."
+  help.topic.appendix_c.title: "Anhang C: vFlash-Pack und Manifest"
+  help.topic.appendix_c.html: |-
+    <h1>Anhang C: vFlash-Pack und Manifest</h1>
+    <p>Der Reiter vFlash in der Rubrik Diagnose laedt ein Flash-Paket, interpretiert es und fuehrt es mit dem eigenen UDS-Flashablauf ueber die gewaehlte Hardware aus (Vector, PEAK, SocketCAN, Simulation). Die Vector-Software vFlash wird dafuer nicht benoetigt.</p>
+    <h2>Unterstuetzte Quellen</h2>
+    <ul><li><code>*.vflashpack</code> oder <code>*.zip</code> mit <code>flashpack.json</code> (oder <code>flashpack.yaml</code>) und den Datendateien: vollstaendig unterstuetzt.</li><li>Echtes vFlash-Pack ohne Manifest: Das interne Format ist nicht oeffentlich dokumentiert. HEX-, S-Record- und BIN-Dateien werden gefunden und das Projekt wird heuristisch gelesen. Ablauf, Adressen und Seed&amp;Key muessen meist ueber ein Manifest ergaenzt werden.</li><li>Einzelne Manifest-Datei oder Abbild (<code>.hex</code>, <code>.s19</code>, <code>.srec</code>, <code>.mot</code>, <code>.bin</code>) mit generischem Standardablauf.</li></ul>
+    <h2>Manifest flashpack.json</h2>
+    [[pre:flashpack]]
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">Element</th><th width="76%" align="left">Bedeutung</th></tr><tr><td valign='top'><code>name</code>, <code>ecu</code></td><td valign='top'>Anzeigename und Steuergeraet.</td></tr><tr><td valign='top'><code>request_id</code>, <code>response_id</code>, <code>extended</code>, <code>fd</code></td><td valign='top'>ISO-TP-Adressierung; fehlt sie, gilt die Diagnose-Konfiguration der Rubrik Diagnose.</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'>Seed&amp;Key: <code>type</code> = <code>none</code>, <code>xor</code>, <code>add</code> oder <code>constant</code>, dazu <code>level</code> (Seed-Level, Key = Level + 1) und <code>value</code>.</td></tr><tr><td valign='top'><code>address_format</code></td><td valign='top'>addressAndLengthFormatIdentifier, z. B. <code>0x44</code> = 4 Byte Laenge und 4 Byte Adresse.</td></tr><tr><td valign='top'><code>max_chunk</code></td><td valign='top'>Obergrenze der Nutzdaten je Transfer-Request (sonst aus der Antwort auf 0x34).</td></tr><tr><td valign='top'><code>data</code></td><td valign='top'>Liste der Datendateien (<code>file</code>, <code>name</code>); fuer BIN-Dateien ist <code>address</code> Pflicht.</td></tr><tr><td valign='top'><code>steps</code></td><td valign='top'>Eigener Ablauf; fehlt er, gilt der Standardablauf.</td></tr></table>
+    <h2>Ablaufschritte (steps)</h2>
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">Schritt</th><th width="76%" align="left">Parameter und Wirkung</th></tr><tr><td valign='top'><code>session</code></td><td valign='top'><code>session</code>: Diagnose-Session (0x10).</td></tr><tr><td valign='top'><code>comm_control</code></td><td valign='top'><code>control</code>, <code>comm_type</code>: Kommunikation steuern (0x28).</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'><code>level</code>: Seed anfordern, Key berechnen und senden (0x27).</td></tr><tr><td valign='top'><code>erase</code></td><td valign='top'><code>block</code> (<code>all</code> oder Nummer), <code>routine</code> (Standard FF00): Speicher loeschen (0x31).</td></tr><tr><td valign='top'><code>download</code></td><td valign='top'><code>block</code>: Request Download, Transfer Data, Transfer Exit (0x34, 0x36, 0x37).</td></tr><tr><td valign='top'><code>check</code>, <code>routine</code></td><td valign='top'><code>routine</code>, <code>data</code> (Hex), <code>control</code>, <code>timeout_ms</code>: Routine starten (0x31).</td></tr><tr><td valign='top'><code>request</code></td><td valign='top'><code>data</code> (Hex), <code>expect</code> (erwartete Antwort-Anfangsbytes).</td></tr><tr><td valign='top'><code>reset</code></td><td valign='top'><code>reset</code>: ECU-Reset (0x11).</td></tr><tr><td valign='top'><code>wait</code>, <code>comment</code></td><td valign='top'><code>ms</code> Wartezeit bzw. <code>text</code> als Kommentar.</td></tr></table>
+    <h2>Standardablauf</h2>
+    <p>Ohne <code>steps</code> werden nacheinander ausgefuehrt: Session 0x03, Kommunikation abschalten (0x28 03 01), Session 0x02, Security Access (falls <code>security</code> gesetzt), Loeschen und Programmieren aller Bloecke, ECU-Reset 0x11 01. Dieser Ablauf ist generisch und nicht herstellerspezifisch.</p>
+    <h2>Sicherheitshinweise</h2>
+    <p>Flashen loescht und ueberschreibt Speicher des Steuergeraets. Spannungsversorgung und Busverbindung duerfen waehrenddessen nicht unterbrochen werden. Aus Paketen wird nie Code ausgefuehrt; herstellerspezifische Seed&amp;Key-DLLs werden nicht unterstuetzt. Bei einem Fehler stoppt der Ablauf, die restlichen Schritte werden uebersprungen.</p>

@@ -1,0 +1,1099 @@
+meta:
+  name: 中文(简体)
+  order: 4
+ui:
+  app.title: CAN Tool
+  tab.project: 项目
+  tab.data: 数据
+  tab.trace: Trace
+  tab.sequence: 测试序列
+  tab.graph: 图表
+  tab.logging: 记录
+  tab.diag: 诊断
+  tab.help: 帮助
+  header.dark: 深色模式
+  header.dark_tip: 在浅色和深色外观之间切换
+  header.language: '语言：'
+  header.language_tip: 选择界面和帮助的语言
+  project.group: 项目
+  project.active: '当前项目：'
+  project.new: 新建...
+  project.import: 导入文件...
+  project.cache_format: '缓存格式：'
+  project.reconvert: "重新转换 DBC/CDD/A2L"
+  project.info_label: '信息：'
+  project.new_title: 新建项目
+  project.new_prompt: '项目名称：'
+  project.dialog_title: 项目
+  project.import_dialog: 选择 DBC/CDD 文件
+  project.import_filter: "DBC/CDD/A2L (*.dbc *.cdd *.a2l);;所有文件 (*)"
+  project.import_title: 导入
+  project.import_error: '{file}：{error}'
+  project.convert_title: 转换
+  project.info.dbc: 'DBC：{sources} - {count} 个报文'
+  project.info.warning: '警告：{text}'
+  project.info.cdd_warning: 'CDD 警告：{text}'
+  hw.group: 硬件
+  hw.interface: '接口：'
+  hw.channel: '通道：'
+  hw.channel_tip: "Vector：设备上的通道号（0 = CH1）；PEAK：例如 PCAN_USBBUS1；SocketCAN：例如 can0"
+  hw.bitrate: '波特率 (bit/s)：'
+  hw.fd: CAN FD
+  hw.data_bitrate: '数据波特率 (bit/s)：'
+  hw.app_name: 'Vector 应用程序名称：'
+  hw.app_name_tip: "可选。留空 = 直接访问 Vector 设备（推荐）。填写名称（如 CANalyzer）时使用 Vector Hardware Config 中的通道分配。"
+  hw.sim_echo: '仿真：回显发送帧'
+  hw.sim_ecu: '仿真：虚拟控制器'
+  hw.peak_note: '提示：使用 PEAK PCAN-USB Pro FD 需安装 PCAN 驱动。'
+  hw.type.simulation: 仿真（无硬件）
+  hw.type.vector: Vector (VN1630A, VN7572)
+  hw.type.pcan: PEAK PCAN-USB Pro FD
+  hw.type.socketcan: SocketCAN (Linux)
+  hw.only_windows: "仅限 Windows"
+  hw.only_linux: "仅限 Linux"
+  hw.os_note.windows: "操作系统：{os}。支持 Vector（XL 驱动）和 PEAK（PCAN-Basic）；Windows 上没有 SocketCAN。"
+  hw.os_note.linux: "操作系统：{os}。支持 SocketCAN（例如 can0，需先用 'ip link set can0 up type can bitrate 500000' 启用）和 PEAK（PCAN-Basic 库或内核驱动 can0）。Linux 上没有 Vector XL 驱动；如可能，请通过 SocketCAN 接入 Vector 设备。"
+  hw.os_note.macos: "操作系统：{os}。可使用仿真和 PEAK（PCAN-Basic）。"
+  hw.os_note.other: "操作系统：{os}。可使用仿真；其他硬件未经测试。"
+  hw.detect: "检测硬件"
+  hw.detect_tip: "搜索当前操作系统上已连接的接口（Vector、PEAK、SocketCAN），若恰好找到一个，则采用其类型和通道。"
+  hw.detect_none: "未找到接口（{os}）。驱动已安装且设备已连接吗？"
+  hw.detect_found: "找到的接口：\n{items}"
+  err.hw.vector_unsupported: "Vector（XL 驱动）在 {os} 上不可用（仅限 Windows）。在 Linux 上请通过 SocketCAN 接入设备。"
+  err.hw.vector_driver_missing: "未找到 Vector 驱动：缺少 {dll}（Python 为 {bits} 位）。解决方法：从 vector.com 安装“Vector Driver Setup”或“XL Driver Library”（会把 {dll} 放入 C:\\Windows\\System32），然后重启本工具。也可将 {dll} 复制到工具文件夹或 drivers\\ 中。32 位 Python 会查找 vxlapi.dll 而不是 vxlapi64.dll，此时请改用 64 位 Python。之后请在 Vector Hardware Config 中确认 VN1630A 已出现，且没有其他程序（CANalyzer、CANoe、vFlash）占用该通道。"
+  err.hw.socketcan_unsupported: "SocketCAN 在 {os} 上不可用（仅限 Linux）。在 Windows 上请选择 Vector 或 PEAK。"
+  conn.connect: 连接
+  conn.disconnect: 断开
+  conn.connected: '已连接：{channel}   RX：{rx}   TX：{tx}'
+  conn.disconnected: 未连接
+  conn.via_serial: "通过序列号"
+  conn.via_index: "通过硬件索引"
+  conn.via_hwconfig: "通过 Vector Hardware Config"
+  tab.xcp: "XCP"
+  tab.builder: "GUI Builder"
+  xcp.title: "XCP"
+  xcp.a2l: "A2L："
+  xcp.master_id: "主站 ID（十六进制）："
+  xcp.slave_id: "从站 ID（十六进制）："
+  xcp.extended: "扩展 ID"
+  xcp.connect: "连接 XCP"
+  xcp.disconnect: "断开 XCP"
+  xcp.filter_placeholder: "过滤（名称）..."
+  xcp.col.name: "名称"
+  xcp.col.kind: "类型"
+  xcp.col.address: "地址"
+  xcp.col.unit: "单位"
+  xcp.col.raw: "原始值"
+  xcp.col.value: "值"
+  xcp.add: "加入监视"
+  xcp.remove: "移除"
+  xcp.available: "可用（来自 A2L）"
+  xcp.watch: "监视"
+  xcp.poll: "循环读取"
+  xcp.read_once: "读取一次"
+  xcp.write_placeholder: "新值（数字或文本）"
+  xcp.write: "写入值"
+  xcp.kind.measurement: "测量量"
+  xcp.kind.characteristic: "参数"
+  xcp.unsupported_tip: "不支持（缺少数据类型、类型或地址）。"
+  xcp.a2l_error: "A2L 错误：{error}"
+  xcp.bad_ids: "无效的 CAN ID（需要十六进制）。"
+  xcp.no_a2l: "项目中没有已转换的 A2L 文件（文件夹 a2l/）。"
+  xcp.connect_first: "请先连接 CAN（项目页）。"
+  xcp.connected_info: "XCP 已连接：MAX_CTO {cto}，MAX_DTO {dto}，字节序 {order}。"
+  xcp.state_on: "XCP 已连接"
+  xcp.state_off: "XCP 已断开"
+  xcp.select_row: "请先在监视列表中选择一行。"
+  xcp.written: "已写入：{name} = {value}"
+  err.a2l.invalid: "不是有效的 A2L 文件：{file}"
+  err.a2l.unknown_item: "A2L 中的未知项“{name}”"
+  err.a2l.short_data: "{name} 的数据不足（需要 {size} 字节）"
+  err.a2l.out_of_range: "值 {value} 超出数据类型范围（{lo} 至 {hi}）"
+  err.xcp.timeout: "XCP：{ms} ms 内无响应"
+  err.xcp.negative: "XCP 错误 {name} (0x{code})"
+  err.xcp.bad_response: "意外的 XCP 响应：{data}"
+  err.xcp.bitmask_write: "“{name}”：不支持写入位掩码测量量"
+  err.xcp.unsupported_item: "不支持“{name}”（缺少数据类型或地址）"
+  conn.no_rx: "在 {channel} 上未收到数据。请检查：(1) 通道号 - 0 = CH1，1 = CH2（VN1630A/VN7572 上的标识）；(2) 波特率与总线一致；(3) 总线上至少有另一个发送节点（PCAN-View 是否在发送？）；(4) 2 x 120 欧终端电阻仅在总线两端，Y 形分支要短；(5) CAN-H/CAN-L 未接反，地线已连接；(6) 没有其他程序（CANalyzer/CANoe）占用该通道；(7) 仅当总线传输 FD 时才启用 CAN FD。"
+  conn.reinit: "重新初始化硬件"
+  conn.reinit_tip: "重新初始化硬件：关闭接口并以相同设置重新打开。当所连接的硬件卡死时很有用。发送列表保持不变；正在进行的日志记录会停止。"
+  err.can.close: "关闭接口时出错：{error}"
+  err.can.close_timeout: "关闭接口无响应（{seconds} 秒后中止）"
+  conn.failed_title: 连接失败
+  msg.dbc_error: '无法加载 DBC：{error}'
+  msg.sequence_load_error: '无法加载测试序列：{error}'
+  msg.project_save_error: '无法保存项目：{error}'
+  msg.cdd_error: '无法加载 CDD：{error}'
+  msg.logger_error: '记录器错误：{error}'
+  col.message_signal: 报文 / 信号
+  col.id: ID
+  col.unit: 单位
+  col.tx_message_signal: 发送报文 / 信号
+  col.rx_message_signal: 接收报文 / 信号
+  col.cyclic: 周期
+  col.value: 值
+  col.cycle_ms: 周期 (ms)
+  col.select: 选择
+  col.text: 文本
+  data.available: '可用数据 (DBC)：'
+  data.filter_placeholder: 过滤（报文、信号、ID）...
+  data.add_tx: 添加到发送
+  data.add_rx: 添加到接收
+  data.remove: 移除
+  data.tx_group: 发送数据 (TX)
+  data.rx_group: 接收数据 (RX)
+  data.send_button: 发送
+  data.send_title: 发送
+  trace.pause: 暂停
+  trace.decode: 解码信号
+  trace.only_selected: 仅显示所选报文
+  trace.autoscroll: 自动滚动
+  trace.tx: TX
+  trace.rx: RX
+  trace.filter_placeholder: ID/名称过滤...
+  trace.clear: 清空
+  trace.save_csv: 另存为 CSV...
+  trace.col.time: 时间
+  trace.col.dir: 方向
+  trace.col.channel: 通道
+  trace.col.id: ID
+  trace.col.type: 类型
+  trace.col.len: 长度
+  trace.col.data: 数据
+  trace.col.message: 报文
+  trace.col.signals: 信号
+  trace.count: '{rows} 行（队列中 {queued} 行）'
+  trace.decode_error: （解码错误）
+  trace.save_title: 保存 Trace
+  seq.file: '文件：'
+  seq.new: 新建
+  seq.load: 加载
+  seq.save: 保存
+  seq.save_as: 另存为...
+  seq.name: '名称：'
+  seq.description: '描述：'
+  seq.col.num: 序号
+  seq.col.type: 命令
+  seq.col.params: 参数 (JSON)
+  seq.kind_item: '{key}  -  {title}'
+  seq.hint: '{key}：{summary}  示例：{example}'
+  seq.add_step: 插入步骤
+  seq.up: 上移
+  seq.down: 下移
+  seq.duplicate: 复制
+  seq.delete: 删除
+  seq.signal: '信号：'
+  seq.apply_signal: 应用到所选步骤
+  seq.run: 开始
+  seq.stop: 停止
+  seq.check: 检查
+  seq.res.step: 步骤
+  seq.res.description: 描述
+  seq.res.status: 状态
+  seq.res.message: 信息
+  seq.status.ok: OK
+  seq.status.fail: 失败
+  seq.status.error: 错误
+  seq.status.skipped: 已跳过
+  seq.running: 序列运行中...
+  seq.saved: '已保存：{name}'
+  seq.valid: 序列有效。
+  seq.bad_json: '第 {row} 行：JSON 无效（{error}）'
+  seq.json_object_expected: 需要 JSON 对象
+  seq.load_title: 加载序列
+  seq.save_title: 保存序列
+  seq.file_filter: 序列 (*.json)
+  seq.dialog_title: 测试序列
+  graph.signals: '信号：'
+  graph.mode_single: "1 个图"
+  graph.mode_multi: "n 个图"
+  graph.mode_tip: "切换：所有选中信号显示在一个共同的图中（1 个图），或每个信号一个独立的图并上下排列、共用时间轴（n 个图）。"
+  graph.window: '时间窗口：'
+  graph.pause: 暂停
+  graph.clear: 清空数据
+  graph.time: 时间
+  builder.edit: "编辑"
+  builder.tip: "用现有信号的元素搭建自己的显示界面(仅显示,不能输入数值)。编辑模式:用鼠标移动元素,拖动右下角调整大小,右键进行设置。"
+  builder.add_led: "LED"
+  builder.add_text: "文本框"
+  builder.add_gauge: "指针"
+  builder.hint: "目前为空:用上方按钮添加 LED、文本框或指针,并通过右键关联信号。"
+  builder.default_text: "文本"
+  builder.no_signal: "(无信号)"
+  builder.signal_title: "关联信号"
+  builder.signal_prompt: "信号(来自“数据”页的选择):"
+  builder.text_title: "文本"
+  builder.text_prompt: "文本或标签:"
+  builder.decimals_prompt: "小数位数:"
+  builder.scale_title: "手动刻度"
+  builder.min: "最小值"
+  builder.max: "最大值"
+  builder.scale_error: "最小值必须小于最大值。"
+  builder.menu.signal: "关联信号..."
+  builder.menu.label: "标签..."
+  builder.menu.text: "文本..."
+  builder.menu.decimals: "小数位数..."
+  builder.menu.scale_auto: "自动刻度"
+  builder.menu.scale_manual: "手动刻度(最小/最大)..."
+  builder.menu.delete: "删除"
+  builder.add_background: "背景"
+  builder.add_image: "图片"
+  builder.image_title: "选择图片"
+  builder.image_filter: "图片 (*.png *.jpg *.jpeg *.bmp *.gif *.svg)"
+  builder.image_empty: "无图片"
+  builder.image_error: "无法加载图片"
+  builder.x_prompt: "比较值 x:"
+  builder.color_title: "选择颜色"
+  builder.menu.bg_color: "背景颜色..."
+  builder.menu.image: "选择图片..."
+  builder.menu.image_clear: "移除图片"
+  builder.menu.led_digital: "LED 数字(值 0 / 1)"
+  builder.menu.led_analog: "带范围的 LED(最小值 <= x < 最大值)"
+  builder.menu.c0: "值 0 的颜色..."
+  builder.menu.c1: "值 1 的颜色..."
+  builder.menu.x: "比较值 x..."
+  builder.menu.c_lt: "小于 x 的颜色..."
+  builder.menu.c_eq: "等于 x 的颜色..."
+  builder.menu.c_gt: "大于 x 的颜色..."
+  builder.menu.title_on: "显示标题"
+  builder.menu.range_on: "范围显示"
+  builder.range_title: "范围 {n}"
+  builder.range_active: "启用范围"
+  builder.range_color: "颜色"
+  builder.range_rule: "规则:最小值 <= x < 最大值"
+  builder.menu.range1: "范围 1..."
+  builder.menu.range2: "范围 2..."
+  builder.menu.range3: "范围 3..."
+  builder.menu.show_min: "最小值指针"
+  builder.menu.show_max: "最大值指针"
+  builder.menu.minmax_reset: "重置最小/最大值"
+  log.tree_header: 报文 / 信号
+  log.all: 全选
+  log.none: 全不选
+  log.filename: '文件名：'
+  log.min_interval: '每个信号最小间隔：'
+  log.on_change: 仅在值变化时记录
+  log.raw: 另外记录原始数据 (Hex)
+  log.raw_ids: "原始数据 ID"
+  log.raw_ids_tip: "原始数据的可选 ID 过滤器（十六进制），例如 100, 7E0-7EF。留空 = 所有帧。"
+  log.raw_ids_placeholder: "例如 100, 7E0-7EF（留空 = 全部）"
+  log.start: 开始记录
+  log.stop: 停止记录
+  log.title: 记录
+  log.connect_first: 请先连接。
+  log.no_data: 未选择信号。
+  log.no_pyarrow: 未安装 pyarrow - Parquet 记录不可用。
+  log.active: '正在记录：{name} - {rows} 行，{size} kB'
+  log.error: '写入出错：{error}'
+  diag.cdd: 'CDD：'
+  diag.ecu: 'ECU：'
+  diag.request_id: '请求 ID：'
+  diag.response_id: '响应 ID：'
+  diag.extended: 扩展 ID
+  diag.fd: CAN FD
+  diag.padding: '填充：'
+  diag.tester_present: Tester Present (3E 80)，每 2 s
+  diag.col.service: 服务
+  diag.col.request: 请求
+  diag.col.description: 描述
+  diag.col.param: 参数
+  diag.col.value: 值 (hex)
+  diag.send: 发送服务
+  diag.raw_placeholder: 十六进制原始请求，如 22 F1 90
+  diag.send_raw: 发送原始请求
+  diag.clear_log: 清空日志
+  diag.bad_address: 地址/填充无效（需要十六进制）
+  diag.bad_request: '请求无效：{error}'
+  diag.bad_hex: 十六进制输入无效
+  diag.not_connected: 未连接
+  diag.config_error: '配置错误：{error}'
+  diag.no_response_expected: （无需响应）
+  diag.error: '错误：{error}'
+  help.search_placeholder: 搜索词（隐藏无匹配的章节）
+  help.next: 下一个匹配
+  help.count: '{count} 章'
+core:
+  diag.resp.positive: '肯定响应：{data}'
+  diag.resp.negative: 否定响应 (NRC 0x{nrc}) {text}
+  diag.resp.unexpected: '意外响应：{data}'
+  err.can.fd_too_long: 'CAN FD 长度无效：{n} 字节'
+  err.can.backend_closed: CAN 接口未打开
+  err.can.missing_python_can: 未安装 python-can 包 (pip install python-can)
+  err.can.listener: '监听器错误：{error}'
+  err.can.rx: '接收错误：{error}'
+  err.can.not_connected: 未连接
+  err.can.classic_limit: 经典 CAN 最多允许 8 个数据字节
+  err.can.not_in_txlist: '报文“{name}”不在发送列表中'
+  err.can.raw_no_signals: 原始报文无信号定义
+  err.can.no_signal: '信号“{signal}”在报文“{name}”中不存在'
+  err.can.tx: '发送 {name} 出错：{error}'
+  err.can.open_failed: "连接失败：{error}\n提示：{hint}"
+  err.can.hint.vector: "Vector：通道号 = 设备上的编号（0 = CH1，1 = CH2 ……）。未填写应用名称时直接访问设备；填写应用名称（如 CANalyzer）则需要在 Vector Hardware Config 中分配通道。波特率必须与总线一致，仅在 FD 模式下启用 CAN FD；通道不得被其他程序占用。"
+  err.can.hint.pcan: "PEAK 通道例如 PCAN_USBBUS1 或 1（通道 2：PCAN_USBBUS2 或 2）；仅在支持 FD 的设备（PCAN-USB Pro FD）上启用 CAN FD；波特率必须与总线一致。"
+  err.can.hint.other: "请检查接口、通道名称和波特率；仅在支持 FD 的设备上启用 CAN FD。"
+  err.can.vector_found: "驱动报告的 Vector 通道：\n{items}"
+  err.can.vector_none: "Vector 驱动未报告任何通道：VN1630A(USB)是否已连接,或 VN7572(PCIe 卡)是否已安装？在“Vector Hardware Config”中是否可见？是否已安装 Vector Driver Setup，且没有其他程序（CANalyzer/CANoe/vFlash）占用该设备？"
+  err.dbc.signal_too_long: 信号长度超过报文长度
+  err.diag.unresolved: '请求中存在未解析的参数：{text}'
+  err.isotp.bad_dl: 'CAN FD 数据长度无效：{dl}'
+  err.isotp.timeout: '超时：控制器无响应'
+  err.isotp.overflow: 控制器报告溢出 (Flow Control)
+  err.isotp.empty: 有效数据为空
+  err.isotp.sequence: 'ISO-TP 序号错误：期望 {expected}，收到 {got}'
+  err.log.pyarrow: 未安装 pyarrow (pip install pyarrow)
+  err.log.bad_id_filter: "无效的 ID 过滤器：“{value}”（十六进制，例如 100 或 7E0-7EF）"
+  err.project.bad_ext: "仅支持 .dbc、.cdd 和 .a2l 文件"
+  err.project.name: 项目名称无效
+  err.project.exists: '项目“{name}”已存在'
+  err.project.not_found: '未找到项目“{name}”'
+  err.seq.invalid: |-
+    序列无效：
+    {problems}
+  err.seq.no_steps: 序列中没有步骤 ('steps')
+  err.seq.not_connected: 未连接
+  err.seq.running: 已有序列正在运行
+  warn.dbc.unreadable_signal: '无法读取信号行：{line}'
+  warn.dbc.extended_mux: '不支持扩展复用：{signal}'
+  warn.dbc.generic: '{source}：{text}'
+  warn.dbc.duplicate_message: '{source}：报文“{name}”重复定义'
+  warn.dbc.duplicate_id: 'ID 0x{id} 重复分配（{first}，{second}）'
+  warn.cdd.heuristic: CDD 以启发式方式读取；请检查结果
+  warn.cdd.no_services: CDD 中未找到服务
+  seq.problem.unknown_type: '{where}：未知命令“{kind}”'
+  seq.problem.bad_op: '{where}：运算符“{op}”无效'
+  seq.problem.no_message: '{where}：报文“{message}”不在 DBC 中'
+  seq.problem.no_signal: '{where}：信号“{signal}”不在报文“{message}”中'
+  seq.summary: '序列“{name}”：{status}（{ok}/{total} 个步骤 OK）'
+  seq.run_status.running: 运行中
+  seq.run_status.passed: 通过
+  seq.run_status.failed: 失败
+  seq.run_status.aborted: 已中止
+  seq.runtime_error: 运行时错误
+  seq.desc.set_signal: '{message}.{signal} = {value}'
+  seq.desc.enable_on: '{message}：周期发送 开'
+  seq.desc.enable_off: '{message}：周期发送 关'
+  seq.desc.set_cycle: '{message}：周期 {cycle_ms} ms'
+  seq.desc.send_once: '{message}：发送一次'
+  seq.desc.wait: 等待 {ms} ms
+  seq.desc.wait_for: 等待 {direction} {message}.{signal} {op} {value}
+  seq.desc.check: 检查 {direction} {message}.{signal} {op} {value}
+  seq.desc.diag: 诊断服务 {service}
+  seq.desc.diag_raw: 诊断原始请求 {request}
+  seq.desc.loop: 循环 x{count}
+  seq.msg.no_value: 未收到值
+  seq.msg.timeout: 超时（{detail}）
+  seq.msg.unknown_step: 未知命令“{kind}”
+  seq.msg.no_new_value: '{key} 没有新值'
+  seq.msg.expected: '{key} = {val}，期望 {op} {value}'
+  seq.msg.diag_not_configured: 未配置诊断
+  seq.msg.no_diag_def: 未加载诊断定义 (CDD)
+  seq.msg.no_service: '服务“{service}”不在 CDD 中'
+  seq.msg.no_response_expected: 无需响应
+  seq.msg.resp_mismatch: '响应 {response} 与“{expect}”不匹配'
+  cli.converted: '已转换：{path}'
+  cli.description: 支持 Vector/PEAK 的 CAN 工具
+  cli.help.project: 启动时打开的项目
+  cli.help.list: 列出项目
+  cli.help.convert: 将项目的 DBC/CDD 转换为 JSON/YAML（无 GUI）
+  cli.help.format: 缓存格式（json 或 yaml）
+  cli.help.force: 即使缓存已是最新也重新生成
+  cli.help.lang: 语言 (de, en, fr, es, zh, th)
+  cli.no_projects: （无项目）
+  cli.summary: '来自 {files} 个文件的 {messages} 个报文'
+  cli.warning: '警告：{text}'
+  cli.missing_xcb_cursor: "在 Linux (X11) 上 Qt 需要库 libxcb-cursor0，但它缺失。请安装：\n  Debian/Ubuntu/Mint: sudo apt install libxcb-cursor0\n  Fedora:             sudo dnf install xcb-util-cursor\n  Arch:               sudo pacman -S xcb-util-cursor\n然后重新启动程序。"
+  cli.missing_gui: |-
+    缺少 GUI 依赖：{error}
+    请执行 'pip install -r requirements.txt'。
+  cli.unknown_lang: '未知语言“{lang}”。可用：{codes}'
+steps:
+  steps:
+    set_signal:
+      title: 设置信号值
+      summary: 设置发送报文中某信号的物理值。新值随下一帧（周期或单次）发送到总线。
+      format: '{"type": "set_signal", "message": "<消息>", "signal": "<信号>", "value": <数字或文本>}'
+      notes: 报文中未指定的信号保持不变（初始值 0）。
+      fields:
+        message: DBC 报文名称。若不在发送列表中，则自动添加（初始不周期发送）。
+        signal: 报文内的信号名称。
+        value: 物理值（经系数/偏移换算后，如 40 表示 40 %）。带值表的信号也可用其文本，如 "R"。超出信号范围的值会被限幅。
+    enable_tx:
+      title: 开启/关闭周期发送
+      summary: 按设定周期启动或停止报文的周期发送。
+      format: '{"type": "enable_tx", "message": "<消息>", "enabled": <true|false>}'
+      notes: 第一帧立即发出，之后按设定周期发送。
+      fields:
+        message: DBC 报文名称（必要时添加到发送列表；周期取自 DBC，否则为 100 ms）。
+        enabled: true = 周期发送，false = 停止发送。
+    set_cycle:
+      title: 修改周期时间
+      summary: 修改发送报文的周期时间（立即生效，周期发送过程中同样有效）。
+      format: '{"type": "set_cycle", "message": "<消息>", "cycle_ms": <数字>}'
+      notes: ''
+      fields:
+        message: DBC 报文名称。
+        cycle_ms: 周期时间，单位毫秒。0 表示暂停周期发送。
+    send_once:
+      title: 发送一次报文
+      summary: 以当前信号值恰好发送一帧，与周期发送无关。
+      format: '{"type": "send_once", "message": "<消息>"}'
+      notes: ''
+      fields:
+        message: DBC 报文名称。
+    send_raw:
+      title: "发送原始帧"
+      summary: "在 CAN 总线上发送原始帧（ID + 数据），单次或循环。cyclic=true 且 enabled=false 时，停止该 ID 的循环发送。"
+      format: '{"type": "send_raw", "id": "<hex>", "data": "<hex>", "dlc": <n>, "cyclic": <true|false>, "cycle_ms": <n>}'
+      notes: "缺少的数据字节用 00 补齐。ID 大于 0x7FF 为扩展帧，DLC 大于 8 为 CAN FD。循环发送的帧在该步骤结束后继续发送。"
+      fields:
+        id: "CAN ID，十六进制（例如 \"0x100\" 或 \"100\"）。"
+        data: "十六进制字节形式的数据，例如 \"00 01 02 03 04 05 06 07\"。"
+        dlc: "数据长度（0-8、12、16、20、24、32、48、64）。默认：数据字节数。"
+        cyclic: "true = 循环发送，false = 单次发送（默认）。"
+        cycle_ms: "cyclic=true 时的周期时间（毫秒，默认 100）。"
+        enabled: "false 停止该 ID 的循环发送（仅与 cyclic=true 一起使用，默认 true）。"
+        extended: "true 强制使用扩展 ID（默认：大于 0x7FF 时自动）。"
+        fd: "true 强制使用 CAN FD（默认：DLC 大于 8 时自动）。"
+    wait:
+      title: 等待固定时间
+      summary: 使序列暂停固定时间。周期发送和接收继续进行。
+      format: '{"type": "wait", "ms": <数字>}'
+      notes: 点击停止会立即结束正在进行的等待。
+      fields:
+        ms: 等待时间，单位毫秒。
+    wait_for:
+      title: 等待信号条件
+      summary: 等待某信号满足条件。仅统计在本步骤开始之后收到的值。首次满足即为 ok，超时则为错误。
+      format: '{"type": "wait_for", "direction": "RX", "message": "<消息>", "signal": "<信号>", "op": "<运算符>", "value": <数字>, "timeout_ms": <数字>}'
+      notes: 评估与“数据”页中的信号选择无关。
+      fields:
+        direction: 评估接收或发送的报文。
+        message: DBC 报文名称。
+        signal: 信号名称。
+        op: '比较：==  !=  <  <=  >  >='
+        value: 比较值（物理值）。
+        timeout_ms: 最长等待时间，单位 ms（默认 3000）。
+    check:
+      title: 检查信号值
+      summary: 立即检查某信号最近收到的值（不等待）。若条件不满足，或序列启动后尚未收到值，则该步骤失败。
+      format: '{"type": "check", "direction": "RX", "message": "<消息>", "signal": "<信号>", "op": "<运算符>", "value": <数字>}'
+      notes: 刚启动时通常还没有值 - 请先用 wait_for 同步。
+      fields:
+        direction: 评估接收或发送的报文。
+        message: DBC 报文名称。
+        signal: 信号名称。
+        op: '比较：==  !=  <  <=  >  >='
+        value: 比较值（物理值）。
+    diag:
+      title: 来自 CDD 的诊断服务
+      summary: 通过 ISO-TP 发送 CDD 中定义的诊断服务并评估响应。
+      format: '{"type": "diag", "service": "<服务名>", "params": {"<参数>": <值>}, "expect": "<十六进制前缀>", "timeout_ms": <数字>}'
+      notes: 寻址（请求/响应 ID、FD）取自“诊断”页。
+      fields:
+        service: CDD 中的服务名称（诊断页），如 ReadVIN。
+        params: 请求中 {Platzhalter} 的值。数字 = 十进制，文本 = 十六进制 ("F186")。
+        expect: 期望的响应开头，如 "62 F1 90"。留空 = 任何肯定响应均可。
+        timeout_ms: 响应超时，单位 ms（默认 1000）。遇到 'ResponsePending' (NRC 0x78) 时会等待更久。
+    diag_raw:
+      title: 十六进制诊断请求
+      summary: 通过 ISO-TP 发送任意 UDS 请求（十六进制字节）并评估响应。
+      format: '{"type": "diag_raw", "request": "<十六进制字节>", "expect": "<十六进制前缀>", "timeout_ms": <数字>}'
+      notes: 无响应的请求（子功能置位 bit 7，如 "3E 80"）视为 ok。
+      fields:
+        request: 请求字节，如 "22 F1 86"。
+        expect: 期望的响应开头，如 "62 F1 86"。留空 = 任何肯定响应均可。
+        timeout_ms: 响应超时，单位 ms（默认 1000）。
+    loop:
+      title: 循环
+      summary: 依次多次执行其中包含的步骤。
+      format: '{"type": "loop", "count": <数字>, "steps": [ <步骤>, <步骤>, ... ]}'
+      notes: 结果中内部步骤显示为如 3.2.1（第 3 步，第 2 次循环，第 1 步）。
+      fields:
+        count: 循环次数。
+        steps: 嵌套步骤（任意类型，也可包含其他循环）。
+    comment:
+      title: 注释
+      summary: 不执行任何操作；仅用于记录序列说明。
+      format: '{"type": "comment", "text": "<文本>"}'
+      notes: ''
+      fields:
+        text: 任意注释。
+    label:
+      format: 格式
+      elements: 元素
+      example: 示例
+      note: '提示：'
+      col_element: 元素
+      col_type: 类型
+      col_desc: 描述
+      col_command: 命令
+      col_title: 标题
+      col_summary: 简介
+    required: 必填
+    optional: 可选
+    type:
+      text: 文本
+      number: 数字
+      number_or_text: 数字或文本
+      bool: true/false
+      direction: '"RX" 或 "TX"'
+      hex: 十六进制文本
+      object: 对象
+      list: 列表
+    type_required: '{type}，{required}'
+help:
+  help:
+    topic:
+      general:
+        title: 1. 概述与项目创建
+        html: |-
+          <h1>1. 概述与项目创建</h1>
+
+          <h2>1.1 工具用途</h2>
+          <p>CAN Tool 是用于测试和分析 CAN 与 CAN FD 总线的 Python 工具。可使用 <b>Vector VN1630A / VN7572</b> 或 <b>PEAK-System PCAN-USB Pro FD</b>（均通过
+          python-can），也可在无硬件时使用内置的<b>仿真</b>。</p>
+          <p>核心功能：</p>
+          <ul><li>管理多个<b>项目</b>（每个项目有各自的 DBC、CDD、序列和日志文件）。</li><li>使用前将 <b>DBC/CDD 转换</b>为 JSON 或 YAML（加载快，便于检查）。</li><li>报文的<b>周期发送</b>与接收，以物理值访问信号。</li><li>所有发送和接收帧的 <b>Trace</b>，可选信号解码。</li><li><b>测试序列</b> (JSON)：设置信号、等待响应、检查、执行诊断。</li><li>所选信号的<b>折线图</b>。</li><li>可切换外观（<b>深色模式</b>）和<b>六种语言</b>（德语、英语、法语、西班牙语、中文/普通话、泰语）。</li><li>带过滤的 <b>Parquet 记录</b>。</li><li>基于 ISO-TP (ISO 15765-2) 的<b>诊断</b>，使用 CDD 中的 UDS 服务。</li></ul>
+
+          <h2>1.2 数据流概览</h2>
+          <pre> dbc/*.dbc  --(转换)--&gt;  cache/*.dbc.json|yaml  ---+
+           cdd/*.cdd  --(转换)--&gt;  cache/*.cdd.json|yaml  ---+--&gt; “数据”页：选择 TX / RX
+                                                                      |        |
+                                                                      |        +--&gt; Trace   (所有帧)
+                                                                      |        +--&gt; 图表   (所选信号)
+                                                                      |        +--&gt; 记录 (所选信号，过滤)
+           sequences/*.json  ------------------------------------------+--&gt; 测试序列 (设置/检查信号，诊断)</pre>
+          <p>运行时始终只读取<b>缓存</b> (JSON/YAML)。DBC/CDD 文件发生变化后，
+          下次打开项目时会自动重新转换（依据源文件的校验和）。</p>
+
+          <h2>1.3 安装与启动</h2>
+          <pre>pip install -r requirements.txt
+          python main.py                      # GUI
+          python main.py --project demo       # 使用指定项目启动 GUI
+          python main.py --list               # 列出项目
+          python main.py --convert demo       # 仅转换 DBC/CDD（无 GUI）
+          python main.py --convert demo --format yaml --force</pre>
+          <p>驱动：Vector 需要 <i>Vector XL Driver Library</i>（Vector 驱动的一部分），PEAK 需要
+          <i>PCAN-Basic</i> 驱动。无硬件时使用仿真即可。</p>
+
+          <h2>1.4 文件夹结构</h2>
+          <pre>can_tool/
+            main.py  gui.py  can_manager.py  dbc_manager.py  cdd_manager.py
+            iso_tp_manager.py  sequence_runner.py  parquet_logger.py  project_manager.py
+            help_content.py  i18n.py
+            lang/               语言文件 (de.yaml, en.yaml, fr.yaml, es.yaml, zh.yaml, th.yaml)
+            tools/check_lang.py 语言文件检查
+            projects/
+              &lt;项目名称&gt;/
+                project.json      项目设置（由工具写入）
+                dbc/              您的 DBC 文件 (*.dbc)
+                cdd/              您的诊断描述 (*.cdd)
+                sequences/        测试序列 (*.json)
+                cache/            自动生成：转换后的 DBC/CDD (JSON 或 YAML)
+                logs/             Parquet 日志文件</pre>
+
+          <h2>1.5 创建项目</h2>
+          <h3>在 GUI 中</h3>
+          <ol><li>打开<b>项目</b>页并点击<b>新建 ...</b>。</li><li>输入项目名称。允许使用字母、数字、下划线、连字符和空格（最多 64 个字符，首字符须为字母或数字）。若名称已存在，不会覆盖任何内容。</li><li>工具会创建 <code>projects/&lt;name&gt;/</code>，包含子文件夹 <code>dbc, cdd, sequences, cache, logs</code> 以及带默认值（仿真、500 kbit/s、JSON 缓存）的 <code>project.json</code>，并切换到新项目。</li><li><b>导入 DBC/CDD ...</b>：文件会被复制到 <code>dbc/</code> 或 <code>cdd/</code> 并立即转换。也可以手动把文件放入文件夹，然后点击<b>重新转换</b>（或重新打开项目）。</li><li>设置硬件（见 2.3 节）并点击<b>连接</b>。</li></ol>
+          <h3>通过文件</h3>
+          <p>按上述结构创建项目文件夹，并放入 <code>project.json</code>，其内容至少为
+          <code>{}</code> - 缺失的设置会用默认值补全。演示项目
+          <code>projects/demo</code> 可作为模板。</p>
+          <h3>切换项目</h3>
+          <p>在项目列表中选择。切换（以及退出）时会断开连接、停止正在进行的
+          记录并保存当前项目。保存内容包括：硬件、发送列表（含信号值和
+          周期）、接收选择、记录过滤、图表选择、诊断设置以及最近加载的序列。
+          打开项目后，周期发送始终处于<b>关闭</b>状态（保证真实总线的安全）。</p>
+
+          <h2>1.6 典型工作流程</h2>
+          <ol><li>创建或选择项目，导入 DBC（及 CDD）。</li><li>设置硬件，<b>连接</b>。</li><li><b>数据</b>页：从 DBC 中选择发送和接收报文，设置信号值和周期。</li><li>开启周期发送；在 <b>Trace</b> 和<b>图表</b>中观察结果。</li><li>需要时启动<b>记录</b>和/或创建并执行<b>测试序列</b>。</li><li><b>诊断</b>：发送服务，检查响应。</li></ol>
+      files:
+        title: 2. 启动前的文件配置
+        html: |-
+          <h1>2. 启动前的文件配置</h1>
+          <p>连接之前，必须先准备好项目文件。本章说明各文件中应包含什么内容，
+          以及工具会评估哪些信息。</p>
+
+          <h2>2.1 DBC 文件 (<code>dbc/*.dbc</code>)</h2>
+          <p>来自 CANdb++、CANdb Editor、SavvyCAN 等的标准 DBC 文件。每个项目可有多个 DBC 文件
+          （它们的总和构成数据基础）。字符集为 UTF-8 或 Windows-1252。</p>
+          <p>被评估的内容：</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">DBC 元素</th><th width="72%" align="left">在工具中的含义</th></tr><tr><td valign='top'><code>BO_</code></td><td valign='top'>报文：ID（bit 31 置位 = 扩展 ID）、名称、长度（DLC &gt; 8 = CAN FD）、发送方。</td></tr><tr><td valign='top'><code>SG_</code></td><td valign='top'>信号：起始位、长度、字节顺序 (Intel/Motorola)、符号、系数、偏移、最小/最大值、单位、接收方。</td></tr><tr><td valign='top'><code>SG_ ... M / m0, m1</code></td><td valign='top'>简单复用（一个复用器，多个分组）。<b>不</b>支持扩展复用（给出警告）。</td></tr><tr><td valign='top'><code>VAL_</code></td><td valign='top'>值表：每个原始值对应的文本。在工具中发送时为下拉列表，接收时显示为文本。</td></tr><tr><td valign='top'><code>SIG_VALTYPE_</code></td><td valign='top'>浮点信号（32/64 位）。</td></tr><tr><td valign='top'><code>CM_</code></td><td valign='top'>报文/信号的注释。</td></tr><tr><td valign='top'><code>BA_ &quot;GenMsgCycleTime&quot;</code></td><td valign='top'>报文的默认周期时间 (ms)；未指定时为 100 ms。</td></tr><tr><td valign='top'><code>BA_ &quot;VFrameFormat&quot;</code></td><td valign='top'>帧格式；含 <i>FD</i> 的值表示 CAN FD 报文。</td></tr></table>
+          <p>示例：</p>
+          [[pre:dbc]]
+          <p><b>配置提示</b></p>
+          <ul><li>报文名和信号名会用于测试序列 - 请选用有意义且唯一的名称。</li><li>多个 DBC 文件中报文名重复：保留第一个定义，第二个被忽略并给出警告。</li><li>相同 ID 但名称不同：接收时归属到第一个名称（警告）。</li><li>发送节点 (<code>BU_</code>) 决定仿真中虚拟控制器周期发送哪些报文（默认：发送方 <code>ECU</code>，可在 <code>sim.traffic_senders</code> 中设置）。DBC 中合理的最小/最大值可产生真实的仿真值。</li><li>转换产生的警告显示在<b>项目</b>页的<i>已转换文件 / 警告</i>字段中。</li></ul>
+          <h3>缓存 (<code>cache/*.dbc.json</code> 或 <code>.yaml</code>)</h3>
+          <p>打开项目时，每个 DBC 都会自动写入缓存（格式可在<b>项目</b>页
+          选择）。仅当源文件发生变化时才重新转换；<b>重新转换</b>可强制执行。
+          对缓存的手动修改会在重新转换时被覆盖 - 修正应在 DBC 中进行。</p>
+          [[pre:cache]]
+
+          <h2>2.2 诊断描述 (<code>cdd/*.cdd</code>)</h2>
+          <p>CDD 描述诊断服务。与 DBC 一样，它会被转换为 <code>cache/*.cdd.json|yaml</code>。</p>
+          <p><b>重要限制：</b>完全支持简单的 XML 格式 <code>&lt;DIAGDATA&gt;</code>
+          （见示例和 <code>projects/demo/cdd/diag.cdd</code>）。原始 CANdelaStudio CDD 文件仅以
+          <b>启发式</b>方式读取（服务名称，以及能找到时的请求字节）。这种情况下请检查生成的
+          缓存文件（<b>项目</b>页，警告），并在其中或使用
+          简单格式补充地址、请求和响应参数。</p>
+          [[pre:cdd]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">元素 / 属性</th><th width="68%" align="left">含义</th></tr><tr><td valign='top'><code>ECU name, request_id, response_id</code></td><td valign='top'>控制器名称和 CAN ID（测试仪 -&gt; ECU，ECU -&gt; 测试仪），如 <code>0x7E0</code>/<code>0x7E8</code>。</td></tr><tr><td valign='top'><code>ECU extended, fd</code></td><td valign='top'><code>true</code>：29 位 ID 或 CAN FD（ISO-TP，每帧最多 64 字节）。</td></tr><tr><td valign='top'><code>SERVICE name</code></td><td valign='top'>服务名称（用于诊断页和序列步骤 <code>diag</code>）。</td></tr><tr><td valign='top'><code>SERVICE request</code></td><td valign='top'>十六进制请求字节。占位符用花括号，如 <code>10 {session}</code>。</td></tr><tr><td valign='top'><code>SERVICE description</code></td><td valign='top'>自由文本，显示在服务列表中。</td></tr><tr><td valign='top'><code>PARAM</code></td><td valign='top'>直接位于 SERVICE 内：占位符的输入参数：<code>name</code>、<code>bytes</code>（宽度）、<code>default</code> (Hex)。</td></tr><tr><td valign='top'><code>RESPONSE prefix_len</code></td><td valign='top'>响应开头要跳过的字节数（服务 ID + DID，如 <code>62 F1 90</code> 时为 3）。</td></tr><tr><td valign='top'><code>RESPONSE/PARAM</code></td><td valign='top'>响应参数：<code>name</code>、<code>offset</code> 和 <code>length</code>（字节，从前缀结尾算起），<code>type</code> = <code>ascii | uint | int | hex</code>，可选 <code>factor</code>、<code>offset_val</code>、<code>unit</code>。</td></tr></table>
+          <p>对应的缓存条目（供手动修改）：</p>
+          [[pre:cdd_cache]]
+
+          <h2>2.3 硬件与连接</h2>
+          <p>在<b>项目</b>页中设置（保存在 <code>project.json</code> 的 <code>hardware</code> 下）：</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="16%" align="left">设置</th><th width="32%" align="left">Vector VN1630A / VN7572</th><th width="32%" align="left">PEAK PCAN-USB Pro FD</th><th width="20%" align="left">仿真</th></tr><tr><td valign='top'>接口</td><td valign='top'><code>vector</code> (XL 驱动)</td><td valign='top'><code>pcan</code> (PCAN-Basic)</td><td valign='top'><code>simulation</code></td></tr><tr><td valign='top'>通道</td><td valign='top'>通道索引，从 0 开始（如 <code>0</code>）。通过 <i>Vector Hardware Config</i> 分配；设置了应用程序名称时，以其中分配的通道号为准。</td><td valign='top'><code>PCAN_USBBUS1</code>, <code>PCAN_USBBUS2</code> ...</td><td valign='top'>不需要</td></tr><tr><td valign='top'>波特率</td><td valign='top'>标称波特率 (kbit/s)</td><td valign='top'>标称波特率 (kbit/s)；FD 时固定为 500k/2M（80 MHz 时钟）</td><td valign='top'>无意义</td></tr><tr><td valign='top'>CAN FD / 数据波特率</td><td valign='top'>勾选并填写数据波特率</td><td valign='top'>勾选；不同的时序在 <code>hardware.extra</code> 中设置</td><td valign='top'>勾选以使用 FD 帧</td></tr><tr><td valign='top'>应用程序名称</td><td valign='top'>Vector Hardware Config 中的名称（留空 = python-can 默认值）</td><td valign='top'>-</td><td valign='top'>-</td></tr></table>
+          <p><b>Vector VN7572(PCIe 卡):</b>Vector 接口卡 VN7572 与 VN1630A 一样,也以 <code>vector</code> 类型通过 Vector XL 驱动使用(仅限 Windows)。安装 <i>Vector Driver Setup</i> 后,该卡必须在 <i>Vector Hardware Config</i> 中可见。通道号从 0 开始(0 = CH1,1 = CH2 ...);<b>检测硬件</b>会列出找到的通道及其序列号。不得有其他程序(CANalyzer、CANoe、vFlash)占用该通道。</p>
+          <ul><li>总线上的所有节点必须使用相同的波特率；CAN FD 时还须使用相同的数据波特率。</li><li>在两台设备的桌面搭建中，总线两端必须接 120 欧姆终端电阻。</li><li><code>hardware.extra</code>（仅在 <code>project.json</code> 中）可将任意参数传递给 python-can，如 PEAK 的 <code>{"nom_brp": 5}</code>。</li><li><b>仿真</b>：<i>回显</i>将自己的发送报文作为接收返回；<i>虚拟控制器</i>在诊断设置的地址上响应 UDS 请求（包括 10、11、14、19、22、27、3E），并周期发送 ECU 发送方的报文。</li></ul>
+
+          <h2>2.4 序列文件 (<code>sequences/*.json</code>)</h2>
+          <p>序列由名称、描述和步骤列表组成。可在<b>测试序列</b>页中创建，
+          也可直接编辑文件。命令参考：附录 A。</p>
+          [[pre:sequence]]
+
+          <h2>2.5 项目文件 (<code>project.json</code>)</h2>
+          <p>由工具写入；需要时可手动编辑（编辑时请先关闭工具）。缺失的键会用默认值补全。</p>
+          [[pre:project]]
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">键</th><th width="78%" align="left">含义</th></tr><tr><td valign='top'><code>hardware</code></td><td valign='top'>连接参数（2.3 节）；波特率单位为 bit/s。</td></tr><tr><td valign='top'><code>cache_format</code></td><td valign='top'>转换文件使用 <code>json</code> 或 <code>yaml</code>。</td></tr><tr><td valign='top'><code>tx</code></td><td valign='top'>发送列表：报文、周期 (ms)、信号值，<code>signals</code> = 图表/记录的选择（<code>null</code> = 全部）。</td></tr><tr><td valign='top'><code>rx</code></td><td valign='top'>接收选择：报文 -&gt; 所选信号列表或 <code>null</code>（全部）。</td></tr><tr><td valign='top'><code>logging</code></td><td valign='top'>记录过滤器和选项（记录页）。</td></tr><tr><td valign='top'><code>graph</code></td><td valign='top'>图表中已勾选信号的键，如 <code>RX:Msg.Signal</code>。</td></tr><tr><td valign='top'><code>diag</code></td><td valign='top'>CDD 文件、ECU、可选的地址覆盖（<code>request_id</code>、<code>response_id</code>）、<code>extended</code>、<code>fd</code>、<code>padding</code>。</td></tr><tr><td valign='top'><code>sequence</code></td><td valign='top'>最近加载的序列（<code>sequences/</code> 中的文件名）。</td></tr><tr><td valign='top'><code>sim</code></td><td valign='top'>仿真：<code>ecu</code>（虚拟控制器）、<code>traffic_senders</code>（被周期仿真的发送节点）。</td></tr></table>
+
+          <h2>2.6 首次连接前的检查清单</h2>
+          <ol><li>DBC 文件位于 <code>dbc/</code> 文件夹；项目页中显示预期的报文（数量），且没有意外的警告。</li><li>可选的 CDD 位于 <code>cdd/</code> 文件夹；诊断页中显示 ECU 和服务。</li><li>已安装硬件驱动、已连接设备，通道和波特率与总线匹配。</li><li>使用 CAN FD 时：勾选 <i>CAN FD</i> 并设置数据波特率；对端也须支持 FD。</li><li><code>sequences/</code> 下已有序列，或已在测试序列页中创建。</li></ol>
+          <h3>常见问题</h3>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="32%" align="left">现象</th><th width="68%" align="left">可能原因 / 解决办法</th></tr><tr><td valign='top'>数据页中没有报文</td><td valign='top'>DBC 不在 <code>dbc/</code> 文件夹中，或扩展名不是 <code>.dbc</code>；请查看项目页中的警告。</td></tr><tr><td valign='top'>连接失败</td><td valign='top'>缺少 python-can/驱动、通道错误、设备被其他应用占用（如 CANalyzer/PCAN-View）。</td></tr><tr><td valign='top'>能看到帧但未解码</td><td valign='top'>DBC 中的 ID/扩展标识与总线不一致；DBC 中缺少该报文。</td></tr><tr><td valign='top'>信号值错误</td><td valign='top'>检查 DBC 中的字节顺序 (Intel/Motorola)、起始位、系数/偏移。</td></tr><tr><td valign='top'>诊断：超时</td><td valign='top'>检查诊断页中的请求/响应 ID、扩展/FD 和填充；控制器是否处于合适的会话？</td></tr><tr><td valign='top'>记录不可用</td><td valign='top'>缺少 Python 包 <code>pyarrow</code> (<code>pip install pyarrow</code>)。</td></tr></table>
+      project:
+        title: 3.1 “项目”页
+        html: |-
+          <h1>3.1 “项目”页</h1>
+          <p><b>操作系统：</b>工具启动时会自动识别运行在 <b>Windows</b> 还是 <b>Linux</b>（显示在标题栏）。硬件选项随之调整：<i>Vector</i>（XL 驱动）仅限 Windows，<i>SocketCAN</i> 仅限 Linux，<i>PEAK</i> 和<i>仿真</i>两者皆可。不可用的条目会被标记并禁用。<b>检测硬件</b>按钮会列出已连接的接口。其余所有功能（Trace、序列、日志、诊断、vFlash、帮助/PDF）在两个系统上完全一致；项目文件夹可在 Windows 与 Linux 之间互换。</p>
+          <p><b>重新初始化硬件：</b>位于<i>连接</i>旁边的按钮，会关闭接口并以相同设置重新打开。当所连接的硬件卡死时可使用。发送列表保持不变（处于循环发送状态的报文之后继续发送）；正在进行的日志记录会停止。</p>
+          <p>管理项目、导入 DBC/CDD、设置硬件并建立连接。</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="34%" align="left">控件</th><th width="66%" align="left">功能</th></tr><tr><td valign='top'>当前项目</td><td valign='top'>所有项目的选择列表 (<code>projects/*/project.json</code>)。切换会断开连接、停止记录、保存旧项目并加载新项目。</td></tr><tr><td valign='top'>新建 ...</td><td valign='top'>创建带文件夹结构和默认设置的项目（1.5 节）。</td></tr><tr><td valign='top'>导入 DBC/CDD ...</td><td valign='top'>将所选 <code>.dbc</code>/<code>.cdd</code> 文件复制到项目中并转换。</td></tr><tr><td valign='top'>缓存格式</td><td valign='top'><code>json</code> 或 <code>yaml</code>；更改后会重新转换。</td></tr><tr><td valign='top'>重新转换</td><td valign='top'>强制转换所有 DBC/CDD 并重新加载项目。</td></tr><tr><td valign='top'>接口 / 通道 / 波特率 / CAN FD / 数据波特率 / 应用程序名称</td><td valign='top'>硬件参数（2.3 节）。连接期间锁定。</td></tr><tr><td valign='top'>仿真：回显</td><td valign='top'>自己的发送报文同时作为接收显示。</td></tr><tr><td valign='top'>仿真：虚拟控制器</td><td valign='top'>连接时启动支持 UDS 的软件控制器，并产生测试流量。</td></tr><tr><td valign='top'>连接 / 断开</td><td valign='top'>打开或关闭接口。断开时会停止正在进行的记录。</td></tr><tr><td valign='top'>状态栏</td><td valign='top'>连接状态、已接收 (RX) 和已发送 (TX) 的帧数、最近一次错误。</td></tr><tr><td valign='top'>已转换文件 / 警告</td><td valign='top'>缓存文件列表、报文数量、来自 DBC/CDD 的警告。</td></tr></table>
+      data:
+        title: 3.2 “数据”页
+        html: |-
+          <h1>3.2 “数据”页</h1>
+          <p>在此确定发送和接收<b>哪些</b>报文，以及图表、
+          记录和显示使用<b>哪些信号</b> - 均来自项目中所有 DBC 数据的总和。</p>
+          <h2>左侧：可用数据</h2>
+          <ul><li>包含所有报文及其信号的树（ID、发送方、单位）。<b>过滤框</b>在报文名称、ID 和信号名称中搜索。</li><li><b>-&gt; 发送 (TX)</b> 将选中的报文加入发送列表（双击报文效果相同）。可多选；选中某个信号时，会添加其所属报文。</li><li><b>-&gt; 接收 (RX)</b> 将选中的报文加入接收列表。</li></ul>
+          <h2>右上：发送</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">列</th><th width="76%" align="left">含义</th></tr><tr><td valign='top'>发送报文 / 信号</td><td valign='top'>报文（含 ID）及其下方的所有信号。</td></tr><tr><td valign='top'>周期</td><td valign='top'>报文上的勾选框用于开启/关闭周期发送（仅在已连接时才真正发送）。</td></tr><tr><td valign='top'>值</td><td valign='top'>信号的物理值（输入框；带值表的信号为选择列表）。更改从下一帧起生效。</td></tr><tr><td valign='top'>周期 [ms]</td><td valign='top'>报文的周期时间；默认取自 DBC (<code>GenMsgCycleTime</code>)，否则为 100 ms。0 = 非周期。</td></tr><tr><td valign='top'>选择</td><td valign='top'>信号上的勾选框：该信号属于图表和记录的选择。</td></tr><tr><td valign='top'>发送（按钮）</td><td valign='top'>以当前值恰好发送一次该报文。</td></tr></table>
+          <p><b>移除</b>会将选中行所属的报文从发送列表中删除。</p>
+          <h2>右下：接收</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">列</th><th width="76%" align="left">含义</th></tr><tr><td valign='top'>接收报文 / 信号</td><td valign='top'>报文（含 ID）及其信号。</td></tr><tr><td valign='top'>值 / 单位 / 文本</td><td valign='top'>最近收到的值（每 200 ms 刷新）、单位，以及（如有）值表中的文本。</td></tr><tr><td valign='top'>选择</td><td valign='top'>信号上的勾选框：该信号属于图表和记录的选择。未勾选的信号不会被保存。</td></tr></table>
+          <h2>提示</h2>
+          <ul><li>选择（勾选）决定<b>图表</b>和<b>记录</b>能看到什么。而 <b>Trace</b> 显示所有帧（可选仅显示所选报文）。</li><li>选择和所有发送值会随项目保存；加载后周期发送为关闭状态。</li><li>同一报文可同时出现在 TX 和 RX 列表中（如仿真中的回显）。</li></ul>
+      trace:
+        title: 3.3 “Trace”页
+        html: |-
+          <h1>3.3 “Trace”页</h1>
+          <p>按时间顺序显示所有发送（Tx，彩色高亮）和接收 (Rx) 的帧。</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">列</th><th width="80%" align="left">内容</th></tr><tr><td valign='top'>时间 [s]</td><td valign='top'>相对于第一个显示帧的时间（自连接或<i>清空</i>起）。</td></tr><tr><td valign='top'>Rx/Tx、通道</td><td valign='top'>方向和接口。</td></tr><tr><td valign='top'>ID、类型、Len</td><td valign='top'>CAN ID（十六进制，扩展 ID 为 8 位）、类型（CAN、FD、FD/BRS）和数据长度。</td></tr><tr><td valign='top'>数据</td><td valign='top'>十六进制有效数据。</td></tr><tr><td valign='top'>报文、信号</td><td valign='top'>来自 DBC 的名称，以及带单位的解码信号（启用<i>解码</i>时）。</td></tr><tr><td valign='top'>彩色模式</td><td valign='top'>切换按钮。开启:Rx 报文为中蓝色,Tx 报文为中绿色,错误报文(总线错误帧,类型 ERR)为红色,ISO-TP 报文(诊断请求/响应 ID,含 0x7DF)为中紫色。关闭:与以前相同的显示。</td></tr></table>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">控件</th><th width="72%" align="left">功能</th></tr><tr><td valign='top'>暂停</td><td valign='top'>停止显示。帧继续缓冲（最多 50 000 个），取消暂停后补充显示。</td></tr><tr><td valign='top'>解码</td><td valign='top'>开启/关闭信号解码（关闭 = 总线负载高时更快）。</td></tr><tr><td valign='top'>仅显示所选报文</td><td valign='top'>仅显示数据页 TX 或 RX 列表中的报文。</td></tr><tr><td valign='top'>自动滚动</td><td valign='top'>自动跟随最新条目。</td></tr><tr><td valign='top'>Rx / Tx</td><td valign='top'>显示/隐藏相应方向。</td></tr><tr><td valign='top'>过滤框</td><td valign='top'>以逗号分隔的十六进制 ID（如 <code>100, 200</code>）和/或报文名称的一部分（如 <code>engine</code>）。</td></tr><tr><td valign='top'>清空</td><td valign='top'>清除显示和缓冲区。</td></tr><tr><td valign='top'>另存为 CSV ...</td><td valign='top'>导出当前可见的行（分隔符 <code>;</code>）。</td></tr></table>
+          <p><b>原地更新：</b>勾选<i>原地更新</i>后，每条报文（方向、通道、ID）在表中只出现一次，按首次出现的顺序排列。再次出现时，更新该行的时间戳、数据和解码后的信号，并增加<i>次数</i>列。不勾选时，所有帧按顺序滚动写入。切换时会清空表格；自动滚动仅在滚动模式下有效。</p>
+          <p><b>时间差：</b>在<i>原地更新</i>的基础上，勾选<i>时间差</i>后，时间列显示与同一报文（方向、通道、ID）上次出现的间隔（即周期时间），而不是绝对时间；首次出现时为 0。列标题变为<i>时间差 [s]</i>。切换时会清空表格。</p>
+          <p><b>发送行：</b>选项栏下方的一行用于发送原始帧（默认：ID 100 十六进制，DLC 8，数据 00 01 02 03 04 05 06 07，1000 ms）。<b>发送</b>只发送一次；勾选<b>循环发送</b>后开始循环发送，再次点击（<b>停止</b>）即可结束。大于 7FF 的 ID 以扩展帧发送，大于 8 的 DLC 以 CAN FD 发送（需在连接设置中启用 FD）。该帧会在 Trace 中显示为 Tx。</p>
+          <h2>自定义报文(多条发送)</h2>
+          <p>发送行一次只发送一条报文。需要<b>多条报文</b>时使用<b>自定义</b>按钮:它会打开一个独立窗口,并保持在 Trace 旁边。在其中可定义任意数量的发送报文并逐条发送。列表保存在项目中(<code>custom_tx</code>),下次打开项目时仍然可用。</p>
+          <h2>定义并发送报文</h2>
+          <ol><li>点击发送行中的<b>自定义</b>按钮:打开“自定义报文”窗口。</li><li>在表格中<b>单击右键</b>,选择<b>添加</b>。</li><li>在“定义报文”对话框中输入 ID(十六进制)、DLC、数据(十六进制)、周期 [ms],必要时勾选<b>周期发送</b>,点击<b>确定</b>。无效输入(如不允许的 DLC 或数据字节过多)会提示并被拒绝,不会保存任何内容。</li><li>在该行上单击右键并选择<b>发送</b>:未勾选周期发送时只发送一次;勾选后开始周期发送(状态:“周期发送中”)。此时该菜单项变为<b>停止</b>。</li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">字段</th><th width="74%" align="left">含义</th></tr><tr><td valign='top'>ID(十六进制)</td><td valign='top'>CAN ID,十六进制,无前缀(如 <code>7DF</code>)。大于 7FF 的 ID 自动按扩展 ID(29 位)发送。</td></tr><tr><td valign='top'>DLC</td><td valign='top'>数据长度:0 到 8,以及 12、16、20、24、32、48、64。大于 8 的值按 CAN FD 发送(硬件和项目须支持 CAN FD)。</td></tr><tr><td valign='top'>数据(十六进制)</td><td valign='top'>十六进制字节,可带或不带空格。输入过短时用 00 补足到 DLC,过长则报错。</td></tr><tr><td valign='top'>周期 [ms]</td><td valign='top'>发送间隔,1 到 3 600 000 ms;仅在周期发送时有效。</td></tr><tr><td valign='top'>周期发送</td><td valign='top'>不勾选:发送一次;勾选:周期发送直到停止。</td></tr></table>
+          <p><b>右键菜单:</b>添加(也可在空白处)、发送或停止、修改(也可双击)和删除。正在发送的条目在修改或删除前会先停止。发送需要已建立连接;断开连接时所有条目的周期发送都会停止。ID 相同的多个条目共用同一个发送任务。已发送的报文在 Trace 中显示为 Tx。</p>
+          <p>提示：最多显示 5 000 行（较旧的行会滚出）。仅当该页
+          可见时才更新显示；在后台工具最多缓冲 50 000 帧。如需无遗漏的记录，请使用<b>记录</b>。</p>
+      sequence:
+        title: 3.4 “测试序列”页
+        html: |-
+          <h1>3.4 “测试序列”页</h1>
+          <p>创建、保存、加载和执行测试序列。始终<b>仅有一个序列</b>处于加载/活动状态；
+          多个序列以文件形式存放在项目的 <code>sequences/</code> 文件夹中。</p>
+          <h2>文件</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">控件</th><th width="70%" align="left">功能</th></tr><tr><td valign='top'>文件列表 + 加载</td><td valign='top'>从 <code>sequences/</code> 中选择序列并加载到编辑器。</td></tr><tr><td valign='top'>新建</td><td valign='top'>空序列（在点击<i>保存</i>之前不会保存）。</td></tr><tr><td valign='top'>保存 / 另存为 ...</td><td valign='top'>将序列写为 JSON。最近保存/加载的文件名会记录在项目中，下次打开时自动重新加载。</td></tr><tr><td valign='top'>名称 / 描述</td><td valign='top'>序列的元数据。</td></tr></table>
+          <h2>编辑步骤</h2>
+          <p>步骤显示在表格中（序号、类型、JSON 参数）。<b>参数文本可直接编辑</b>
+          （双击）。无效的 JSON 会被拒绝并恢复旧值；步骤的类型是固定的。</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">控件</th><th width="70%" align="left">功能</th></tr><tr><td valign='top'>命令下拉列表</td><td valign='top'>选择步骤类型。<b>鼠标悬停在条目上时会出现工具提示</b>，包含格式、所有元素的说明和一个示例；下方另外显示所选命令的简介。</td></tr><tr><td valign='top'>添加步骤</td><td valign='top'>以模板形式在选中行之后（或末尾）插入该命令。</td></tr><tr><td valign='top'>上移 / 下移 / 复制 / 删除</td><td valign='top'>移动、复制或删除选中的步骤。</td></tr><tr><td valign='top'>信号选择 + 应用到步骤</td><td valign='top'>以 <code>Message.Signal</code> 形式列出 DBC 中的所有信号（支持输入补全），并将报文（对于 <code>set_signal</code>、<code>wait_for</code>、<code>check</code> 还包括信号）填入选中的步骤。</td></tr><tr><td valign='top'>表格中的工具提示</td><td valign='top'>鼠标悬停在步骤的类型列上也会显示命令工具提示。</td></tr></table>
+          <h2>检查与执行</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">控件</th><th width="70%" align="left">功能</th></tr><tr><td valign='top'>检查</td><td valign='top'>静态检查：未知的步骤类型、运算符、报文和信号（对照 DBC）。</td></tr><tr><td valign='top'>开始</td><td valign='top'>执行序列（仅在已连接时）。启动前会自动检查。运行期间编辑器被锁定。</td></tr><tr><td valign='top'>停止</td><td valign='top'>中止序列（包括正在进行的 <code>wait</code>）；状态为 <i>aborted</i>。</td></tr><tr><td valign='top'>结果表</td><td valign='top'>每个步骤：序号（循环中如 <code>3.2.1</code>）、描述、状态（绿色 = ok，红色 = fail/error）和信息（如测得的值、响应字节）。</td></tr></table>
+          <p><b>运行规则：</b>步骤依次执行。<b>第一个失败的步骤会结束序列</b>（状态 <i>failed</i>）。
+          结束后状态栏显示，如 <i>startup: passed (10/10 个步骤 ok)</i>。以周期方式启动的报文在序列结束后继续发送，
+          除非通过 <code>enable_tx</code> 停止。</p>
+          <h2>命令概览</h2>
+          [[commands_table]]
+          <p>每条命令的完整说明（含格式、元素和示例）见<a href="topic:appendix_a">附录 A</a>。</p>
+      graph:
+        title: 3.5 “图表”页
+        html: |-
+          <h1>3.5 “图表”页</h1>
+          <p>本页以折线图实时显示信号曲线(时间轴:相对于现在的秒数,左 = 过去,右 = 现在)。选择区上方的开关用于在<b>1 个图</b>和<b>n 个图</b>之间切换。</p>
+          <h2>按报文分组的选择</h2>
+          <p>选择区列出在“数据”页中选定的所有信号,按方向和报文分组(<code>RX</code> = 接收,<code>TX</code> = 发送)。每个报文下方是其信号,单位显示在方括号中。报文前的复选框有三种状态:全部信号已选、部分已选(半选状态)、全部未选。单击可选中该报文的所有信号或全部取消。</p>
+          <h2>显示方式“1 个图”</h2>
+          <p>所有选定信号绘制在同一个带图例(颜色对应)的图中,便于直接比较曲线。若数值范围相差很大,较小的信号会显得很平,此时更适合使用“n 个图”。</p>
+          <h2>显示方式“n 个图”</h2>
+          <p>每个选定信号都有独立的图和独立的数值轴,标注为 报文.信号 及单位;各图上下排列。所有图共用同一<b>时间基准</b>:在任一图中缩放或平移时间轴,会同时作用于所有图,时间刻度只显示在最下方的图。</p>
+          <h2>操作元素</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">操作元素</th><th width="74%" align="left">功能</th></tr><tr><td valign='top'>开关 1 个图 / n 个图</td><td valign='top'>切换显示方式,界面立即重建。该设置保存在项目中(<code>graph_multi</code>)。</td></tr><tr><td valign='top'>信号选择</td><td valign='top'>勾选 = 显示曲线。报文前的复选框可选中或取消其所有信号。选择内容保存在项目中(<code>graph</code>)。</td></tr><tr><td valign='top'>时间窗口</td><td valign='top'>可见时间范围,单位秒(1 到 3600)。</td></tr><tr><td valign='top'>暂停</td><td valign='top'>冻结显示;数据仍在后台继续收集。</td></tr><tr><td valign='top'>清除数据</td><td valign='top'>丢弃所有已收集的信号曲线。</td></tr><tr><td valign='top'>图表</td><td valign='top'>鼠标:滚轮缩放,按住按键平移。在“n 个图”中对所有图同时生效。</td></tr></table>
+          <p>提示：每个信号最多保留 50 000 个点。仅记录数据页中已勾选的信号。
+          信号只有在收到/发送数据后才会出现。仅当该页可见时才更新显示。</p>
+      logging:
+        title: 3.6 “记录”页
+        html: |-
+          <h1>3.6 “记录”页</h1>
+          <p><b>解析后的信号：</b>加载了 DBC、A2L 或 CDD 后，Parquet 文件不仅包含十六进制报文，还包含带有<b>原始值、原始十六进制、物理值、文本（值表）和单位</b>的信号。信号文件的列：<code>timestamp, direction, message, signal, value, source, can_id, raw, raw_hex, text, unit, message_hex</code>。记录期间，<code>source</code> 为 <code>CAN</code>（DBC 报文）、<code>XCP</code>（XCP 页读取的 A2L 值）或 <code>UDS</code>（诊断页中来自 CDD 的已解码响应参数）。原始文件（<code>_raw.parquet</code>）另有 <code>signals</code> 列，以文本形式给出该帧的所有信号，例如 <code>RPM=0x1F40/2000 rpm</code>。</p>
+          <p>以 <b>Parquet</b> 格式记录所选信号（需要 <code>pyarrow</code>）。文件位于项目的
+          <code>logs/</code> 文件夹中。</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">控件</th><th width="72%" align="left">功能</th></tr><tr><td valign='top'>数据树</td><td valign='top'>显示数据页中选择的报文/信号。<b>过滤：</b>仅记录已勾选的信号（勾选报文会选中/取消其所有信号）。选择会保存在项目中。</td></tr><tr><td valign='top'>全选 / 全不选</td><td valign='top'>选中或取消选中所有信号。</td></tr><tr><td valign='top'>文件名</td><td valign='top'>默认为 <i>项目_日期_时间.parquet</i>；需要时自动补全扩展名。</td></tr><tr><td valign='top'>每个信号最小间隔</td><td valign='top'>每个信号在该时间段 (ms) 内最多记录一条 - 可减少高速报文的数据量。0 = 每一帧。</td></tr><tr><td valign='top'>仅在值变化时</td><td valign='top'>仅当信号值与上次写入的值不同时才写入。</td></tr><tr><td valign='top'>原始帧</td><td valign='top'>另外写入 <i>&lt;名称&gt;_raw.parquet</i>，包含总线上的<b>所有</b>帧（与 DBC 和信号选择无关，包括错误帧）。列：时间、方向、通道、ID、扩展、FD、BRS、错误、DLC、数据（二进制）、数据（十六进制文本）、报文名称。因此无需选择信号也可记录。<b>原始数据 ID</b> 用于限制帧，例如 <code>100, 7E0-7EF</code>（十六进制，留空 = 全部）。</td></tr><tr><td valign='top'>开始 / 停止记录</td><td valign='top'>开始或结束记录（仅在已连接时）。断开连接或切换项目时会自动停止并正确关闭文件。</td></tr><tr><td valign='top'>状态栏</td><td valign='top'>文件名、已写入的行数、文件大小。</td></tr></table>
+          <h2>文件格式</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="20%" align="left">列</th><th width="20%" align="left">类型</th><th width="60%" align="left">内容</th></tr><tr><td valign='top'>timestamp</td><td valign='top'>float64</td><td valign='top'>时间戳（Epoch 秒）</td></tr><tr><td valign='top'>direction</td><td valign='top'>string</td><td valign='top'><code>RX</code> 或 <code>TX</code></td></tr><tr><td valign='top'>message</td><td valign='top'>string</td><td valign='top'>报文名称</td></tr><tr><td valign='top'>signal</td><td valign='top'>string</td><td valign='top'>信号名称</td></tr><tr><td valign='top'>value</td><td valign='top'>float64</td><td valign='top'>物理值</td></tr></table>
+          <p>长格式（每个信号值一行）可避免因周期时间不同而产生的空缺。数据先缓冲，
+          每 5 秒或达到 20 000 行时写入磁盘（zstd 压缩）。</p>
+          <p>在 Python 中分析（另见附录 B）：</p>
+          [[pre:pandas]]
+      diag:
+        title: 3.7 “诊断”页
+        html: |-
+          <h1>3.7 “诊断”页</h1>
+          <p>在 CAN 或 CAN FD 上通过 <b>ISO-TP</b> (ISO 15765-2) 进行诊断服务 (UDS)。服务来自转换后的 CDD；
+          此外还可发送任意十六进制请求。</p>
+          <h2>配置（顶部一行）</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">字段</th><th width="74%" align="left">含义</th></tr><tr><td valign='top'>CDD</td><td valign='top'>来自项目缓存的已转换诊断描述。</td></tr><tr><td valign='top'>ECU</td><td valign='top'>CDD 中的控制器；切换时会采用其地址。</td></tr><tr><td valign='top'>请求 ID / 响应 ID</td><td valign='top'>十六进制 CAN ID（测试仪 -&gt; ECU / ECU -&gt; 测试仪）。默认取自 CDD，可在此覆盖。</td></tr><tr><td valign='top'>扩展 ID</td><td valign='top'>29 位寻址。</td></tr><tr><td valign='top'>CAN FD</td><td valign='top'>使用 FD 帧的 ISO-TP（每帧最多 64 字节，带波特率切换）。须与对端一致。</td></tr><tr><td valign='top'>填充</td><td valign='top'>十六进制填充字节（默认 AA）；留空 = 经典 CAN 下不填充。</td></tr><tr><td valign='top'>Tester Present</td><td valign='top'>每 2 s 发送 <code>3E 80</code>（无响应），以保持诊断会话。</td></tr><tr><td valign='top'>vFlash 选项卡</td><td valign='top'>加载 vFlash 包(或清单文件/HEX/S19/BIN),显示解析结果,并在所选硬件上运行刷写流程,附带进度窗口(附录 C)。</td></tr></table>
+          <h2>发送服务</h2>
+          <ol><li>在列表中选中服务（名称、请求、描述）。</li><li>如果服务带有参数，在<i>参数 / 值 (hex)</i>表中填入值（请求中的占位符）。</li><li><b>发送服务</b>。发送在后台进行；界面仍可操作。</li><li><b>日志</b>显示请求 (&gt;&gt;)、响应 (&lt;&lt;) 及其评估（肯定/否定，否定响应时显示 NRC 及文字说明），以及 CDD 中解码的响应参数（如 <i>VIN: WDD...</i>）。</li></ol>
+          <p><b>发送原始请求</b>：以十六进制字节输入请求（如 <code>22 F1 86</code>），按回车或点击按钮。</p>
+          <h2>技术细节</h2>
+          <ul><li>分段：Single Frame、First Frame、Consecutive Frames 和 Flow Control，最多 4095 字节（更长的通过扩展 First Frame）。</li><li>接收较长响应时，工具发送 Blocksize 0 和 STmin 0 的 Flow Control。</li><li>响应超时 2 s；遇到 <i>ResponsePending</i> (NRC 0x78) 时最多继续等待 10 s。</li><li>无响应的请求（带 bit 7 的子功能，如 <code>3E 80</code>）记录为已发送。</li><li>在测试序列中，<code>diag</code> 和 <code>diag_raw</code> 使用相同的地址配置。</li></ul>
+      header:
+        title: '3.8 标签栏：深色模式与语言'
+        html: |-
+          <h1>3.8 标签栏：深色模式与语言</h1>
+          <p>在标签栏右侧（标签页旁）有两个控件，对所有页面生效。</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="22%" align="left">控件</th><th width="78%" align="left">功能</th></tr><tr><td valign='top'>深色模式</td><td valign='top'>勾选框在浅色和深色外观之间切换。影响界面、Trace、图表、序列结果表以及本帮助。该设置会被保存并在下次启动时使用。</td></tr><tr><td valign='top'>语言</td><td valign='top'>下拉菜单，含 Deutsch（主语言）、English、Francais、Espanol、中文（普通话，简体）和泰语。切换立即生效，无需重启。所选语言会被保存。</td></tr></table>
+          <h2>哪些内容会被翻译？</h2>
+          <ul><li>界面的所有标签、按钮、表头、工具提示、对话框和信息。</li><li>测试序列的命令参考（下拉列表中的工具提示、附录 A）以及本帮助的所有章节。</li><li>程序各部分的错误和警告信息（如转换、连接、序列运行）。</li><li><b>不</b>翻译您文件中的数据：报文名和信号名、DBC/CDD 中的单位和值表、文件名、项目名以及序列文件的内容。</li><li>已写入的日志行（诊断日志、序列结果表）保持其生成时所用的语言。</li></ul>
+          <p>使用中文和泰语时，计算机上必须安装包含相应字符的字体
+          （常见的 Windows、macOS 和 Linux 安装通常都具备）。</p>
+          <h2>语言文件</h2>
+          <p>每种语言有各自的文件，位于 <code>lang/</code> 文件夹（YAML；也可使用 JSON）：</p>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="30%" align="left">文件</th><th width="70%" align="left">语言</th></tr><tr><td valign='top'><code>lang/de.yaml</code></td><td valign='top'>Deutsch - 主语言和回退语言：若某语言缺少某文本，则使用德语文本。</td></tr><tr><td valign='top'><code>lang/en.yaml</code></td><td valign='top'>English</td></tr><tr><td valign='top'><code>lang/fr.yaml</code></td><td valign='top'>Francais</td></tr><tr><td valign='top'><code>lang/es.yaml</code></td><td valign='top'>Espanol</td></tr><tr><td valign='top'><code>lang/zh.yaml</code></td><td valign='top'>中文（普通话，简体字）</td></tr><tr><td valign='top'><code>lang/th.yaml</code></td><td valign='top'>泰语</td></tr></table>
+          <p>每个文件的结构：<code>meta</code>（显示名称、下拉列表中的顺序）、<code>ui</code>（界面）、
+          <code>core</code>（信息）、<code>steps</code>（命令参考）和 <code>help</code>（本帮助的章节）。花括号中的占位符
+          （如 <code>{name}</code>）以及帮助文本中双方括号内的占位符
+          不得更改。</p>
+          <h3>添加或修改语言</h3>
+          <ol><li>复制 <code>lang/de.yaml</code> 并保存为 <code>lang/&lt;code&gt;.yaml</code>（如 <code>it.yaml</code>）。</li><li>在 <code>meta</code> 部分设置显示名称 (<code>name</code>) 和位置 (<code>order</code>)；翻译所有文本。</li><li>用 <code>python tools/check_lang.py it</code> 检查：该工具会报告缺失的键、不一致的占位符和损坏的 HTML 结构。</li><li>重启程序 - 该语言会自动出现在下拉列表中。</li></ol>
+          <h3>命令行</h3>
+          <p><code>main.py</code> 的输出同样已翻译：<code>python main.py --lang en --list</code>。
+          未使用 <code>--lang</code> 时，采用最近在 GUI 中选择的语言。</p>
+      help:
+        title: 3.9 “帮助”页
+        html: |-
+          <h1>3.9 “帮助”页</h1>
+          <p>即本页。左侧为章节，右侧为正文。</p>
+          <ul>
+          <li><b>搜索框</b>：隐藏不含该词的章节，并在所选章节中
+          标出第一处匹配。<b>下一个匹配</b>跳转到下一处。清空输入框后重新显示所有章节。</li>
+          <li>正文中的链接（如指向附录）可以点击。</li>
+          <li>命令说明与测试序列页命令下拉列表中的工具提示一致。</li>
+          <li>帮助以所选语言显示（3.8 节），切换语言时立即替换；浅色/深色切换在此同样有效。</li>
+          </ul>
+      xcp:
+        title: 3.10 XCP 页
+        html: |-
+          <h1>3.10 “XCP”页</h1>
+          <p>基于 <b>A2L 文件</b>（ASAP2），通过 <b>XCP on CAN</b> 测量和调整 ECU 变量。A2L 的转换方式与 DBC 和 CDD 相同：
+          源文件位于项目文件夹 <code>a2l/</code>，运行时只读取缓存 <code>cache/&lt;name&gt;.a2l.json|yaml</code>。</p>
+          <h2>设置</h2>
+          <ol><li>用<b>导入</b>（项目页）把 A2L 复制到项目中；它会自动转换（<code>python main.py --convert demo</code> 也可在无 GUI 时使用）。</li>
+          <li>连接 CAN（项目页）。XCP 使用同一接口。</li>
+          <li>XCP 页：选择 A2L，检查<b>主站 ID</b>（发给 ECU 的命令）和<b>从站 ID</b>（响应）。它们由 A2L 的 XCP 部分（<code>IF_DATA XCP / XCP_ON_CAN</code>）预填，可修改。</li>
+          <li><b>连接 XCP</b>。日志以十六进制显示所有命令（-&gt;）和响应（&lt;-）。</li></ol>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="28%" align="left">控件</th><th width="72%" align="left">功能</th></tr>
+          <tr><td valign='top'>左侧列表</td><td valign='top'>A2L 中的所有测量量（MEASUREMENT）和参数（VALUE 类型的 CHARACTERISTIC）；按名称过滤；双击或<i>加入监视</i>即可采用。</td></tr>
+          <tr><td valign='top'>监视</td><td valign='top'>显示每个条目的原始值和带单位的物理值。选择会随项目保存。</td></tr>
+          <tr><td valign='top'>循环读取</td><td valign='top'>按设定间隔（ms）读取所有被监视的条目。通过 SHORT_UPLOAD 轮询，不使用 DAQ 列表。</td></tr>
+          <tr><td valign='top'>读取一次</td><td valign='top'>读取一次监视列表。</td></tr>
+          <tr><td valign='top'>写入值</td><td valign='top'>把输入的值（物理值；文本转换时也可用文本，例如 <i>RUN</i>）写入所选行（SET_MTA + DOWNLOAD），然后读回。</td></tr></table>
+          <h2>A2L 的解释</h2>
+          <ul><li>数据类型 UBYTE、SBYTE、UWORD、SWORD、ULONG、SLONG、A_UINT64、A_INT64、FLOAT32_IEEE、FLOAT64_IEEE；字节序依据 ECU 的 CONNECT 响应。</li>
+          <li>转换方式 IDENTICAL、LINEAR、RAT_FUNC（不含二次项）和 TAB_VERB（文本值）；读取时会屏蔽 BIT_MASK。</li>
+          <li>不支持的对象（曲线、图、数组、无地址的测量量）显示为灰色。</li></ul>
+          <p>硬件为<i>仿真</i>时，工具会启动一个映射项目 A2L 的模拟 XCP 从站（演示：<code>projects/demo/a2l/demo.a2l</code>）。
+          不包含：DAQ/STIM、Seed&amp;Key、标定页和闪存编程。真实 ECU 是否允许所有访问取决于其保护级别。</p>
+      builder:
+        title: 3.11 GUI Builder 页
+        html: |-
+          <h1>3.11 “GUI Builder”页</h1>
+          <p>在此用简单元素为现有信号搭建自己的显示界面。元素仅用于<b>显示</b>,不能输入数值。可关联在“数据”页中选定的信号(接收或发送)。布局和关联保存在项目中(<code>builder</code>)。</p>
+          <h2>元素</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">元素</th><th width="74%" align="left">功能</th></tr><tr><td valign='top'>LED</td><td valign='top'>以颜色显示信号状态。<b>数字</b>:值 0 和值 1 各有一种可选颜色。<b>范围</b>:与指针刻度相同,三个范围(最小值 &lt;= x &lt; 最大值),各有一种颜色;数值不在任何范围内或无数值时,LED 为灰色。</td></tr><tr><td valign='top'>无信号文本框</td><td valign='top'>纯文本框,文本可自由设定,例如用作标题或标签。</td></tr><tr><td valign='top'>带信号文本框</td><td valign='top'>显示文本及信号的当前值和单位,持续更新。小数位数可设置。</td></tr><tr><td valign='top'>指针</td><td valign='top'>刻度为 180 度(半圆)的指针仪表:左侧为最小值,右侧为最大值;下方显示带单位的数值。</td></tr><tr><td valign='top'>背景</td><td valign='top'>简单的彩色矩形(颜色可选),无其他功能。它在视觉上归组其他元素,始终位于功能元素之后、标准背景之上。</td></tr><tr><td valign='top'>图片</td><td valign='top'>带可选图片的图片框(PNG、JPG、BMP、GIF、SVG)。图片会自动适应图片框(保持宽高比),并随大小变化而调整。</td></tr></table>
+          <h2>操作</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">操作元素</th><th width="74%" align="left">功能</th></tr><tr><td valign='top'>编辑</td><td valign='top'>勾选:显示网格,可添加、移动、调整大小和删除元素。不勾选:界面锁定(仅显示)。</td></tr><tr><td valign='top'>+ LED / + 文本框 / + 指针</td><td valign='top'>添加新元素(也可在空白区域右键,在鼠标位置添加)。</td></tr><tr><td valign='top'>拖动</td><td valign='top'>移动元素;右下角用于调整大小。</td></tr><tr><td valign='top'>右键单击元素</td><td valign='top'>菜单:关联信号(或“无信号”)、标签或文本、LED 阈值和颜色、小数位数、刻度(指针)、删除。</td></tr></table>
+          <h2>指针与刻度</h2>
+          <p>刻度有两种模式。<b>自动</b>(默认):范围随观测到的数值扩大,并取整为整数(如 0 到 100);刻度线和数字随之调整。<b>手动</b>:在指针上<b>右键</b>并选择<b>手动刻度(最小/最大)</b>,设定最小值和最大值(最小值必须小于最大值)。同一菜单中的<b>自动刻度</b>复选项可切回自动模式。超出刻度的数值会使指针停在端点。</p>
+          <h2>快速入门</h2>
+          <ol><li>保持勾选<b>编辑</b>(显示网格)。</li><li>点击 <b>+ LED</b>、<b>+ 文本框</b> 或 <b>+ 指针</b>;元素出现在画布上(也可在空白区域右键,在鼠标位置添加)。</li><li>在元素上<b>单击右键</b>,选择<b>关联信号</b>并从列表中选取信号。</li><li>设置标签、LED 阈值、小数位数或刻度,并通过拖动放置元素;右下角用于调整大小。</li><li>取消勾选<b>编辑</b>:界面被锁定,仅用于查看。</li></ol>
+          <h2>关联信号</h2>
+          <p>列表显示在“数据”页中选定的信号,格式为 <code>RX:Msg.Signal</code> 或 <code>TX:Msg.Signal</code>,另有“(无信号)”项用于解除关联。若缺少某信号,请先在“数据”页中选择。收到或发送数据后数值即会显示;单位来自 DBC。更换信号时,自动刻度会被重置。</p>
+          <h2>设置 LED 和文本框</h2>
+          <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="26%" align="left">设置</th><th width="74%" align="left">作用</th></tr><tr><td valign='top'>标签 / 文本</td><td valign='top'>LED:LED 旁边的标签(为空时显示信号名)。文本框:自由文本;带信号时位于数值之前。</td></tr><tr><td valign='top'>LED 模式</td><td valign='top'>数字(值 0 / 值 1)或范围(范围 1 到 3)。数字:值 0 对应颜色 0,其他任何值对应颜色 1。</td></tr><tr><td valign='top'>颜色 / 范围</td><td valign='top'>数字:值 0 和值 1 的颜色。范围:每个范围可开关,并按规则<b>最小值 &lt;= x &lt; 最大值</b>设置最小值、最大值和颜色;第一个匹配的范围决定颜色。与指针的范围显示设置相同。</td></tr><tr><td valign='top'>小数位数</td><td valign='top'>文本框和指针的小数位数,0 到 9。</td></tr><tr><td valign='top'>标题(指针)</td><td valign='top'>复选项<b>显示标题</b>用于显示或隐藏指针上方的标签;空间随后用于刻度。</td></tr><tr><td valign='top'>范围显示(指针)</td><td valign='top'>复选项<b>范围显示</b>按规则<b>最小值 &lt;= x &lt; 最大值</b>将刻度最多分为三个范围着色(范围 1 到 3),每个范围有最小值、最大值、颜色和开关;三个范围随后出现在菜单中。</td></tr><tr><td valign='top'>最小/最大值指针(指针)</td><td valign='top'>勾选<b>最小值指针</b>和<b>最大值指针</b>后,刻度上会额外显示细的第二根指针(蓝色)和第三根指针(橙色),分别表示自观测开始以来的最小值和最大值。<b>重置最小/最大值</b>重新开始;更换信号或切换复选项也会重置。数值不保存在项目中,只保存复选项。</td></tr></table>
+          <h2>指针刻度详解</h2>
+          <p><b>自动:</b>在收到第一个数值之前,范围为 0 到 100。之后指针记住观测到的最小值和最大值,并将边界取整为整数(1、2、2.5、5 乘以 10 的幂);若所有数值非负且接近 0,则刻度从 0 开始。刻度只会扩大,不会缩小。右键菜单中的<b>自动刻度</b>复选项(关闭再开启)会重新开始观测。刻度显示五个刻度线及数字。</p>
+          <p><b>手动:</b>在指针上<b>单击右键</b>,选择<b>手动刻度(最小/最大)</b>:在对话框中输入最小值和最大值(可带小数)。若最小值不小于最大值,会提示且不会应用。手动刻度立即生效,保存在项目中,并关闭自动模式。超出范围的数值使指针停在端点。</p>
+          <h2>背景与图片</h2>
+          <p>元素分层放置:标准背景(画布),其上是背景元素,再上是功能元素(LED、文本框、指针、图片)。背景元素在添加、移动和加载时自动置于其他元素之后,因此彩色底框可以把多个显示归为一组。所选图片会复制到项目文件夹(<code>images</code>),使项目便于迁移;无图片时显示“无图片”。</p>
+          <h2>LED 颜色与范围显示</h2>
+          <p>数字 LED 示例:值 0 = 红色,值 1 = 绿色。范围 LED 示例(温度):范围 1:0 到 80 绿色,范围 2:80 到 100 黄色,范围 3:100 到 120 红色;范围之外 LED 为灰色。</p><p>指针的范围显示:共有三个范围,每个范围有最小值、最大值和颜色。当 <b>最小值 &lt;= x &lt; 最大值</b> 成立时,数值 x 属于该范围(包含最小值,不包含最大值)。示例:范围 1:0 到 80 绿色,范围 2:80 到 100 黄色,范围 3:100 到 120 红色。每个范围可单独开关;超出刻度的部分会被截去,最小值必须小于最大值。使用自动刻度时,色带随当前刻度调整。</p>
+          <h2>保存与限制</h2>
+          <p>元素、位置、大小、关联和设置都保存在项目中(<code>builder</code>)。画布可滚动。GUI Builder 仅显示数值,没有输入或开关元素。只能显示“数据”页所选信号。</p>
+          <p>提示:信号只有在收到或发送数据后才会出现;在此之前文本框和指针显示“--”或零位,LED 熄灭。</p>
+      appendix_a:
+        title: '附录 A：测试序列命令参考'
+        html: '<h1>附录 A：测试序列命令参考</h1><p>每个步骤都是一个 JSON 对象，包含字段 <code>type</code> 和下列元素。物理值是指经 DBC 的系数和偏移换算后的值。</p>[[commands_reference]]'
+      appendix_b:
+        title: '附录 B：提示与限制'
+        html: |-
+          <h1>附录 B：提示与限制</h1>
+          <ul><li><b>时间精度</b>：周期发送通过软件定时器实现（精度在几毫秒范围内），并非硬件触发。</li><li><b>DBC</b>：不支持扩展复用和环境变量。</li><li><b>CDD</b>：原始 CANdelaStudio 文件仅以启发式方式读取（2.2 节）。</li><li><b>PEAK + CAN FD</b>：位时序固定预设（80 MHz，500k/2M）；如需不同设置，请通过 <code>hardware.extra</code>。</li><li><b>安全</b>：加载项目时周期发送绝不会自动启动。在车辆或试验台总线上，连接前请检查发送列表和数值。</li><li><b>键盘</b>：表格中双击进行编辑；在原始诊断输入框中，按回车发送请求。</li></ul>
+          <h2>无硬件测试</h2>
+          <p>演示项目 <code>demo</code> 使用带虚拟控制器的仿真。借此可在无硬件的情况下试用
+          所有页面（发送/接收、Trace、图表、记录、序列 <i>startup</i> 和 <i>driving</i>、诊断）。
+          核心测试通过 <code>python -m unittest discover -s tests -v</code> 运行。</p>
+
+shots:
+  help.shot.title: "带注释的界面图"
+  help.shot.caption: "界面示意图;编号对应下方说明。"
+  help.export_pdf: "导出 PDF 手册..."
+  help.export_title: "保存 PDF 手册"
+  help.export_filter: "PDF 文档 (*.pdf)"
+  help.export_done: "手册已保存:{path}"
+  help.export_error: "无法创建 PDF:{error}"
+  manual.title: "用户手册"
+  manual.date: "发布日期:{date}"
+  manual.languages: "包含的语言"
+  cli.help.manual: "将手册(所有语言的帮助)输出为 PDF 文件"
+  cli.manual_done: "手册已写入:{path}"
+  help.shot.project.1: "选择项目、新建项目并导入 DBC/CDD 文件。"
+  help.shot.project.2: "缓存格式(json/yaml)及重新转换 DBC/CDD。"
+  help.shot.project.3: "硬件:接口、通道(如 PCAN_USBBUS1)、波特率和 CAN FD。"
+  help.shot.project.4: "连接或断开,并显示状态(接收和发送计数)。"
+  help.shot.project.5: "信息栏:已加载的 DBC 文件、报文数量和警告。"
+  help.shot.data.1: "过滤框及 DBC 中所有报文和信号的列表。"
+  help.shot.data.2: "将所选项添加到发送数据 (TX) 或接收数据 (RX)。"
+  help.shot.data.3: "发送数据:周期发送开/关,设置信号值和周期时间。"
+  help.shot.data.4: "单次发送:立即发送一次该报文。"
+  help.shot.data.5: "接收数据,显示信号的实时值。"
+  help.shot.trace.1: "选项:暂停、解码信号、仅显示所选报文、自动滚动。"
+  help.shot.trace.2: "按 ID 或报文名称过滤。"
+  help.shot.trace.3: "跟踪表:时间、方向 (Rx/Tx)、通道、ID、类型、长度和原始数据。没有 DBC/CDD 也可使用。"
+  help.shot.trace.4: "解码后的报文名称和信号值(已加载 DBC 时)。"
+  help.shot.trace.5: "清空跟踪或保存为 CSV 文件。"
+  help.shot.sequence.1: "选择、加载、新建和保存测试序列文件(一次一个序列)。"
+  help.shot.sequence.2: "命令下拉列表:鼠标悬停在条目上时显示包含格式、元素和示例的提示。"
+  help.shot.sequence.3: "插入、移动、复制或删除步骤。"
+  help.shot.sequence.4: "步骤列表:命令和参数为 JSON,可直接在表格中编辑。"
+  help.shot.sequence.5: "启动、停止并静态检查序列;旁边显示总体结果。"
+  help.shot.sequence.6: "各步骤结果表:绿色 = 通过,红色 = 失败,附带信息。"
+  help.shot.builder.1: "“编辑”复选框:可显示网格、添加、移动和调整大小。"
+  help.shot.builder.2: "用于添加 LED、文本框、指针、背景和图片的按钮。"
+  help.shot.builder.3: "可选颜色的背景元素:在视觉上归组元素,位于它们之后。"
+  help.shot.builder.4: "LED:数字(值 0 / 1)和带范围(颜色取决于范围 最小值 <= x < 最大值)。"
+  help.shot.builder.5: "文本框:左侧无信号(纯文本),右侧带信号(实时数值和单位)。"
+  help.shot.builder.6: "180 度刻度的指针,自动或手动刻度,可选范围显示。"
+  help.shot.builder.7: "图片框:所选图片自动缩放以适应图片框。"
+  help.shot.builder.8: "指针的右键菜单:信号、标题、刻度、范围显示和删除。"
+  help.shot.builder_signal.1: "右键单击 LED:关联信号、标签、数字/范围模式、颜色、删除。"
+  help.shot.builder_signal.2: "选择:“数据”页中的信号,格式 RX:/TX:报文.信号,或(无信号)。"
+  help.shot.builder_signal.3: "LED:颜色取决于信号值(数字 0 / 1 或按范围 1 到 3)。"
+  help.shot.builder_signal.4: "带信号的文本框:文本、数值和单位;小数位数可调。"
+  help.shot.builder_range.1: "三个带范围的 LED:每个数值范围(最小值 <= x < 最大值)决定颜色。"
+  help.shot.builder_range.2: "带范围显示的指针:刻度上有三个彩色范围(范围 1 到 3)。"
+  help.shot.builder_range.3: "菜单:显示标题用于开关标签。"
+  help.shot.builder_range.4: "菜单:开启或关闭范围显示。"
+  help.shot.builder_range.5: "范围 1 到 3:各有最小值、最大值(规则:最小值 <= x < 最大值)、颜色和开关。"
+  help.shot.builder_range.6: "菜单:可选的第二、第三根指针,分别表示最小值(蓝色)和最大值(橙色),以及重置。"
+  help.shot.trace_custom_edit.1: "ID(十六进制):CAN ID,也可为扩展 ID(> 7FF)。"
+  help.shot.trace_custom_edit.2: "DLC:数据长度,也可为 CAN FD 数值。"
+  help.shot.trace_custom_edit.3: "数据(十六进制):字节可带或不带空格;缺少的字节用 00 补足。"
+  help.shot.trace_custom_edit.4: "周期 [ms] 和周期发送复选框:发送一次或周期发送。"
+  help.shot.trace_custom_edit.5: "确定将报文加入列表,取消则放弃输入。"
+  help.shot.builder_scale.1: "自动刻度的指针:边界取整,此处为 0 到 3200。"
+  help.shot.builder_scale.2: "手动刻度的指针,此处为 0 到 8000。"
+  help.shot.builder_scale.3: "手动刻度对话框:输入最小值和最大值。"
+  help.shot.builder_scale.4: "确定应用刻度(仅当最小值小于最大值),取消则放弃。"
+  help.shot.graph.1: "开关 1 个图 / n 个图(此处:1 个图)。"
+  help.shot.graph.2: "按报文分组的信号选择;报文复选框可选中其所有信号,单位在方括号中。"
+  help.shot.graph.3: "时间窗口(秒)。"
+  help.shot.graph.4: "暂停冻结显示,清除数据丢弃曲线。"
+  help.shot.graph.5: "带图例的共用图表;时间轴为相对于现在的秒数。"
+  help.shot.graph_multi.1: "开关设为 n 个图。"
+  help.shot.graph_multi.2: "选择仍按报文分组;此处选中了三个信号。"
+  help.shot.graph_multi.3: "每个信号有独立的图和数值轴,标注为 报文.信号 及单位。"
+  help.shot.graph_multi.4: "共用时间轴:缩放和平移作用于所有图;刻度仅显示在底部。"
+  help.shot.logging.1: "选择要记录的报文和信号(从已选数据中过滤)。"
+  help.shot.logging.2: "全选或全不选信号。"
+  help.shot.logging.3: "Parquet 文件名(保存在项目的 logs/ 文件夹中)。"
+  help.shot.logging.4: "选项:仅在值变化时、每个信号的最小间隔、另外记录原始数据。"
+  help.shot.logging.5: "开始或停止记录;状态行显示行数和文件大小。"
+  help.shot.diag.1: "诊断配置:CDD、ECU、请求/响应 ID、扩展 ID、CAN FD、填充。"
+  help.shot.diag.2: "每 2 秒自动发送 Tester Present (3E 80)。"
+  help.shot.diag.3: "CDD 中的服务,含请求模板和说明。"
+  help.shot.diag.4: "所选服务的参数(十六进制值可编辑),然后点击“发送服务”。"
+  help.shot.diag.5: "响应日志:已发送的请求、响应(肯定/否定)及解码值。"
+  help.shot.diag.6: "发送十六进制原始请求(如 22 F1 90),无需 CDD 定义。"
+  help.shot.header.1: "深色模式:在浅色和深色外观之间切换(会被保存)。"
+  help.shot.header.2: "语言:列出所有可用语言文件的下拉列表;切换立即生效,包括帮助。"
+  help.shot.help.1: "帮助章节列表。"
+  help.shot.help.2: "搜索框:隐藏没有匹配的章节;“下一个匹配”跳转到下一处。"
+  help.shot.help.3: "章节正文及带注释的插图。"
+  help.shot.help.4: "PDF 手册:导出所有可用语言的帮助(含封面和发布日期)并提供保存。"
+  trace.color_mode: "彩色"
+  trace.color_mode_tip: "彩色模式:Rx 中蓝色,Tx 中绿色,错误报文红色,ISO-TP 报文中紫色。关闭:与以前相同的显示。"
+  trace.col.count: "次数"
+  trace.update_mode: "原地更新"
+  trace.update_mode_tip: "更新模式：每条报文（方向、通道、ID）在表中只出现一次；再次出现时，仅更新该行的时间、数据和信号，并增加次数。关闭：帧按顺序滚动写入。"
+  trace.diff_time: "时间差"
+  trace.diff_time_tip: "仅在更新模式下：时间列显示与同一报文上次出现的间隔（周期时间），而不是绝对时间；首次出现时为 0。"
+  trace.col.diff: "时间差 [s]"
+  trace.raw.id: "ID（十六进制）"
+  trace.raw.dlc: "DLC"
+  trace.raw.data: "数据（十六进制）"
+  trace.raw.timing: "周期 [ms]"
+  trace.raw.cyclic: "循环发送"
+  trace.raw.send: "发送"
+  trace.raw.stop: "停止"
+  trace.raw.tip: "在 CAN 总线上发送原始帧。未勾选：只发送一次；勾选：循环发送，直到再次点击（停止）。数据为十六进制字节，缺少的字节用 00 补齐。"
+  trace.raw.title: "发送原始帧"
+  trace.custom.button: "自定义"
+  trace.custom.title: "自定义报文"
+  trace.custom.add: "添加"
+  trace.custom.edit: "修改"
+  trace.custom.delete: "删除"
+  trace.custom.status: "状态"
+  trace.custom.running: "周期发送中"
+  trace.custom.edit_title: "定义报文"
+  trace.custom.tip: "可定义任意数量的发送报文(ID 十六进制、DLC、数据十六进制、周期、是否周期)。右键:添加、修改、删除、发送/停止。列表保存在项目中。"
+  help.shot.trace.7: "发送行：ID（十六进制）、DLC、数据、周期时间、循环发送复选框和发送按钮。"
+  help.shot.trace_custom.1: "“自定义”按钮打开自定义发送报文窗口。"
+  help.shot.trace_custom.2: "发送报文表:ID(十六进制)、DLC、数据(十六进制)、周期 [ms]、是否周期和状态。"
+  help.shot.trace_custom.3: "右键菜单:添加、发送/停止、修改、删除。"
+  err.can.bad_id: "无效的 CAN ID：“{value}”（十六进制，0 至 1FFFFFFF）"
+  err.can.bad_data: "无效的数据：“{data}”（应为十六进制字节，例如 00 01 02）"
+  err.can.bad_dlc: "无效的 DLC：{dlc}（允许：0-8、12、16、20、24、32、48、64）"
+  err.can.data_longer_than_dlc: "{length} 个数据字节无法放入 DLC {dlc}"
+  err.can.bad_cycle: "无效的周期时间：{cycle_ms} ms"
+  seq.problem.bad_raw: "{where}：{error}"
+  seq.desc.send_raw_once: "单次发送原始帧 {id}：{data}"
+  seq.desc.send_raw_cyclic: "每 {cycle_ms} ms 循环发送原始帧 {id}：{data}"
+  seq.desc.send_raw_stop: "原始帧 {id}：循环发送关闭"
+  trace.error_frame: "错误帧"
+  help.shot.trace.6: "彩色模式:Rx 蓝色,Tx 绿色,错误红色,ISO-TP 紫色。"
+
+flash:
+  diag.sub.services: "服务"
+  diag.sub.vflash: "vFlash"
+  flash.hint: "加载 vFlash 包(Vector),对其进行解析并在所选硬件(Vector、PEAK、SocketCAN、仿真)上运行。无需 vFlash 软件。"
+  flash.load: "加载 vFlash 包..."
+  flash.reload: "重新加载"
+  flash.load_title: "选择 vFlash 包"
+  flash.load_filter: "vFlash 包 (*.vflashpack *.zip *.json *.yaml *.hex *.s19 *.srec *.mot *.bin);;所有文件 (*)"
+  flash.no_pack: "未加载任何包。"
+  flash.loaded: "{name}:{blocks} 个数据块,{kb} kB,{steps} 个步骤"
+  flash.load_error: "无法读取该包:{error}"
+  flash.start: "开始刷写..."
+  flash.confirm_title: "确认刷写"
+  flash.confirm_text: "包“{name}”({blocks} 个数据块,{kb} kB)将被写入 ECU。存储器将被擦除并覆盖。在此期间不得中断供电和连接。\n\n确定要开始吗?"
+  flash.not_connected: "请先在“项目”选项卡中连接。"
+  flash.tree.header: "包的解析结果"
+  flash.tree.general: "常规"
+  flash.tree.data: "数据"
+  flash.tree.steps: "流程"
+  flash.tree.warnings: "提示"
+  flash.info.source: "来源"
+  flash.info.format: "格式"
+  flash.info.ecu: "ECU"
+  flash.info.ids: "请求/响应 ID"
+  flash.info.security: "Seed&Key"
+  flash.info.alfid: "地址/长度格式"
+  flash.format.manifest: "CAN Tool 清单文件 (flashpack.json/yaml)"
+  flash.format.vflash: "vFlash 包(启发式读取)"
+  flash.format.image: "单个文件(默认流程)"
+  flash.block: "数据块 {index}:0x{address},{length} 字节({source})"
+  flash.security.none: "无"
+  flash.security.xor: "Key = seed XOR 0x{value}(级别 {level})"
+  flash.security.add: "Key = seed + 0x{value}(级别 {level})"
+  flash.security.constant: "Key = 常量 0x{value}(级别 {level})"
+  flash.warn.generic_sequence: "该包未定义自己的流程:将使用通用的默认 UDS 流程(非整车厂专用)。刷写前请检查该流程。"
+  flash.warn.vflash_heuristic: "vFlash 包的内部格式未公开;仅以启发式方式读取了内容(数据文件、名称、CAN ID)。"
+  flash.warn.ignored_files: "包中有 {count} 个文件未被处理(例如 ODX-F、签名、DLL)。"
+  flash.warn.vflash_security: "不会执行整车厂专用的 Seed&Key(例如 DLL)。如有需要,请添加采用简单算法(xor/add/constant)的清单文件。"
+  flash.warn.no_data: "该包不含可编程的数据。"
+  flash.warn.bin_address: "{file}:BIN 文件不含地址,将使用地址 0。请在清单文件中指定 'address'。"
+  flash.err.bad_record: "{file}:第 {line} 行记录无效"
+  flash.err.unsupported_file: "不支持的文件:{name}"
+  flash.err.too_big: "该包解压后过大。"
+  flash.err.bad_manifest: "清单文件无效:{error}"
+  flash.err.missing_file: "包中缺少文件“{name}”"
+  flash.err.no_algorithm: "缺少 Seed&Key 算法(清单:security.type)"
+  flash.err.running: "刷写操作已在运行"
+  flash.err.aborted: "已中止"
+  flash.err.no_response: "ECU 无响应"
+  flash.err.expected: "响应 {got} 不以 {expect} 开头"
+  flash.err.block_missing: "数据块 {block} 不存在"
+  flash.err.alfid_too_small: "地址/长度格式 0x{alfid} 对该数据块而言过小"
+  flash.err.no_seed: "响应中不含 seed"
+  flash.log.already_unlocked: "Seed 为 0:ECU 已解锁"
+  flash.msg.transferred: "已传输 {length} 字节(块大小 {chunk})"
+  flash.step.unknown: "未知步骤“{kind}”"
+  flash.step.session: "诊断会话 0x{session}"
+  flash.step.comm_control: "通信控制 (0x{control})"
+  flash.step.security: "安全访问(级别 {level})"
+  flash.step.routine: "例程 0x{routine}"
+  flash.step.erase: "擦除数据块 {block}(0x{address},{length} 字节)"
+  flash.step.download: "编程数据块 {block}(0x{address},{length} 字节)"
+  flash.step.check: "检查例程 0x{routine}"
+  flash.step.request: "请求 {data}"
+  flash.step.reset: "ECU 复位 0x{reset}"
+  flash.step.wait: "等待 {ms} ms"
+  flash.step.comment: "{text}"
+  flash.dlg.title: "vFlash - 进度"
+  flash.dlg.overall: "总进度"
+  flash.dlg.col.step: "步骤"
+  flash.dlg.col.status: "状态"
+  flash.dlg.col.detail: "详情"
+  flash.dlg.abort: "中止"
+  flash.dlg.close: "关闭"
+  flash.dlg.running: "正在刷写。请勿中断连接或供电!"
+  flash.dlg.speed: "{done} / {total} kB  ({speed} kB/s)"
+  flash.dlg.log: "日志"
+  flash.dlg.aborting: "已请求中止..."
+  flash.status.pending: "待执行"
+  flash.status.running: "执行中"
+  flash.status.ok: "OK"
+  flash.status.fail: "失败"
+  flash.status.skipped: "已跳过"
+  flash.status.aborted: "已中止"
+  flash.result.passed: "刷写成功完成({seconds} s)"
+  flash.result.failed: "刷写失败"
+  flash.result.aborted: "刷写已中止"
+  help.shot.vflash.1: "加载 vFlash 包(.vflashpack/.zip、清单文件、HEX/S19/BIN);“重新加载”会再次读取该文件。"
+  help.shot.vflash.2: "包的解析结果:常规(ECU、ID、Seed&Key)、数据(含地址和长度的数据块)、流程(步骤)以及提示。"
+  help.shot.vflash.3: "开始刷写:经安全提示确认后,流程将在所选硬件上运行。"
+  help.shot.vflash.4: "进度窗口:显示每个步骤的状态(待执行、执行中、OK、失败、已跳过)及详情。"
+  help.shot.vflash.5: "总进度、当前数据块的进度(含数据速率)和日志;“中止”会在两个数据块之间停止。"
+  help.topic.appendix_c.title: "附录 C:vFlash 包与清单文件"
+  help.topic.appendix_c.html: |-
+    <h1>附录 C:vFlash 包与清单文件</h1>
+    <p>“诊断”部分的 vFlash 选项卡用于加载刷写包、对其进行解析,并使用内置的 UDS 刷写流程在所选硬件(Vector、PEAK、SocketCAN、仿真)上运行。无需 Vector 软件 vFlash。</p>
+    <h2>支持的来源</h2>
+    <ul><li><code>*.vflashpack</code> 或 <code>*.zip</code>,包含 <code>flashpack.json</code>(或 <code>flashpack.yaml</code>)及数据文件:完全支持。</li><li>不含清单文件的原生 vFlash 包:其内部格式未公开。程序会找出 HEX、S-record 和 BIN 文件,并以启发式方式读取工程。流程、地址和 Seed&amp;Key 通常需要通过清单文件补充。</li><li>单个清单文件或镜像(<code>.hex</code>、<code>.s19</code>、<code>.srec</code>、<code>.mot</code>、<code>.bin</code>),将使用通用默认流程。</li></ul>
+    <h2>清单文件 flashpack.json</h2>
+    [[pre:flashpack]]
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">元素</th><th width="76%" align="left">含义</th></tr><tr><td valign='top'><code>name</code>, <code>ecu</code></td><td valign='top'>显示名称和 ECU。</td></tr><tr><td valign='top'><code>request_id</code>, <code>response_id</code>, <code>extended</code>, <code>fd</code></td><td valign='top'>ISO-TP 寻址;若缺省,则采用“诊断”部分的诊断配置。</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'>Seed&amp;Key:<code>type</code> = <code>none</code>、<code>xor</code>、<code>add</code> 或 <code>constant</code>,以及 <code>level</code>(seed 级别,key = level + 1)和 <code>value</code>。</td></tr><tr><td valign='top'><code>address_format</code></td><td valign='top'>addressAndLengthFormatIdentifier,例如 <code>0x44</code> = 4 字节长度和 4 字节地址。</td></tr><tr><td valign='top'><code>max_chunk</code></td><td valign='top'>每次传输请求的有效载荷上限(否则取自 0x34 的响应)。</td></tr><tr><td valign='top'><code>data</code></td><td valign='top'>数据文件列表(<code>file</code>、<code>name</code>);对于 BIN 文件,<code>address</code> 为必填项。</td></tr><tr><td valign='top'><code>steps</code></td><td valign='top'>自定义流程;若缺省,则采用默认流程。</td></tr></table>
+    <h2>流程步骤 (steps)</h2>
+    <table border="1" cellspacing="0" cellpadding="4" width="100%"><tr><th width="24%" align="left">步骤</th><th width="76%" align="left">参数与作用</th></tr><tr><td valign='top'><code>session</code></td><td valign='top'><code>session</code>:诊断会话 (0x10)。</td></tr><tr><td valign='top'><code>comm_control</code></td><td valign='top'><code>control</code>、<code>comm_type</code>:通信控制 (0x28)。</td></tr><tr><td valign='top'><code>security</code></td><td valign='top'><code>level</code>:请求 seed,计算并发送 key (0x27)。</td></tr><tr><td valign='top'><code>erase</code></td><td valign='top'><code>block</code>(<code>all</code> 或编号)、<code>routine</code>(默认 FF00):擦除存储器 (0x31)。</td></tr><tr><td valign='top'><code>download</code></td><td valign='top'><code>block</code>:请求下载、传输数据、退出传输 (0x34, 0x36, 0x37)。</td></tr><tr><td valign='top'><code>check</code>, <code>routine</code></td><td valign='top'><code>routine</code>、<code>data</code>(十六进制)、<code>control</code>、<code>timeout_ms</code>:启动例程 (0x31)。</td></tr><tr><td valign='top'><code>request</code></td><td valign='top'><code>data</code>(十六进制)、<code>expect</code>(期望的响应起始字节)。</td></tr><tr><td valign='top'><code>reset</code></td><td valign='top'><code>reset</code>:ECU 复位 (0x11)。</td></tr><tr><td valign='top'><code>wait</code>, <code>comment</code></td><td valign='top'><code>ms</code> 为等待时间,或 <code>text</code> 作为注释。</td></tr></table>
+    <h2>默认流程</h2>
+    <p>未设置 <code>steps</code> 时,将按顺序执行:会话 0x03、禁用通信 (0x28 03 01)、会话 0x02、安全访问(若设置了 <code>security</code>)、擦除并编程所有数据块、ECU 复位 0x11 01。该流程为通用流程,非整车厂专用。</p>
+    <h2>安全注意事项</h2>
+    <p>刷写会擦除并覆盖 ECU 的存储器。在此期间不得中断供电和总线连接。包中的代码绝不会被执行;不支持整车厂专用的 Seed&amp;Key DLL。若发生错误,流程将停止,其余步骤将被跳过。</p>
